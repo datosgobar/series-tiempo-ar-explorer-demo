@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@graphic_2.1/dist/js/graphic.js'></script>
 </head>
 <style>
 .dashboard {
@@ -16,43 +17,38 @@ body {
 </style>
 
 <body>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@graphic_1.0/dist/js/graphic.js'></script>
     <div class="dashboard" id="root1"></div>
     <div class="dashboard" id="root4"></div>
     <div class="dashboard" id="root2"></div>
     <div class="dashboard" id="root3"></div>
     <script>
     window.onload = function() {
-        TSExplorer.render('root1', {
+        TSGraphic.render('root1', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&representation_mode=percent_change_a_year_ago',
-            seriesApiUri: "https://apis.datos.gob.ar/series/api",
             chartOptions: {
                 title: {
                     text: "Inflación interanual"
                 },
             }
         })
-        TSExplorer.render('root2', {
+        TSGraphic.render('root2', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=168.1_T_CAMBIOR_D_0_0_26',
-            seriesApiUri: "https://apis.datos.gob.ar/series/api",
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 title: {
                     text: "Tipo de cambio"
                 },
             }
         })
-        TSExplorer.render('root3', {
+        TSGraphic.render('root3', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21&limit=1000&start=0&format=json&representation_mode=percent_change_a_year_ago',
-            seriesApiUri: "https://apis.datos.gob.ar/series/api",
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 title: {
                     text: "Nivel de actividad"
                 },
             }
         })
-        TSExplorer.render('root4', {
+        TSGraphic.render('root4', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=116.3_TCRMA_0_M_36&limit=1000&start=0&format=json',
-            seriesApiUri: "https://apis.datos.gob.ar/series/api",
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 title: {
                     text: "Tipo de Cambio Real Multilateral"
