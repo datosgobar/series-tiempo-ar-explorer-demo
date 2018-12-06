@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Componentes para Series de Tiempo</title>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@graphic_2.1/dist/js/graphic.js'></script>
+</head>
+<style>
+.component {
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+body {
+    text-align: center;
+}
+</style>
+
+<body>
+    <div class="component" id="tsChartWithZoom"></div>
+    <br>
+    <div class="component" id="tsChartWithNavigator"></div>
+    <br>
+    <script>
+    window.onload = function() {
+
+        TSGraphic.render('tsChartWithZoom', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+            	title: {
+                    text: "Gráfico de series de tiempo con zoom y descarga"
+                },
+            },
+            navigator: false
+        })
+
+        TSGraphic.render('tsChartWithNavigator', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+            	title: {
+                    text: "Gráfico de series de tiempo con slider, zoom y descarga"
+                },
+            },
+            navigator: true
+        })
+
+    }
+    </script>
+</body>
+
+</html>
