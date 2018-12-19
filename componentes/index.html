@@ -3,48 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <title>Componentes para Series de Tiempo</title>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@graphic_2.1/dist/js/graphic.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@graphic_2.3/dist/js/graphic.js'></script>
 </head>
 <style>
 .component {
     width: 60%;
     height: 60%;
     margin: auto;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+}
+
+.full-width {
+    width: 90%;
+}
+
+.x3,
+.x4 {
+    display: inline-block;
+}
+
+.x3 {
+    width: 30%;
+}
+
+.x4 {
+    width: 22%;
+    height: 30%;
+    box-shadow: none;
 }
 
 body {
     text-align: center;
 }
+
+.x3 .highcharts-range-selector-buttons {
+    display: none;
+}
+
+/*.x4 .highcharts-range-selector-buttons,
+.x4 .highcharts-input-group {
+    display: none;
+}
+*/
 </style>
 
 <body>
-    <div class="component" id="tsChartWithZoom"></div>
+    <h2>Gráfico de series de tiempo completo</h2>
+    <div class="component full-width" id="tsChartFull"></div>
     <br>
-    <div class="component" id="tsChartWithNavigator"></div>
+    <h2>Gráficos de series de tiempo más chicos</h2>
+    <div class="component x3" id="tsChartSmall1"></div>
+    <div class="component x3" id="tsChartSmall2"></div>
+    <div class="component x3" id="tsChartSmall3"></div>
+    <br>
+    <h2>Gráficos de series de tiempo mínimos</h2>
+    <div class="component x4" id="tsChartMin1"></div>
+    <div class="component x4" id="tsChartMin2"></div>
+    <div class="component x4" id="tsChartMin3"></div>
+    <div class="component x4" id="tsChartMin4"></div>
     <br>
     <script>
     window.onload = function() {
 
-        TSGraphic.render('tsChartWithZoom', {
+        TSGraphic.render('tsChartFull', {
             graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            	title: {
-                    text: "Gráfico de series de tiempo con zoom y descarga"
+                title: {
+                    text: "Inflación interanual por categorías"
+                },
+                subtitle: {
+                    text: "Fuente: INDEC"
                 },
             },
-            navigator: false
+            locale: "AR",
+            navigator: true,
+            zoom: true,
+            exportable: true,
         })
 
-        TSGraphic.render('tsChartWithNavigator', {
+        TSGraphic.render('tsChartSmall1', {
             graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            	title: {
+                title: {
                     text: "Gráfico de series de tiempo con slider, zoom y descarga"
                 },
             },
-            navigator: true
+            zoom: true,
+            navigator: false,
+            exportable: false,
         })
+
+        TSGraphic.render('tsChartSmall2', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: {
+                    text: "Gráfico de series de tiempo con slider, zoom y descarga"
+                },
+            },
+            zoom: true,
+            navigator: false,
+            exportable: false,
+        })
+
+        TSGraphic.render('tsChartSmall3', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: {
+                    text: "Gráfico de series de tiempo con slider, zoom y descarga"
+                },
+            },
+            zoom: true,
+            navigator: false,
+            exportable: false,
+        })
+
+        TSGraphic.render('tsChartMin1', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=33.2_I_2004_M_4&limit=1000&start=0&format=json',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: {
+                    text: "Indicador Sintético de la Actividad de la Construcción (ISAC)"
+                },
+                legend: false
+            },
+            exportable: false,
+            navigator: false
+        })
+
+        TSGraphic.render('tsChartMin2', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: {
+                    text: "Estimador Mensual de Actividad Económica (EMAE)"
+                },
+                legend: false
+            },
+            exportable: false,
+            navigator: false
+        })
+
+
+        TSGraphic.render('tsChartMin3', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago&limit=1000&start=0&format=json',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: {
+                    text: "Índice de Precios al Consumidor (IPC)"
+                },
+                legend: false
+            },
+            exportable: false,
+            navigator: false
+        })
+
+
+        TSGraphic.render('tsChartMin4', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=14.2_E_M_2004_0_3&limit=1000&start=0&format=json',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: {
+                    text: "Gráfico de series de tiempo con slider, zoom y descarga"
+                },
+                legend: false
+            },
+            exportable: false,
+            navigator: false,
+            locale: 'AR'
+        })
+
+
+
 
     }
     </script>
