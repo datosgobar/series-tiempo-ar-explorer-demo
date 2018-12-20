@@ -27,7 +27,7 @@
 }
 
 .x4 {
-    width: 22%;
+    width: 30%;
     height: 30%;
     box-shadow: none;
 }
@@ -37,8 +37,12 @@ body {
 }
 
 .x3 .highcharts-range-selector-buttons {
-    display: none;
+    visibility: hidden;
 }
+
+
+
+
 
 /*.x4 .highcharts-range-selector-buttons,
 .x4 .highcharts-input-group {
@@ -49,45 +53,38 @@ body {
 
 <body>
     <h2>Gráfico de series de tiempo completo</h2>
+    <br>
     <div class="component full-width" id="tsChartFull"></div>
     <br>
-    <h2>Gráficos de series de tiempo más chicos</h2>
+    <h2>Gráficos de series de tiempo chicos</h2>
+    <br>
     <div class="component x3" id="tsChartSmall1"></div>
     <div class="component x3" id="tsChartSmall2"></div>
     <div class="component x3" id="tsChartSmall3"></div>
     <br>
-    <h2>Gráficos de series de tiempo mínimos</h2>
+    <h2>Gráficos de series de tiempo mono-serie</h2>
+    <br>
     <div class="component x4" id="tsChartMin1"></div>
     <div class="component x4" id="tsChartMin2"></div>
-    <div class="component x4" id="tsChartMin3"></div>
     <div class="component x4" id="tsChartMin4"></div>
     <br>
     <script>
     window.onload = function() {
 
         TSGraphic.render('tsChartFull', {
-            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,116.4_TCRZE_2015_D_36_4&limit=1000&start=0',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
                 title: {
-                    text: "Inflación interanual por categorías"
+                    text: "Nivel de actividad y tipo de cambio real"
                 },
                 subtitle: {
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
-                    align: "left",
-                    verticalAlign: "bottom"
+                    align: "center",
                 },
                 credits: {
-                    text: "Ver en explorador de series",
+                    text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
-                },
-                labels: {
-                    items: [{
-                        html: "<strong><p>Esto es un label HTML que se puede colorcar en cualquier parte interna del gráfico</p></strong>",
-                        style: {
-                            left: '1px',
-                            top: '1px'
-                        }
-                    }]
                 }
             },
             locale: "AR",
@@ -97,10 +94,20 @@ body {
         })
 
         TSGraphic.render('tsChartSmall1', {
-            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change,143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                subtitle: {
+                    text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
+                    align: "center",
+                },
+                credits: {
+                    text: "Ver en datos.gob.ar",
+                    href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
+                },
+
                 title: {
-                    text: "Gráfico de series de tiempo con slider, zoom y descarga"
+                    text: "Estimador Mensual de Actividad Económica (EMAE)"
                 },
             },
             zoom: true,
@@ -109,10 +116,20 @@ body {
         })
 
         TSGraphic.render('tsChartSmall2', {
-            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&limit=1000&start=0',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                subtitle: {
+                    text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
+                    align: "center",
+                },
+                credits: {
+                    text: "Ver en datos.gob.ar",
+                    href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
+                },
+
                 title: {
-                    text: "Gráfico de series de tiempo con slider, zoom y descarga"
+                    text: "Trabajadores registrados"
                 }
             },
             zoom: true,
@@ -121,10 +138,20 @@ body {
         })
 
         TSGraphic.render('tsChartSmall3', {
-            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                subtitle: {
+                    text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
+                    align: "center",
+                },
+                credits: {
+                    text: "Ver en datos.gob.ar",
+                    href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
+                },
+
                 title: {
-                    text: "Gráfico de series de tiempo con slider, zoom y descarga"
+                    text: "Indice de Precios al Consumidor (IPC)"
                 },
             },
             zoom: true,
@@ -133,53 +160,92 @@ body {
         })
 
         TSGraphic.render('tsChartMin1', {
-            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=33.2_I_2004_M_4&limit=1000&start=0&format=json',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=33.2_I_2004_M_4&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                subtitle: {
+                    text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
+                    align: "center",
+                },
+                credits: {
+                    text: "Ver en datos.gob.ar",
+                    href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
+                },
+
                 title: {
                     text: "Indicador Sintético de la Actividad de la Construcción (ISAC)"
                 },
-                legend: false
+                legend: false,
+                labels: {
+                    items: [{
+                        html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
+                        style: {
+                            left: '1px',
+                            top: '1px'
+                        }
+                    }]
+                }
             },
             exportable: false,
-            navigator: false
+            navigator: false,
         })
 
         TSGraphic.render('tsChartMin2', {
-            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                subtitle: {
+                    text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
+                    align: "center",
+                },
+                credits: {
+                    text: "Ver en datos.gob.ar",
+                    href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
+                },
+
                 title: {
                     text: "Estimador Mensual de Actividad Económica (EMAE)"
                 },
-                legend: false
+                legend: false,
+                labels: {
+                    items: [{
+                        html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
+                        style: {
+                            left: '1px',
+                            top: '1px'
+                        }
+                    }]
+                }
             },
             exportable: false,
             navigator: false
         })
-
-
-        TSGraphic.render('tsChartMin3', {
-            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago&limit=1000&start=0&format=json',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                title: {
-                    text: "Índice de Precios al Consumidor (IPC)"
-                },
-                legend: false
-            },
-            exportable: false,
-            navigator: false
-        })
-
 
         TSGraphic.render('tsChartMin4', {
-            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=14.2_E_M_2004_0_3&limit=1000&start=0&format=json',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=14.2_E_M_2004_0_3&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                subtitle: {
+                    text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
+                    align: "center",
+                },
+                credits: {
+                    text: "Ver en datos.gob.ar",
+                    href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
+                },
+
                 title: {
-                    text: "Gráfico de series de tiempo con slider, zoom y descarga"
+                    text: "Estimador Mensual Industrial (EMI)"
                 },
                 legend: false,
-                accessibility: {
-                    describeSingleSeries: true,
-                    enabled: true
+                labels: {
+                    items: [{
+                        html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
+                        style: {
+                            left: '1px',
+                            top: '1px'
+                        }
+                    }]
                 }
             },
             exportable: false,
