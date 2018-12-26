@@ -7,28 +7,31 @@
 </head>
 <style>
 .component {
-    width: 60%;
-    height: 60%;
     margin: auto;
+    width: 32%;
+    height: 50%;
+    /*border: solid 1px red;*/
     /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 }
 
-.full-width {
+.component div {
+    height: 100%;
+}
+
+.component.full-width {
     width: 90%;
 }
 
-.x3,
-.x4 {
+.component.full-height {
+    height: 80%;
+}
+
+.component.x3,
+.component.x4 {
     display: inline-block;
 }
 
-.x3 {
-    width: 30%;
-}
-
-.x4 {
-    width: 30%;
-    height: 30%;
+.component.x4 {
     box-shadow: none;
 }
 
@@ -36,25 +39,20 @@ body {
     text-align: center;
 }
 
-.x3 .highcharts-range-selector-buttons {
+.component.x3 .highcharts-range-selector-buttons {
     visibility: hidden;
 }
 
-
-
-
-
-/*.x4 .highcharts-range-selector-buttons,
-.x4 .highcharts-input-group {
+.component.x4 .highcharts-range-selector-buttons,
+.component.x4 .highcharts-input-group {
     display: none;
 }
-*/
 </style>
 
 <body>
     <h2>Gráfico de series de tiempo completo</h2>
     <br>
-    <div class="component full-width" id="tsChartFull"></div>
+    <div class="component full-width full-height" id="tsChartFull"></div>
     <br>
     <h2>Gráficos de series de tiempo chicos</h2>
     <br>
