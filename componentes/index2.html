@@ -1,102 +1,107 @@
 <html>
+
 <head>
     <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.4/dist/js/components.js'></script>
 </head>
+
 <body>
     <style>
-        .custom-chart {
-            width: 40%;
-            display: inline-block;
-            margin: 30px;
-        }
-    </style>
+    .custom-chart {
+        width: 40%;
+        display: inline-block;
+        margin: 30px;
+    }
 
+    body {
+        text-align: center;
+        /*background-color: #FAFBFC;*/
+        background-color: #EFF0F5;
+    }
+    </style>
     <div class="custom-chart" id="no-zoom"></div>
     <div class="custom-chart" id="no-datepicker"></div>
     <div class="custom-chart" id="no-range-selector"></div>
     <div class="custom-chart" id="background-red"></div>
     <div class="custom-chart" id="id-legend"></div>
-
-
     <script>
-        window.onload = function () {
-            TSComponents.Graphic.render('no-zoom', {
-                graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
-                chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                    title: { text: 'Gráfico sin zoom' }
-                },
-                navigator: false,
-                locale: 'AR',
-                zoom: false,
-                datePickerEnabled: true,
-                exportable: true,
-                colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
-                backgroundColor: '#ffffff00',
-                legendField: 'title',
-            });
+    window.onload = function() {
+        TSComponents.Graphic.render('no-zoom', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: { text: 'Gráfico sin zoom' }
+            },
+            navigator: false,
+            locale: 'AR',
+            zoom: false,
+            datePickerEnabled: true,
+            exportable: true,
+            colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
+            backgroundColor: '#ffffff00',
+            legendField: 'title',
+        });
 
-            TSComponents.Graphic.render('no-datepicker', {
-                graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
-                chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                    title: { text: 'Gráfico sin fechas' }
-                },
-                navigator: false,
-                locale: 'AR',
-                zoom: true,
-                datePickerEnabled: false,
-                exportable: true,
-                colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
-                backgroundColor: '#ffffff00',
-                legendField: 'title',
-            });
+        TSComponents.Graphic.render('no-datepicker', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: { text: 'Gráfico sin fechas' }
+            },
+            navigator: false,
+            locale: 'AR',
+            zoom: true,
+            datePickerEnabled: false,
+            exportable: true,
+            colors: ['#F9A822', '#0072BB', '#2E7D33', '#C62828', , '#6A1B99'],
+            backgroundColor: '#ffffff00',
+            legendField: 'title',
+        });
 
-            TSComponents.Graphic.render('no-range-selector', {
-                graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
-                chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                    title: { text: 'Gráfico sin zoom ni fechas' }
-                },
-                navigator: false,
-                locale: 'AR',
-                zoom: false,
-                datePickerEnabled: false,
-                exportable: true,
-                colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
-                backgroundColor: '#ffffff00',
-                legendField: 'title',
-            });
+        TSComponents.Graphic.render('no-range-selector', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: { text: 'Gráfico sin zoom ni fechas' }
+            },
+            navigator: false,
+            locale: 'AR',
+            zoom: false,
+            datePickerEnabled: false,
+            exportable: true,
+            colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
+            backgroundColor: '#ffffff00',
+            legendField: 'title',
+        });
 
-            TSComponents.Graphic.render('background-red', {
-                graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
-                chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                    title: { text: 'Gráfico con color de fondo' }
-                },
-                navigator: false,
-                locale: 'AR',
-                zoom: false,
-                datePickerEnabled: true,
-                exportable: true,
-                colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
-                backgroundColor: 'red',
-                legendField: 'title',
-            });
+        TSComponents.Graphic.render('background-red', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: { text: 'Gráfico con color de fondo' }
+            },
+            navigator: false,
+            locale: 'AR',
+            zoom: false,
+            datePickerEnabled: true,
+            exportable: true,
+            colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
+            backgroundColor: 'red',
+            legendField: 'title',
+        });
 
-            TSComponents.Graphic.render('id-legend', {
-                graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
-                chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                    title: { text: 'Gráfico con «id» como leyenda' }
-                },
-                navigator: false,
-                locale: 'AR',
-                zoom: false,
-                datePickerEnabled: true,
-                exportable: true,
-                colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
-                backgroundColor: '#ffffff00',
-                legendField: 'id',
-            });
+        TSComponents.Graphic.render('id-legend', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: { text: 'Gráfico con «id» como leyenda' }
+            },
+            navigator: false,
+            locale: 'AR',
+            zoom: false,
+            datePickerEnabled: true,
+            exportable: true,
+            colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
+            backgroundColor: '#ffffff00',
+            legendField: 'id',
+        });
 
-        }
+    }
     </script>
-
 </body>
+
 </html>
