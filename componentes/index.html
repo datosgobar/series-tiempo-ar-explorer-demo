@@ -31,25 +31,25 @@
     display: inline-block;
 }
 
-.component.x4 {
+/*.component.x4 {
     box-shadow: none;
 }
-
+*/
 body {
     text-align: center;
     background-color: #FAFBFC;
     /*background-color: #EFF0F5;*/
 }
 
-.component.x3 .highcharts-range-selector-buttons {
+/*.component.x3 .highcharts-range-selector-buttons {
     visibility: hidden;
 }
-
-.component.x4 .highcharts-range-selector-buttons,
+*/
+/*.component.x4 .highcharts-range-selector-buttons,
 .component.x4 .highcharts-input-group {
     display: none;
 }
-</style>
+*/</style>
 
 <body>
     <h2>Gráfico de series de tiempo completo</h2>
@@ -79,15 +79,18 @@ body {
                     text: "Nivel de actividad y tipo de cambio real"
                 },
                 subtitle: {
+                    y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
                     align: "center",
+                    verticalAlign: "bottom",
                 },
                 credits: {
+                    // position: {y:-43},
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
                 // backgroundColor: 'rgba(255, 255, 255, 0.0)'
-                backgroundColor: null
+                backgroundColor: null,
             },
             locale: "AR",
             navigator: true,
@@ -103,10 +106,13 @@ body {
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 chart: { colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"] },
                 subtitle: {
+                    y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
                     align: "center",
+                    verticalAlign: "bottom",
                 },
                 credits: {
+                    position: {y:- 78},
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -114,7 +120,7 @@ body {
                     text: "Estimador Mensual de Actividad Económica (EMAE)"
                 },
             },
-            zoom: true,
+            zoom: false,
             navigator: false,
             exportable: false,
         })
@@ -124,10 +130,13 @@ body {
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
                 subtitle: {
+                    y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
                     align: "center",
+                    verticalAlign: "bottom",
                 },
                 credits: {
+                    position: {y:-92},
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -136,7 +145,7 @@ body {
                     text: "Trabajadores registrados"
                 }
             },
-            zoom: true,
+            zoom: false,
             navigator: false,
             exportable: false,
         })
@@ -146,19 +155,22 @@ body {
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
                 subtitle: {
+                    y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
                     align: "center",
+                    verticalAlign: "bottom",
                 },
                 credits: {
+                    position: {y:-106},
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
 
                 title: {
                     text: "Indice de Precios al Consumidor (IPC)"
-                },
+                }
             },
-            zoom: true,
+            zoom: false,
             navigator: false,
             exportable: false,
             legendField: 'id',
@@ -169,10 +181,13 @@ body {
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
                 subtitle: {
+                    y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
                     align: "center",
+                    verticalAlign: "bottom"
                 },
                 credits: {
+                    position: {y:-43},
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -186,13 +201,15 @@ body {
                         html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
                         style: {
                             left: '1px',
-                            top: '1px'
+                            top: '-20px'
                         }
                     }]
                 }
             },
             exportable: false,
             navigator: false,
+            zoom: false,
+            datePickerEnabled: false,
         })
 
         TSComponents.Graphic.render('tsChartMin2', {
@@ -200,10 +217,13 @@ body {
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
                 subtitle: {
+                    y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
                     align: "center",
+                    verticalAlign: "bottom"
                 },
                 credits: {
+                    position: {y:-43},
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -217,13 +237,15 @@ body {
                         html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
                         style: {
                             left: '1px',
-                            top: '1px'
+                            top: '-20px'
                         }
                     }]
                 }
             },
             exportable: false,
-            navigator: false
+            navigator: false,
+            zoom: false,
+            datePickerEnabled: false,
         })
 
         TSComponents.Graphic.render('tsChartMin4', {
@@ -231,12 +253,15 @@ body {
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
                 subtitle: {
+                    y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
                     align: "center",
+                    verticalAlign: "bottom"
                 },
                 credits: {
                     text: "Ver en datos.gob.ar",
-                    href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
+                    href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago",
+                    position: {y:-43},
                 },
 
                 title: {
@@ -248,14 +273,16 @@ body {
                         html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
                         style: {
                             left: '1px',
-                            top: '1px'
+                            top: '-20px'
                         }
                     }]
                 }
             },
             exportable: false,
             navigator: false,
-            locale: 'AR'
+            locale: 'AR',
+            zoom: false,
+            datePickerEnabled: false,
         })
 
 
