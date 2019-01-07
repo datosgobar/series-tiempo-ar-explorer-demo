@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.4.5/dist/js/components.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.4.6-multiple_types/dist/js/components.js'></script>
 </head>
 
 <body>
@@ -23,6 +23,8 @@
     <div class="custom-chart" id="no-range-selector"></div>
     <div class="custom-chart" id="background-red"></div>
     <div class="custom-chart" id="title-legend"></div>
+    <div class="custom-chart" id="multiple-type"></div>
+
     <script>
     window.onload = function() {
         TSComponents.Graphic.render('no-zoom', {
@@ -98,6 +100,27 @@
             colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
             backgroundColor: '#ffffff00',
             legendField: 'title',
+        });
+
+        TSComponents.Graphic.render('multiple-type', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+                title: { text: 'Line & area' }
+            },
+            navigator: false,
+            locale: 'AR',
+            zoom: false,
+            datePickerEnabled: true,
+            exportable: true,
+            colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
+            backgroundColor: '#ffffff00',
+            legendField: 'description',
+            chartTypes: {'143.3_NO_PR_2004_A_31': 'line', '143.3_NO_PR_2004_A_21': 'area'}
+            // chartTypes recibe un hash con clave como ID de la serie y valor como tipo de gráfico.
+            // Si alguna serie no está acá detallada con qué tipo mostrarse, simplemente se muestra con el default (lineas).
+            // Hay ciertos tipos que no funcionan bien con la implementación que tenemos hoy. Como por ejemplo: pie y bar. Esto es porque
+            // el gráfico de torta debería ser el único tipo para contener a todas las series, sino no sería más que un círculo todo pintado. Y
+            // los gráficos como el de barras tiene los valores a la izquierda de abajo hacia arriba, lo cual pisa todo el diseño que tenemos hoy.
         });
 
     }
