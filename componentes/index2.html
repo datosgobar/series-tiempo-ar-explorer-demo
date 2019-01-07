@@ -107,7 +107,7 @@
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 title: { text: 'Line & area' }
             },
-            navigator: false,
+            navigator: true,
             locale: 'AR',
             zoom: false,
             datePickerEnabled: true,
@@ -115,12 +115,13 @@
             colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
             backgroundColor: '#ffffff00',
             legendField: 'description',
-            chartTypes: {'143.3_NO_PR_2004_A_31': 'line', '143.3_NO_PR_2004_A_21': 'area'}
+            chartTypes: {'143.3_NO_PR_2004_A_31': 'line', '143.3_NO_PR_2004_A_21': 'column'}
             // chartTypes recibe un hash con clave como ID de la serie y valor como tipo de gráfico.
             // Si alguna serie no está acá detallada con qué tipo mostrarse, simplemente se muestra con el default (lineas).
             // Hay ciertos tipos que no funcionan bien con la implementación que tenemos hoy. Como por ejemplo: pie y bar. Esto es porque
             // el gráfico de torta debería ser el único tipo para contener a todas las series, sino no sería más que un círculo todo pintado. Y
             // los gráficos como el de barras tiene los valores a la izquierda de abajo hacia arriba, lo cual pisa todo el diseño que tenemos hoy.
+            // Tss: La barra de navegación incluye los tipos ;)
         });
 
     }
