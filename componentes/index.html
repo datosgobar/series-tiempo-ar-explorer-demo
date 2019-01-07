@@ -96,13 +96,11 @@ body {
             navigator: true,
             zoom: true,
             exportable: true,
-            header: "descriptions",
-            header: "titles",
-            header: "ids",
+            chartTypes: {'143.3_NO_PR_2004_A_21': 'column'}
         })
 
         TSComponents.Graphic.render('tsChartSmall1', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change,143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=11.3_VMATC_2004_M_12:percent_change_a_year_ago,143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
                 chart: { colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"] },
                 subtitle: {
@@ -123,6 +121,7 @@ body {
             zoom: false,
             navigator: false,
             exportable: false,
+            chartTypes: {'11.3_VMATC_2004_M_12': 'column', '143.3_NO_PR_2004_A_21': 'column'}
         })
 
         TSComponents.Graphic.render('tsChartSmall2', {
@@ -148,6 +147,7 @@ body {
             zoom: false,
             navigator: false,
             exportable: false,
+
         })
 
         TSComponents.Graphic.render('tsChartSmall3', {
