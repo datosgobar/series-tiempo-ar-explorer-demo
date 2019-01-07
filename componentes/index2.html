@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.4.1/dist/js/components.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.4.4/dist/js/components.js'></script>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
     <div class="custom-chart" id="no-datepicker"></div>
     <div class="custom-chart" id="no-range-selector"></div>
     <div class="custom-chart" id="background-red"></div>
-    <div class="custom-chart" id="id-legend"></div>
+    <div class="custom-chart" id="title-legend"></div>
     <script>
     window.onload = function() {
         TSComponents.Graphic.render('no-zoom', {
@@ -37,7 +37,7 @@
             exportable: true,
             colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
             backgroundColor: '#ffffff00',
-            legendField: 'title',
+            legendField: 'description',
         });
 
         TSComponents.Graphic.render('no-datepicker', {
@@ -52,7 +52,7 @@
             exportable: true,
             colors: ['#F9A822', '#0072BB', '#2E7D33', '#C62828', , '#6A1B99'],
             backgroundColor: '#ffffff00',
-            legendField: 'title',
+            legendField: 'description',
         });
 
         TSComponents.Graphic.render('no-range-selector', {
@@ -67,7 +67,7 @@
             exportable: true,
             colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
             backgroundColor: '#ffffff00',
-            legendField: 'title',
+            legendField: 'description',
         });
 
         TSComponents.Graphic.render('background-red', {
@@ -82,13 +82,13 @@
             exportable: true,
             colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
             backgroundColor: 'red',
-            legendField: 'title',
+            legendField: 'description',
         });
 
-        TSComponents.Graphic.render('id-legend', {
+        TSComponents.Graphic.render('title-legend', {
             graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21,143.3_NO_PR_2004_A_31&limit=1000&start=0',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                title: { text: 'Gráfico con «id» como leyenda' }
+                title: { text: 'Gráfico con «title» como leyenda' }
             },
             navigator: false,
             locale: 'AR',
@@ -97,7 +97,7 @@
             exportable: true,
             colors: ['#0072BB', '#2E7D33', '#C62828', '#F9A822', '#6A1B99'],
             backgroundColor: '#ffffff00',
-            legendField: 'id',
+            legendField: 'title',
         });
 
     }
