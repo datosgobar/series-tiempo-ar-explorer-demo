@@ -31,25 +31,31 @@
     display: inline-block;
 }
 
+
 /*.component.x4 {
     box-shadow: none;
 }
 */
+
 body {
     text-align: center;
     background-color: #FAFBFC;
     /*background-color: #EFF0F5;*/
 }
 
+
 /*.component.x3 .highcharts-range-selector-buttons {
     visibility: hidden;
 }
 */
+
+
 /*.component.x4 .highcharts-range-selector-buttons,
 .component.x4 .highcharts-input-group {
     display: none;
 }
-*/</style>
+*/
+</style>
 
 <body>
     <h2>Gráfico de series de tiempo completo</h2>
@@ -96,7 +102,7 @@ body {
             navigator: true,
             zoom: true,
             exportable: true,
-            chartTypes: {'143.3_NO_PR_2004_A_21': 'column'}
+            chartTypes: { '143.3_NO_PR_2004_A_21': 'column' }
         })
 
         TSComponents.Graphic.render('tsChartSmall1', {
@@ -110,7 +116,7 @@ body {
                     verticalAlign: "bottom",
                 },
                 credits: {
-                    position: {y:- 78},
+                    position: { y: -78 },
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -121,7 +127,7 @@ body {
             zoom: false,
             navigator: false,
             exportable: false,
-            chartTypes: {'11.3_VMATC_2004_M_12': 'column', '143.3_NO_PR_2004_A_21': 'column'}
+            chartTypes: { '11.3_VMATC_2004_M_12': 'column', '143.3_NO_PR_2004_A_21': 'column' }
         })
 
         TSComponents.Graphic.render('tsChartSmall2', {
@@ -135,7 +141,7 @@ body {
                     verticalAlign: "bottom",
                 },
                 credits: {
-                    position: {y:-92},
+                    position: { y: -92 },
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -146,7 +152,7 @@ body {
             },
             zoom: false,
             navigator: false,
-            exportable: false,
+            exportable: false
 
         })
 
@@ -161,7 +167,7 @@ body {
                     verticalAlign: "bottom",
                 },
                 credits: {
-                    position: {y:-90},
+                    position: { y: -90 },
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -187,7 +193,7 @@ body {
                     verticalAlign: "bottom"
                 },
                 credits: {
-                    position: {y:-43},
+                    position: { y: -43 },
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -223,7 +229,7 @@ body {
                     verticalAlign: "bottom"
                 },
                 credits: {
-                    position: {y:-43},
+                    position: { y: -43 },
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -246,6 +252,7 @@ body {
             navigator: false,
             zoom: false,
             datePickerEnabled: false,
+            chartTypes: { '143.3_NO_PR_2004_A_21': 'area'}
         })
 
         TSComponents.Graphic.render('tsChartMin4', {
@@ -261,7 +268,7 @@ body {
                 credits: {
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago",
-                    position: {y:-43},
+                    position: { y: -43 },
                 },
 
                 title: {
@@ -283,6 +290,7 @@ body {
             locale: 'AR',
             zoom: false,
             datePickerEnabled: false,
+            chartTypes: { '14.2_E_M_2004_0_3': 'scatter'}
         })
 
 
