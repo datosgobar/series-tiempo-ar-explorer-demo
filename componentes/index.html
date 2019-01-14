@@ -59,11 +59,15 @@ body {
     <br>
     <div class="component full-width full-height" id="tsChartFull"></div>
     <br>
+    <br>
+    <br>
     <h2>Gráficos de series de tiempo chicos</h2>
     <br>
     <div class="component x3" id="tsChartSmall1"></div>
     <div class="component x3" id="tsChartSmall2"></div>
     <div class="component x3" id="tsChartSmall3"></div>
+    <br>
+    <br>
     <br>
     <h2>Gráficos de series de tiempo mono-serie</h2>
     <br>
@@ -77,7 +81,7 @@ body {
         TSComponents.Graphic.render('tsChartFull', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,116.4_TCRZE_2015_D_36_4&limit=1000&start=0',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"],
                 title: {
                     text: "Nivel de actividad y tipo de cambio real"
                 },
@@ -113,7 +117,7 @@ body {
                     verticalAlign: "bottom",
                 },
                 credits: {
-                    position: { y: -78 },
+                    position: { y: -90 },
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -124,13 +128,13 @@ body {
             zoom: false,
             navigator: false,
             exportable: false,
-            chartTypes: { '11.3_VMATC_2004_M_12': 'column', '143.3_NO_PR_2004_A_21': 'column' }
+            chartTypes: { '11.3_VMATC_2004_M_12': 'area', '143.3_NO_PR_2004_A_21': 'area' }
         })
 
         TSComponents.Graphic.render('tsChartSmall2', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&limit=1000&start=0',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"],
                 subtitle: {
                     y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
@@ -156,7 +160,7 @@ body {
         TSComponents.Graphic.render('tsChartSmall3', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"],
                 subtitle: {
                     y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
@@ -182,7 +186,7 @@ body {
         TSComponents.Graphic.render('tsChartMin1', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=33.2_I_2004_M_4&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"],
                 subtitle: {
                     y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
@@ -199,15 +203,6 @@ body {
                     text: "Indicador Sintético de la Actividad de la Construcción (ISAC)"
                 },
                 legend: false,
-                labels: {
-                    items: [{
-                        html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
-                        style: {
-                            left: '1px',
-                            top: '1px'
-                        }
-                    }]
-                }
             },
             exportable: false,
             navigator: false,
@@ -218,7 +213,7 @@ body {
         TSComponents.Graphic.render('tsChartMin2', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"],
                 subtitle: {
                     y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
@@ -235,27 +230,18 @@ body {
                     text: "Estimador Mensual de Actividad Económica (EMAE)"
                 },
                 legend: false,
-                labels: {
-                    items: [{
-                        html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
-                        style: {
-                            left: '1px',
-                            top: '1px'
-                        }
-                    }]
-                }
             },
             exportable: false,
             navigator: false,
             zoom: false,
             datePickerEnabled: false,
-            chartTypes: { '143.3_NO_PR_2004_A_21': 'area'}
+            chartTypes: { '143.3_NO_PR_2004_A_21': 'column'}
         })
 
         TSComponents.Graphic.render('tsChartMin4', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=14.2_E_M_2004_0_3&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
+                colors: ["#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"],
                 subtitle: {
                     y: 15,
                     text: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
@@ -272,22 +258,13 @@ body {
                     text: "Estimador Mensual Industrial (EMI)"
                 },
                 legend: false,
-                labels: {
-                    items: [{
-                        html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
-                        style: {
-                            left: '1px',
-                            top: '1px'
-                        }
-                    }]
-                }
             },
             exportable: false,
             navigator: false,
             locale: 'AR',
             zoom: false,
             datePickerEnabled: false,
-            chartTypes: { '14.2_E_M_2004_0_3': 'scatter'}
+            chartTypes: { '14.2_E_M_2004_0_3': 'area'}
         })
 
 
