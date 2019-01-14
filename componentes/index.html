@@ -59,11 +59,15 @@ body {
     <br>
     <div class="component full-width full-height" id="tsChartFull"></div>
     <br>
+    <br>
+    <br>
     <h2>Gráficos de series de tiempo chicos</h2>
     <br>
     <div class="component x3" id="tsChartSmall1"></div>
     <div class="component x3" id="tsChartSmall2"></div>
     <div class="component x3" id="tsChartSmall3"></div>
+    <br>
+    <br>
     <br>
     <h2>Gráficos de series de tiempo mono-serie</h2>
     <br>
@@ -113,7 +117,7 @@ body {
                     verticalAlign: "bottom",
                 },
                 credits: {
-                    position: { y: -78 },
+                    position: { y: -90 },
                     text: "Ver en datos.gob.ar",
                     href: "https://datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago"
                 },
@@ -124,7 +128,7 @@ body {
             zoom: false,
             navigator: false,
             exportable: false,
-            chartTypes: { '11.3_VMATC_2004_M_12': 'column', '143.3_NO_PR_2004_A_21': 'column' }
+            chartTypes: { '11.3_VMATC_2004_M_12': 'area', '143.3_NO_PR_2004_A_21': 'area' }
         })
 
         TSComponents.Graphic.render('tsChartSmall2', {
@@ -199,15 +203,6 @@ body {
                     text: "Indicador Sintético de la Actividad de la Construcción (ISAC)"
                 },
                 legend: false,
-                labels: {
-                    items: [{
-                        html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
-                        style: {
-                            left: '1px',
-                            top: '1px'
-                        }
-                    }]
-                }
             },
             exportable: false,
             navigator: false,
@@ -235,21 +230,12 @@ body {
                     text: "Estimador Mensual de Actividad Económica (EMAE)"
                 },
                 legend: false,
-                labels: {
-                    items: [{
-                        html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
-                        style: {
-                            left: '1px',
-                            top: '1px'
-                        }
-                    }]
-                }
             },
             exportable: false,
             navigator: false,
             zoom: false,
             datePickerEnabled: false,
-            chartTypes: { '143.3_NO_PR_2004_A_21': 'area'}
+            chartTypes: { '143.3_NO_PR_2004_A_21': 'column'}
         })
 
         TSComponents.Graphic.render('tsChartMin4', {
@@ -272,22 +258,13 @@ body {
                     text: "Estimador Mensual Industrial (EMI)"
                 },
                 legend: false,
-                labels: {
-                    items: [{
-                        html: "<strong>Último dato:</strong> -9,35% (Oct. 18)",
-                        style: {
-                            left: '1px',
-                            top: '1px'
-                        }
-                    }]
-                }
             },
             exportable: false,
             navigator: false,
             locale: 'AR',
             zoom: false,
             datePickerEnabled: false,
-            chartTypes: { '14.2_E_M_2004_0_3': 'scatter'}
+            chartTypes: { '14.2_E_M_2004_0_3': 'area'}
         })
 
 
