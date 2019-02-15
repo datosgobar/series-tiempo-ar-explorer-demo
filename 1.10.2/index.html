@@ -98,12 +98,14 @@ body {
             },
             title: 'dinamic',
             legendField: 'title',
+            source: 'Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)'
         })
 
         TSComponents.Graphic.render('tsChartMin1', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=33.2_I_2004_M_4&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
             },
+            source: 'Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)'
         })
 
         TSComponents.Graphic.render('tsChartMin2', {
@@ -113,6 +115,7 @@ body {
             title: 'zoom:true date:true nav:dinamic',
             zoom: true,
             datePickerEnabled: true,
+            source: 'Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
             chartTypes: { '143.3_NO_PR_2004_A_21': 'column'}
         })
 
