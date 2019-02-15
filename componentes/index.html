@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Componentes para Series de Tiempo</title>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.6.6/dist/js/components.js'></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.6.5/dist/css/components.css" type="text/css">
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.10.2/dist/js/components.js'></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.10.2/dist/css/components.css" type="text/css">
 </head>
 <style>
 .component {
@@ -100,9 +100,7 @@ body {
                 backgroundColor: null,
             },
             locale: "AR",
-            navigator: true,
-            zoom: true,
-            exportable: true,
+            exportable: false,
             chartTypes: { '143.3_NO_PR_2004_A_21': 'column' }
         })
 
@@ -125,8 +123,6 @@ body {
                     text: "Estimador Mensual de Actividad Económica (EMAE)"
                 },
             },
-            zoom: false,
-            navigator: false,
             exportable: false,
             chartTypes: { '11.3_VMATC_2004_M_12': 'area', '143.3_NO_PR_2004_A_21': 'area' }
         })
@@ -151,8 +147,6 @@ body {
                     text: "Trabajadores registrados"
                 }
             },
-            zoom: false,
-            navigator: false,
             exportable: false
 
         })
@@ -177,9 +171,6 @@ body {
                     text: "Indice de Precios al Consumidor (IPC)"
                 }
             },
-            zoom: false,
-            navigator: false,
-            exportable: false,
             legendField: 'title',
         })
 
@@ -204,9 +195,6 @@ body {
                 },
                 legend: false,
             },
-            exportable: false,
-            navigator: false,
-            zoom: false,
             datePickerEnabled: false,
         })
 
@@ -231,10 +219,8 @@ body {
                 },
                 legend: false,
             },
-            exportable: false,
-            navigator: false,
-            zoom: false,
             datePickerEnabled: false,
+            exportable: false,
             chartTypes: { '143.3_NO_PR_2004_A_21': 'column'}
         })
 
@@ -259,11 +245,9 @@ body {
                 },
                 legend: false,
             },
-            exportable: false,
-            navigator: false,
             locale: 'AR',
-            zoom: false,
             datePickerEnabled: false,
+            exportable: false,
             chartTypes: { '14.2_E_M_2004_0_3': 'area'}
         })
 

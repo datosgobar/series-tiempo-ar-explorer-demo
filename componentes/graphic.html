@@ -1,0 +1,21 @@
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.9.0/dist/js/components.js'></script>
+<script type='text/css' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.9.0/dist/css/components.css'></script>
+<div id="root"></div>
+<script>
+    window.onload = function() {
+        TSComponents.Graphic.render('root', {
+            graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?metadata=full&end_date=2017-08-01&ids=103.1_I2N_2016_M_15,173.1_INUCLEOLEO_DIC-_0_10,92.1_TCV_0_0_21&limit=1000&start=0&start_date=2016-06-01',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+            },
+            navigator: false,
+            locale: 'AR',
+            zoom: true,
+            datePickerEnabled: true,
+            exportable: true,
+            colors: ['#0072BB','#039BE5','#2E7D33','#6EA100','#F9A822','#EC407A','#C2185B','#C62828','#6A1B99'],
+            backgroundColor: '#ffffff00',
+            title: 'dataset_title',
+            source: 'Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
+        })
+    }
+</script>
