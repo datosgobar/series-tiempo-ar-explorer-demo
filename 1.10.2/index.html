@@ -61,11 +61,8 @@ body {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,116.4_TCRZE_2015_D_36_4&limit=1000&start=0',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
             },
-            locale: "AR",
             zoom: true,
             chartTypes: { '143.3_NO_PR_2004_A_21': 'column' },
-            colors: ['#0072BB','#039BE5','#2E7D33','#6EA100','#F9A822','#EC407A','#C2185B','#C62828','#6A1B99'],
-            backgroundColor: '#ffffff00',
             title: 'Este es el título del gráfico. Y se ve muy bien.',
             source: 'Banco Central de la República Argentina (BCRA)',
         })
@@ -124,10 +121,8 @@ body {
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
             },
             title: 'zoom:false date:false nav:dinamic',
-            locale: 'AR',
             zoom: false,
             datePickerEnabled: false,
-            chartTypes: { '14.2_E_M_2004_0_3': 'area'}
         })
 
     }
