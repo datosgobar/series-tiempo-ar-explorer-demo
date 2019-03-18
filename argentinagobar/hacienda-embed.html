@@ -67,7 +67,7 @@
     }];
     </script>
     <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.14.1/dist/js/components.js'></script>
-    <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.14.0/dist/css/components.css' />
+    <link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.14.1/dist/css/components.css' />
 </head>
 
 <style>
@@ -710,14 +710,14 @@
     window.onload = function() {
 
         TSComponents.Graphic.render('emae', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,143.3_NO_PR_2004_A_31:percent_change&limit=1000&start_date=2017-11',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,143.3_NO_PR_2004_A_31:percent_change&last=12',
             title: 'Estimador Mensual de Actividad Económica (EMAE)',
             source: 'Var % interanual, var % p/p desest. Fuente: INDEC.',
             chartTypes: { "143.3_NO_PR_2004_A_21": "column", "143.3_NO_PR_2004_A_31": "column" }
         })
 
         TSComponents.Graphic.render('ipi', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=IPI_UIA_8QBRJ5:percent_change_a_year_ago&limit=1000&start_date=2017-12',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=IPI_UIA_8QBRJ5:percent_change_a_year_ago&last=12',
             colors: ["#2E7D33", "#C62828", "#F9A822", "#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100", "#0072BB"],
             title: 'Índice de Producción Industrial Manufacturero (IPI)',
             source: 'Var % interanual. Fuente: Secretaría de la Transformación Productiva.',
@@ -725,7 +725,7 @@
         })
 
         TSComponents.Graphic.render('isac', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=33.2_ISAC_SIN_EDAD_0_M_23_56:percent_change_a_year_ago&limit=1000&start_date=2017-12',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=33.2_ISAC_SIN_EDAD_0_M_23_56:percent_change_a_year_ago&last=12',
             colors: ["#C62828", "#F9A822", "#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100", "#0072BB", "#2E7D33"],
             title: 'Indicador sintético de la actividad de la construcción (ISAC)',
             source: 'Var % interanual. Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
@@ -733,21 +733,21 @@
         })
 
         TSComponents.Graphic.render('ipc', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26:percent_change&limit=1000&start_date=2018-01',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26:percent_change&last=12',
             colors: ["#F9A822", "#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100", "#0072BB", "#2E7D33", "#C62828"],
             title: 'Índice de precios al consumidor (IPC)',
             source: 'Var % p/p. Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
         })
 
         TSComponents.Graphic.render('trabajadores', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&limit=1000&start_date=2017-11',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&last=12',
             colors: ["#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100", "#0072BB", "#2E7D33", "#C62828", "#F9A822"],
             title: 'Cantidad de trabajadores registrados',
             source: 'Cantidades. Fuente: Ministerio de Trabajo, Empleo y Seguridad Social',
         })
 
         TSComponents.Graphic.render('desempleo', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=42.3_EPH_PUNTUATAL_0_M_30&limit=1000&start_date=2016',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=42.3_EPH_PUNTUATAL_0_M_30&last=12',
             colors: ["#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100", "#0072BB", "#2E7D33", "#C62828", "#F9A822", "#6A1B99"],
             title: 'Tasa de desempleo',
             source: 'Porcentaje. Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
