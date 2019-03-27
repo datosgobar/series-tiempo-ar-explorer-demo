@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Explorador de la API de Series de Tiempo | Ministerio de Modernización</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@2.2.2/dist/css/main.css" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@2.2.2/dist/js/main.js"></script>
+</head>
+
+<body>
+    <style>
+        i.far.fa-times {
+            font-weight: 900;
+        }
+    </style>
+
+   <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+
+
+    <script>
+        window.onload = function() {
+            TSExplorer.render("root", {
+            featured: [
+               "103.1_I2N_2016_M_15",
+               "168.1_T_CAMBIOR_D_0_0_26",
+               "116.3_TCRMA_0_M_36",
+               "143.3_NO_PR_2004_A_21",
+               "101.1_I2NG_2016_M_22",
+               "11.3_VMASD_2004_M_23",
+               "11.3_VMATC_2004_M_12",
+               "103.1_I2N_2016_M_19",
+               "106.4_I1PNMEEVM_2015_M_51",
+               "106.4_I1TPNVM_2015_M_47",
+               "106.4_I1NGVM_2015_M_41",
+               "106.4_I1NGVA_2015_M_39"
+            ],
+            seriesApiUri: "https://apis-stg.datos.gob.ar/series/api",
+            catalogId: "datosgobar",
+            formatChartUnits: true,
+            laps: {
+               Diaria: 90,
+               Mensual: 24,
+               Trimestral: 20,
+               Semestral: 10,
+               Anual: 10
+            },
+            locale: "AR"
+         })
+        }
+    </script>
+</body>
+
+</html>
