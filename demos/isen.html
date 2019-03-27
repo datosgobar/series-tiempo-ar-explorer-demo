@@ -1,0 +1,44 @@
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.16.1/dist/js/components.js'></script>
+<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.16.1/dist/css/components.css' />
+<style>
+div.graphic-panel {
+    display: block;
+    height: 600px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+#provincias {
+    height: 750px;
+}
+.graphic-element {
+    display: inline-block;
+    width: 49%;
+}
+</style>
+<div class="graphic-panel">
+    <div class="graphic-element" id="genero"></div>
+    <div class="graphic-element" id="procedencia"></div>
+</div>
+<div class="graphic-panel">
+    <div id="provincias"></div>
+</div>
+<script>
+window.onload = function() {
+
+    TSComponents.Graphic.render('genero', {
+        graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?ids=isen_0032,isen_0031,isen_0030',
+        title: "Género"
+    })
+
+    TSComponents.Graphic.render('procedencia', {
+        graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?ids=isen_0003,isen_0004,isen_0002',
+        title: "Procedencia nacional o extranjera"
+    })
+
+    TSComponents.Graphic.render('provincias', {
+        graphicUrl: 'https://apis-stg.datos.gob.ar/series/api/series/?ids=isen_0009,isen_0008,isen_0005,isen_0007,isen_0018,isen_0019,isen_0012,isen_0011,isen_0023,isen_0014,isen_0015,isen_0010,isen_0024,isen_0013,isen_0016,isen_0028,isen_0027,isen_0026,isen_0025,isen_0022,isen_0021,isen_0020,isen_0017,isen_0006',
+        title: "Procedencia por provincias"
+    })
+
+}
+</script>

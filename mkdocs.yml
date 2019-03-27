@@ -1,0 +1,42 @@
+site_name: Mkdocs time series dashboard
+# site_url: http://apis.datos.gob.ar/georef/
+site_description: Dashboard de prueba de series de tiempo con Mkdocs
+site_author: Datos Argentina
+
+# repo_url: https://github.com/datosgobar/georef-ar-api
+# edit_uri: ""
+
+nav:
+  - Inicio: vista-general.md
+
+docs_dir: dashboard/src
+site_dir: dashboard
+
+google_analytics: ['UA-91435482-1', "https://datosgobar.github.io/series-tiempo-ar-explorer-demo/dashboard"]
+
+theme:
+  name: datosgobar_docs
+  highlightjs: true
+  hljs_languages:
+      - yaml
+      - django
+      - python
+
+extra_js:
+  - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.12.2/dist/js/components.js
+  - dashboard/js/vista-general.js
+extra_css:
+  - dashboard/css/extra.css
+  - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.12.2/dist/css/components.css
+
+plugins:
+  - search:
+      lang: es
+
+markdown_extensions:
+  - toc:
+      permalink: True
+  - attr_list
+  - fenced_code
+  - sane_lists
+  - admonition
