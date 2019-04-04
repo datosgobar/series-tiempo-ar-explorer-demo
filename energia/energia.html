@@ -1,0 +1,17 @@
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.17.1/dist/js/components.js'></script>
+<link rel='stylesheet' type='text/css' href='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.17.1/dist/css/components.css'/>
+
+<div class="component full-width full-height" id="tsChartFull"></div>
+
+<script>
+    window.onload = function() {
+        TSComponents.Graphic.render('tsChartFull', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=CAP_IV_PET_11,CAP_IV_GAS_2',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+            },
+            title: "Nivel de actividad y tipo de cambio real",
+            source: "Instituto Nacional de Estadística y Censos (INDEC)",
+            chartTypes: { 'CAP_IV_PET_11': 'column' }
+        })
+    }
+</script>
