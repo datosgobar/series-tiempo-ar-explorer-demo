@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Componentes para Series de Tiempo</title>
+
+    <script type='text/javascript' src='components.js'></script>
+    <link rel="stylesheet" href="components.css" type="text/css">
+</head>
+
+<style>
+    body {
+        text-align: center;
+        background-color: #FAFBFC;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    .col {
+        padding: 16px;
+    }
+</style>
+
+<body>
+    <h2>Tarjetas de series de tiempo</h2>
+    <br>
+    <div class="row">
+        <div class="col" id="card1"></div>
+        <div class="col" id="card2"></div>
+        <div class="col" id="card3"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+
+            TSComponents.Card.render('card1', {
+                serieId: '143.3_NO_PR_2004_A_21',
+            })
+
+            TSComponents.Card.render('card2', {
+                serieId: '42.3_EPH_PUNTUATAL_0_M_24',
+            })
+
+            TSComponents.Card.render('card3', {
+                serieId: '168.1_T_CAMBIOR_D_0_0_26',
+            })
+        }
+    </script>
+</body>
+
+</html>
