@@ -1,6 +1,6 @@
 site_name: Mkdocs time series dashboard
 # site_url: http://apis.datos.gob.ar/georef/
-site_description: Dashboard de prueba de series de tiempo con Mkdocs
+site_description: Dashboard de prueba de series de tiempo hecho con Mkdocs
 site_author: Datos Argentina
 
 # repo_url: https://github.com/datosgobar/georef-ar-api
@@ -8,14 +8,16 @@ site_author: Datos Argentina
 
 nav:
   - Inicio: vista-general.md
+  - Inicio: vista-general.md
 
-docs_dir: dashboard/src
-site_dir: dashboard
+docs_dir: src
+site_dir: .
 
 google_analytics: ['UA-91435482-1', "https://datosgobar.github.io/series-tiempo-ar-explorer-demo/dashboard"]
 
 theme:
-  name: datosgobar_docs
+  # name: datosgobar_docs
+  name: bootstrap
   highlightjs: true
   hljs_languages:
       - yaml
@@ -23,11 +25,11 @@ theme:
       - python
 
 extra_js:
-  - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.12.2/dist/js/components.js
-  - dashboard/js/vista-general.js
+  - js/vista-general.js
+  - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0-Beta4/dist/js/components.js
 extra_css:
-  - dashboard/css/extra.css
-  - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.12.2/dist/css/components.css
+  - css/extra.css
+  - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0-Beta4/dist/css/components.css
 
 plugins:
   - search:
