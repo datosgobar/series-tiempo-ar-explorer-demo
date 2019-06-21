@@ -71,6 +71,120 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0-beta4/dist/css/components.css" type="text/css">
+     <script>
+    window.onload = function() {
+        // componentes de series de tiempo
+
+        TSComponents.Card.render('ipc-card', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            hasChart: 'small',
+            title: "Indice de Precios al Consumidor Nacional"
+        })
+
+        TSComponents.Card.render('emae-card', {
+            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+            hasChart: 'small',
+            title: "Estimador Mensual de Actividad Económica"
+        })
+
+        TSComponents.Card.render('superavit-card', {
+            serieId: '373.6_SUPERAVIT_017__23_65',
+            hasChart: 'small',
+            title: "Resultado primario"
+        })
+
+        TSComponents.Card.render('desempleo-card', {
+            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            hasChart: 'small',
+            title: "Desocupación"
+        })
+
+        TSComponents.Card.render('ipc-card-links2', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            hasChart: 'small',
+            links: "small",
+            title: "Indice de Precios al Consumidor Nacional"
+        })
+
+        TSComponents.Card.render('emae-card-links2', {
+            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+            hasChart: 'small',
+            links: "small",
+            title: "Estimador Mensual de Actividad Económica"
+        })
+
+        TSComponents.Card.render('superavit-card-links2', {
+            serieId: '373.6_SUPERAVIT_017__23_65',
+            hasChart: 'small',
+            links: "small",
+            title: "Resultado primario"
+        })
+
+        TSComponents.Card.render('desempleo-card-links2', {
+            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            hasChart: 'small',
+            links: "small",
+            title: "Desocupación"
+        })
+
+        TSComponents.Card.render('ipc-card-med', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            hasChart: 'small',
+            links: "none",
+            title: "Indice de Precios al Consumidor Nacional"
+        })
+
+        TSComponents.Card.render('emae-card-med', {
+            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+            hasChart: 'small',
+            links: "none",
+            title: "Estimador Mensual de Actividad Económica"
+        })
+
+        TSComponents.Card.render('superavit-card-med', {
+            serieId: '373.6_SUPERAVIT_017__23_65',
+            hasChart: 'small',
+            links: "none",
+            title: "Resultado primario"
+        })
+
+        TSComponents.Card.render('desempleo-card-med', {
+            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            hasChart: 'small',
+            links: "none",
+            title: "Desocupación"
+        })
+
+        TSComponents.Card.render('ipc-card-min', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            links: 'none',
+            hasChart: "none",
+            title: "Indice de Precios al Consumidor Nacional"
+        })
+
+        TSComponents.Card.render('emae-card-min', {
+            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+            links: 'none',
+            hasChart: "none",
+            title: "Estimador Mensual de Actividad Económica"
+        })
+
+        TSComponents.Card.render('superavit-card-min', {
+            serieId: '373.6_SUPERAVIT_017__23_65',
+            links: 'none',
+            hasChart: "none",
+            title: "Resultado primario"
+        })
+
+        TSComponents.Card.render('desempleo-card-min', {
+            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            links: 'none',
+            hasChart: "none",
+            title: "Desocupación"
+        })
+
+    }
+    </script>
 </head>
 
 <body role="document" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-769 node-type-page og-context og-context-node og-context-node-769 i18n-es">
@@ -349,120 +463,7 @@
             </div>
         </div>
     </footer>
-    <script>
-    window.onload = function() {
-        // componentes de series de tiempo
 
-        TSComponents.Card.render('ipc-card', {
-            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
-            hasChart: 'small',
-            title: "Indice de Precios al Consumidor Nacional"
-        })
-
-        TSComponents.Card.render('emae-card', {
-            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
-            hasChart: 'small',
-            title: "Estimador Mensual de Actividad Económica"
-        })
-
-        TSComponents.Card.render('superavit-card', {
-            serieId: '373.6_SUPERAVIT_017__23_65',
-            hasChart: 'small',
-            title: "Resultado primario"
-        })
-
-        TSComponents.Card.render('desempleo-card', {
-            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
-            hasChart: 'small',
-            title: "Desocupación"
-        })
-
-        TSComponents.Card.render('ipc-card-links2', {
-            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
-            hasChart: 'small',
-            links: "small",
-            title: "Indice de Precios al Consumidor Nacional"
-        })
-
-        TSComponents.Card.render('emae-card-links2', {
-            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
-            hasChart: 'small',
-            links: "small",
-            title: "Estimador Mensual de Actividad Económica"
-        })
-
-        TSComponents.Card.render('superavit-card-links2', {
-            serieId: '373.6_SUPERAVIT_017__23_65',
-            hasChart: 'small',
-            links: "small",
-            title: "Resultado primario"
-        })
-
-        TSComponents.Card.render('desempleo-card-links2', {
-            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
-            hasChart: 'small',
-            links: "small",
-            title: "Desocupación"
-        })
-
-        TSComponents.Card.render('ipc-card-med', {
-            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
-            hasChart: 'small',
-            links: "none",
-            title: "Indice de Precios al Consumidor Nacional"
-        })
-
-        TSComponents.Card.render('emae-card-med', {
-            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
-            hasChart: 'small',
-            links: "none",
-            title: "Estimador Mensual de Actividad Económica"
-        })
-
-        TSComponents.Card.render('superavit-card-med', {
-            serieId: '373.6_SUPERAVIT_017__23_65',
-            hasChart: 'small',
-            links: "none",
-            title: "Resultado primario"
-        })
-
-        TSComponents.Card.render('desempleo-card-med', {
-            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
-            hasChart: 'small',
-            links: "none",
-            title: "Desocupación"
-        })
-
-        TSComponents.Card.render('ipc-card-min', {
-            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
-            links: 'none',
-            hasChart: "none",
-            title: "Indice de Precios al Consumidor Nacional"
-        })
-
-        TSComponents.Card.render('emae-card-min', {
-            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
-            links: 'none',
-            hasChart: "none",
-            title: "Estimador Mensual de Actividad Económica"
-        })
-
-        TSComponents.Card.render('superavit-card-min', {
-            serieId: '373.6_SUPERAVIT_017__23_65',
-            links: 'none',
-            hasChart: "none",
-            title: "Resultado primario"
-        })
-
-        TSComponents.Card.render('desempleo-card-min', {
-            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
-            links: 'none',
-            hasChart: "none",
-            title: "Desocupación"
-        })
-
-    }
-    </script>
     <script src="https://www.argentina.gob.ar/sites/default/files/js/js_yI4XDRIca1vpVutY_HYJvsqEnjRmmpr-WgeRS0xBbPQ.js"></script>
     <script src="https://www.argentina.gob.ar/sites/default/files/js/js_L50O_PWoAuMOxVjnzZCkNSSmI0kFwhZsO1_KS8WnGKw.js"></script>
     <script type="text/javascript" language="javascript">
