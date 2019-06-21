@@ -81,20 +81,22 @@
             title: "Indice de Precios al Consumidor Nacional"
         })
 
-        TSComponents.Card.render('emae-card', {
-            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+        TSComponents.Card.render('exportaciones-card', {
+            serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+            explicitSign: true,
             hasChart: 'small',
-            title: "Estimador Mensual de Actividad Económica"
+            title: "Exportaciones"
         })
 
         TSComponents.Card.render('superavit-card', {
             serieId: '373.6_SUPERAVIT_017__23_65',
             hasChart: 'small',
-            title: "Resultado primario"
+            title: "Resultado Primario del Sector Público No Fin."
         })
 
         TSComponents.Card.render('desempleo-card', {
             serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            color: '#EC407A',
             hasChart: 'small',
             title: "Desocupación"
         })
@@ -106,22 +108,24 @@
             title: "Indice de Precios al Consumidor Nacional"
         })
 
-        TSComponents.Card.render('emae-card-links2', {
-            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+        TSComponents.Card.render('exportaciones-card-links2', {
+            serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+            explicitSign: true,
             hasChart: 'small',
             links: "small",
-            title: "Estimador Mensual de Actividad Económica"
+            title: "Exportaciones"
         })
 
         TSComponents.Card.render('superavit-card-links2', {
             serieId: '373.6_SUPERAVIT_017__23_65',
             hasChart: 'small',
             links: "small",
-            title: "Resultado primario"
+            title: "Resultado Primario del Sector Público No Fin."
         })
 
         TSComponents.Card.render('desempleo-card-links2', {
             serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            color: '#EC407A',
             hasChart: 'small',
             links: "small",
             title: "Desocupación"
@@ -134,22 +138,24 @@
             title: "Indice de Precios al Consumidor Nacional"
         })
 
-        TSComponents.Card.render('emae-card-med', {
-            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+        TSComponents.Card.render('exportaciones-card-med', {
+            serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+            explicitSign: true,
             hasChart: 'small',
             links: "none",
-            title: "Estimador Mensual de Actividad Económica"
+            title: "Exportaciones"
         })
 
         TSComponents.Card.render('superavit-card-med', {
             serieId: '373.6_SUPERAVIT_017__23_65',
             hasChart: 'small',
             links: "none",
-            title: "Resultado primario"
+            title: "Resultado Primario del Sector Público No Fin."
         })
 
         TSComponents.Card.render('desempleo-card-med', {
             serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            color: '#EC407A',
             hasChart: 'small',
             links: "none",
             title: "Desocupación"
@@ -162,25 +168,65 @@
             title: "Indice de Precios al Consumidor Nacional"
         })
 
-        TSComponents.Card.render('emae-card-min', {
-            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+        TSComponents.Card.render('exportaciones-card-min', {
+            serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+            explicitSign: true,
             links: 'none',
             hasChart: "none",
-            title: "Estimador Mensual de Actividad Económica"
+            title: "Exportaciones"
         })
 
         TSComponents.Card.render('superavit-card-min', {
             serieId: '373.6_SUPERAVIT_017__23_65',
             links: 'none',
             hasChart: "none",
-            title: "Resultado primario"
+            title: "Resultado Primario del Sector Público No Fin."
         })
 
         TSComponents.Card.render('desempleo-card-min', {
             serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            color: '#EC407A',
             links: 'none',
             hasChart: "none",
             title: "Desocupación"
+        })
+
+        TSComponents.Card.render('ipc-card-min-xtreme', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            links: 'none',
+            hasChart: "none",
+            title: "",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('exportaciones-card-min-xtreme', {
+            serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+            explicitSign: true,
+            links: 'none',
+            hasChart: "none",
+            title: "",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('superavit-card-min-xtreme', {
+            serieId: '373.6_SUPERAVIT_017__23_65',
+            links: 'none',
+            hasChart: "none",
+            title: "",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('desempleo-card-min-xtreme', {
+            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            color: '#EC407A',
+            links: 'none',
+            hasChart: "none",
+            title: "",
+            units: "",
+            source: ""
         })
 
     }
@@ -294,7 +340,7 @@
                                                 <div class="panel-body">
                                                     <div class="media">
                                                         <div class="media-body">
-                                                            <h3>Nivel de Actividad</h3>
+                                                            <h3>Sector Externo</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -353,7 +399,7 @@
                         </div>
                         <div id="ipc-card" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
-                        <div id="emae-card" class="col-xs-12 col-sm-6 col-md-3">
+                        <div id="exportaciones-card" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
                         <div id="superavit-card" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
@@ -373,7 +419,7 @@
                         </div>
                         <div id="ipc-card-links2" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
-                        <div id="emae-card-links2" class="col-xs-12 col-sm-6 col-md-3">
+                        <div id="exportaciones-card-links2" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
                         <div id="superavit-card-links2" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
@@ -393,7 +439,7 @@
                         </div>
                         <div id="ipc-card-med" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
-                        <div id="emae-card-med" class="col-xs-12 col-sm-6 col-md-3">
+                        <div id="exportaciones-card-med" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
                         <div id="superavit-card-med" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
@@ -413,11 +459,31 @@
                         </div>
                         <div id="ipc-card-min" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
-                        <div id="emae-card-min" class="col-xs-12 col-sm-6 col-md-3">
+                        <div id="exportaciones-card-min" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
                         <div id="superavit-card-min" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
                         <div id="desempleo-card-min" class="col-xs-12 col-sm-6 col-md-3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="panel-separator"></div>
+                <div class="panel-pane pane-texto">
+                    <div class="pane-content">
+                        <div class="container">
+                            <h4 class="activities-sidbar">Mínima (eliminando elementos)</h4>
+                        </div>
+                        <div id="ipc-card-min-xtreme" class="col-xs-12 col-sm-6 col-md-3">
+                        </div>
+                        <div id="exportaciones-card-min-xtreme" class="col-xs-12 col-sm-6 col-md-3">
+                        </div>
+                        <div id="superavit-card-min-xtreme" class="col-xs-12 col-sm-6 col-md-3">
+                        </div>
+                        <div id="desempleo-card-min-xtreme" class="col-xs-12 col-sm-6 col-md-3">
                         </div>
                     </div>
                 </div>
