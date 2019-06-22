@@ -16,8 +16,8 @@ site_dir: .
 google_analytics: ['UA-91435482-1', "https://datosgobar.github.io/series-tiempo-ar-explorer-demo/dashboard"]
 
 theme:
-  # name: datosgobar_docs
-  name: bootstrap
+  name: datosgobar_docs
+  # name: bootstrap
   highlightjs: true
   hljs_languages:
       - yaml
@@ -25,11 +25,15 @@ theme:
       - python
 
 extra_js:
-  - js/vista-general.js
-  - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0-Beta4/dist/js/components.js
+  # - js/vista-general.js
+  # - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0-beta5/dist/js/components.js
+  # - https://code.jquery.com/jquery-3.4.1.min.js
+  # - https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js
+
 extra_css:
+  - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0-beta5/dist/css/components.css
   - css/extra.css
-  - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0-Beta4/dist/css/components.css
+
 
 plugins:
   - search:
