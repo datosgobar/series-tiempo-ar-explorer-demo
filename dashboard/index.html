@@ -2,14 +2,30 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Dashboard de series de tiempo</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="<div>sha3 class=" title "84-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh3u" crossorigin="anonymous">
+    </div>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0-beta5/dist/css/components.css" type="text/css">
 </head>
 <style>
-.dashboard {
-    width: 48%;
-    display: inline-block;
+.row {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+}
+
+.row-graphic {
+    height: 80%;
+    padding: 40px;
+}
+
+.row-graphic-min {
+    height: 50%;
+    padding: 50px;
+}
+
+.title {
+    padding: 5px;
 }
 
 body {
@@ -18,32 +34,64 @@ body {
 </style>
 
 <body>
-    <div id='ipc-card'></div>
-    <div id='exportaciones-card'></div>
-    <div id='superavit-card'></div>
-    <div id='desempleo-card'></div>
-    <div id='ipc-card-links2'></div>
-    <div id='exportaciones-card-links2'></div>
-    <div id='superavit-card-links2'></div>
-    <div id='desempleo-card-links2'></div>
-    <div id='ipc-card-med'></div>
-    <div id='exportaciones-card-med'></div>
-    <div id='superavit-card-med'></div>
-    <div id='desempleo-card-med'></div>
-    <div id='ipc-card-min'></div>
-    <div id='exportaciones-card-min'></div>
-    <div id='superavit-card-min'></div>
-    <div id='desempleo-card-min'></div>
-    <div id='ipc-card-min-xtreme'></div>
-    <div id='exportaciones-card-min-xtreme'></div>
-    <div id='superavit-card-min-xtreme'></div>
-    <div id='desempleo-card-min-xtreme'></div>
-    <div id='tcrm-graphic'></div>
-    <div id='emae-graphic-without-filters'></div>
-    <div id='ica-graphic-without-filters'></div>
-    <div id='ipc-graphic-min'></div>
-    <div id='rem-graphic-min'></div>
-    <div id='tcbna-graphic-min'></div>
+    <div class="row">
+        <div class="title">
+            <h3>Card: default</h3></div>
+        <div id='ipc-card' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='exportaciones-card' class="col-xs-12 col-sm-6 col-md-3"> </div>
+        <div id='superavit-card' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='desempleo-card' class="col-xs-12 col-sm-6 col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="title">
+            <h3>Card: menos links</h3></div>
+        <div id='ipc-card-links2' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='exportaciones-card-links2' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='superavit-card-links2' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='desempleo-card-links2' class="col-xs-12 col-sm-6 col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="title">
+            <h3>Card: sin links</h3></div>
+        <div id='ipc-card-med' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='exportaciones-card-med' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='superavit-card-med' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='desempleo-card-med' class="col-xs-12 col-sm-6 col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="title">
+            <h3>Card: mínima</h3></div>
+        <div id='ipc-card-min' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='exportaciones-card-min' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='superavit-card-min' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='desempleo-card-min' class="col-xs-12 col-sm-6 col-md-3"></div>
+    </div>
+    <div class="row">
+        <div class="title">
+            <h3>Card: mínima (eliminando elementos)</h3></div>
+        <div id='ipc-card-min-xtreme' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='exportaciones-card-min-xtreme' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='superavit-card-min-xtreme' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='desempleo-card-min-xtreme' class="col-xs-12 col-sm-6 col-md-3"></div>
+    </div>
+    <div class="row row-graphic">
+        <div class="title">
+            <h3>Graphic: full</h3></div>
+        <div id='tcrm-graphic'></div>
+    </div>
+    <div class="row row-graphic">
+        <div class="title">
+            <h3>Graphic: sin filtros de tiempo</h3></div>
+        <div id='emae-graphic-without-filters' class="col-xs-12 col-sm-6 col-md-6"></div>
+        <div id='ica-graphic-without-filters' class="col-xs-12 col-sm-6 col-md-6"></div>
+    </div>
+    <div class="row row-graphic-min">
+        <div class="title">
+            <h3>Graphic: mínimo</h3></div>
+        <div id='ipc-graphic-min' class="col-xs-12 col-sm-6 col-md-4"></div>
+        <div id='rem-graphic-min' class="col-xs-12 col-sm-6 col-md-4"></div>
+        <div id='tcbna-graphic-min' class="col-xs-12 col-sm-6 col-md-4"></div>
+    </div>
     <script>
     window.onload = function() {
         // componentes de series de tiempo
@@ -220,6 +268,7 @@ body {
             },
             source: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
             datePickerEnabled: false,
+            navigator: false,
             title: "Estimador Mensual de Actividad Económica (EMAE)",
             chartTypes: { '11.3_VMATC_2004_M_12': 'area', '143.3_NO_PR_2004_A_21': 'area' },
             legendLabel: { '11.3_VMATC_2004_M_12': "Construcción", '143.3_NO_PR_2004_A_21': "Nivel general" }
