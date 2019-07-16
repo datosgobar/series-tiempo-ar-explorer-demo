@@ -9,24 +9,22 @@
 <style>
 .row {
     width: 90%;
-    margin: auto;
-    padding: 10px;
+    margin: 0 76px 0 76px;
+    padding: 20px 10px;
     display: flex;
     justify-content: space-around;
 }
-
-.row-graphic {
-    height: 80%;
-    padding: 40px;
+    
+.row-graphic-min {
+    height: 30%;
 }
 
-.row-graphic-min {
-    height: 50%;
-    padding: 50px;
+.graphic-item {
+    width: 100%;
 }
 
 .title {
-    padding: 5px;
+    padding: 3px;
 }
 
 body {
@@ -39,67 +37,68 @@ body {
         <h3>Card: default</h3>
     </div>
     <div class="row">
-        <div id='ipc-card' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='exportaciones-card' class="col-xs-12 col-sm-6 col-md-3"> </div>
-        <div id='superavit-card' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='desempleo-card' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='ipc-card'></div>
+        <div id='exportaciones-card'> </div>
+        <div id='superavit-card'></div>
+        <div id='desempleo-card'></div>
     </div>
     <div class="title">
         <h3>Card: menos links</h3>
     </div>
     <div class="row">
-        <div id='ipc-card-links2' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='exportaciones-card-links2' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='superavit-card-links2' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='desempleo-card-links2' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='ipc-card-links2'></div>
+        <div id='exportaciones-card-links2'></div>
+        <div id='superavit-card-links2'></div>
+        <div id='desempleo-card-links2'></div>
     </div>
     <div class="title">
         <h3>Card: sin links</h3>
     </div>
     <div class="row">
-        <div id='ipc-card-med' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='exportaciones-card-med' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='superavit-card-med' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='desempleo-card-med' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='ipc-card-med'></div>
+        <div id='exportaciones-card-med'></div>
+        <div id='superavit-card-med'></div>
+        <div id='desempleo-card-med'></div>
     </div>
     <div class="title">
         <h3>Card: mínima</h3>
     </div>
     <div class="row">
-        <div id='ipc-card-min' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='exportaciones-card-min' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='superavit-card-min' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='desempleo-card-min' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='ipc-card-min'></div>
+        <div id='exportaciones-card-min'></div>
+        <div id='superavit-card-min'></div>
+        <div id='desempleo-card-min'></div>
     </div>
     <div class="title">
         <h3>Card: mínima (eliminando elementos)</h3>
     </div>
     <div class="row">
-        <div id='ipc-card-min-xtreme' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='exportaciones-card-min-xtreme' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='superavit-card-min-xtreme' class="col-xs-12 col-sm-6 col-md-3"></div>
-        <div id='desempleo-card-min-xtreme' class="col-xs-12 col-sm-6 col-md-3"></div>
+        <div id='ipc-card-min-xtreme'></div>
+        <div id='exportaciones-card-min-xtreme'></div>
+        <div id='superavit-card-min-xtreme'></div>
+        <div id='desempleo-card-min-xtreme'></div>
     </div>
     <div class="title">
         <h3>Graphic: full</h3>
     </div>
-    <div class="row row-graphic">
-        <div id='tcrm-graphic'></div>
+    <div class="row">
+        <div id='tcrm-graphic' class='graphic-item'></div>
     </div>
     <div class="title">
         <h3>Graphic: sin filtros de tiempo</h3>
     </div>
-    <div class="row row-graphic">
-        <div id='emae-graphic-without-filters' class="col-xs-12 col-sm-6 col-md-6"></div>
-        <div id='ica-graphic-without-filters' class="col-xs-12 col-sm-6 col-md-6"></div>
+    <div class="row">
+        <div id='emae-graphic-without-filters' class='graphic-item'></div>
+        <div id='ica-graphic-without-filters' class='graphic-item'></div>
     </div>
+    <br><br>
     <div class="title">
         <h3>Graphic: mínimo</h3>
     </div>
     <div class="row row-graphic-min">
-        <div id='ipc-graphic-min' class="col-xs-12 col-sm-6 col-md-4"></div>
-        <div id='rem-graphic-min' class="col-xs-12 col-sm-6 col-md-4"></div>
-        <div id='tcbna-graphic-min' class="col-xs-12 col-sm-6 col-md-4"></div>
+        <div id='ipc-graphic-min' class='graphic-item'></div>
+        <div id='rem-graphic-min' class='graphic-item'></div>
+        <div id='tcbna-graphic-min' class='graphic-item'></div>
     </div>
     <script>
     window.onload = function() {
