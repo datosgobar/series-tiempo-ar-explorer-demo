@@ -14,7 +14,7 @@
     display: flex;
     justify-content: space-around;
 }
-    
+
 .row-graphic-min {
     height: 30%;
 }
@@ -182,7 +182,8 @@ body {
             serieId: '372.6_SUPERAVIT_017__23_67',
             hasChart: 'small',
             links: "none",
-            title: "Resultado Primario del Sector Público No Fin."
+            title: "Resultado Primario del Sector Público No Fin.",
+            hasFrame: false
         })
 
         TSComponents.Card.render('desempleo-card-med', {
@@ -190,7 +191,8 @@ body {
             color: '#EC407A',
             hasChart: 'small',
             links: "none",
-            title: "Desocupación"
+            title: "Desocupación",
+            hasColorBar: false
         })
 
         TSComponents.Card.render('ipc-card-min', {
@@ -213,7 +215,8 @@ body {
             serieId: '372.6_SUPERAVIT_017__23_67',
             links: 'none',
             hasChart: "none",
-            title: "Resultado Primario del Sector Público No Fin."
+            title: "Resultado Primario del Sector Público No Fin.",
+            hasColorBar: true
         })
 
         TSComponents.Card.render('desempleo-card-min', {
@@ -221,7 +224,8 @@ body {
             color: '#EC407A',
             links: 'none',
             hasChart: "none",
-            title: "Desocupación"
+            title: "Desocupación",
+            hasFrame: true
         })
 
         TSComponents.Card.render('ipc-card-min-xtreme', {
@@ -249,7 +253,8 @@ body {
             hasChart: "none",
             title: "",
             units: "",
-            source: ""
+            source: "",
+            hasColorBar: true
         })
 
         TSComponents.Card.render('desempleo-card-min-xtreme', {
@@ -259,7 +264,8 @@ body {
             hasChart: "none",
             title: "",
             units: "",
-            source: ""
+            source: "",
+            hasFrame: true
         })
 
         TSComponents.Graphic.render('tcrm-graphic', {
