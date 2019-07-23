@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Componentes para Series de Tiempo</title>
-
     <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.18.2/dist/js/components.js'></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_1.18.2/dist/css/components.css" type="text/css">
 </head>
-
 <style>
 .component {
     margin: auto;
@@ -31,8 +29,8 @@
 body {
     text-align: center;
     background-color: #FAFBFC;
+    font-family: roboto;
 }
-
 </style>
 
 <body>
@@ -47,7 +45,6 @@ body {
     <div class="component x3" id="tsChartSmall1"></div>
     <div class="component x3" id="tsChartSmall2"></div>
     <div class="component x3" id="tsChartSmall3"></div>
-    <hr>
     <br>
     <br>
     <br>
@@ -56,20 +53,21 @@ body {
     <div class="component x4" id="tsChartMin1"></div>
     <div class="component x4" id="tsChartMin2"></div>
     <div class="component x4" id="tsChartMin4"></div>
-    <br>
     <script>
     window.onload = function() {
 
+        // Gráfico de series de tiempo completo
         TSComponents.Graphic.render('tsChartFull', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,116.4_TCRZE_2015_D_36_4&limit=1000&start=0',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
             },
             zoom: true,
             chartTypes: { '143.3_NO_PR_2004_A_21': 'column' },
-            title: 'Este es el título del gráfico. Y se ve muy bien.',
-            source: 'Banco Central de la República Argentina (BCRA)',
+            title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
         })
 
+        // Gráficos de series de tiempo chicos
         TSComponents.Graphic.render('tsChartSmall1', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=11.3_VMATC_2004_M_12:percent_change_a_year_ago,143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
@@ -77,17 +75,17 @@ body {
             zoom: false,
             datePickerEnabled: false,
             navigator: false,
-            title: 'todo false',
+            title: 'Apagando todos los elementos',
             chartTypes: { '11.3_VMATC_2004_M_12': 'area', '143.3_NO_PR_2004_A_21': 'area' },
-            source: 'Banco Central de la República Argentina (BCRA), foo',
-            legendLabel: {"11.3_VMATC_2004_M_12": "mi propio label", '143.3_NO_PR_2004_A_21': "el otro label"}
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
+            legendLabel: { "11.3_VMATC_2004_M_12": "mi propio label", '143.3_NO_PR_2004_A_21': "el otro label" }
         })
 
         TSComponents.Graphic.render('tsChartSmall2', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&limit=1000&start=0',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
             },
-            title: 'todo true',
+            title: 'Prendiendo todos los elementos',
             navigator: true,
             zoom: true,
             datePickerEnabled: true
@@ -97,36 +95,39 @@ body {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
             },
-            title: 'dinamic',
+            title: 'Defaults dinámicos por tamaño del gráfico',
             legendField: 'title',
-            source: 'Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)'
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
         })
 
+        // Gráficos de series de tiempo mono-serie
         TSComponents.Graphic.render('tsChartMin1', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=33.2_I_2004_M_4&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
             },
-            source: 'Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)'
+            title: "ISAC",
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)\n\nzoom:dinamic date:dinamic nav:dinamic'
         })
 
         TSComponents.Graphic.render('tsChartMin2', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
             },
-            title: 'zoom:true date:true nav:dinamic',
+            title: 'EMAE',
             zoom: true,
             datePickerEnabled: true,
-            source: 'Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
-            chartTypes: { '143.3_NO_PR_2004_A_21': 'column'}
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)\n\nzoom:true date:true nav:dinamic',
+            chartTypes: { '143.3_NO_PR_2004_A_21': 'column' }
         })
 
         TSComponents.Graphic.render('tsChartMin4', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=14.2_E_M_2004_0_3&limit=1000&start=0&format=json',
             chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
             },
-            title: 'zoom:false date:false nav:dinamic',
+            title: 'EMI (interanual)',
             zoom: false,
             datePickerEnabled: false,
+            source: "zoom:false date:false nav:dinamic"
         })
 
     }
