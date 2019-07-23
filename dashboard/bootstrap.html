@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Dashboard de series de tiempo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" media="all" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.0/dist/css/components.css" type="text/css">
+    <style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="https://getbootstrap.com/docs/4.3/examples/dashboard/dashboard.css" rel="stylesheet">
+</head>
+<style>
+.row {
+    /*width: 90%;*/
+    /*margin: 0 76px 0 76px;*/
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.row-graphic-min {
+    height: 30%;
+}
+
+.graphic-item {
+    width: 100%;
+}
+
+.title {
+    padding: 3px;
+}
+
+body {
+    font-family: roboto;
+}
+</style>
+
+<body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Dashboard Series de Tiempo</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link" href="#">Volver</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+              <span data-feather="home"></span>
+              Inicio <span class="sr-only">(current)</span>
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+              <span data-feather="file"></span>
+              Economía
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Energía
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Salud
+            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Defensa
+            </a>
+                        </li>
+                    </ul>
+            </nav>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Inicio</h1>
+                </div>
+                <div class="title">
+                    <h3>Economía</h3>
+                </div>
+                <div class="row">
+                    <div id='ipc-card'></div>
+                    <div id='exportaciones-card'> </div>
+                    <div id='superavit-card'></div>
+                    <div id='emae-card'></div>
+                </div>
+                <div class="title">
+                    <h3>Energía</h3>
+                </div>
+                <div class="row">
+                    <div id='aerokerosene-card'></div>
+                    <div id='petroleo-card'></div>
+                    <div id='pozos-terminados-card'></div>
+                </div>
+                <div class="title">
+                    <h3>Salud</h3>
+                </div>
+                <div class="row">
+                    <div id='tmi-card'></div>
+                    <div id='chagas-card'></div>
+                    <div id='natalidad-card'></div>
+                </div>
+                <div class="title">
+                    <h3>Defensa</h3>
+                </div>
+                <div class="row">
+                    <div id='personal-ea-card'></div>
+                    <div id='personal-faa-card'></div>
+                    <div id='personal-ara-card'></div>
+                    <div id='personal-ea-femenino-card'></div>
+                </div>
+            </main>
+            </div>
+        </div>
+        <script>
+        window.onload = function() {
+            // componentes de series de tiempo
+
+            TSComponents.Card.render('ipc-card', {
+                serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+                color: '#F9A822',
+                hasChart: 'small',
+                title: "Indice de Precios al Consumidor Nacional"
+            })
+
+            TSComponents.Card.render('exportaciones-card', {
+                serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+                explicitSign: true,
+                hasChart: 'small',
+                title: "Exportaciones"
+            })
+
+            TSComponents.Card.render('superavit-card', {
+                serieId: '452.3_RESULTADO_RIO_0_M_18_54',
+                hasChart: 'small',
+                title: "Resultado Primario Sector Público No Fin."
+            })
+
+            TSComponents.Card.render('emae-card', {
+                serieId: '143.3_NO_PR_2004_A_31:percent_change',
+                color: '#EC407A',
+                explicitSign: true,
+                hasChart: 'small',
+                title: "EMAE desestacionalizado"
+            })
+
+            TSComponents.Card.render('aerokerosene-card', {
+                serieId: 'VENTAS_AL_MERCADO_AERO_26:percent_change_a_year_ago',
+                explicitSign: true,
+                color: '#F9A822',
+                hasChart: 'small',
+                title: "Ventas al mercado de aerokerosene"
+            })
+
+            TSComponents.Card.render('petroleo-card', {
+                serieId: 'PROD_PET_SESCO_7:percent_change_a_year_ago',
+                explicitSign: true,
+                hasChart: 'small',
+                title: "Producción de petróleo"
+            })
+
+            TSComponents.Card.render('pozos-terminados-card', {
+                serieId: '366.2_POZOS_TERMRAL__30',
+                hasChart: 'small',
+                title: "Pozos terminados"
+            })
+
+            TSComponents.Card.render('tmi-card', {
+                serieId: 'tmi_arg',
+                color: '#F9A822',
+                hasChart: 'small',
+                title: "Tasa de mortalidad infantil"
+            })
+
+            TSComponents.Card.render('chagas-card', {
+                serieId: 'chav_arg',
+                hasChart: 'small',
+                title: "Casos chagas agudo vectorial"
+            })
+
+            TSComponents.Card.render('natalidad-card', {
+                serieId: 'tn_arg',
+                hasChart: 'small',
+                title: "Tasa de natalidad",
+            })
+
+            TSComponents.Card.render('personal-ea-card', {
+                hasChart: "small",
+                serieId: 'defensa_EA_0002',
+                color: '#F9A822',
+                title: "Personal Ejército Argentino"
+            })
+
+            TSComponents.Card.render('personal-faa-card', {
+                hasChart: "small",
+                serieId: 'defensa_FAA_0002',
+                title: "Personal Fuerza Aérea Argentina"
+            })
+
+            TSComponents.Card.render('personal-ara-card', {
+                hasChart: "small",
+                serieId: 'defensa_ARA_0002',
+                title: "Personal Armada Argentina"
+            })
+
+            TSComponents.Card.render('personal-ea-femenino-card', {
+                hasChart: "small",
+                serieId: 'defensa_EA_0006',
+                title: "Personal Femenino Ejército Argentino"
+            })
+
+        }
+        </script>
+        <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.0/dist/js/components.js'></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+        <script src="https://getbootstrap.com/docs/4.3/examples/dashboard/dashboard.js"></script>
+</body>
+
+</html>
