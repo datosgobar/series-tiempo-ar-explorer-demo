@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Componentes para Series de Tiempo</title>
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" media="all" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0.4/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.0/dist/css/components.css" type="text/css">
 </head>
 
 <style>
@@ -69,11 +69,12 @@
 
             TSComponents.Card.render('card4', {
                 serieId: '143.3_NO_PR_2004_A_21',
-                hasChart: 'full',
+                hasChart: 'small',
+                hasColorBar: false
             })
             TSComponents.Card.render('card5', {
                 serieId: '143.3_NO_PR_2004_A_21',
-                hasChart: 'full',
+                hasChart: 'small',
                 title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
                 units: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore',
                 source: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore '
@@ -81,12 +82,13 @@
             TSComponents.Card.render('card6', {
                serieId: '42.3_EPH_PUNTUATAL_0_M_24',
                links: 'none',
+               hasChart: 'small',
                explicitSign: true
             })
 
         }
     </script>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0.4/dist/js/components.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.0/dist/js/components.js'></script>
 </body>
 
 </html>
