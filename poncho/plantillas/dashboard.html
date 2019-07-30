@@ -243,7 +243,64 @@
                         <div class="panel-pane pane-texto">
                             <div class="pane-content">
                                 <div class="container">
-                                    <h4 class="activities-sidbar">Otros índices de precios....</h4>
+                                    <h4 class="activities-sidbar">Índices de precios provinciales</h4>
+                                </div>
+                                <br>
+                                <br>
+                                <div id="ipc-general-nqn" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-general-cba" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-general-caba" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-general-mza" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="panel-separator"></div>
+                        <div class="panel-pane pane-texto">
+                            <div class="pane-content">
+                                <div class="container">
+                                    <h4 class="activities-sidbar">Indice de Precios al Consumidor Nacional: por capítulos</h4>
+                                </div>
+                                <br>
+                                <br>
+                                <div id="ipc-alimentos" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-alcohol" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-vestimenta" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-servicios" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-equipamiento" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-salud" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-transporte" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-comunicaciones" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-recreacion" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-educacion" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-hoteles" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-varios" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="panel-separator"></div>
+                        <div class="panel-pane pane-texto">
+                            <div class="pane-content">
+                                <div id="ipc-capitulos">
                                 </div>
                             </div>
                         </div>
@@ -279,28 +336,11 @@
     <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.0/dist/js/components.js'></script>
     <script>
     window.onload = function() {
-        // componentes de series de tiempo
-        TSComponents.Graphic.render('ipc-graphic', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago&limit=5000',
-            title: 'Variación interanual',
-            source: 'Fuente primaria: Instituto Nacional de Estadística y Censos (INDEC)',
-            chartTypes: { "148.3_INIVELNAL_DICI_M_26": "line", "148.3_INUCLEONAL_DICI_M_19": "line" },
-            legendLabel: { "148.3_INIVELNAL_DICI_M_26": "Nivel general", "148.3_INUCLEONAL_DICI_M_19": "Núcleo" },
-            datePickerEnabled: false,
-            navigator: true
+        // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
 
-        })
+        // componentes de series de tiempo para cada sección
 
-        TSComponents.Graphic.render('ipc-graphic-monthly', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26:percent_change,148.3_INUCLEONAL_DICI_M_19:percent_change&limit=5000',
-            title: 'Variación mensual',
-            source: 'Fuente primaria: Instituto Nacional de Estadística y Censos (INDEC)',
-            chartTypes: { "148.3_INIVELNAL_DICI_M_26": "column", "148.3_INUCLEONAL_DICI_M_19": "column" },
-            legendLabel: { "148.3_INIVELNAL_DICI_M_26": "Nivel general", "148.3_INUCLEONAL_DICI_M_19": "Núcleo" },
-            datePickerEnabled: false,
-            navigator: true
-        })
-
+        // SECCION: Indice de Precios al Consumidor Nacional
         TSComponents.Card.render('ipc-general-ia', {
             serieId: '148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago',
             color: '#F9A822',
@@ -322,6 +362,7 @@
 
         TSComponents.Card.render('ipc-nucleo-ia', {
             serieId: '148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago',
+            color: '#F9A822',
             hasChart: 'small',
             title: "Núcleo (% interanual)",
             links: "none",
@@ -331,12 +372,162 @@
 
         TSComponents.Card.render('ipc-nucleo-pp', {
             serieId: '148.3_INUCLEONAL_DICI_M_19:percent_change',
-            color: '#EC407A',
             hasChart: 'small',
             title: "Núcleo (% mensual)",
             links: "none",
             units: "",
             hasFrame: false
+        })
+
+        // SECCION: Índices de precios provinciales
+        TSComponents.Graphic.render('ipc-graphic', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago&limit=5000',
+            title: 'Variación interanual',
+            source: 'Fuente primaria: Instituto Nacional de Estadística y Censos (INDEC)',
+            chartTypes: { "148.3_INIVELNAL_DICI_M_26": "line", "148.3_INUCLEONAL_DICI_M_19": "line" },
+            legendLabel: { "148.3_INIVELNAL_DICI_M_26": "Nivel general", "148.3_INUCLEONAL_DICI_M_19": "Núcleo" },
+            datePickerEnabled: false,
+            navigator: true
+
+        })
+
+        TSComponents.Graphic.render('ipc-graphic-monthly', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26:percent_change,148.3_INUCLEONAL_DICI_M_19:percent_change&limit=5000',
+            title: 'Variación mensual',
+            source: 'Fuente primaria: Instituto Nacional de Estadística y Censos (INDEC)',
+            chartTypes: { "148.3_INIVELNAL_DICI_M_26": "column", "148.3_INUCLEONAL_DICI_M_19": "column" },
+            legendLabel: { "148.3_INIVELNAL_DICI_M_26": "Nivel general", "148.3_INUCLEONAL_DICI_M_19": "Núcleo" },
+            datePickerEnabled: false,
+            navigator: true
+        })
+
+        TSComponents.Card.render('ipc-general-nqn', {
+            serieId: '196.1_NIVEL_GENERAL_2014_0_13:percent_change',
+            color: "#0072BB",
+            hasChart: 'small',
+            title: "Neuquén (nivel general)",
+            // links: "none",
+        })
+
+        TSComponents.Card.render('ipc-general-cba', {
+            serieId: '194.1_NIVEL_GENERAL_2014_0_13:percent_change',
+            color: "#2E7D33",
+            hasChart: 'small',
+            title: "Córdoba (nivel general)",
+            // links: "none",
+        })
+
+        TSComponents.Card.render('ipc-general-caba', {
+            serieId: '193.1_NIVEL_GENERAL_JULI_0_13:percent_change',
+            color: "#C62828",
+            hasChart: 'small',
+            title: "CABA (nivel general)",
+            // links: "none",
+        })
+
+        TSComponents.Card.render('ipc-general-mza', {
+            serieId: '195.1_NIVEL_GENERAL_0_0_13:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Mendoza (nivel general)",
+            // links: "none",
+        })
+
+        // SECCION: Indice de Precios al Consumidor Nacional: por capítulos
+        TSComponents.Card.render('ipc-alimentos', {
+            serieId: '146.3_IALIMENNAL_DICI_M_45:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Alimentos y bebidas no alcohólicas",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-alcohol', {
+            serieId: '146.3_IBEBIDANAL_DICI_M_39:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Bebidas alcohólicas y tabaco",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-vestimenta', {
+            serieId: '146.3_IPRENDANAL_DICI_M_35:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Prendas de vestir y calzado",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-servicios', {
+            serieId: '146.3_IVIVIENNAL_DICI_M_52:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Vivienda, agua, electricidad, y otros combustibles",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-equipamiento', {
+            serieId: '146.3_IEQUIPANAL_DICI_M_46:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Equipamiento y mantenimiento del hogar",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-salud', {
+            serieId: '146.3_ISALUDNAL_DICI_M_18:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Salud",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-transporte', {
+            serieId: '146.3_ITRANSPNAL_DICI_M_23:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Transporte",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-comunicaciones', {
+            serieId: '146.3_ICOMUNINAL_DICI_M_27:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Comunicaciones",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-recreacion', {
+            serieId: '146.3_IRECREANAL_DICI_M_31:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Recreación y cultura",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-educacion', {
+            serieId: '146.3_IEDUCACNAL_DICI_M_22:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Educación",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-hoteles', {
+            serieId: '146.3_IRESTAUNAL_DICI_M_33:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Hoteles y restaurantes",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-varios', {
+            serieId: '146.3_IBIENESNAL_DICI_M_36:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Bienes y servicios varios",
+            links: "none",
         })
 
     }
