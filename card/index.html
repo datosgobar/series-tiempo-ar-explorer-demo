@@ -2,91 +2,252 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Componentes para Series de Tiempo</title>
+    <title>Componentes para Series de Tiempo: card</title>
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" media="all" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.3/dist/css/components.css" type="text/css">
 </head>
-
 <style>
-    body {
-        text-align: center;
-        background-color: #FAFBFC;
-        margin-left: 10px;
-    }
+.row {
+    width: 90%;
+    margin: 0 76px 0 76px;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-around;
+}
 
-    .row {
-        width: 90%;
-        margin: 0 76px 0 76px;
-        padding: 20px 10px;
-        display: flex;
-        justify-content: space-around;
-    }
+.row-graphic-min {
+    height: 30%;
+}
 
+.graphic-item {
+    width: 100%;
+}
 
-    .col {
-        padding: 16px;
-    }
+.title {
+    padding: 3px;
+}
+
+body {
+    text-align: center;
+    font-family: roboto;
+}
 </style>
 
 <body>
-    <h2>Tarjetas de series de tiempo</h2>
-    <br>
-    <div class="row">
-        <div class="col" id="card1"></div>
-        <div class="col" id="card2"></div>
-        <div class="col" id="card3"></div>
+    <div class="title">
+        <h3>Card: default</h3>
     </div>
-
-    <hr/>
-
     <div class="row">
-        <div class="col" id="card4"></div>
-        <div class="col" id="card5"></div>
-        <div class="col" id="card6"></div>
+        <div id='ipc-card'></div>
+        <div id='exportaciones-card'> </div>
+        <div id='superavit-card'></div>
+        <div id='desempleo-card'></div>
     </div>
-
+    <div class="title">
+        <h3>Card: menos links</h3>
+    </div>
+    <div class="row">
+        <div id='ipc-card-links2'></div>
+        <div id='exportaciones-card-links2'></div>
+        <div id='superavit-card-links2'></div>
+        <div id='desempleo-card-links2'></div>
+    </div>
+    <div class="title">
+        <h3>Card: sin links</h3>
+    </div>
+    <div class="row">
+        <div id='ipc-card-med'></div>
+        <div id='exportaciones-card-med'></div>
+        <div id='superavit-card-med'></div>
+        <div id='desempleo-card-med'></div>
+    </div>
+    <div class="title">
+        <h3>Card: mínima</h3>
+    </div>
+    <div class="row">
+        <div id='ipc-card-min'></div>
+        <div id='exportaciones-card-min'></div>
+        <div id='superavit-card-min'></div>
+        <div id='desempleo-card-min'></div>
+    </div>
+    <div class="title">
+        <h3>Card: mínima (eliminando elementos)</h3>
+    </div>
+    <div class="row">
+        <div id='ipc-card-min-xtreme'></div>
+        <div id='exportaciones-card-min-xtreme'></div>
+        <div id='superavit-card-min-xtreme'></div>
+        <div id='desempleo-card-min-xtreme'></div>
+    </div>
     <script>
-        window.onload = function () {
+    window.onload = function() {
+        // componentes de series de tiempo
 
-            TSComponents.Card.render('card1', {
-                serieId: '143.3_NO_PR_2004_A_21',
-                hasChart: 'small',
-            })
+        TSComponents.Card.render('ipc-card', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            color: '#F9A822',
+            hasChart: 'small',
+            title: "Indice de Precios al Consumidor Nacional"
+        })
 
-            TSComponents.Card.render('card2', {
-                serieId: '42.3_EPH_PUNTUATAL_0_M_24',
-                hasChart: 'none',
-                links: 'none',
-                color: '#EC407A'
-            })
+        TSComponents.Card.render('exportaciones-card', {
+            serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+            explicitSign: true,
+            hasChart: 'small',
+            title: "Exportaciones"
+        })
 
-            TSComponents.Card.render('card3', {
-                serieId: '168.1_T_CAMBIOR_D_0_0_26',
-                hasChart: 'none',
-                links: 'small',
-                color: '#F9A822'
-            })
+        TSComponents.Card.render('superavit-card', {
+            serieId: '452.3_RESULTADO_RIO_0_M_18_54',
+            hasChart: 'small',
+            title: "Resultado Primario del Sector Público No Fin."
+        })
 
-            TSComponents.Card.render('card4', {
-                serieId: '143.3_NO_PR_2004_A_21',
-                hasChart: 'small',
-                hasColorBar: false
-            })
-            TSComponents.Card.render('card5', {
-                serieId: '143.3_NO_PR_2004_A_21',
-                hasChart: 'small',
-                title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-                units: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore',
-                source: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore '
-            })
-            TSComponents.Card.render('card6', {
-               serieId: '42.3_EPH_PUNTUATAL_0_M_24',
-               links: 'none',
-               hasChart: 'small',
-               explicitSign: true
-            })
+        TSComponents.Card.render('desempleo-card', {
+            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            color: '#EC407A',
+            hasChart: 'small',
+            title: "Desocupación"
+        })
 
-        }
+        TSComponents.Card.render('ipc-card-links2', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            color: '#F9A822',
+            hasChart: 'small',
+            links: "small",
+            title: "Indice de Precios al Consumidor Nacional"
+        })
+
+        TSComponents.Card.render('exportaciones-card-links2', {
+            serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+            explicitSign: true,
+            hasChart: 'small',
+            links: "small",
+            title: "Exportaciones"
+        })
+
+        TSComponents.Card.render('superavit-card-links2', {
+            serieId: '372.6_SUPERAVIT_017__23_67',
+            hasChart: 'small',
+            links: "small",
+            title: "Resultado Primario del Sector Público No Fin."
+        })
+
+        TSComponents.Card.render('desempleo-card-links2', {
+            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            color: '#EC407A',
+            hasChart: 'small',
+            links: "small",
+            title: "Desocupación"
+        })
+
+        TSComponents.Card.render('ipc-card-med', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            color: '#F9A822',
+            hasChart: 'small',
+            links: "none",
+            title: "Indice de Precios al Consumidor Nacional"
+        })
+
+        TSComponents.Card.render('exportaciones-card-med', {
+            serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+            explicitSign: true,
+            hasChart: 'small',
+            links: "none",
+            title: "Exportaciones"
+        })
+
+        TSComponents.Card.render('superavit-card-med', {
+            serieId: '372.6_SUPERAVIT_017__23_67',
+            hasChart: 'small',
+            links: "none",
+            title: "Resultado Primario del Sector Público No Fin.",
+            hasFrame: false
+        })
+
+        TSComponents.Card.render('desempleo-card-med', {
+            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            color: '#EC407A',
+            hasChart: 'small',
+            links: "none",
+            title: "Desocupación",
+            hasColorBar: false
+        })
+
+        TSComponents.Card.render('ipc-card-min', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            color: '#F9A822',
+            links: 'none',
+            hasChart: "none",
+            title: "Indice de Precios al Consumidor Nacional"
+        })
+
+        TSComponents.Card.render('exportaciones-card-min', {
+            serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+            explicitSign: true,
+            links: 'none',
+            hasChart: "none",
+            title: "Exportaciones"
+        })
+
+        TSComponents.Card.render('superavit-card-min', {
+            serieId: '372.6_SUPERAVIT_017__23_67',
+            links: 'none',
+            hasChart: "none",
+            title: "Resultado Primario del Sector Público No Fin.",
+            hasColorBar: true
+        })
+
+        TSComponents.Card.render('desempleo-card-min', {
+            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            color: '#EC407A',
+            links: 'none',
+            hasChart: "none",
+            title: "Desocupación",
+            hasFrame: true
+        })
+
+        TSComponents.Card.render('ipc-card-min-xtreme', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            links: 'none',
+            hasChart: "none",
+            title: "",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('exportaciones-card-min-xtreme', {
+            serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
+            explicitSign: true,
+            links: 'none',
+            hasChart: "none",
+            title: "",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('superavit-card-min-xtreme', {
+            serieId: '372.6_SUPERAVIT_017__23_67',
+            links: 'none',
+            hasChart: "none",
+            title: "",
+            units: "",
+            source: "",
+            hasColorBar: true
+        })
+
+        TSComponents.Card.render('desempleo-card-min-xtreme', {
+            serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+            color: '#EC407A',
+            links: 'none',
+            hasChart: "none",
+            title: "",
+            units: "",
+            source: "",
+            hasFrame: true
+        })
+
+    }
     </script>
     <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.3/dist/js/components.js'></script>
 </body>

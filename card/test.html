@@ -1,0 +1,94 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Componentes para Series de Tiempo</title>
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" media="all" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.0/dist/css/components.css" type="text/css">
+</head>
+
+<style>
+    body {
+        text-align: center;
+        background-color: #FAFBFC;
+        margin-left: 10px;
+    }
+
+    .row {
+        width: 90%;
+        margin: 0 76px 0 76px;
+        padding: 20px 10px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+
+    .col {
+        padding: 16px;
+    }
+</style>
+
+<body>
+    <h2>Tarjetas de series de tiempo</h2>
+    <br>
+    <div class="row">
+        <div class="col" id="card1"></div>
+        <div class="col" id="card2"></div>
+        <div class="col" id="card3"></div>
+    </div>
+
+    <hr/>
+
+    <div class="row">
+        <div class="col" id="card4"></div>
+        <div class="col" id="card5"></div>
+        <div class="col" id="card6"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+
+            TSComponents.Card.render('card1', {
+                serieId: '143.3_NO_PR_2004_A_21',
+                hasChart: 'small',
+            })
+
+            TSComponents.Card.render('card2', {
+                serieId: '42.3_EPH_PUNTUATAL_0_M_24',
+                hasChart: 'none',
+                links: 'none',
+                color: '#EC407A'
+            })
+
+            TSComponents.Card.render('card3', {
+                serieId: '168.1_T_CAMBIOR_D_0_0_26',
+                hasChart: 'none',
+                links: 'small',
+                color: '#F9A822'
+            })
+
+            TSComponents.Card.render('card4', {
+                serieId: '143.3_NO_PR_2004_A_21',
+                hasChart: 'small',
+                hasColorBar: false
+            })
+            TSComponents.Card.render('card5', {
+                serieId: '143.3_NO_PR_2004_A_21',
+                hasChart: 'small',
+                title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+                units: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore',
+                source: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore '
+            })
+            TSComponents.Card.render('card6', {
+               serieId: '42.3_EPH_PUNTUATAL_0_M_24',
+               links: 'none',
+               hasChart: 'small',
+               explicitSign: true
+            })
+
+        }
+    </script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.0/dist/js/components.js'></script>
+</body>
+
+</html>
