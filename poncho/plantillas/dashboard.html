@@ -305,7 +305,23 @@
                                 </div>
                                 <br>
                                 <br>
-                                <div id="ipc-regiones">
+                                <div class="container">
+                                    <div id="ipc-regiones">
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div id='ipc-regiones-patagonia' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                    <div id='ipc-regiones-cuyo' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                    <div id='ipc-regiones-no' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                    <div id='ipc-regiones-ne' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                    <div id='ipc-regiones-pampeana' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                    <div id='ipc-regiones-gba' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -536,6 +552,66 @@
         })
 
         // SECCION: Indice de Precios al Consumidor Nacional: por regiones
+        TSComponents.Card.render('ipc-regiones-patagonia', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            color: "#0072BB",
+            links: 'none',
+            hasChart: "none",
+            title: "Patagonia",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('ipc-regiones-cuyo', {
+            serieId: '148.3_INIVELGBA_DICI_M_21:percent_change',
+            color: "#2E7D33",
+            links: 'none',
+            hasChart: "none",
+            title: "Cuyo",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('ipc-regiones-no', {
+            serieId: '148.3_INIVELANA_DICI_M_26:percent_change',
+            color: "#C62828",
+            links: 'none',
+            hasChart: "none",
+            title: "Noroeste",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('ipc-regiones-ne', {
+            serieId: '148.3_INIVELNEA_DICI_M_21:percent_change',
+            color: "#F9A822",
+            links: 'none',
+            hasChart: "none",
+            title: "Noreste",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('ipc-regiones-pampeana', {
+            serieId: '148.3_INIVELNOA_DICI_M_21:percent_change',
+            color: "#6A1B99",
+            links: 'none',
+            hasChart: "none",
+            title: "Pampeana",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('ipc-regiones-gba', {
+            serieId: '148.3_INIVELUYO_DICI_M_22:percent_change',
+            color: "#EC407A",
+            links: 'none',
+            hasChart: "none",
+            title: "GBA",
+            units: "",
+            source: ""
+        })
+
         TSComponents.Graphic.render('ipc-regiones', {
             graphicUrl: "https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26,148.3_INIVELGBA_DICI_M_21,148.3_INIVELANA_DICI_M_26,148.3_INIVELNEA_DICI_M_21,148.3_INIVELNOA_DICI_M_21,148.3_INIVELUYO_DICI_M_22,148.3_INIVELNIA_DICI_M_27&representation_mode=percent_change&start_date=2019",
             chartTypes: {
