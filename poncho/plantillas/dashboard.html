@@ -300,7 +300,12 @@
                         <div class="panel-separator"></div>
                         <div class="panel-pane pane-texto">
                             <div class="pane-content">
-                                <div id="ipc-capitulos">
+                                <div class="container">
+                                    <h4 class="activities-sidbar">Indice de Precios al Consumidor Nacional: por regiones</h4>
+                                </div>
+                                <br>
+                                <br>
+                                <div id="ipc-regiones">
                                 </div>
                             </div>
                         </div>
@@ -528,6 +533,20 @@
             hasChart: 'small',
             title: "Bienes y servicios varios",
             links: "none",
+        })
+
+        // SECCION: Indice de Precios al Consumidor Nacional: por regiones
+        TSComponents.Graphic.render('ipc-regiones', {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26,148.3_INIVELGBA_DICI_M_21,148.3_INIVELANA_DICI_M_26,148.3_INIVELNEA_DICI_M_21,148.3_INIVELNOA_DICI_M_21,148.3_INIVELUYO_DICI_M_22,148.3_INIVELNIA_DICI_M_27&representation_mode=percent_change&start_date=2019",
+            chartTypes: {
+                "148.3_INIVELNAL_DICI_M_26": "column",
+                "148.3_INIVELGBA_DICI_M_21": "column",
+                "148.3_INIVELANA_DICI_M_26": "column",
+                "148.3_INIVELNEA_DICI_M_21": "column",
+                "148.3_INIVELNOA_DICI_M_21": "column",
+                "148.3_INIVELUYO_DICI_M_22": "column",
+                "148.3_INIVELNIA_DICI_M_27": "column"
+            }
         })
 
     }
