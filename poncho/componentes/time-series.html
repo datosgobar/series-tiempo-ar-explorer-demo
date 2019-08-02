@@ -90,6 +90,7 @@
 
 
 
+
 /* PRIMARY */
 
 #btn-primary-hover {
@@ -101,14 +102,6 @@
 }
 
 
-
-
-
-
-
-
-
-
 /* ESTILOS PARA TARJETAS DE SERIES DE TIEMPO */
 
 .row {
@@ -118,33 +111,6 @@
 */
     display: flex;
     justify-content: space-around;
-}
-
-.row-graphic-min {
-    height: 30%;
-}
-
-.graphic-item {
-    width: 100%;
-}
-
-.component {
-    margin: auto;
-    width: 32%;
-    height: 400px;
-}
-
-.component.full-width {
-    width: 100%;
-}
-
-.component.full-height {
-    height: 80%;
-}
-
-.component.x3,
-.component.x4 {
-    display: inline-block;
 }
 </style>
 
@@ -470,50 +436,29 @@
                                         <h3>Gráfico: completo</h3>
                                     </div>
                                     <div class="row">
-                                        <div class="component full-width full-height" id="tsChartFull"></div>
+                                        <div class="col-sm-12" id="tsChartFull"></div>
                                     </div>
-
+                                    <br>
+                                    <br>
                                     <div class="title">
-                                        <h3>Gráfico: completo</h3>
+                                        <h3>Gráfico: medio</h3>
                                     </div>
                                     <div class="row">
-                        <div class="component x3" id="tsChartSmall1"></div>
-                        <div class="component x3" id="tsChartSmall2"></div>
+                                        <div class="col-sm-6" id="tsChartSmall1"></div>
+                                        <div class="col-sm-6" id="tsChartSmall2"></div>
                                     </div>
-
+                                    <br>
+                                    <br>
                                     <div class="title">
-                                        <h3>Gráfico: completo</h3>
+                                        <h3>Gráfico: mínimo</h3>
                                     </div>
-                                    <div class="row">
-    <div class="component x4" id="tsChartMin1"></div>
-    <div class="component x4" id="tsChartMin2"></div>
-    <div class="component x4" id="tsChartMin4"></div>
+                                    <div class="row" style="height: 400px">
+                                        <div class="col-sm-4" id="tsChartMin1"></div>
+                                        <div class="col-sm-4" id="tsChartMin2"></div>
+                                        <div class="col-sm-4" id="tsChartMin4"></div>
                                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                    <br>
+                                    <br>
                                 </fieldset>
                             </div>
                         </article>
@@ -728,33 +673,28 @@
 
         // Gráfico de series de tiempo completo
         TSComponents.Graphic.render('tsChartFull', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,116.4_TCRZE_2015_D_36_4&limit=1000&start=0',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,116.4_TCRZE_2015_D_36_4',
             zoom: true,
-            chartTypes: { '143.3_NO_PR_2004_A_21': 'column' },
+            chartTypes: { '143.3_NO_PR_2004_A_21:percent_change_a_year_ago': 'column' },
             title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
             source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
+            navigator: true
         })
 
         // Gráficos de series de tiempo chicos
         TSComponents.Graphic.render('tsChartSmall1', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=11.3_VMATC_2004_M_12:percent_change_a_year_ago,143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=11.3_VMATC_2004_M_12:percent_change_a_year_ago,143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
             zoom: false,
             datePickerEnabled: false,
             navigator: false,
             title: 'Apagando todos los elementos',
-            chartTypes: { '11.3_VMATC_2004_M_12': 'area', '143.3_NO_PR_2004_A_21': 'area' },
+            chartTypes: { '11.3_VMATC_2004_M_12:percent_change_a_year_ago': 'area', '143.3_NO_PR_2004_A_21:percent_change_a_year_ago': 'area' },
             source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
             legendLabel: { "11.3_VMATC_2004_M_12": "mi propio label", '143.3_NO_PR_2004_A_21': "el otro label" }
         })
 
         TSComponents.Graphic.render('tsChartSmall2', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&limit=1000&start=0',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20',
             title: 'Prendiendo todos los elementos',
             navigator: true,
             zoom: true,
@@ -763,32 +703,25 @@
 
         // Gráficos de series de tiempo mono-serie
         TSComponents.Graphic.render('tsChartMin1', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=33.2_I_2004_M_4&limit=1000&start=0&format=json',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
-            title: "ISAC",
-            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)\n\nzoom:dinamic date:dinamic nav:dinamic'
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=33.2_I_2004_M_4',
+            title: "Apagando todos los elementos",
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
         })
 
         TSComponents.Graphic.render('tsChartMin2', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
-            title: 'EMAE',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+            title: 'Prendiendo algunos elementos',
             zoom: true,
             datePickerEnabled: true,
-            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)\n\nzoom:true date:true nav:dinamic',
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
             chartTypes: { '143.3_NO_PR_2004_A_21': 'column' }
         })
 
         TSComponents.Graphic.render('tsChartMin4', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=14.2_E_M_2004_0_3&limit=1000&start=0&format=json',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
-            title: 'EMI (interanual)',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=14.2_E_M_2004_0_3',
+            title: 'Sin fuente',
             zoom: false,
-            datePickerEnabled: false,
-            source: "zoom:false date:false nav:dinamic"
+            datePickerEnabled: false
         })
 
     }
