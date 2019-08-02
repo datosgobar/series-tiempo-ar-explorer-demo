@@ -127,6 +127,25 @@
 .graphic-item {
     width: 100%;
 }
+
+.component {
+    margin: auto;
+    width: 32%;
+    height: 400px;
+}
+
+.component.full-width {
+    width: 100%;
+}
+
+.component.full-height {
+    height: 80%;
+}
+
+.component.x3,
+.component.x4 {
+    display: inline-block;
+}
 </style>
 
 <body>
@@ -245,18 +264,19 @@
         &emsp;&emsp;&emsp;&emsp;title: "Indice de Precios al Consumidor Nacional"
         })
 
-        &emsp;&emsp;TSComponents.Card.render('exportaciones-card', {
-        &emsp;&emsp;&emsp;&emsp;serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
-        &emsp;&emsp;&emsp;&emsp;explicitSign: true,
-        &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
-        &emsp;&emsp;&emsp;&emsp;title: "Exportaciones"
-        })
-
         &emsp;&emsp;TSComponents.Card.render('superavit-card', {
         &emsp;&emsp;&emsp;&emsp;serieId: '452.3_RESULTADO_RIO_0_M_18_54',
         &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
         &emsp;&emsp;&emsp;&emsp;title: "Resultado Primario del Sector Público No Fin."
         })
+
+        &emsp;&emsp;TSComponents.Card.render('desempleo-card', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+        &emsp;&emsp;&emsp;&emsp;color: '#EC407A',
+        &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
+        &emsp;&emsp;&emsp;&emsp;title: "Desocupación"
+        })
+
                       </code></pre>
                                         </div>
                                     </div>
@@ -278,13 +298,6 @@
                                     &lt;/div>
                       </code></pre>
                                             <pre><code class="language-js">
-        &emsp;&emsp;TSComponents.Card.render('desempleo-card', {
-        &emsp;&emsp;&emsp;&emsp;serieId: '42.3_EPH_PUNTUATAL_0_M_30',
-        &emsp;&emsp;&emsp;&emsp;color: '#EC407A',
-        &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
-        &emsp;&emsp;&emsp;&emsp;title: "Desocupación"
-        })
-
         &emsp;&emsp;TSComponents.Card.render('ipc-card-links2', {
         &emsp;&emsp;&emsp;&emsp;serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
         &emsp;&emsp;&emsp;&emsp;color: '#F9A822',
@@ -293,12 +306,19 @@
         &emsp;&emsp;&emsp;&emsp;title: "Indice de Precios al Consumidor Nacional"
         })
 
-        &emsp;&emsp;TSComponents.Card.render('exportaciones-card-links2', {
-        &emsp;&emsp;&emsp;&emsp;serieId: '74.3_IET_0_M_16:percent_change_a_year_ago',
-        &emsp;&emsp;&emsp;&emsp;explicitSign: true,
+        &emsp;&emsp;TSComponents.Card.render('superavit-card-links2', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '372.6_SUPERAVIT_017__23_67',
         &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
         &emsp;&emsp;&emsp;&emsp;links: "small",
-        &emsp;&emsp;&emsp;&emsp;title: "Exportaciones"
+        &emsp;&emsp;&emsp;&emsp;title: "Resultado Primario del Sector Público No Fin."
+        })
+
+        &emsp;&emsp;TSComponents.Card.render('desempleo-card-links2', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+        &emsp;&emsp;&emsp;&emsp;color: '#EC407A',
+        &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
+        &emsp;&emsp;&emsp;&emsp;links: "small",
+        &emsp;&emsp;&emsp;&emsp;title: "Desocupación"
         })
                       </code></pre>
                                         </div>
@@ -321,27 +341,29 @@
                                     &lt;/div>
                       </code></pre>
                                             <pre><code class="language-js">
-        &emsp;&emsp;TSComponents.Card.render('superavit-card-links2', {
-        &emsp;&emsp;&emsp;&emsp;serieId: '372.6_SUPERAVIT_017__23_67',
-        &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
-        &emsp;&emsp;&emsp;&emsp;links: "small",
-        &emsp;&emsp;&emsp;&emsp;title: "Resultado Primario del Sector Público No Fin."
-        })
-
-        &emsp;&emsp;TSComponents.Card.render('desempleo-card-links2', {
-        &emsp;&emsp;&emsp;&emsp;serieId: '42.3_EPH_PUNTUATAL_0_M_30',
-        &emsp;&emsp;&emsp;&emsp;color: '#EC407A',
-        &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
-        &emsp;&emsp;&emsp;&emsp;links: "small",
-        &emsp;&emsp;&emsp;&emsp;title: "Desocupación"
-        })
-
         &emsp;&emsp;TSComponents.Card.render('ipc-card-med', {
         &emsp;&emsp;&emsp;&emsp;serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
         &emsp;&emsp;&emsp;&emsp;color: '#F9A822',
         &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
         &emsp;&emsp;&emsp;&emsp;links: "none",
         &emsp;&emsp;&emsp;&emsp;title: "Indice de Precios al Consumidor Nacional"
+        })
+
+        &emsp;&emsp;TSComponents.Card.render('superavit-card-med', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '372.6_SUPERAVIT_017__23_67',
+        &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
+        &emsp;&emsp;&emsp;&emsp;links: "none",
+        &emsp;&emsp;&emsp;&emsp;title: "Resultado Primario del Sector Público No Fin.",
+        &emsp;&emsp;&emsp;&emsp;hasFrame: false
+        })
+
+        &emsp;&emsp;TSComponents.Card.render('desempleo-card-med', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+        &emsp;&emsp;&emsp;&emsp;color: '#EC407A',
+        &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
+        &emsp;&emsp;&emsp;&emsp;links: "none",
+        &emsp;&emsp;&emsp;&emsp;title: "Desocupación",
+        &emsp;&emsp;&emsp;&emsp;hasColorBar: false
         })
                       </code></pre>
                                         </div>
@@ -354,6 +376,44 @@
                                         <div id='superavit-card-min'></div>
                                         <div id='desempleo-card-min'></div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <pre><code class="language-html">
+                                    &lt;div class="row">
+                                    &emsp;&emsp;&lt;div id='ipc-card-min'>&lt;/div>
+                                    &emsp;&emsp;&lt;div id='superavit-card-min'>&lt;/div>
+                                    &emsp;&emsp;&lt;div id='desempleo-card-min'>&lt;/div>
+                                    &lt;/div>
+                                    &lt;div class="row">
+                      </code></pre>
+                                            <pre><code class="language-js">
+        &emsp;&emsp;TSComponents.Card.render('ipc-card-min', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+        &emsp;&emsp;&emsp;&emsp;color: '#F9A822',
+        &emsp;&emsp;&emsp;&emsp;links: 'none',
+        &emsp;&emsp;&emsp;&emsp;hasChart: "none",
+        &emsp;&emsp;&emsp;&emsp;title: "Indice de Precios al Consumidor Nacional"
+        })
+
+        &emsp;&emsp;TSComponents.Card.render('superavit-card-min', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '372.6_SUPERAVIT_017__23_67',
+        &emsp;&emsp;&emsp;&emsp;links: 'none',
+        &emsp;&emsp;&emsp;&emsp;hasChart: "none",
+        &emsp;&emsp;&emsp;&emsp;title: "Resultado Primario del Sector Público No Fin.",
+        &emsp;&emsp;&emsp;&emsp;hasColorBar: true
+        })
+
+        &emsp;&emsp;TSComponents.Card.render('desempleo-card-min', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+        &emsp;&emsp;&emsp;&emsp;color: '#EC407A',
+        &emsp;&emsp;&emsp;&emsp;links: 'none',
+        &emsp;&emsp;&emsp;&emsp;hasChart: "none",
+        &emsp;&emsp;&emsp;&emsp;title: "Desocupación",
+        &emsp;&emsp;&emsp;&emsp;hasFrame: true
+        })
+                      </code></pre>
+                                        </div>
+                                    </div>
                                     <div class="title">
                                         <h3>Card: mínima (eliminando elementos)</h3>
                                     </div>
@@ -363,71 +423,97 @@
                                         <div id='desempleo-card-min-xtreme'></div>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="icon-item">
-                                                <i class="fa fa-users text-success"></i>
-                                                <h3>Cercana</h3>
-                                                <p>Conoce tus necesidades y adopta sus servicios a ellas.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="icon-item">
-                                                <i class="fa fa-search text-primary"></i>
-                                                <h3>Transparente</h3>
-                                                <p>Brinda mayor información y certeza sobre sus actos de gobierno.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-6 col-md-4">
-                                            <div class="icon-item">
-                                                <i class="fa fa-users"></i>
-                                                <h3>Participativa</h3>
-                                                <p>Trabaja en equipo con los empleados públicos y la gente.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
-                        &lt;div class="icon-item">
-                          &emsp;&emsp;&lt;i class="fa fa-users text-success">&lt;/i>
-                          &emsp;&emsp;&lt;h3>Cercana&lt;/h3>
-                          &emsp;&emsp;&lt;p>Conoce tus necesidades y adopta sus servicios a ellas.&lt;/p>
-                        &lt;/div>
+                                    &lt;div class="row">
+                                        &emsp;&emsp;&lt;div id='ipc-card-min-xtreme'>&lt;/div>
+                                        &emsp;&emsp;&lt;div id='superavit-card-min-xtreme'>&lt;/div>
+                                        &emsp;&emsp;&lt;div id='desempleo-card-min-xtreme'>&lt;/div>
+                                    &lt;/div>
+
+                      </code></pre>
+                                            <pre><code class="language-js">
+        &emsp;&emsp;TSComponents.Card.render('ipc-card-min-xtreme', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+        &emsp;&emsp;&emsp;&emsp;links: 'none',
+        &emsp;&emsp;&emsp;&emsp;hasChart: "none",
+        &emsp;&emsp;&emsp;&emsp;title: "",
+        &emsp;&emsp;&emsp;&emsp;units: "",
+        &emsp;&emsp;&emsp;&emsp;source: ""
+        })
+
+        &emsp;&emsp;TSComponents.Card.render('superavit-card-min-xtreme', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '372.6_SUPERAVIT_017__23_67',
+        &emsp;&emsp;&emsp;&emsp;links: 'none',
+        &emsp;&emsp;&emsp;&emsp;hasChart: "none",
+        &emsp;&emsp;&emsp;&emsp;title: "",
+        &emsp;&emsp;&emsp;&emsp;units: "",
+        &emsp;&emsp;&emsp;&emsp;source: "",
+        &emsp;&emsp;&emsp;&emsp;hasColorBar: true
+        })
+
+        &emsp;&emsp;TSComponents.Card.render('desempleo-card-min-xtreme', {
+        &emsp;&emsp;&emsp;&emsp;serieId: '42.3_EPH_PUNTUATAL_0_M_30',
+        &emsp;&emsp;&emsp;&emsp;color: '#EC407A',
+        &emsp;&emsp;&emsp;&emsp;links: 'none',
+        &emsp;&emsp;&emsp;&emsp;hasChart: "none",
+        &emsp;&emsp;&emsp;&emsp;title: "",
+        &emsp;&emsp;&emsp;&emsp;units: "",
+        &emsp;&emsp;&emsp;&emsp;source: "",
+        &emsp;&emsp;&emsp;&emsp;hasFrame: true
+        })
                       </code></pre>
                                         </div>
                                     </div>
-                                    <h2>Números</h2>
-                                    <p>Sirven para mostrar cifras estadísticas. </p>
-                                    <div class="row numbers">
-                                        <div class="col-md-4">
-                                            <div class="h2 text-success">392.493</div>
-                                            <p class="lead">Visitas últimos 30 días</p>
-                                            <p class="text-muted">+11,06% vs mes anterior</p>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="h2 text-gray">33 <small>%</small></div>
-                                            <p class="lead">Visitas este mes</p>
-                                            <p class="text-muted">del 1 al 26 de Febrero</p>
-                                        </div>
-                                        <div class="col-md-4">
-                                            <div class="h2">5 <small>de 10</small></div>
-                                            <p class="lead">Personas conectadas</p>
-                                            <p class="text-muted">Duramente los últimos 30 días.</p>
-                                        </div>
+                                    <h2>Gráficos</h2>
+                                    <div class="title">
+                                        <h3>Gráfico: completo</h3>
                                     </div>
                                     <div class="row">
-                                        <div class="col-sm-12">
-                                            <pre><code class="language-html">
-                      &lt;div class="row numbers">
-                        &emsp;&emsp;&lt;div class="col-md-4">
-                          &emsp;&emsp;&emsp;&emsp;&lt;div class="h2 text-success">392.493&lt;/div>
-                          &emsp;&emsp;&emsp;&emsp;&lt;p class="lead">Visitas últimos 30 días&lt;/p>
-                          &emsp;&emsp;&emsp;&emsp;&lt;p class="text-muted">+11,06% vs mes anterior&lt;/p>
-                        &emsp;&emsp;&lt;/div>
-                      &lt;/div>
-                    </code></pre>
-                                        </div>
+                                        <div class="component full-width full-height" id="tsChartFull"></div>
                                     </div>
+
+                                    <div class="title">
+                                        <h3>Gráfico: completo</h3>
+                                    </div>
+                                    <div class="row">
+                        <div class="component x3" id="tsChartSmall1"></div>
+                        <div class="component x3" id="tsChartSmall2"></div>
+                                    </div>
+
+                                    <div class="title">
+                                        <h3>Gráfico: completo</h3>
+                                    </div>
+                                    <div class="row">
+    <div class="component x4" id="tsChartMin1"></div>
+    <div class="component x4" id="tsChartMin2"></div>
+    <div class="component x4" id="tsChartMin4"></div>
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 </fieldset>
                             </div>
                         </article>
@@ -638,6 +724,71 @@
             units: "",
             source: "",
             hasFrame: true
+        })
+
+        // Gráfico de series de tiempo completo
+        TSComponents.Graphic.render('tsChartFull', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,116.4_TCRZE_2015_D_36_4&limit=1000&start=0',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+            },
+            zoom: true,
+            chartTypes: { '143.3_NO_PR_2004_A_21': 'column' },
+            title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
+        })
+
+        // Gráficos de series de tiempo chicos
+        TSComponents.Graphic.render('tsChartSmall1', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=11.3_VMATC_2004_M_12:percent_change_a_year_ago,143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+            },
+            zoom: false,
+            datePickerEnabled: false,
+            navigator: false,
+            title: 'Apagando todos los elementos',
+            chartTypes: { '11.3_VMATC_2004_M_12': 'area', '143.3_NO_PR_2004_A_21': 'area' },
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
+            legendLabel: { "11.3_VMATC_2004_M_12": "mi propio label", '143.3_NO_PR_2004_A_21': "el otro label" }
+        })
+
+        TSComponents.Graphic.render('tsChartSmall2', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&limit=1000&start=0',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+            },
+            title: 'Prendiendo todos los elementos',
+            navigator: true,
+            zoom: true,
+            datePickerEnabled: true
+        })
+
+        // Gráficos de series de tiempo mono-serie
+        TSComponents.Graphic.render('tsChartMin1', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=33.2_I_2004_M_4&limit=1000&start=0&format=json',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+            },
+            title: "ISAC",
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)\n\nzoom:dinamic date:dinamic nav:dinamic'
+        })
+
+        TSComponents.Graphic.render('tsChartMin2', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+            },
+            title: 'EMAE',
+            zoom: true,
+            datePickerEnabled: true,
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)\n\nzoom:true date:true nav:dinamic',
+            chartTypes: { '143.3_NO_PR_2004_A_21': 'column' }
+        })
+
+        TSComponents.Graphic.render('tsChartMin4', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=14.2_E_M_2004_0_3&limit=1000&start=0&format=json',
+            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
+            },
+            title: 'EMI (interanual)',
+            zoom: false,
+            datePickerEnabled: false,
+            source: "zoom:false date:false nav:dinamic"
         })
 
     }
