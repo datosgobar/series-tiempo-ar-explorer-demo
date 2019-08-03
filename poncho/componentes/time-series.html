@@ -68,6 +68,7 @@
 <script src="http://argob.github.io/poncho/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
 <script src="http://argob.github.io/poncho/js/scripts.js"></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.3/dist/js/components.js'></script>
 <style>
 /* EXPERIMéNTAL */
 
@@ -78,17 +79,6 @@
     border: 3px solid transparent;
     letter-spacing: 1.5px
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* PRIMARY */
@@ -105,10 +95,6 @@
 /* ESTILOS PARA TARJETAS DE SERIES DE TIEMPO */
 
 .row {
-    /*width: 90%;*/
-    /*    margin: 0 76px 0 76px;
-    padding: 20px 10px;
-*/
     display: flex;
     justify-content: space-around;
 }
@@ -169,39 +155,52 @@
                                 <fieldset>
                                     <h2>Tarjetas</h2>
                                     <p>Sirven para mostrar el valor más reciente de un indicador.</p>
-                                    <p>Debe importarse un CSS y un JS adicional para poder usarlas:</p>
+                                    <p>Para usarlas debe importarse un CSS y un JS adicional:</p>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
 
-                        &lt;!-- hoja de estilos en el HEAD -->
                         &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.1/dist/css/components.css" type="text/css">
 
-                        &lt;!-- JS al final del BODY -->
                         &lt;script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.1/dist/js/components.js'>&lt;/script>
 
                       </code></pre>
                                         </div>
                                     </div>
-                                    <p>Debe ubicarse un div con un id en el html, y crear un objeto TSComponentes.Card en un script al final del BODY:</p>
+                                    <p>Debe ubicarse un div con un id en el html, y crear un objeto TSComponentes.Card en un script:</p>
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
 
-                        &lt;!-- hoja de estilos en el HEAD -->
                         &lt;div id='ipc-card'>&lt;/div>
                       </code></pre>
                                             <pre><code class="language-js">
-                        // JS al final del BODY
-                        window.onload = function() {
-                        &emsp;&emsp;TSComponents.Card.render('ipc-card', {
-                        &emsp;&emsp;&emsp;&emsp;serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
-                        &emsp;&emsp;&emsp;&emsp;color: '#F9A822',
-                        &emsp;&emsp;&emsp;&emsp;hasChart: 'small',
-                        &emsp;&emsp;&emsp;&emsp;title: "Indice de Precios al Consumidor Nacional"
-                        &emsp;&emsp;})
-                        }
+window.onload = function() {
+&emsp;&emsp;TSComponents.Card.render('ipc-card', {
+&emsp;&emsp;&emsp;&emsp;serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+&emsp;&emsp;&emsp;&emsp;color: '#F9A822',
+&emsp;&emsp;&emsp;&emsp;hasChart: 'small',
+&emsp;&emsp;&emsp;&emsp;title: "Indice de Precios al Consumidor Nacional"
+&emsp;&emsp;})
+}
 
+                      </code></pre>
+                                        </div>
+                                    </div>
+                                    <p>Para que se vean mejor, conviene ubicar las tarjetas en una row y agregar algunos estilos:</p>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <pre><code class="language-html">
+&lt;style>
+.row {
+&emsp;&emsp;&emsp;&emsp;display: flex;
+&emsp;&emsp;&emsp;&emsp;justify-content: space-around;
+}
+&lt;/style>
+
+&lt;div class="row">
+&emsp;&emsp;&emsp;&emsp;&lt;div id='ipc-card'>&lt;/div>
+&lt;/div>
                       </code></pre>
                                         </div>
                                     </div>
@@ -438,6 +437,28 @@
                                     <div class="row">
                                         <div class="col-sm-12" id="tsChartFull"></div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <pre><code class="language-html">
+                                    &lt;div class="row">
+                                        &emsp;&emsp;&lt;div class="col-sm-12" id="tsChartFull">&lt;/div>
+                                    &lt;/div>
+
+                      </code></pre>
+                                            <pre><code class="language-js">
+        &emsp;&emsp;TSComponents.Graphic.render('tsChartFull', {
+            &emsp;&emsp;&emsp;&emsp;graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,116.4_TCRZE_2015_D_36_4',
+            &emsp;&emsp;&emsp;&emsp;zoom: true,
+            &emsp;&emsp;&emsp;&emsp;chartTypes: {'143.3_NO_PR_2004_A_21:percent_change_a_year_ago': 'column'},
+            &emsp;&emsp;&emsp;&emsp;title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
+            &emsp;&emsp;&emsp;&emsp;source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
+            &emsp;&emsp;&emsp;&emsp;navigator: true
+        })
+
+
+                      </code></pre>
+                                        </div>
+                                    </div>
                                     <br>
                                     <br>
                                     <div class="title">
@@ -446,6 +467,36 @@
                                     <div class="row">
                                         <div class="col-sm-6" id="tsChartSmall1"></div>
                                         <div class="col-sm-6" id="tsChartSmall2"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <pre><code class="language-html">
+                                    &lt;div class="row">
+                                        &emsp;&emsp;&lt;div class="col-sm-6" id="tsChartSmall1">&lt;/div>
+                                        &emsp;&emsp;&lt;div class="col-sm-6" id="tsChartSmall2">&lt;/div>
+                                    &lt;/div>
+                      </code></pre>
+                                            <pre><code class="language-js">
+        &emsp;&emsp;TSComponents.Graphic.render('tsChartSmall1', {
+            &emsp;&emsp;&emsp;&emsp;graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=11.3_VMATC_2004_M_12:percent_change_a_year_ago,143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+            &emsp;&emsp;&emsp;&emsp;zoom: false,
+            &emsp;&emsp;&emsp;&emsp;datePickerEnabled: false,
+            &emsp;&emsp;&emsp;&emsp;navigator: false,
+            &emsp;&emsp;&emsp;&emsp;title: 'Apagando todos los elementos',
+            &emsp;&emsp;&emsp;&emsp;chartTypes: { '11.3_VMATC_2004_M_12:percent_change_a_year_ago': 'area', '143.3_NO_PR_2004_A_21:percent_change_a_year_ago': 'area' },
+            &emsp;&emsp;&emsp;&emsp;source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
+            &emsp;&emsp;&emsp;&emsp;legendLabel: { "11.3_VMATC_2004_M_12": "mi propio label", '143.3_NO_PR_2004_A_21': "el otro label" }
+        })
+
+        &emsp;&emsp;TSComponents.Graphic.render('tsChartSmall2', {
+            &emsp;&emsp;&emsp;&emsp;graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20',
+            &emsp;&emsp;&emsp;&emsp;title: 'Prendiendo todos los elementos',
+            &emsp;&emsp;&emsp;&emsp;navigator: true,
+            &emsp;&emsp;&emsp;&emsp;zoom: true,
+            &emsp;&emsp;&emsp;&emsp;datePickerEnabled: true
+        })
+                      </code></pre>
+                                        </div>
                                     </div>
                                     <br>
                                     <br>
@@ -456,6 +507,40 @@
                                         <div class="col-sm-4" id="tsChartMin1"></div>
                                         <div class="col-sm-4" id="tsChartMin2"></div>
                                         <div class="col-sm-4" id="tsChartMin4"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <pre><code class="language-html">
+                                    &lt;div class="row" style="height: 400px">
+                                        &emsp;&emsp;&lt;div class="col-sm-4" id="tsChartMin1">&lt;/div>
+                                        &emsp;&emsp;&lt;div class="col-sm-4" id="tsChartMin2">&lt;/div>
+                                        &emsp;&emsp;&lt;div class="col-sm-4" id="tsChartMin4">&lt;/div>
+                                    &lt;/div>
+                      </code></pre>
+                                            <pre><code class="language-js">
+        &emsp;&emsp;TSComponents.Graphic.render('tsChartMin1', {
+        &emsp;&emsp;&emsp;&emsp;graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=33.2_I_2004_M_4',
+        &emsp;&emsp;&emsp;&emsp;title: "Apagando todos los elementos",
+        &emsp;&emsp;&emsp;&emsp;source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
+        })
+
+        &emsp;&emsp;TSComponents.Graphic.render('tsChartMin2', {
+        &emsp;&emsp;&emsp;&emsp;graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+        &emsp;&emsp;&emsp;&emsp;title: 'Prendiendo algunos elementos',
+        &emsp;&emsp;&emsp;&emsp;zoom: true,
+        &emsp;&emsp;&emsp;&emsp;datePickerEnabled: true,
+        &emsp;&emsp;&emsp;&emsp;source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
+        &emsp;&emsp;&emsp;&emsp;chartTypes: { '143.3_NO_PR_2004_A_21': 'column' }
+        })
+
+        &emsp;&emsp;TSComponents.Graphic.render('tsChartMin4', {
+        &emsp;&emsp;&emsp;&emsp;graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=14.2_E_M_2004_0_3',
+        &emsp;&emsp;&emsp;&emsp;title: 'Sin fuente',
+        &emsp;&emsp;&emsp;&emsp;zoom: false,
+        &emsp;&emsp;&emsp;&emsp;datePickerEnabled: false
+        })
+                      </code></pre>
+                                        </div>
                                     </div>
                                     <br>
                                     <br>
@@ -494,56 +579,6 @@
             </div>
         </div>
     </footer>
-    <script>
-    $(function() {
-
-        jQuery(function($) {
-            $.syntax({ theme: 'bright' });
-        });
-
-        $("#menuLateral").load("../../includes/componentes_menu.html", function() {
-            var seccion = $("#menuLateral").data("seccion");
-            $("#menuLateral ul li a[data-seccion=" + seccion + "]").parent().addClass("active");
-        });
-
-        var tabla = $(".dataTables").DataTable({
-            "lengthChange": false,
-            "autoWidth": false,
-            "language": {
-                "sProcessing": "Procesando...",
-                "sLengthMenu": "Mostrar _MENU_ registros",
-                "sZeroRecords": "No se encontraron resultados",
-                "sEmptyTable": "Ningún dato disponible en esta tabla",
-                "sInfo": "_TOTAL_ resultados",
-                "sInfoEmpty": "No hay resultados",
-                "sInfoFiltered": "",
-                "sInfoPostFix": "",
-                "sSearch": "Buscar:",
-                "sUrl": "",
-                "sInfoThousands": ",",
-                "sLoadingRecords": "Cargando...",
-
-                "oPaginate": {
-                    "sFirst": "<<",
-                    "sLast": ">>",
-                    "sNext": ">",
-                    "sPrevious": "<"
-                },
-                "oAria": {
-                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                    "sSortDescending": ": Activar para ordenar la columna de manera descendente",
-                    "paginate": {
-                        "first": 'Ir a la primera página',
-                        "previous": 'Ir a la página anterior',
-                        "next": 'Ir a la página siguiente',
-                        "last": 'Ir a la última página'
-                    }
-                }
-            }
-        });
-
-    })
-    </script>
     <script>
     window.onload = function() {
         // componentes de series de tiempo
@@ -726,7 +761,56 @@
 
     }
     </script>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.3/dist/js/components.js'></script>
+    <script>
+    $(function() {
+
+        jQuery(function($) {
+            $.syntax({ theme: 'bright' });
+        });
+
+        $("#menuLateral").load("../../includes/componentes_menu.html", function() {
+            var seccion = $("#menuLateral").data("seccion");
+            $("#menuLateral ul li a[data-seccion=" + seccion + "]").parent().addClass("active");
+        });
+
+        var tabla = $(".dataTables").DataTable({
+            "lengthChange": false,
+            "autoWidth": false,
+            "language": {
+                "sProcessing": "Procesando...",
+                "sLengthMenu": "Mostrar _MENU_ registros",
+                "sZeroRecords": "No se encontraron resultados",
+                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                "sInfo": "_TOTAL_ resultados",
+                "sInfoEmpty": "No hay resultados",
+                "sInfoFiltered": "",
+                "sInfoPostFix": "",
+                "sSearch": "Buscar:",
+                "sUrl": "",
+                "sInfoThousands": ",",
+                "sLoadingRecords": "Cargando...",
+
+                "oPaginate": {
+                    "sFirst": "<<",
+                    "sLast": ">>",
+                    "sNext": ">",
+                    "sPrevious": "<"
+                },
+                "oAria": {
+                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                    "sSortDescending": ": Activar para ordenar la columna de manera descendente",
+                    "paginate": {
+                        "first": 'Ir a la primera página',
+                        "previous": 'Ir a la página anterior',
+                        "next": 'Ir a la página siguiente',
+                        "last": 'Ir a la última página'
+                    }
+                }
+            }
+        });
+
+    })
+    </script>
 </body>
 
 </html>
