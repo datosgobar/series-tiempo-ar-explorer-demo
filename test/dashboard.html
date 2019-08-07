@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]> <html lang="es"class="iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html lang="es" class="ie6 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="es" class="ie7 lt-ie8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="es" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html lang="es">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banco de Pruebas</title>
+    <meta name="description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina.">
+    <meta name="author" content="Presidencia de la Nación">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Nav and address bar color -->
+    <meta name="theme-color" content="#0072b8">
+    <meta name="msapplication-navbutton-color" content="#0072b8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0072b8">
+    <meta property="og:url" content="http://localhost:4000/proyectos/argentina/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Banco de Pruebas" />
+    <meta property="og:description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta property="og:image" content="/ejemplos/img/jumbotron.jpg" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Banco de Pruebas" />
+    <meta name="twitter:description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta name="twitter:image" content="/ejemplos/img/jumbotron.jpg" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" media="all" />
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/poncho.min.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/icono-arg.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/argentina.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://argob.github.io/poncho/js/html5shiv.js"></script>
+      <script src="http://argob.github.io/poncho/js/respond.min.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.2.0/dist/css/components.css" type="text/css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+<body>
+    <header>
+        <nav class="navbar navbar-top navbar-default" role="navigation">
+            <div class="container">
+                <div>
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="#" aria-label="Argentina.gob.ar Presidencia de la Nación">
+            <img alt="Argentina.gob.ar" src="img/argentinagob.svg" height="50">
+          </a>
+                        <a href="https://mi.argentina.gob.ar/" class="btn btn-login btn-link visible-xs" aria-label="Ingresar a Mi Argentina"><i class="icono-arg-mi-argentina"></i></a>
+                    </div>
+                    <a href="https://mi.argentina.gob.ar/" class="btn btn-login btn-link hidden-xs" aria-label="Ingresar a Mi Argentina"><i class="icono-arg-mi-argentina"></i>Mi Argentina</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main role="main">
+        <a id="main-content"></a>
+        <div class="container"></div>
+        <div class="region region-content">
+            <div id="block-system-main" class="block block-system clearfix">
+                <div class="container">
+                    <div class="panel-pane pane-page-breadcrumb">
+                        <div class="pane-content">
+                            <ol class="breadcrumb pull-left">
+                                <li><a href="https://www.argentina.gob.ar/">Inicio</a></li>
+                                <li><a href="https://www.argentina.gob.ar/hacienda">Ministerio de Hacienda</a></li>
+                                <li><a href="index.html">Datos Económicos</a></li>
+                                <li class="active">Precios</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                        </div>
+                    </div>
+                </div>
+                <section>
+                    <div class="container">
+                        <article class="container content_format">
+                            <div class="panel-pane pane-titulo">
+                                <div class="pane-content">
+                                    <h1 class="activities-sidbar">Datos Económicos: precios</h1>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="container">
+                        <div class="panel-pane pane-area-estructura">
+                            <div class="panel-pane pane-atajos">
+                                <div class="pane-content">
+                                    <div class="row panels-row">
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="precios.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Precios</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="nivel-actividad.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Nivel de Actividad</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="sector-externo.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Sector Externo</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="finanzas-publicas.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Finanzas Públicas</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="finanzas.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Finanzas</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="economia-internacional.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Economía Internacional</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="dinero-bancos.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Dinero y Bancos</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="empleo-ingresos.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Empleo e Ingresos</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                    </div>
+                                    <!-- /.panels-row -->
+                                </div>
+                                <!-- /.pane-content -->
+                            </div>
+                            <!-- /.pane-atajos -->
+                        </div>
+                        <!-- /.pane-area-estructura -->
+                    </div>
+                    <!-- /.container -->
+                    <div class="panel-separator"></div>
+                    <div class="container">
+                        <button type="button" class="btn"><a href="https://www.economia.gob.ar/download/infoeco/apendice4.xlsx">Descargar apéndice de Precios</a></button>
+                    </div>
+                    <br>
+                    <div class="container">
+                        <div class="panel-separator"></div>
+                        <div class="panel-pane pane-texto">
+                            <div class="pane-content">
+                                <div class="container">
+                                    <h3 class="activities-sidbar">Indice de Precios al Consumidor Nacional</h3>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="container">
+                                    <div id="ipc-general-ia" class="col-xs-12 col-sm-6 col-md-3">
+                                    </div>
+                                    <div id="ipc-general-pp" class="col-xs-12 col-sm-6 col-md-3">
+                                    </div>
+                                    <div id="ipc-nucleo-ia" class="col-xs-12 col-sm-6 col-md-3">
+                                    </div>
+                                    <div id="ipc-nucleo-pp" class="col-xs-12 col-sm-6 col-md-3">
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div id="ipc-graphic" class="col-xs-24 col-sm-12 col-md-6">
+                                    </div>
+                                    <div id="ipc-graphic-monthly" class="col-xs-24 col-sm-12 col-md-6">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="panel-separator"></div>
+                        <div class="panel-pane pane-texto">
+                            <div class="pane-content">
+                                <div class="container">
+                                    <h4 class="activities-sidbar">Índices de precios provinciales</h4>
+                                </div>
+                                <br>
+                                <br>
+                                <div id="ipc-general-nqn" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-general-cba" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-general-caba" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-general-mza" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="panel-separator"></div>
+                        <div class="panel-pane pane-texto">
+                            <div class="pane-content">
+                                <div class="container">
+                                    <h4 class="activities-sidbar">Indice de Precios al Consumidor Nacional: por capítulos</h4>
+                                </div>
+                                <br>
+                                <br>
+                                <div id="ipc-alimentos" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-alcohol" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-vestimenta" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-servicios" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-equipamiento" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-salud" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-transporte" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-comunicaciones" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-recreacion" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-educacion" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-hoteles" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                                <div id="ipc-varios" class="col-xs-12 col-sm-6 col-md-3">
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="panel-separator"></div>
+                        <div class="panel-pane pane-texto">
+                            <div class="pane-content">
+                                <div class="container">
+                                    <h4 class="activities-sidbar">Indice de Precios al Consumidor Nacional: por regiones</h4>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="container">
+                                    <div id="ipc-regiones">
+                                    </div>
+                                </div>
+                                <div class="container">
+                                    <div id='ipc-regiones-patagonia' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                    <div id='ipc-regiones-cuyo' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                    <div id='ipc-regiones-no' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                    <div id='ipc-regiones-ne' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                    <div id='ipc-regiones-pampeana' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                    <div id='ipc-regiones-gba' class="col-xs-8 col-sm-4 col-md-2">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <a class="navbar-brand" href="#" aria-label="Argentina.gob.ar Presidencia de la Nación">
+            <img alt="Argentina.gob.ar" src="img/argentinagob.svg" height="50">
+        </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+    function viewpassword() {
+        var clave = document.getElementById('password_confirmacion')
+        if (clave.type === 'password') {
+            clave.type = 'text'
+            document.getElementById('eye-password').classList.remove("fa-eye-slash")
+            document.getElementById('eye-password').classList.add("fa-eye")
+        } else {
+            clave.type = 'password'
+            document.getElementById('eye-password').classList.remove("fa-eye")
+            document.getElementById('eye-password').classList.add("fa-eye-slash")
+        }
+
+    }
+    </script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.2.0/dist/js/components.js'></script>
+    <script>
+    window.onload = function() {
+        // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
+
+        // componentes de series de tiempo para cada sección
+
+        // SECCION: Indice de Precios al Consumidor Nacional
+        TSComponents.Card.render('ipc-general-ia', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago',
+            color: '#F9A822',
+            hasChart: 'small',
+            title: "Nivel General (% interanual)",
+            links: "none",
+            units: "",
+            hasFrame: false
+        })
+
+        TSComponents.Card.render('ipc-general-pp', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            hasChart: 'small',
+            title: "Nivel general (% mensual)",
+            links: "none",
+            units: "",
+            hasFrame: false
+        })
+
+        TSComponents.Card.render('ipc-nucleo-ia', {
+            serieId: '148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago',
+            color: '#F9A822',
+            hasChart: 'small',
+            title: "Núcleo (% interanual)",
+            links: "none",
+            units: "",
+            hasFrame: false
+        })
+
+        TSComponents.Card.render('ipc-nucleo-pp', {
+            serieId: '148.3_INUCLEONAL_DICI_M_19:percent_change',
+            hasChart: 'small',
+            title: "Núcleo (% mensual)",
+            links: "none",
+            units: "",
+            hasFrame: false
+        })
+
+        // SECCION: Índices de precios provinciales
+        TSComponents.Graphic.render('ipc-graphic', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago&limit=5000',
+            title: 'Variación interanual',
+            source: 'Fuente primaria: Instituto Nacional de Estadística y Censos (INDEC)',
+            chartTypes: { "148.3_INIVELNAL_DICI_M_26": "line", "148.3_INUCLEONAL_DICI_M_19": "line" },
+            legendLabel: { "148.3_INIVELNAL_DICI_M_26": "Nivel general", "148.3_INUCLEONAL_DICI_M_19": "Núcleo" },
+            datePickerEnabled: false,
+            navigator: true
+
+        })
+
+        TSComponents.Graphic.render('ipc-graphic-monthly', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26:percent_change,148.3_INUCLEONAL_DICI_M_19:percent_change&limit=5000',
+            title: 'Variación mensual',
+            source: 'Fuente primaria: Instituto Nacional de Estadística y Censos (INDEC)',
+            chartTypes: { "148.3_INIVELNAL_DICI_M_26": "column", "148.3_INUCLEONAL_DICI_M_19": "column" },
+            legendLabel: { "148.3_INIVELNAL_DICI_M_26": "Nivel general", "148.3_INUCLEONAL_DICI_M_19": "Núcleo" },
+            datePickerEnabled: false,
+            navigator: true
+        })
+
+        TSComponents.Card.render('ipc-general-nqn', {
+            serieId: '196.1_NIVEL_GENERAL_2014_0_13:percent_change',
+            color: "#0072BB",
+            hasChart: 'small',
+            title: "Neuquén (nivel general)",
+            // links: "none",
+        })
+
+        TSComponents.Card.render('ipc-general-cba', {
+            serieId: '194.1_NIVEL_GENERAL_2014_0_13:percent_change',
+            color: "#2E7D33",
+            hasChart: 'small',
+            title: "Córdoba (nivel general)",
+            // links: "none",
+        })
+
+        TSComponents.Card.render('ipc-general-caba', {
+            serieId: '193.1_NIVEL_GENERAL_JULI_0_13:percent_change',
+            color: "#C62828",
+            hasChart: 'small',
+            title: "CABA (nivel general)",
+            // links: "none",
+        })
+
+        TSComponents.Card.render('ipc-general-mza', {
+            serieId: '195.1_NIVEL_GENERAL_0_0_13:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Mendoza (nivel general)",
+            // links: "none",
+        })
+
+        // SECCION: Indice de Precios al Consumidor Nacional: por capítulos
+        TSComponents.Card.render('ipc-alimentos', {
+            serieId: '146.3_IALIMENNAL_DICI_M_45:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Alimentos y bebidas no alcohólicas",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-alcohol', {
+            serieId: '146.3_IBEBIDANAL_DICI_M_39:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Bebidas alcohólicas y tabaco",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-vestimenta', {
+            serieId: '146.3_IPRENDANAL_DICI_M_35:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Prendas de vestir y calzado",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-servicios', {
+            serieId: '146.3_IVIVIENNAL_DICI_M_52:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Vivienda, agua, electricidad, y otros combustibles",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-equipamiento', {
+            serieId: '146.3_IEQUIPANAL_DICI_M_46:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Equipamiento y mantenimiento del hogar",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-salud', {
+            serieId: '146.3_ISALUDNAL_DICI_M_18:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Salud",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-transporte', {
+            serieId: '146.3_ITRANSPNAL_DICI_M_23:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Transporte",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-comunicaciones', {
+            serieId: '146.3_ICOMUNINAL_DICI_M_27:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Comunicaciones",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-recreacion', {
+            serieId: '146.3_IRECREANAL_DICI_M_31:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Recreación y cultura",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-educacion', {
+            serieId: '146.3_IEDUCACNAL_DICI_M_22:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Educación",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-hoteles', {
+            serieId: '146.3_IRESTAUNAL_DICI_M_33:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Hoteles y restaurantes",
+            links: "none",
+        })
+
+        TSComponents.Card.render('ipc-varios', {
+            serieId: '146.3_IBIENESNAL_DICI_M_36:percent_change',
+            color: "#F9A822",
+            hasChart: 'small',
+            title: "Bienes y servicios varios",
+            links: "none",
+        })
+
+        // SECCION: Indice de Precios al Consumidor Nacional: por regiones
+        TSComponents.Card.render('ipc-regiones-patagonia', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            color: "#0072BB",
+            links: 'none',
+            hasChart: "none",
+            title: "Patagonia",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('ipc-regiones-cuyo', {
+            serieId: '148.3_INIVELGBA_DICI_M_21:percent_change',
+            color: "#2E7D33",
+            links: 'none',
+            hasChart: "none",
+            title: "Cuyo",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('ipc-regiones-no', {
+            serieId: '148.3_INIVELANA_DICI_M_26:percent_change',
+            color: "#C62828",
+            links: 'none',
+            hasChart: "none",
+            title: "Noroeste",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('ipc-regiones-ne', {
+            serieId: '148.3_INIVELNEA_DICI_M_21:percent_change',
+            color: "#F9A822",
+            links: 'none',
+            hasChart: "none",
+            title: "Noreste",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('ipc-regiones-pampeana', {
+            serieId: '148.3_INIVELNOA_DICI_M_21:percent_change',
+            color: "#6A1B99",
+            links: 'none',
+            hasChart: "none",
+            title: "Pampeana",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Card.render('ipc-regiones-gba', {
+            serieId: '148.3_INIVELUYO_DICI_M_22:percent_change',
+            color: "#EC407A",
+            links: 'none',
+            hasChart: "none",
+            title: "GBA",
+            units: "",
+            source: ""
+        })
+
+        TSComponents.Graphic.render('ipc-regiones', {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26,148.3_INIVELGBA_DICI_M_21,148.3_INIVELANA_DICI_M_26,148.3_INIVELNEA_DICI_M_21,148.3_INIVELNOA_DICI_M_21,148.3_INIVELUYO_DICI_M_22,148.3_INIVELNIA_DICI_M_27&representation_mode=percent_change&start_date=2019",
+            // chartTypes: {
+            //     "148.3_INIVELNAL_DICI_M_26": "column",
+            //     "148.3_INIVELGBA_DICI_M_21": "column",
+            //     "148.3_INIVELANA_DICI_M_26": "column",
+            //     "148.3_INIVELNEA_DICI_M_21": "column",
+            //     "148.3_INIVELNOA_DICI_M_21": "column",
+            //     "148.3_INIVELUYO_DICI_M_22": "column",
+            //     "148.3_INIVELNIA_DICI_M_27": "column"
+            // }
+            chartType: "column"
+        })
+
+    }
+    </script>
+</body>
+
+</html>
