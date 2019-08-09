@@ -79,6 +79,7 @@ body {
     <div>
         <div class="component x4" id="tsChartMin1"></div>
         <div class="component x4" id="tsChartMin2"></div>
+        <div class="component x4" id="tsChartMin3"></div>
         <div class="component x4" id="tsChartMin4"></div>
     </div>
     <script>
@@ -204,6 +205,15 @@ body {
         })
 
         TSComponents.Graphic.render('tsChartMin2', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
+            title: 'EMAE',
+            zoom: true,
+            datePickerEnabled: true,
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)\n\nzoom:true date:true nav:dinamic',
+            chartTypes: { '143.3_NO_PR_2004_A_21': 'column' }
+        })
+
+        TSComponents.Graphic.render('tsChartMin3', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
             title: 'EMAE',
             zoom: true,
