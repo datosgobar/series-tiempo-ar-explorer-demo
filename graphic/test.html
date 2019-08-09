@@ -24,6 +24,9 @@
     height: 80%;
 }
 
+.row.big-height {
+    height: 700px;
+}
 
 body {
     text-align: center;
@@ -36,6 +39,14 @@ body {
     <h2>Gráfico de series de tiempo completo</h2>
     <br>
     <div class="component full-width full-height" id="tsChartFull"></div>
+    <br>
+    <br>
+    <h2>Gráficos de series de tiempo medianos</h2>
+    <br>
+    <div class="row">
+        <div class="component" id="tsChartMed1"></div>
+        <div class="component" id="tsChartMed2"></div>
+    </div>
     <br>
     <br>
     <br>
@@ -53,6 +64,14 @@ body {
         <div class="component" id="tsChartSmall2"></div>
         <div class="component" id="tsChartSmall2b"></div>
         <div class="component" id="tsChartSmall2c"></div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="row big-height">
+        <div class="component" id="tsChartSmall2-big"></div>
+        <div class="component" id="tsChartSmall2b-big"></div>
+        <div class="component" id="tsChartSmall2c-big"></div>
     </div>
     <br>
     <br>
@@ -88,7 +107,24 @@ body {
         TSComponents.Graphic.render('tsChartFull', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=116.4_TCRZE_2015_D_36_4,116.4_TCRZE_2015_D_36_4:percent_change&limit=1000&start=0',
             zoom: true,
-            chartTypes: { '143.3_NO_PR_2004_A_21': 'column' },
+            chartTypes: { '116.4_TCRZE_2015_D_36_4:percent_change': 'column' },
+            title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
+        })
+
+        // Gráfico de series de tiempo medianos
+        TSComponents.Graphic.render('tsChartMed1', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=116.4_TCRZE_2015_D_36_4,116.4_TCRZE_2015_D_36_4:percent_change&limit=1000&start=0',
+            zoom: true,
+            chartTypes: { '116.4_TCRZE_2015_D_36_4:percent_change': 'column' },
+            title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
+        })
+
+        TSComponents.Graphic.render('tsChartMed2', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=116.4_TCRZE_2015_D_36_4,116.4_TCRZE_2015_D_36_4:percent_change&limit=1000&start=0',
+            zoom: true,
+            chartTypes: { '116.4_TCRZE_2015_D_36_4:percent_change': 'column' },
             title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
             source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
         })
@@ -146,6 +182,30 @@ body {
         TSComponents.Graphic.render('tsChartSmall2c', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&limit=1000&start=0',
             title: 'Prendiendo todos los elementos Prendiendo todos los elementos',
+            navigator: true,
+            zoom: true,
+            datePickerEnabled: true
+        })
+
+        TSComponents.Graphic.render('tsChartSmall2-big', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19,148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:percent_change,148.3_INUCLEONAL_DICI_M_19:change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:change&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
+            title: 'Prendiendo todos los elementos Tamaño vertical agrandado explícitamente',
+            navigator: true,
+            zoom: true,
+            datePickerEnabled: true
+        })
+
+        TSComponents.Graphic.render('tsChartSmall2b-big', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20,151.1_TL_ESTADAD_2012_M_20:percent_change_a_year_ago,151.1_TL_ESTADAD_2012_M_20:change,151.1_TL_ESTADAD_2012_M_20:percent_change&limit=1000&start=0',
+            title: 'Prendiendo todos los elementos Tamaño vertical agrandado explícitamente',
+            navigator: true,
+            zoom: true,
+            datePickerEnabled: true
+        })
+
+        TSComponents.Graphic.render('tsChartSmall2c-big', {
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&limit=1000&start=0',
+            title: 'Prendiendo todos los elementos Tamaño vertical agrandado explícitamente',
             navigator: true,
             zoom: true,
             datePickerEnabled: true
