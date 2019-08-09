@@ -59,19 +59,16 @@ body {
         // Gráfico de series de tiempo completo
         TSComponents.Graphic.render('tsChartFull', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,116.4_TCRZE_2015_D_36_4&limit=1000&start=0',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
             zoom: true,
             chartTypes: { '143.3_NO_PR_2004_A_21': 'column' },
             title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
             source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
+            seriesAxis: {"143.3_NO_PR_2004_A_21:percent_change_a_year_ago": "right"}
         })
 
         // Gráficos de series de tiempo chicos
         TSComponents.Graphic.render('tsChartSmall1', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=11.3_VMATC_2004_M_12:percent_change_a_year_ago,143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
             zoom: false,
             datePickerEnabled: false,
             navigator: false,
@@ -83,8 +80,6 @@ body {
 
         TSComponents.Graphic.render('tsChartSmall2', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&limit=1000&start=0',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
             title: 'Prendiendo todos los elementos',
             navigator: true,
             zoom: true,
@@ -93,8 +88,6 @@ body {
 
         TSComponents.Graphic.render('tsChartSmall3', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
             title: 'Defaults dinámicos por tamaño del gráfico',
             legendField: 'title',
             source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)',
@@ -103,16 +96,12 @@ body {
         // Gráficos de series de tiempo mono-serie
         TSComponents.Graphic.render('tsChartMin1', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=33.2_I_2004_M_4&limit=1000&start=0&format=json',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
             title: "ISAC",
             source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)\n\nzoom:dinamic date:dinamic nav:dinamic'
         })
 
         TSComponents.Graphic.render('tsChartMin2', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago&limit=1000&start=0&format=json',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
             title: 'EMAE',
             zoom: true,
             datePickerEnabled: true,
@@ -122,8 +111,6 @@ body {
 
         TSComponents.Graphic.render('tsChartMin4', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=14.2_E_M_2004_0_3&limit=1000&start=0&format=json',
-            chartOptions: { // Override highstock configs. See https://api.highcharts.com/highstock/
-            },
             title: 'EMI (interanual)',
             zoom: false,
             datePickerEnabled: false,
