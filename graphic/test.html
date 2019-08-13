@@ -105,16 +105,11 @@ body {
 
         // Gráfico de series de tiempo completo
         TSComponents.Graphic.render('tsChartFull', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:percent_change,148.3_INUCLEONAL_DICI_M_19:change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:change&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
-            title: 'Prendiendo todos los elementos Tamaño vertical agrandado explícitamente',
-            navigator: true,
-            legendLabel: { "148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago": "Cambio porcentual anual",
-                "148.3_INUCLEONAL_DICI_M_19:percent_change": "Cambio porcentual",
-                "148.3_INUCLEONAL_DICI_M_19:change": "Cambio",
-                "148.3_INUCLEONAL_DICI_M_19:change_a_year_ago": "Cambio anual"
-            },
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=116.4_TCRZE_2015_D_36_4,116.4_TCRZE_2015_D_36_4:percent_change&limit=1000&start=0',
             zoom: true,
-            datePickerEnabled: true
+            chartTypes: { '116.4_TCRZE_2015_D_36_4:percent_change': 'column' },
+            title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
+            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
         })
 
         // Gráfico de series de tiempo medianos
