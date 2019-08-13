@@ -45,6 +45,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.3/dist/js/components.js'></script>
+<style>
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+</style>
 
 <body>
     <header>
@@ -135,92 +141,26 @@
             <div class="overlay"></div>
         </section>
         <section>
-            <article class="container content_format">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2>El Estado al servicio de la gente</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <blockquote>
-                            <p>Todas las áreas del Gobierno tendrán un plan de comunicación e información que será publicado y actualizado en forma permanente</p>
-                            <small>Mauricio Macri</small>
-                        </blockquote>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        <h2 class="">Qué hacemos</h2>
-                        <ul>
-                            <li>Colaboramos con toda las áreas del gobierno para que sus servicios sean cada vez mas <strong>eficientes</strong>.</li>
-                            <li>Aplicamos tecnología e innovamos en procesos para que <strong>vos ganes en calidad de vida</strong>.</li>
-                            <li>Acercamos el Estado a la gente para hacerlo <strong>más transparente</strong>, y abrimos la información para una comunicación mas directa, que tenga un <strong>ida y vuelta con la ciudadanía</strong>.</li>
-                            <li>Trabajamos hacia adentro con el eje puesto en el <strong>empleado público</strong>, para capacitarlo y jerarquizar su carrera, y de esta manera <strong>acompañar su vocación y ganas de crecer</strong>. </li>
-                        </ul>
-                    </div>
-                </div>
-            </article>
-        </section>
-        <section>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2>Principios para una gestión moderna</h2>
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="icon-item">
-                                    <i class="fa fa-users"></i>
-                                    <h3>Cercana</h3>
-                                    <p>Conoce tus necesidades y adopta sus servicios a ellas.</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="icon-item">
-                                    <i class="fa fa-search"></i>
-                                    <h3>Transparente</h3>
-                                    <p>Brinda mayor información y certeza sobre sus actos de gobierno.</p>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-4">
-                                <div class="icon-item">
-                                    <i class="fa fa-users"></i>
-                                    <h3>Participativa</h3>
-                                    <p>Trabaja en equipo con los empleados públicos y la gente.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
             <div class="container">
                 <div class="row ">
                     <div class="col-md-12">
                         <h2 class="h3 section-title">Indicadores destacados</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div id="indicador-2">
-                        </div>
+                <div class="row d-flex justify-content-around">
+                    <div class="col" id="indicador-2">
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div id="indicador-3">
-                        </div>
+                    <div class="col" id="indicador-3">
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div id="indicador-4">
-                        </div>
+                    <div class="col" id="indicador-4">
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div id="indicador-2-graphic">
-                        </div>
+                <div style="height: 320px" class="d-flex justify-content-between row">
+                    <div class="col-xs-12 col-sm-6 col-md-4" id="indicador-2-graphic">
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div id="indicador-3-graphic">
-                        </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4" id="indicador-3-graphic">
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div id="indicador-4-graphic">
-                        </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4" id="indicador-4-graphic">
                     </div>
                 </div>
                 <div class="row">
@@ -234,42 +174,22 @@
             <div class="container">
                 <div class="row ">
                     <div class="col-md-12">
-                        <h2 class="h3 section-title">Links no destacados</h2>
-                    </div>
-                </div>
-                <div class="row panels-row">
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default" href="#">
-                            <div class="panel-body">
-                                <h3>Este es el título del link</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default" href="#">
-                            <div class="panel-body">
-                                <h3>Este es el título de otro link un tanto mas largo</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default" href="#">
-                            <div class="panel-body">
-                                <h3>Este es el título para otro link mas</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default" href="#">
-                            <div class="panel-body">
-                                <h3>Este es el título del link</h3>
-                            </div>
-                        </a>
+                        <h2 class="h3 section-title">Indicadores destacados</h2>
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col" id='emae-mensual-desest'></div>
+                    <div class="col" id='emae-interanual'></div>
+                    <div class="col" id='isac-mensual'> </div>
+                    <div class="col" id='isac-interanual'> </div>
+                </div>
+                <div class="row">
+                    <div class="col full-height full-width" id='emae-evolucion'></div>
+                    <div class="col full-height full-width" id='isac-evolucion'></div>
+                </div>
+                <div class="row">
                     <div class="col-xs-12">
-                        <a class="btn btn-primary">Ver todas las áreas de gobierno</a>
+                        <a class="btn btn-primary">Ver más indicadores</a>
                     </div>
                 </div>
             </div>
@@ -278,38 +198,17 @@
             <div class="container">
                 <div class="row ">
                     <div class="col-md-12">
-                        <h2 class="h3 section-title">Links no destacados con descripción</h2>
-                    </div>
-                </div>
-                <div class="row panels-row">
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <a class="panel panel-default" href="#">
-                            <div class="panel-body">
-                                <h3>Ministerio de Economía</h3>
-                                <p class="text-muted">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <a class="panel panel-default" href="#">
-                            <div class="panel-body">
-                                <h3>Ministerio de Educacióncon con dos líneas de texto</h3>
-                                <p class="text-muted">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <a class="panel panel-default" href="#">
-                            <div class="panel-body">
-                                <h3>Este es el título para otro link mas</h3>
-                                <p class="text-muted">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                            </div>
-                        </a>
+                        <h2 class="h3 section-title">Indicadores destacados</h2>
                     </div>
                 </div>
                 <div class="row">
+                    <div class="col" id='ipc-mensual'></div>
+                    <div class="col" id='ipc-interanual'> </div>
+                    <div style="height: 350px;" class="col-6" id='ipc-evolucion'></div>
+                </div>
+                <div class="row">
                     <div class="col-xs-12">
-                        <a class="btn btn-primary">Ver todas las áreas de gobierno</a>
+                        <a class="btn btn-primary">Ver más indicadores</a>
                     </div>
                 </div>
             </div>
@@ -318,165 +217,23 @@
             <div class="container">
                 <div class="row ">
                     <div class="col-md-12">
-                        <h2 class="h3 section-title">Links destacados con iconos y descripción</h2>
-                    </div>
-                </div>
-                <div class="row panels-row">
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default panel-icon" href="#">
-                            <div class="panel-heading"><i class="fa fa-file"></i></div>
-                            <div class="panel-body">
-                                <h3>Ministerio de Economía</h3>
-                                <p class="text-muted">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default panel-icon" href="#">
-                            <div class="panel-heading"><i class="fa fa-flask"></i></div>
-                            <div class="panel-body">
-                                <h3>Ministerio de Educación</h3>
-                                <p class="text-muted">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default panel-icon" href="#">
-                            <div class="panel-heading"><i class="fa fa-file"></i></div>
-                            <div class="panel-body">
-                                <h3>Ministerio del Interior</h3>
-                                <p class="text-muted">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default panel-icon" href="#">
-                            <div class="panel-heading"><i class="fa fa-cube"></i></div>
-                            <div class="panel-body">
-                                <h3>Ministerio de Salud</h3>
-                                <p class="text-muted">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
-                            </div>
-                        </a>
+                        <h2 class="h3 section-title">Indicadores destacados</h2>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-xs-12">
-                        <a class="btn btn-primary">Ver todas las áreas de gobierno</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="container">
-                <div class="row ">
-                    <div class="col-md-12">
-                        <h2 class="h3 section-title">Links destacados con fotos</h2>
-                    </div>
-                </div>
-                <div class="row panels-row">
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default" href="#">
-                            <div style="background-image:url('./img/01.jpg');" class="panel-heading"></div>
-                            <div class="panel-body">
-                                <h3>Este es el título del link</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default" href="#">
-                            <div style="background-image:url('./img/02.jpg');" class="panel-heading"></div>
-                            <div class="panel-body">
-                                <h3>Este es el título del link</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default" href="#">
-                            <div style="background-image:url('./img/03.jpg');" class="panel-heading"></div>
-                            <div class="panel-body">
-                                <h3>Este es el título del link</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default" href="#">
-                            <div style="background-image:url('./img/04.jpg');" class="panel-heading"></div>
-                            <div class="panel-body">
-                                <h3>Este es el título del link</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="container">
-                <div class="row ">
-                    <div class="col-md-12">
-                        <h2 class="h3 section-title">Noticias Destacadas</h2>
-                    </div>
-                </div>
-                <div class="row panels-row">
-                    <div class="col-xs-12 col-sm-6">
-                        <a class="panel panel-default panel-lg" href="#">
-                            <div style="background-image:url('./img/01.jpg');" class="panel-heading"></div>
-                            <div class="panel-body">
-                                <time>Jueves 14 de Enero del 2016</time>
-                                <h4>El Ministro Buryaile asistió a la apertura de la Semana Verde Internacional, en Berlín</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6">
-                        <a class="panel panel-default panel-lg" href="#">
-                            <div style="background-image:url('./img/02.jpg');" class="panel-heading"></div>
-                            <div class="panel-body">
-                                <time>Jueves 14 de Enero del 2016</time>
-                                <h4>El Ministro Buryaile asistió a la apertura de la Semana Verde Internacional, en Berlín</h4>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="row panels-row">
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default panel-md" href="#">
-                            <div style="background-image:url('./img/03.jpg');" class="panel-heading"></div>
-                            <div class="panel-body">
-                                <time>Jueves 14 de Enero del 2016</time>
-                                <h4>El Ministro Buryaile asistió a la apertura de la Semana Verde Internacional, en Berlín</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default panel-md" href="#">
-                            <div style="background-image:url('./img/04.jpg');" class="panel-heading"></div>
-                            <div class="panel-body">
-                                <time>Jueves 14 de Enero del 2016</time>
-                                <h4>El Ministro Buryaile asistió a la apertura de la Semana Verde Internacional, en Berlín</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default panel-md" href="#">
-                            <div style="background-image:url('./img/01.jpg');" class="panel-heading"></div>
-                            <div class="panel-body">
-                                <time>Jueves 14 de Enero del 2016</time>
-                                <h4>El Ministro Buryaile asistió a la apertura de la Semana Verde Internacional, en Berlín</h4>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-3">
-                        <a class="panel panel-default panel-md" href="#">
-                            <div style="background-image:url('./img/02.jpg');" class="panel-heading"></div>
-                            <div class="panel-body">
-                                <time>Jueves 14 de Enero del 2016</time>
-                                <h4>El Ministro Buryaile asistió a la apertura de la Semana Verde Internacional, en Berlín</h4>
-                            </div>
-                        </a>
-                    </div>
+                    <div class="col" id='itcrm'></div>
+                    <div class="col" id='itcrm-interanual'></div>
+                    <div class="col" id='exportaciones'></div>
+                    <div class="col" id='exportaciones-interanual'></div>
                 </div>
                 <div class="row">
+                    <div style="width: 100%;" class="col" id='itcrm-exportaciones'></div>
+                </div>
+                <br>
+                <br>
+                <div class="row">
                     <div class="col-xs-12">
-                        <a class="btn btn-primary">Ver todas las noticias</a>
+                        <a class="btn btn-primary">Ver más indicadores</a>
                     </div>
                 </div>
             </div>
@@ -630,55 +387,232 @@
         TSComponents.Card.render('indicador-2', {
             serieId: 'tmi_arg',
             color: '#2E7D33',
-            hasChart: 'small',
+            hasChart: 'none',
+            title: "",
             links: "none",
-            hasFrame: false
+            hasFrame: false,
+            source: ""
         })
 
         TSComponents.Card.render('indicador-3', {
             serieId: 'defensa_FAA_0006',
             color: '#C62828',
-            hasChart: 'small',
-            title: "Personal Femenino en la Fuerza Aérea",
+            hasChart: 'none',
+            title: "",
             links: "none",
-            hasFrame: false
+            hasFrame: false,
+            source: ""
         })
 
         TSComponents.Card.render('indicador-4', {
             serieId: '77.3_IEB_0_A_24',
             color: '#F9A822',
-            hasChart: 'small',
-            title: "Exportaciones FOB a Brasil",
+            hasChart: 'none',
+            title: "",
             units: "Millones de USD",
             links: "none",
-            hasFrame: false
+            hasFrame: false,
+            source: ""
         })
 
         TSComponents.Graphic.render('indicador-2-graphic', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=tmi_arg',
-            color: '#2E7D33',
-            hasChart: 'small',
-            links: "none",
-            hasFrame: false
+            title: "Tasa de Mortalidad Infantil en Argentina",
+            source: "Fuente: Dirección de Estadística e Información en la Salud"
         })
 
         TSComponents.Graphic.render('indicador-3-graphic', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=defensa_FAA_0006',
-            color: '#C62828',
-            hasChart: 'small',
             title: "Personal Femenino en la Fuerza Aérea",
-            links: "none",
-            hasFrame: false
+            source: "Fuente: Ministerio de Defensa"
         })
 
         TSComponents.Graphic.render('indicador-4-graphic', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=77.3_IEB_0_A_24',
-            color: '#F9A822',
-            hasChart: 'small',
             title: "Exportaciones FOB a Brasil",
-            units: "Millones de USD",
+            source: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)"
+        })
+
+        // actividad
+        TSComponents.Card.render('emae-mensual-desest', {
+            serieId: '143.3_NO_PR_2004_A_31:percent_change',
+            hasChart: "none",
+            color: "#0072BB",
             links: "none",
-            hasFrame: false
+            explicitSign: true,
+            title: "EMAE desest. (% mensual)",
+            units: "",
+            hasFrame: false,
+            source: ""
+        })
+
+        TSComponents.Card.render('emae-interanual', {
+            serieId: '143.3_NO_PR_2004_A_21:percent_change_a_year_ago',
+            hasChart: "none",
+            color: "#2E7D33",
+            links: "none",
+            explicitSign: true,
+            title: "EMAE (% interanual)",
+            units: "",
+            hasFrame: false,
+            source: ""
+        })
+
+        TSComponents.Card.render('isac-mensual', {
+            serieId: '33.2_ISAC_NIVELRAL_0_M_18_63:percent_change',
+            hasChart: "none",
+            color: "#0072BB",
+            links: "none",
+            explicitSign: true,
+            title: "ISAC (% mensual)",
+            units: "",
+            hasFrame: false,
+            source: ""
+        })
+
+        TSComponents.Card.render('isac-interanual', {
+            serieId: '33.2_ISAC_NIVELRAL_0_M_18_63:percent_change_a_year_ago',
+            hasChart: "none",
+            color: "#2E7D33",
+            links: "none",
+            explicitSign: true,
+            title: "ISAC (% interanual)",
+            units: "",
+            hasFrame: false,
+            source: ""
+        })
+
+        TSComponents.Graphic.render('emae-evolucion', {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=143.3_NO_PR_2004_A_31:percent_change,143.3_NO_PR_2004_A_21:percent_change_a_year_ago&start_date=2018",
+            colors: ["#0072BB", "#2E7D33"],
+            chartTypes: {
+                "143.3_NO_PR_2004_A_31:percent_change": "column",
+                "143.3_NO_PR_2004_A_21:percent_change_a_year_ago": "column"
+            },
+            datePickerEnabled: false,
+            displayUnits: false,
+            title: "EMAE",
+            zoom: true,
+            legendLabel: {
+                "143.3_NO_PR_2004_A_31:percent_change": "EMAE desestacionalizado (% mensual)",
+                "143.3_NO_PR_2004_A_21:percent_change_a_year_ago": "EMAE (% interanual)"
+            }
+        })
+
+        TSComponents.Graphic.render('isac-evolucion', {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=33.2_ISAC_NIVELRAL_0_M_18_63:percent_change,33.2_ISAC_NIVELRAL_0_M_18_63:percent_change_a_year_ago&start_date=2018",
+            colors: ["#C62828", "#F9A822"],
+            chartTypes: {
+                "33.2_ISAC_NIVELRAL_0_M_18_63:percent_change": "column",
+                "33.2_ISAC_NIVELRAL_0_M_18_63:percent_change_a_year_ago": "column"
+            },
+            datePickerEnabled: false,
+            displayUnits: false,
+            title: "ISAC",
+            zoom: true,
+            legendLabel: {
+                "33.2_ISAC_NIVELRAL_0_M_18_63:percent_change": "ISAC (% mensual)",
+                "33.2_ISAC_NIVELRAL_0_M_18_63:percent_change_a_year_ago": "ISAC (% interanual)"
+            }
+        })
+
+        // precios
+        TSComponents.Card.render('ipc-mensual', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
+            hasChart: "small",
+            // color: "#C62828",
+            color: "#0072BB",
+            title: "IPC mensual"
+        })
+
+        TSComponents.Card.render('ipc-interanual', {
+            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago',
+            hasChart: "small",
+            // color: "#F9A822",
+            color: "#2E7D33",
+            title: "IPC interanual"
+        })
+
+        TSComponents.Graphic.render('ipc-evolucion', {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=148.3_INIVELNAL_DICI_M_26:percent_change,148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago&start_date=2018",
+            colors: ["#C62828", "#F9A822"],
+            chartTypes: {
+                "148.3_INIVELNAL_DICI_M_26:percent_change": "column",
+                "148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago": "line"
+            },
+            seriesAxis: {
+                "148.3_INIVELNAL_DICI_M_26:percent_change": "right",
+                "148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago": "left"
+            },
+            datePickerEnabled: false,
+            displayUnits: false,
+            // title: "IPC",
+            zoom: false,
+            navigator: false,
+            legendLabel: {
+                "148.3_INIVELNAL_DICI_M_26:percent_change": "IPC (% mensual)",
+                "148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago": "IPC (% interanual)"
+            }
+        })
+
+        // sector externo
+        TSComponents.Card.render('itcrm', {
+            serieId: '116.4_TCRZE_2015_D_36_4',
+            hasChart: "none",
+            links: "none",
+            title: "ITCRM",
+            units: ""
+        })
+
+        TSComponents.Card.render('itcrm-interanual', {
+            serieId: '116.4_TCRZE_2015_D_36_4:percent_change_a_year_ago',
+            hasChart: "none",
+            color: "#039BE5",
+            links: "none",
+            title: "ITCRM (interanual)",
+            units: "",
+            explicitSign: true
+        })
+
+        TSComponents.Card.render('exportaciones', {
+            serieId: '75.3_IETG_0_M_31',
+            hasChart: "none",
+            // color: "#F9A822",
+            color: "#C2185B",
+            links: "none",
+            title: "Exportaciones (USD FOB)",
+            units: ""
+        })
+
+        TSComponents.Card.render('exportaciones-interanual', {
+            serieId: '75.3_IETG_0_M_31:percent_change_a_year_ago',
+            hasChart: "none",
+            // color: "#F9A822",
+            color: "#EC407A",
+            links: "none",
+            title: "Exportaciones (USD FOB - interanual)",
+            units: "",
+            explicitSign: true
+        })
+
+        TSComponents.Graphic.render('itcrm-exportaciones', {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=116.4_TCRZE_2015_D_36_4,75.3_IETG_0_M_31",
+            chartTypes: {
+                "75.3_IETG_0_M_31": "column"
+            },
+            seriesAxis: {
+                "75.3_IETG_0_M_31": "right"
+            },
+            datePickerEnabled: true,
+            displayUnits: true,
+            // title: "IPC",
+            zoom: true,
+            navigator: true,
+            legendLabel: {
+                "116.4_TCRZE_2015_D_36_4": "ITCRM",
+                "75.3_IETG_0_M_31": "Exportaciones FOB"
+            },
+            source: "Fuente: Banco Central de la República Argentina (BCRA), Instituto Nacional de Estadística y Censos (INDEC)"
         })
 
     }
