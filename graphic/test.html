@@ -105,11 +105,16 @@ body {
 
         // Gráfico de series de tiempo completo
         TSComponents.Graphic.render('tsChartFull', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=116.4_TCRZE_2015_D_36_4,116.4_TCRZE_2015_D_36_4:percent_change&limit=1000&start=0',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:percent_change,148.3_INUCLEONAL_DICI_M_19:change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:change&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
+            title: 'Prendiendo todos los elementos Tamaño vertical agrandado explícitamente',
+            navigator: true,
+            legendLabel: { "148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago": "Cambio porcentual anual",
+                "148.3_INUCLEONAL_DICI_M_19:percent_change": "Cambio porcentual",
+                "148.3_INUCLEONAL_DICI_M_19:change": "Cambio",
+                "148.3_INUCLEONAL_DICI_M_19:change_a_year_ago": "Cambio anual"
+            },
             zoom: true,
-            chartTypes: { '116.4_TCRZE_2015_D_36_4:percent_change': 'column' },
-            title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
-            source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
+            datePickerEnabled: true
         })
 
         // Gráfico de series de tiempo medianos
@@ -124,8 +129,8 @@ body {
         TSComponents.Graphic.render('tsChartMed2', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=116.4_TCRZE_2015_D_36_4,116.4_TCRZE_2015_D_36_4:percent_change&limit=1000&start=0',
             zoom: true,
-            chartTypes: { '116.4_TCRZE_2015_D_36_4:percent_change': 'column' },
-            title: 'Nivel de Actividad y Tipo de Cambio Real Multilateral',
+            chartType: 'column',
+            title: 'chartType global, misma serie distintos colores',
             source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC), Banco Central de la República Argentina (BCRA)',
         })
 
@@ -196,10 +201,11 @@ body {
         })
 
         TSComponents.Graphic.render('tsChartSmall2b-big', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20,151.1_TL_ESTADAD_2012_M_20:percent_change_a_year_ago,151.1_TL_ESTADAD_2012_M_20:change,151.1_TL_ESTADAD_2012_M_20:percent_change&limit=1000&start=0',
-            title: 'Prendiendo todos los elementos Tamaño vertical agrandado explícitamente',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=151.1_TL_SIN_TAC_2012_M_15,151.1_TL_ESTADAD_2012_M_20&limit=1000&start=0&representation_mode=change',
+            title: 'Representation mode global',
             navigator: true,
             zoom: true,
+            chartTypes: { "151.1_TL_ESTADAD_2012_M_20": "column" },
             datePickerEnabled: true
         })
 
@@ -244,8 +250,9 @@ body {
 
         TSComponents.Graphic.render('tsChartSmall3b', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?metadata=full&ids=147.3_ISERVICNAL_DICI_T_22,148.3_INIVELNAL_DICI_M_26,148.3_INUCLEONAL_DICI_M_19,148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:percent_change,148.3_INUCLEONAL_DICI_M_19:change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:change&limit=1000&start=0&representation_mode=percent_change_a_year_ago',
-            title: 'Defaults dinámicos por tamaño del gráfico',
+            title: 'Defaults dinámicos por tamaño del gráfico, sin navigator',
             legendField: 'title',
+            navigator: false,
             source: 'Fuente: Instituto Nacional de Estadística y Censos (INDEC)\n\nzoom:dinamic date:dinamic nav:dinamic'
         })
 
