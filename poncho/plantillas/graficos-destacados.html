@@ -40,11 +40,11 @@
       <script src="/node_modules/html5shiv/html5shiv.js"></script>
       <script src="/node_modules/respond.js/respond.min.js"></script>
   <![endif]-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.3/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.2.2/dist/css/components.css" type="text/css">
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.3/dist/js/components.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.2.2/dist/js/components.js'></script>
 <style>
 .row {
     display: flex;
@@ -418,19 +418,22 @@
         TSComponents.Graphic.render('indicador-2-graphic', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=tmi_arg',
             title: "Tasa de Mortalidad Infantil en Argentina",
-            source: "Fuente: Dirección de Estadística e Información en la Salud"
+            source: "Fuente: Dirección de Estadística e Información en la Salud",
+            colors: ['#2E7D33']
         })
 
         TSComponents.Graphic.render('indicador-3-graphic', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=defensa_FAA_0006',
             title: "Personal Femenino en la Fuerza Aérea",
-            source: "Fuente: Ministerio de Defensa"
+            source: "Fuente: Ministerio de Defensa",
+            colors: ['#C62828']
         })
 
         TSComponents.Graphic.render('indicador-4-graphic', {
             graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=77.3_IEB_0_A_24',
             title: "Exportaciones FOB a Brasil",
-            source: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)"
+            source: "Fuente: Instituto Nacional de Estadística y Censos (INDEC)",
+            colors: ['#F9A822']
         })
 
         // actividad

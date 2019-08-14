@@ -40,7 +40,7 @@
       <script src="http://argob.github.io/poncho/js/html5shiv.js"></script>
       <script src="http://argob.github.io/poncho/js/respond.min.js"></script>
   <![endif]-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.1/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.2.2/dist/css/components.css" type="text/css">
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
@@ -354,7 +354,7 @@
 
     }
     </script>
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.1.1/dist/js/components.js'></script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.2.2/dist/js/components.js'></script>
     <script>
     window.onload = function() {
         // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
@@ -364,39 +364,45 @@
         // SECCION: Indice de Precios al Consumidor Nacional
         TSComponents.Card.render('ipc-general-ia', {
             serieId: '148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago',
-            color: '#F9A822',
-            hasChart: 'small',
+            color: '#0072BB',
+            hasChart: 'none',
             title: "Nivel General (% interanual)",
             links: "none",
             units: "",
+            source: "",
             hasFrame: false
         })
 
         TSComponents.Card.render('ipc-general-pp', {
             serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
-            hasChart: 'small',
+            color: '#039BE5',
+            hasChart: 'none',
             title: "Nivel general (% mensual)",
             links: "none",
             units: "",
+            source: "",
             hasFrame: false
         })
 
         TSComponents.Card.render('ipc-nucleo-ia', {
             serieId: '148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago',
-            color: '#F9A822',
-            hasChart: 'small',
+            color: '#C2185B',
+            hasChart: 'none',
             title: "Núcleo (% interanual)",
             links: "none",
             units: "",
+            source: "",
             hasFrame: false
         })
 
         TSComponents.Card.render('ipc-nucleo-pp', {
             serieId: '148.3_INUCLEONAL_DICI_M_19:percent_change',
-            hasChart: 'small',
+            color: '#EC407A',
+            hasChart: 'none',
             title: "Núcleo (% mensual)",
             links: "none",
             units: "",
+            source: "",
             hasFrame: false
         })
 
@@ -407,6 +413,7 @@
             source: 'Fuente primaria: Instituto Nacional de Estadística y Censos (INDEC)',
             chartTypes: { "148.3_INIVELNAL_DICI_M_26": "line", "148.3_INUCLEONAL_DICI_M_19": "line" },
             legendLabel: { "148.3_INIVELNAL_DICI_M_26": "Nivel general", "148.3_INUCLEONAL_DICI_M_19": "Núcleo" },
+            colors: ["#0072BB", "#C2185B"],
             datePickerEnabled: false,
             navigator: true
 
@@ -418,6 +425,7 @@
             source: 'Fuente primaria: Instituto Nacional de Estadística y Censos (INDEC)',
             chartTypes: { "148.3_INIVELNAL_DICI_M_26": "column", "148.3_INUCLEONAL_DICI_M_19": "column" },
             legendLabel: { "148.3_INIVELNAL_DICI_M_26": "Nivel general", "148.3_INUCLEONAL_DICI_M_19": "Núcleo" },
+            colors: ["#039BE5", "#EC407A"],
             datePickerEnabled: false,
             navigator: true
         })
