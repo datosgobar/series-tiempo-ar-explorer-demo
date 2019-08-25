@@ -49,6 +49,22 @@
 .row {
     display: flex;
     justify-content: space-around;
+    margin: auto;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-width {
+    width: 100%;
+}
+.card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 </style>
 
@@ -147,18 +163,42 @@
                         <h2 class="h3 section-title">Indicadores destacados</h2>
                     </div>
                 </div>
-                <div class="row" style="margin-bottom: 40px">
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="text-center" id="indicador-2"></div>
-                        <div style="height: 320px" id="indicador-2-graphic"></div> 
+                <div class="row panels-row" style="margin-bottom: 40px">
+                    <div class="col-xs-12 col-sm-6 col-md-4 center-block">
+                        <div class="container full-width">
+                            <div class="row">
+                                <div class="col text-center" id="indicador-2"></div>
+                            </div>
+                            <div class="row">
+                                <div class="full-width" style="height: 320px" id="indicador-2-graphic"></div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="text-center" id="indicador-3"></div>
-                        <div style="height: 320px" id="indicador-3-graphic"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 center-block">
+                        <div class="container full-width">
+                            <div class="row">
+                                <div class="col text-center" id="indicador-3"></div>
+                            </div>
+                            <div class="row">
+                                <div class="full-width" style="height: 320px" id="indicador-3-graphic"></div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6 col-md-4">
-                        <div class="text-center" id="indicador-4"></div>
-                        <div style="height: 320px" id="indicador-4-graphic"></div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 center-block">
+                        <div class="container full-width">
+                            <div class="row">
+                                <div class="col text-center" id="indicador-4"></div>
+                            </div>
+                            <div class="row">
+                                <div class="full-width" style="height: 320px" id="indicador-4-graphic"></div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
@@ -175,16 +215,34 @@
                         <h2 class="h3 section-title">Indicadores destacados</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col" id='emae-mensual-desest'></div>
-                    <div class="col" id='emae-interanual'></div>
-                    <div class="col" id='isac-mensual'> </div>
-                    <div class="col" id='isac-interanual'> </div>
+                <div class="row panels-row">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="container full-width">
+                            <div class="row panels-row">
+                                <div class="center-block col-xs-12 col-sm-6 col-md-6" id='emae-mensual-desest'></div>
+                                <div class="center-block col-xs-12 col-sm-6 col-md-6" id='emae-interanual'></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 center-block full-width" id='emae-evolucion'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="container full-width">
+                            <div class="row panels-row">
+                                <div class="center-block col-xs-12 col-sm-6 col-md-6" id='isac-mensual'> </div>
+                                <div class="center-block col-xs-12 col-sm-6 col-md-6" id='isac-interanual'> </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 center-block full-width" id='isac-evolucion'></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="row">
-                    <div class="col full-height full-width" id='emae-evolucion'></div>
-                    <div class="col full-height full-width" id='isac-evolucion'></div>
-                </div>
+                <br>
+                <br>
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-xs-12">
                         <a class="btn btn-primary">Ver más indicadores</a>
@@ -199,11 +257,21 @@
                         <h2 class="h3 section-title">Indicadores destacados</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col" id='ipc-mensual'></div>
-                    <div class="col" id='ipc-interanual'> </div>
-                    <div style="height: 350px;" class="col-6" id='ipc-evolucion'></div>
+                <div class="row panels-row">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="center-block" id='ipc-mensual'></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="center-block" id='ipc-interanual'> </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="center-block full-width" style="height: 350px;" id='ipc-evolucion'></div>
+                    </div>
                 </div>
+                <br>
+                <br>
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-xs-12">
                         <a class="btn btn-primary">Ver más indicadores</a>
@@ -218,15 +286,29 @@
                         <h2 class="h3 section-title">Indicadores destacados</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col" id='itcrm'></div>
-                    <div class="col" id='itcrm-interanual'></div>
-                    <div class="col" id='exportaciones'></div>
-                    <div class="col" id='exportaciones-interanual'></div>
+                <div class="row panels-row">
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="container">
+                            <div class="row panels-row">
+                                <div class="col-xs-12 col-sm-6 col-md-6" id='itcrm'></div>
+                                <div class="col-xs-12 col-sm-6 col-md-6" id='itcrm-interanual'></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6">
+                        <div class="container">
+                            <div class="row panels-row">
+                                <div class="col-xs-12 col-sm-6 col-md-6" id='exportaciones'></div>
+                                <div class="col-xs-12 col-sm-6 col-md-6" id='exportaciones-interanual'></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div style="width: 100%;" class="col" id='itcrm-exportaciones'></div>
                 </div>
+                <br>
+                <br>
                 <br>
                 <br>
                 <div class="row">
@@ -493,7 +575,6 @@
             datePickerEnabled: false,
             displayUnits: false,
             title: "EMAE",
-            zoom: true,
             legendLabel: {
                 "143.3_NO_PR_2004_A_31:percent_change": "EMAE desestacionalizado (% mensual)",
                 "143.3_NO_PR_2004_A_21:percent_change_a_year_ago": "EMAE (% interanual)"
@@ -510,7 +591,6 @@
             datePickerEnabled: false,
             displayUnits: false,
             title: "ISAC",
-            zoom: true,
             legendLabel: {
                 "33.2_ISAC_NIVELRAL_0_M_18_63:percent_change": "ISAC (% mensual)",
                 "33.2_ISAC_NIVELRAL_0_M_18_63:percent_change_a_year_ago": "ISAC (% interanual)"
@@ -598,7 +678,9 @@
 
         TSComponents.Graphic.render('itcrm-exportaciones', {
             graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=116.4_TCRZE_2015_D_36_4,75.3_IETG_0_M_31",
+            colors: [0, "#C2185B"],
             chartTypes: {
+                "116.4_TCRZE_2015_D_36_4": "line",
                 "75.3_IETG_0_M_31": "column"
             },
             seriesAxis: {
@@ -607,7 +689,6 @@
             datePickerEnabled: true,
             displayUnits: true,
             // title: "IPC",
-            zoom: true,
             navigator: true,
             legendLabel: {
                 "116.4_TCRZE_2015_D_36_4": "ITCRM",
