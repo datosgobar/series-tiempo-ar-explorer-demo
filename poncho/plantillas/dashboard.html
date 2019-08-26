@@ -42,6 +42,33 @@
   <![endif]-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.3.2/dist/css/components.css" type="text/css">
 </head>
+<style>
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.exportable-graph {
+    width: 100%;
+}
+
+.card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
@@ -207,32 +234,40 @@
                     <div class="container">
                         <button type="button" class="btn"><a href="https://www.economia.gob.ar/download/infoeco/apendice4.xlsx">Descargar apéndice de Precios</a></button>
                     </div>
-                    <br>
+                </section>
+                <section>
                     <div class="container">
-                        <div class="panel-separator"></div>
-                        <div class="panel-pane pane-texto">
-                            <div class="pane-content">
+                        <div class="row">
+                            <h3 class="activities-sidbar">Indice de Precios al Consumidor Nacional</h3>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row panels-row">
+                            <div class="col-xs-12 col-sm-12 col-md-6 center-block">
                                 <div class="container">
-                                    <h3 class="activities-sidbar">Indice de Precios al Consumidor Nacional</h3>
-                                </div>
-                                <br>
-                                <br>
-                                <div class="container">
-                                    <div id="ipc-general-ia" class="col-xs-12 col-sm-6 col-md-3">
-                                    </div>
-                                    <div id="ipc-general-pp" class="col-xs-12 col-sm-6 col-md-3">
-                                    </div>
-                                    <div id="ipc-nucleo-ia" class="col-xs-12 col-sm-6 col-md-3">
-                                    </div>
-                                    <div id="ipc-nucleo-pp" class="col-xs-12 col-sm-6 col-md-3">
+                                    <div class="row panels-row">
+                                        <div id="ipc-general-ia" class="col-xs-12 col-sm-6 col-md-6">
+                                        </div>
+                                        <div id="ipc-general-pp" class="col-xs-12 col-sm-6 col-md-6">
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6 center-block">
                                 <div class="container">
-                                    <div id="ipc-graphic" class="col-xs-24 col-sm-12 col-md-6">
-                                    </div>
-                                    <div id="ipc-graphic-monthly" class="col-xs-24 col-sm-12 col-md-6">
+                                    <div class="row panels-row">
+                                        <div id="ipc-nucleo-ia" class="col-xs-12 col-sm-6 col-md-6">
+                                        </div>
+                                        <div id="ipc-nucleo-pp" class="col-xs-12 col-sm-6 col-md-6">
+                                        </div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row panels-row">
+                            <div id="ipc-graphic" style="margin-bottom: 40px;" class="col-xs-12 col-sm-12 col-md-6 full-width center-block">
+                            </div>
+                            <div id="ipc-graphic-monthly" style="margin-bottom: 40px;" class="col-xs-12 col-sm-12 col-md-6 full-width center-block">
                             </div>
                         </div>
                     </div>
