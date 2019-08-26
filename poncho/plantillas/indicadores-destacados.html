@@ -45,6 +45,33 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.3.2/dist/js/components.js'></script>
+<style>
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.exportable-graph {
+    width: 100%;
+}
+
+.card {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
 
 <body>
     <header>
@@ -74,7 +101,6 @@
                 </div>
             </div>
         </nav>
-
     </header>
     <style>
     .row {
@@ -150,22 +176,24 @@
                 </div>
                 <div class="row panels-row">
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-1min">
+                        <div class="center-block" id="indicador-1min">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-2min">
+                        <div class="center-block" id="indicador-2min">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-3min">
+                        <div class="center-block" id="indicador-3min">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-4min">
+                        <div class="center-block" id="indicador-4min">
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-xs-12">
                         <a class="btn btn-primary">Ver más indicadores</a>
@@ -182,22 +210,24 @@
                 </div>
                 <div class="row panels-row">
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-1">
+                        <div class="center-block" id="indicador-1">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-2">
+                        <div class="center-block" id="indicador-2">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-3">
+                        <div class="center-block" id="indicador-3">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-4">
+                        <div class="center-block" id="indicador-4">
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-xs-12">
                         <a class="btn btn-primary">Ver más indicadores</a>
@@ -214,22 +244,24 @@
                 </div>
                 <div class="row panels-row">
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-1b">
+                        <div class="center-block" id="indicador-1b">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-2b">
+                        <div class="center-block" id="indicador-2b">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-3b">
+                        <div class="center-block" id="indicador-3b">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-4b">
+                        <div class="center-block" id="indicador-4b">
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-xs-12">
                         <a class="btn btn-primary">Ver más indicadores</a>
@@ -246,22 +278,24 @@
                 </div>
                 <div class="row panels-row">
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-1c">
+                        <div class="center-block" id="indicador-1c">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-2c">
+                        <div class="center-block" id="indicador-2c">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-3c">
+                        <div class="center-block" id="indicador-3c">
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-6 col-md-3">
-                        <div id="indicador-4c">
+                        <div class="center-block" id="indicador-4c">
                         </div>
                     </div>
                 </div>
+                <br>
+                <br>
                 <div class="row">
                     <div class="col-xs-12">
                         <a class="btn btn-primary">Ver más indicadores</a>
@@ -388,11 +422,11 @@
     <footer class="main-footer">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     <img class="image-responsive" alt="Argentina.gob.ar - Presidencia de la Nación" src="img/argentinagob.svg" height="50">
                     <p class="text-muted small"><a href="https://creativecommons.org/licenses/by/2.5/ar/">Los contenidos de Argentina.gob.ar están licenciados bajo Creative Commons Reconocimiento 2.5 Argentina License</a></p>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-xs-3 col-sm-3 col-md-3">
                     <ul>
                         <li><a href="/servicios">Trámites y servicios</a></li>
                         <li><a href="/turnos">Turnos</a></li>
@@ -400,7 +434,7 @@
                         <li><a href="http://mapadelestado.modernizacion.gob.ar/" target="_blank" aria-label="Mapa del Estado - Sitio Externo">Mapa del Estado</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 col-sm-6">
+                <div class="col-xs-3 col-sm-3 col-md-3">
                     <ul>
                         <li><a href="/acerca">Acerca de este sitio</a></li>
                         <li><a href="/terminos-y-condiciones">Términos y condiciones</a></li>
