@@ -26,7 +26,7 @@ theme:
 
 extra_js:
   # - js/vista-general.js
-  # - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.0-beta5/dist/js/components.js
+  # - https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.5.0/dist/js/components.js
   # - https://code.jquery.com/jquery-3.4.1.min.js
   # - https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js
 
