@@ -197,35 +197,64 @@
                     <div class="container">
                         <div class="row ">
                             <div class="col-md-12">
-                                <h2 class="h3 section-title">Indicadores destacados</h2>
+                                <h2 class="h3 section-title">Indicadores nacionales</h2>
+                            </div>
+                        </div>
+                        <div class="row panels-row">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="center-block" id='hdv'></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="center-block" id='hdt'> </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <div class="center-block full-width" style="height: 380px;" id='hdv-hdt'></div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <a class="btn btn-primary">Ver más indicadores</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <h2 class="h3 section-title">Indicadores por provincia</h2>
                             </div>
                         </div>
                         <div class="row">
                             <select name="hdp-selector" id="hdp-selector-id">
-                                <option value="tn_06-ba" selected>Buenos Aires</option>
-                                <option value="tn_10-cat">Catamarca</option>
-                                <option value="tn_22-chaco">Chaco</option>
-                                <option value="tn_26-chubut">Chubut</option>
-                                <option value="tn_02-caba">Ciudad Autónoma de Buenos Aires</option>
-                                <option value="tn_14-cba">Córdoba</option>
-                                <option value="tn_18-ctes">Corrientes</option>
-                                <option value="tn_30-er">Entre Ríos</option>
-                                <option value="tn_34-form">Formosa</option>
-                                <option value="tn_38-jujuy">Jujuy</option>
-                                <option value="tn_42-lp">La Pampa</option>
-                                <option value="tn_46-lr">La Rioja</option>
-                                <option value="tn_50-mza">Mendoza</option>
-                                <option value="tn_54-mis">Misiones</option>
-                                <option value="tn_58-neu">Neuquén</option>
-                                <option value="tn_62-rn">Río Negro</option>
-                                <option value="tn_66-salta">Salta</option>
-                                <option value="tn_70-sj">San Juan</option>
-                                <option value="tn_74-sl">San Luis</option>
-                                <option value="tn_78-scruz">Santa Cruz</option>
-                                <option value="tn_82-sf">Santa Fe</option>
-                                <option value="tn_86-sgo">Santiago del Estero</option>
-                                <option value="tn_94-tdf">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
-                                <option value="tn_90-tuc">Tucumán</option>
+                                <option value="snic_hdv_06,snic_hdt_06-ba" selected>Buenos Aires</option>
+                                <option value="snic_hdv_10,snic_hdt_10-cat">Catamarca</option>
+                                <option value="snic_hdv_22,snic_hdt_22-chaco">Chaco</option>
+                                <option value="snic_hdv_26,snic_hdt_26-chubut">Chubut</option>
+                                <option value="snic_hdv_02,snic_hdt_02-caba">Ciudad Autónoma de Buenos Aires</option>
+                                <option value="snic_hdv_14,snic_hdt_14-cba">Córdoba</option>
+                                <option value="snic_hdv_18,snic_hdt_18-ctes">Corrientes</option>
+                                <option value="snic_hdv_30,snic_hdt_30-er">Entre Ríos</option>
+                                <option value="snic_hdv_34,snic_hdt_34-form">Formosa</option>
+                                <option value="snic_hdv_38,snic_hdt_38-jujuy">Jujuy</option>
+                                <option value="snic_hdv_42,snic_hdt_42-lp">La Pampa</option>
+                                <option value="snic_hdv_46,snic_hdt_46-lr">La Rioja</option>
+                                <option value="snic_hdv_50,snic_hdt_50-mza">Mendoza</option>
+                                <option value="snic_hdv_54,snic_hdt_54-mis">Misiones</option>
+                                <option value="snic_hdv_58,snic_hdt_58-neu">Neuquén</option>
+                                <option value="snic_hdv_62,snic_hdt_62-rn">Río Negro</option>
+                                <option value="snic_hdv_66,snic_hdt_66-salta">Salta</option>
+                                <option value="snic_hdv_70,snic_hdt_70-sj">San Juan</option>
+                                <option value="snic_hdv_74,snic_hdt_74-sl">San Luis</option>
+                                <option value="snic_hdv_78,snic_hdt_78-scruz">Santa Cruz</option>
+                                <option value="snic_hdv_82,snic_hdt_82-sf">Santa Fe</option>
+                                <option value="snic_hdv_86,snic_hdt_86-sgo">Santiago del Estero</option>
+                                <option value="snic_hdv_94,snic_hdt_94-tdf">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                                <option value="snic_hdt_90,snic_hdv_90-tuc">Tucumán</option>
                             </select>
                         </div>
                         <div class="row">
@@ -531,33 +560,85 @@
         </div>
     </footer>
     <script type="text/javascript">
-        // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
-        // componentes de series de tiempo
-        function hideSeriesDivs() {
-            $(".serie-div").each(function() {
-                $(this).hide();
-            })
-        }
-        function showSerieDiv(targetDivId, serieId) {
-            TSComponents.Graphic.render(targetDivId, {
-                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieId
-            });
-            $("#" + targetDivId).show();
-        }
-        $(document).ready(function() {
-            TSComponents.Graphic.render('homicidios-dolosos-provincias-ba', {
-                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=tn_06"
-            });
-            $("#hdp-selector-id").on("change", function(){
-                var selector = $(this);
-                var values = selector.val().split('-');
-                var serieId = values[0];
-                var serieName = values[1];
-                hideSeriesDivs();
-                var targetDivId = 'homicidios-dolosos-provincias-' + serieName;
-                showSerieDiv(targetDivId, serieId);
-            });
+    // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
+    // componentes de series de tiempo
+    function hideSeriesDivs() {
+        $(".serie-div").each(function() {
+            $(this).hide();
+        })
+    }
+
+    function showSerieDiv(targetDivId, serieIds) {
+        var hdt = serieIds.split(',')[0] + ""
+        var hdv = serieIds.split(',')[1] + ""
+
+        var chartTypes = {}
+        chartTypes[hdt] = "column"
+
+        var seriesAxis = {}
+        seriesAxis[hdv] = "left"
+        seriesAxis[hdt] = "right"
+
+        TSComponents.Graphic.render(targetDivId, {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieIds,
+            chartTypes: chartTypes,
+            seriesAxis: seriesAxis
         });
+        $("#" + targetDivId).show();
+    }
+    $(document).ready(function() {
+
+        TSComponents.Card.render('hdv', {
+            serieId: "snic_hdv_arg",
+            title: "Homicidios (ARG)"
+        });
+
+        TSComponents.Card.render('hdt', {
+            serieId: "snic_hdt_arg",
+            title: "Tasa de homicidios (ARG)",
+            color: "#2E7D33",
+        });
+
+        TSComponents.Graphic.render('hdv-hdt', {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=snic_hdv_arg,snic_hdt_arg",
+            datePickerEnabled: false,
+            displayUnits: false,
+            zoom: false,
+            navigator: true,
+            title: "Evolución de víctimas de homicidios en Argentina",
+            chartTypes: {
+                "snic_hdt_arg": "column"
+            },
+            seriesAxis: {
+                "snic_hdv_arg": "left",
+                "snic_hdt_arg": "right"
+            },
+            legendLabel: {
+                "snic_hdv_arg": "Homicidios (ARG)",
+                "snic_hdt_arg": "Tasa de homicidios (ARG)",
+            }
+        });
+
+        TSComponents.Graphic.render('homicidios-dolosos-provincias-ba', {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=snic_hdv_06,snic_hdt_06",
+            chartTypes: {
+                "snic_hdt_06": "column"
+            },
+            seriesAxis: {
+                "snic_hdv_06": "left",
+                "snic_hdt_06": "right"
+            }
+        });
+        $("#hdp-selector-id").on("change", function() {
+            var selector = $(this);
+            var values = selector.val().split('-');
+            var serieIds = values[0];
+            var serieName = values[1];
+            hideSeriesDivs();
+            var targetDivId = 'homicidios-dolosos-provincias-' + serieName;
+            showSerieDiv(targetDivId, serieIds);
+        });
+    });
     </script>
     <script src="https://www.argentina.gob.ar/sites/default/files/js/js_yI4XDRIca1vpVutY_HYJvsqEnjRmmpr-WgeRS0xBbPQ.js"></script>
     <script src="https://www.argentina.gob.ar/sites/default/files/js/js_L50O_PWoAuMOxVjnzZCkNSSmI0kFwhZsO1_KS8WnGKw.js"></script>
