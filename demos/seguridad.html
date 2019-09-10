@@ -95,18 +95,6 @@
     margin-right: auto;
 }
 </style>
-<script>
-function createHomicidiosChart() {
-    var serieId = document.getElementById('hdp-selector-id').value;
-
-    // document.getElementById('homicidios-dolosos-provincias').innerHTML = "";
-
-    console.log(serieId)
-    TSComponents.Graphic.render('homicidios-dolosos-provincias', {
-        graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieId,
-    })
-}
-</script>
 
 <body role="document" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-26548 node-type-area og-context og-context-node og-context-node-26548 i18n-es">
     <noscript>
@@ -213,35 +201,101 @@ function createHomicidiosChart() {
                             </div>
                         </div>
                         <div class="row">
-                            <select name="hdp-selector" id="hdp-selector-id" onchange="createHomicidiosChart()">
-                                <option value="tn_06">Buenos Aires</option>
-                                <option value="tn_10">Catamarca</option>
-                                <option value="tn_22">Chaco</option>
-                                <option value="tn_26">Chubut</option>
-                                <option value="tn_02">Ciudad Autónoma de Buenos Aires</option>
-                                <option value="tn_14">Córdoba</option>
-                                <option value="tn_18">Corrientes</option>
-                                <option value="tn_30">Entre Ríos</option>
-                                <option value="tn_34">Formosa</option>
-                                <option value="tn_38">Jujuy</option>
-                                <option value="tn_42">La Pampa</option>
-                                <option value="tn_46">La Rioja</option>
-                                <option value="tn_50">Mendoza</option>
-                                <option value="tn_54">Misiones</option>
-                                <option value="tn_58">Neuquén</option>
-                                <option value="tn_62">Río Negro</option>
-                                <option value="tn_66">Salta</option>
-                                <option value="tn_70">San Juan</option>
-                                <option value="tn_74">San Luis</option>
-                                <option value="tn_78">Santa Cruz</option>
-                                <option value="tn_82">Santa Fe</option>
-                                <option value="tn_86">Santiago del Estero</option>
-                                <option value="tn_94">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
-                                <option value="tn_90">Tucumán</option>
+                            <select name="hdp-selector" id="hdp-selector-id">
+                                <option value="tn_06-ba" selected>Buenos Aires</option>
+                                <option value="tn_10-cat">Catamarca</option>
+                                <option value="tn_22-chaco">Chaco</option>
+                                <option value="tn_26-chubut">Chubut</option>
+                                <option value="tn_02-caba">Ciudad Autónoma de Buenos Aires</option>
+                                <option value="tn_14-cba">Córdoba</option>
+                                <option value="tn_18-ctes">Corrientes</option>
+                                <option value="tn_30-er">Entre Ríos</option>
+                                <option value="tn_34-form">Formosa</option>
+                                <option value="tn_38-jujuy">Jujuy</option>
+                                <option value="tn_42-lp">La Pampa</option>
+                                <option value="tn_46-lr">La Rioja</option>
+                                <option value="tn_50-mza">Mendoza</option>
+                                <option value="tn_54-mis">Misiones</option>
+                                <option value="tn_58-neu">Neuquén</option>
+                                <option value="tn_62-rn">Río Negro</option>
+                                <option value="tn_66-salta">Salta</option>
+                                <option value="tn_70-sj">San Juan</option>
+                                <option value="tn_74-sl">San Luis</option>
+                                <option value="tn_78-scruz">Santa Cruz</option>
+                                <option value="tn_82-sf">Santa Fe</option>
+                                <option value="tn_86-sgo">Santiago del Estero</option>
+                                <option value="tn_94-tdf">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                                <option value="tn_90-tuc">Tucumán</option>
                             </select>
                         </div>
                         <div class="row">
-                            <div style="width: 100%;" class="col" id='homicidios-dolosos-provincias'></div>
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-ba'></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-cat' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-chaco' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-chubut' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-caba' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-cba' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-er' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-form' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-jujuy' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-lp' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-lr' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-mza' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-mis' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-neu' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-rn' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-salta' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-sj' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-sl' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-scruz' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-sf' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-sgo' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-tdf' hidden></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-tuc' hidden></div>
                         </div>
                         <br>
                         <br>
@@ -476,13 +530,34 @@ function createHomicidiosChart() {
             </section>
         </div>
     </footer>
-    <script>
-    window.onload = function() {
+    <script type="text/javascript">
         // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
         // componentes de series de tiempo
-
-        createHomicidiosChart()
-    }
+        function hideSeriesDivs() {
+            $(".serie-div").each(function() {
+                $(this).hide();
+            })
+        }
+        function showSerieDiv(targetDivId, serieId) {
+            TSComponents.Graphic.render(targetDivId, {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieId
+            });
+            $("#" + targetDivId).show();
+        }
+        $(document).ready(function() {
+            TSComponents.Graphic.render('homicidios-dolosos-provincias-ba', {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=tn_06"
+            });
+            $("#hdp-selector-id").on("change", function(){
+                var selector = $(this);
+                var values = selector.val().split('-');
+                var serieId = values[0];
+                var serieName = values[1];
+                hideSeriesDivs();
+                var targetDivId = 'homicidios-dolosos-provincias-' + serieName;
+                showSerieDiv(targetDivId, serieId);
+            });
+        });
     </script>
     <script src="https://www.argentina.gob.ar/sites/default/files/js/js_yI4XDRIca1vpVutY_HYJvsqEnjRmmpr-WgeRS0xBbPQ.js"></script>
     <script src="https://www.argentina.gob.ar/sites/default/files/js/js_L50O_PWoAuMOxVjnzZCkNSSmI0kFwhZsO1_KS8WnGKw.js"></script>
