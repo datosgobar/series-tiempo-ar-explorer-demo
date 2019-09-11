@@ -94,6 +94,13 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.card.full {
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
 </style>
 
 <body role="document" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-26548 node-type-area og-context og-context-node og-context-node-26548 i18n-es">
@@ -223,32 +230,34 @@
                             </div>
                         </div>
                         <div class="row">
-                            <select name="hdp-selector" id="hdp-selector-id">
-                                <option value="snic_hdv_06,snic_hdt_06-ba" selected>Buenos Aires</option>
-                                <option value="snic_hdv_10,snic_hdt_10-cat">Catamarca</option>
-                                <option value="snic_hdv_22,snic_hdt_22-chaco">Chaco</option>
-                                <option value="snic_hdv_26,snic_hdt_26-chubut">Chubut</option>
-                                <option value="snic_hdv_02,snic_hdt_02-caba">Ciudad Autónoma de Buenos Aires</option>
-                                <option value="snic_hdv_14,snic_hdt_14-cba">Córdoba</option>
-                                <option value="snic_hdv_18,snic_hdt_18-ctes">Corrientes</option>
-                                <option value="snic_hdv_30,snic_hdt_30-er">Entre Ríos</option>
-                                <option value="snic_hdv_34,snic_hdt_34-form">Formosa</option>
-                                <option value="snic_hdv_38,snic_hdt_38-jujuy">Jujuy</option>
-                                <option value="snic_hdv_42,snic_hdt_42-lp">La Pampa</option>
-                                <option value="snic_hdv_46,snic_hdt_46-lr">La Rioja</option>
-                                <option value="snic_hdv_50,snic_hdt_50-mza">Mendoza</option>
-                                <option value="snic_hdv_54,snic_hdt_54-mis">Misiones</option>
-                                <option value="snic_hdv_58,snic_hdt_58-neu">Neuquén</option>
-                                <option value="snic_hdv_62,snic_hdt_62-rn">Río Negro</option>
-                                <option value="snic_hdv_66,snic_hdt_66-salta">Salta</option>
-                                <option value="snic_hdv_70,snic_hdt_70-sj">San Juan</option>
-                                <option value="snic_hdv_74,snic_hdt_74-sl">San Luis</option>
-                                <option value="snic_hdv_78,snic_hdt_78-scruz">Santa Cruz</option>
-                                <option value="snic_hdv_82,snic_hdt_82-sf">Santa Fe</option>
-                                <option value="snic_hdv_86,snic_hdt_86-sgo">Santiago del Estero</option>
-                                <option value="snic_hdv_94,snic_hdt_94-tdf">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
-                                <option value="snic_hdt_90,snic_hdv_90-tuc">Tucumán</option>
-                            </select>
+                            <div class="col">
+                                <select name="hdp-selector" id="hdp-selector-id" class="form-control">
+                                    <option value="snic_hdv_06,snic_hdt_06-ba" selected>Buenos Aires</option>
+                                    <option value="snic_hdv_10,snic_hdt_10-cat">Catamarca</option>
+                                    <option value="snic_hdv_22,snic_hdt_22-chaco">Chaco</option>
+                                    <option value="snic_hdv_26,snic_hdt_26-chubut">Chubut</option>
+                                    <option value="snic_hdv_02,snic_hdt_02-caba">Ciudad Autónoma de Buenos Aires</option>
+                                    <option value="snic_hdv_14,snic_hdt_14-cba">Córdoba</option>
+                                    <option value="snic_hdv_18,snic_hdt_18-ctes">Corrientes</option>
+                                    <option value="snic_hdv_30,snic_hdt_30-er">Entre Ríos</option>
+                                    <option value="snic_hdv_34,snic_hdt_34-form">Formosa</option>
+                                    <option value="snic_hdv_38,snic_hdt_38-jujuy">Jujuy</option>
+                                    <option value="snic_hdv_42,snic_hdt_42-lp">La Pampa</option>
+                                    <option value="snic_hdv_46,snic_hdt_46-lr">La Rioja</option>
+                                    <option value="snic_hdv_50,snic_hdt_50-mza">Mendoza</option>
+                                    <option value="snic_hdv_54,snic_hdt_54-mis">Misiones</option>
+                                    <option value="snic_hdv_58,snic_hdt_58-neu">Neuquén</option>
+                                    <option value="snic_hdv_62,snic_hdt_62-rn">Río Negro</option>
+                                    <option value="snic_hdv_66,snic_hdt_66-salta">Salta</option>
+                                    <option value="snic_hdv_70,snic_hdt_70-sj">San Juan</option>
+                                    <option value="snic_hdv_74,snic_hdt_74-sl">San Luis</option>
+                                    <option value="snic_hdv_78,snic_hdt_78-scruz">Santa Cruz</option>
+                                    <option value="snic_hdv_82,snic_hdt_82-sf">Santa Fe</option>
+                                    <option value="snic_hdv_86,snic_hdt_86-sgo">Santiago del Estero</option>
+                                    <option value="snic_hdv_94,snic_hdt_94-tdf">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                                    <option value="snic_hdt_90,snic_hdv_90-tuc">Tucumán</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="row">
                             <div style="width: 100%;" class="col serie-div" id='homicidios-dolosos-provincias-ba'></div>
@@ -321,6 +330,15 @@
                         </div>
                         <div class="container">
                             <button type="button" class="btn"><a href="https://estadisticascriminales.minseg.gob.ar/datos/snic-homicidios-dolosos-provincias-series.csv">Descargar indicadores por provincia</a></button>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <div class="col-xs-12 text-center"> <a href="https://estadisticascriminales.minseg.gob.ar/" class="btn btn-primary">Ir a micrositio de Estadísticas Criminales</a></div>
+                            </div>
                         </div>
                     </div>
                 </section>
