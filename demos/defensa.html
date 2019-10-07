@@ -67,11 +67,11 @@
         'userIPaddress': '192.168.32.105',
     }];
     </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.1/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.3/dist/css/components.css" type="text/css">
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.1/dist/js/components.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.3/dist/js/components.js'></script>
 <style>
 body {
     width: 60%;
@@ -207,7 +207,7 @@ body {
         })
 
         TSComponents.Graphic.render('efectivos-graphic', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=defensa_EA_0002,defensa_ARA_0002,defensa_FAA_0002&chartType=column',
+            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=defensa_EA_0002,defensa_ARA_0002,defensa_FAA_0002',
             colors: ["#0072BB", "#2E7D33", "#C62828"],
             chartType: "column",
             seriesAxis: {
@@ -224,14 +224,15 @@ body {
             links: "none",
             color: "#0072BB",
             decimals: 0,
-            title: "Efectivos Ejército Argentino"
+            title: "Efectivos femeninos Ejército Argentino (%)"
         })
 
         TSComponents.Card.render('efectivos-genero-ara', {
             serieId: 'defensa_ARA_0006',
             links: "none",
             color: "#2E7D33",
-            title: "Efectivos Armada Argentina"
+            decimals: 0,
+            title: "Efectivos femeninos Armada Argentina (%)"
         })
 
         TSComponents.Card.render('efectivos-genero-faa', {
@@ -239,7 +240,7 @@ body {
             links: "none",
             color: "#C62828",
             decimals: 0,
-            title: "Fuerza Aérea Argentina"
+            title: "Efectivos femeninos Fuerza Aérea Arg. (%)"
         })
 
         TSComponents.Graphic.render('efectivos-genero-graphic', {
