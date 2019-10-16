@@ -129,21 +129,21 @@ div.graphic-panel {
                         </div>
                         <div class="row">
                             <div class="col">
-                                <select name="indic-nacional-selector" id="indic-nacional-selector-id" class="form-control">
-                                    <option value="tn_arg" selected>Tasa de Natalidad</option>
-                                    <option value="tmi_arg">Tasa de Mortalidad Infantil</option>
-                                    <option value="chav_arg">Casos de Chagas Agudos Vectorial</option>
+                                <select name="indicator-selector" id="indicator-selector-id" class="form-control">
+                                    <option value="tn" selected>Tasa de Natalidad</option>
+                                    <option value="tmi">Tasa de Mortalidad Infantil</option>
+                                    <option value="chav">Casos de Chagas Agudos Vectorial</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row">
-                            <div style="width: 100%;" class="col serie-div-indic-nacional" id='tn_arg_graphic'></div>
+                            <div style="width: 100%;" class="col national-indicator-graphic" id='tn_arg_graphic'></div>
                         </div>
                         <div class="row">
-                            <div style="width: 100%;" class="col serie-div-indic-nacional" id='tmi_arg_graphic' hidden></div>
+                            <div style="width: 100%; display: none;" class="col national-indicator-graphic" id='tmi_arg_graphic'></div>
                         </div>
                         <div class="row">
-                            <div style="width: 100%;" class="col serie-div-indic-nacional" id='chav_arg_graphic' hidden></div>
+                            <div style="width: 100%; display: none;" class="col national-indicator-graphic" id='chav_arg_graphic'></div>
                         </div>
                 </section>
                 <section>
@@ -156,7 +156,7 @@ div.graphic-panel {
                         <!-- COMIENZO DEL SELECTOR DE PROVINCIAS -->
                         <div class="row">
                             <div class="col">
-                                <select name="hdp-selector" id="hdp-selector-id" class="form-control">
+                                <select name="province-selector" id="province-selector-id" class="form-control">
                                     <option value="06" selected>Buenos Aires</option>
                                     <option value="10">Catamarca</option>
                                     <option value="22">Chaco</option>
@@ -186,9 +186,9 @@ div.graphic-panel {
                         </div>
                         <!-- FIN DEL SELECTOR DE PROVINCIAS -->
                         <!-- COMIENZO DE LOS PANELES DE PROVINCIAS-INDICADORES -->
-                        <div class="row" id='tn_06_panel'>
+                        <div class="row province-indicator-panel" id='tn_06_panel'>
                             <div style="margin-top: auto; margin-bottom: auto;" class="col-xs-12 col-sm-4 col-md-4" id="tn_06_card"></div>
-                            <div style="width: 100%; height: 380px;" class="col-xs-12 col-sm-8 col-md-8" id="tn_06_graphic"></div>
+                            <div style="width: 100%; height: 420px;" class="col-xs-12 col-sm-8 col-md-8" id="tn_06_graphic"></div>
                         </div>
                         <!-- los nuevos paneles de provincia-indicadore se agregan dinámicamente -->
                         <!-- FIN DE LOS PANELES DE PROVINCIAS-INDICADORES -->
@@ -198,58 +198,9 @@ div.graphic-panel {
             </div>
     </main>
     <script type="text/javascript">
+    // crea los componentes de series de tiempo
+
     // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
-    // componentes de series de tiempo
-    function hideSeriesDivsIndicsNacional() {
-        $(".serie-div-indic-nacional").each(function() {
-            $(this).hide();
-        });
-    }
-
-    function showSerieDiv(targetDivId, serieIds) {
-        var tn = serieIds.split(',')[0] + ""
-        var tmi = serieIds.split(',')[1] + ""
-        var chartTypes = {}
-        chartTypes[tmi] = "line"
-        var seriesAxis = {}
-        seriesAxis[tn] = "left"
-        seriesAxis[tmi] = "right"
-        var decimalTooltips = {}
-        decimalTooltips[tn] = 0
-        decimalTooltips[tmi] = 1
-        TSComponents.Graphic.render(targetDivId, {
-            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieIds,
-            chartTypes: chartTypes,
-            seriesAxis: seriesAxis,
-            decimalTooltips: decimalTooltips
-        });
-        $("#" + targetDivId).show();
-    }
-
-    function showSerieDivIndicsNacional(targetDivId, serieId) {
-        var serieIdVariation = serieId + ":percent_change_a_year_ago"
-
-        var chartTypes = {}
-        chartTypes[serieId] = "line"
-        chartTypes[serieIdVariation] = "column"
-
-        var seriesAxis = {}
-        seriesAxis[serieId] = "left"
-        seriesAxis[serieIdVariation] = "right"
-
-        // var decimalTooltips = {}
-        // decimalTooltips[tn] = 0
-        // decimalTooltips[tmi] = 1
-        var seriesIds = serieId + "," + serieIdVariation
-        TSComponents.Graphic.render(targetDivId, {
-            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + seriesIds,
-            chartTypes: chartTypes,
-            seriesAxis: seriesAxis,
-            // decimalTooltips: decimalTooltips
-        });
-        $("#" + targetDivId).show();
-    }
-
     INDICS_PARAMS = {
         "tn": {
             "color": { "card": "#0072BB", "graphic": ["#0072BB", "#0072BB"] },
@@ -376,14 +327,9 @@ div.graphic-panel {
             seriesAxis: seriesAxis,
             decimalTooltips: decimalTooltips,
             datePickerEnabled: false,
-            zoom: false
+            zoom: false,
+            navigator: true,
         });
-    }
-
-    function provinceIndicatorPanel(serieIdRoot, provinceId) {
-        provinceIndicatorPanelHtml(serieIdRoot, provinceId)
-        provinceIndicatorCard(serieIdRoot, provinceId)
-        provinceIndicatorGraphic(serieIdRoot, provinceId)
     }
 
     function provinceIndicatorPanelHtml(serieIdRoot, provinceId) {
@@ -399,40 +345,70 @@ div.graphic-panel {
         }
     }
 
+    function provinceIndicatorPanel(serieIdRoot, provinceId) {
+        provinceIndicatorPanelHtml(serieIdRoot, provinceId)
+        provinceIndicatorCard(serieIdRoot, provinceId)
+        provinceIndicatorGraphic(serieIdRoot, provinceId)
+    }
 
     $(document).ready(function() {
         // INDICADORES NACIONALES
+        // crea el selector de indicadores nacionales
+        $("#indicator-selector-id").on("change", function() {
+            var selector = $(this);
+            var serieRootId = selector.val()
+
+            // hide all
+            $(".national-indicator-graphic").each(function() {
+                $(this).hide();
+            });
+
+            nationalIndicatorGraphic(serieRootId)
+
+            // show selected
+            $("#" + serieRootId + "_arg_graphic").show();
+        });
+
+        // crea las tarjetas de indicadores nacionales
         nationalIndicatorCard("tn")
         nationalIndicatorCard("tmi")
         nationalIndicatorCard("chav")
 
+        // crea el primer gráfico de indicador nacional
         nationalIndicatorGraphic("tn")
 
         // INDICADORES PROVINCIALES
+        // crea el selector de provincias
+        $("#province-selector-id").on("change", function() {
+            var selector = $(this);
+            var provinceId = selector.val()
+
+            // hide all
+            $(".province-indicator-panel").each(function() {
+                $(this).hide();
+            });
+
+            // crea paneles de la provincia si todavía no existen
+            provinceIndicatorPanel("tn", provinceId)
+            provinceIndicatorPanel("tmi", provinceId)
+            provinceIndicatorPanel("chav", provinceId)
+            provinceIndicatorPanel("cus_cons", provinceId)
+            provinceIndicatorPanel("cus_recetas", provinceId)
+
+            // show selected
+            $("#tn_" + provinceId + "_panel").show();
+            $("#tmi_" + provinceId + "_panel").show();
+            $("#chav_" + provinceId + "_panel").show();
+            $("#cus_cons_" + provinceId + "_panel").show();
+            $("#cus_recetas_" + provinceId + "_panel").show();
+        });
+
+        // crea los primeros paneles de indicadores provinciales
         provinceIndicatorPanel("tn", "06")
         provinceIndicatorPanel("tmi", "06")
         provinceIndicatorPanel("chav", "06")
         provinceIndicatorPanel("cus_cons", "06")
         provinceIndicatorPanel("cus_recetas", "06")
-
-        $("#hdp-selector-id").on("change", function() {
-            var selector = $(this);
-            var values = selector.val().split('-');
-            var serieIds = values[0];
-            var serieName = values[1];
-            hideSeriesDivs();
-            var targetDivId = 'tasas-mortalidad-natalidadprovincias-' + serieName;
-            showSerieDiv(targetDivId, serieIds);
-        });
-        $("#indic-nacional-selector-id").on("change", function() {
-            var selector = $(this);
-            var serieId = selector.val()
-            hideSeriesDivsIndicsNacional();
-            var targetDivId = serieId + "_graphic";
-            console.log(targetDivId, serieId)
-            showSerieDivIndicsNacional(targetDivId, serieId);
-        });
-
     });
     </script>
     <script src="https://www.argentina.gob.ar/sites/default/files/js/js_yI4XDRIca1vpVutY_HYJvsqEnjRmmpr-WgeRS0xBbPQ.js"></script>
