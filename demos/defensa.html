@@ -47,6 +47,9 @@
     <link type="text/css" rel="stylesheet" href="https://www.argentina.gob.ar/sites/default/files/updatePoncho/icono-arg.css" media="all" />
     <link type="text/css" rel="stylesheet" href="https://www.argentina.gob.ar/sites/default/files/css/css_MjFALtKrfRjrzbKr-O9WV3K_p6hQ5aJBuId8mH8EWzo.css" media="all" />
     <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/poncho.min.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/icono-arg.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/argentina.css">
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
     window.jQuery || document.write("<script src='/profiles/argentinagobar/modules/contrib/jquery_update/replace/jquery/2.1/jquery.min.js'>\x3C/script>")
@@ -67,43 +70,29 @@
         'userIPaddress': '192.168.32.105',
     }];
     </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.6/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.7/dist/css/components.css" type="text/css">
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.6/dist/js/components.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.7/dist/js/components.js'></script>
 <style>
+/* estilos solo para demo, no portar a argentina.gob.ar! */
 body {
     width: 60%;
     margin: auto;
 }
+
+/* estilos que deben portarse a argentina.gob.ar! */
 .row {
     display: flex;
     justify-content: space-around;
     margin: auto;
 }
 
-.center-block {
+.card-wrapper {
     display: block;
     margin-left: auto;
     margin-right: auto;
-}
-
-.full-width {
-    width: 100%;
-}
-
-.cardWrapper {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.card.full {
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
-    background: #ffffff;
-    border-radius: 4px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 </style>
 
@@ -137,17 +126,17 @@ body {
                         </div>
                         <div class="row panels-row">
                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                <div class="center-block cardWrapper" id='efectivos-ea'></div>
+                                <div class="center-block card-wrapper" id='efectivos-ea'></div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                <div class="center-block cardWrapper" id='efectivos-ara'> </div>
+                                <div class="center-block card-wrapper" id='efectivos-ara'> </div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                <div class="center-block cardWrapper" id='efectivos-faa'> </div>
+                                <div class="center-block card-wrapper" id='efectivos-faa'> </div>
                             </div>
                         </div>
                         <div class="row panels-row">
-                            <div id="efectivos-graphic" class="col-xs-12 col-sm-12 col-md-12 full-width">
+                            <div id="efectivos-graphic" style="width: 100%;" class="col-xs-12 col-sm-12 col-md-12">
                             </div>
                         </div>
                 </section>
@@ -160,17 +149,17 @@ body {
                         </div>
                         <div class="row panels-row">
                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                <div class="center-block cardWrapper" id='efectivos-genero-ea'></div>
+                                <div class="center-block card-wrapper" id='efectivos-genero-ea'></div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                <div class="center-block cardWrapper" id='efectivos-genero-ara'> </div>
+                                <div class="center-block card-wrapper" id='efectivos-genero-ara'> </div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                <div class="center-block cardWrapper" id='efectivos-genero-faa'> </div>
+                                <div class="center-block card-wrapper" id='efectivos-genero-faa'> </div>
                             </div>
                         </div>
                         <div class="row panels-row">
-                            <div id="efectivos-genero-graphic" class="col-xs-12 col-sm-12 col-md-12 full-width">
+                            <div id="efectivos-genero-graphic" style="width: 100%;" class="col-xs-12 col-sm-12 col-md-12">
                             </div>
                         </div>
                 </section>
