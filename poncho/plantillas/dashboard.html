@@ -42,18 +42,6 @@
   <![endif]-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.8/dist/css/components.css" type="text/css">
 </head>
-<style>
-.row {
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-}
-
-.cardWrapper {
-    margin-bottom: 10px;
-    text-align: center;
-}
-</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
@@ -89,7 +77,7 @@
                             </ol>
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="ts-components-row">
                         <div class="col-sm-6">
                         </div>
                         <div class="col-sm-6">
@@ -110,7 +98,7 @@
                         <div class="panel-pane pane-area-estructura">
                             <div class="panel-pane pane-atajos">
                                 <div class="pane-content">
-                                    <div class="row panels-row">
+                                    <div class="ts-components-row panels-row">
                                         <div class="col-xs-12 col-sm-6 col-md-3">
                                             <a href="precios.html" class="panel panel-default">
                                                 <div class="panel-body">
@@ -222,34 +210,34 @@
                 </section>
                 <section>
                     <div class="container">
-                        <div class="row">
+                        <div class="ts-components-row">
                             <h3 class="activities-sidbar">Indice de Precios al Consumidor Nacional</h3>
                         </div>
                         <br>
                         <br>
-                        <div class="row panels-row">
+                        <div class="ts-components-row panels-row">
                             <div class="col-xs-12 col-sm-12 col-md-6 center-block">
                                 <div class="container">
-                                    <div class="row panels-row">
-                                        <div id="ipc-general-ia" class="col-xs-12 col-sm-6 col-md-6 cardWrapper">
+                                    <div class="ts-components-row panels-row">
+                                        <div id="ipc-general-ia" class="col-xs-12 col-sm-6 col-md-6 card-wrapper">
                                         </div>
-                                        <div id="ipc-general-pp" class="col-xs-12 col-sm-6 col-md-6 cardWrapper">
+                                        <div id="ipc-general-pp" class="col-xs-12 col-sm-6 col-md-6 card-wrapper">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-6 center-block">
                                 <div class="container">
-                                    <div class="row panels-row">
-                                        <div id="ipc-nucleo-ia" class="col-xs-12 col-sm-6 col-md-6 cardWrapper">
+                                    <div class="ts-components-row panels-row">
+                                        <div id="ipc-nucleo-ia" class="col-xs-12 col-sm-6 col-md-6 card-wrapper">
                                         </div>
-                                        <div id="ipc-nucleo-pp" class="col-xs-12 col-sm-6 col-md-6 cardWrapper">
+                                        <div id="ipc-nucleo-pp" class="col-xs-12 col-sm-6 col-md-6 card-wrapper">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row panels-row">
+                        <div class="ts-components-row panels-row">
                             <div id="ipc-graphic" style="margin-bottom: 40px;" class="col-xs-12 col-sm-12 col-md-6 full-width center-block">
                             </div>
                             <div id="ipc-graphic-monthly" style="margin-bottom: 40px;" class="col-xs-12 col-sm-12 col-md-6 full-width center-block">
@@ -267,13 +255,13 @@
                                 </div>
                                 <br>
                                 <br>
-                                <div id="ipc-general-nqn" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-general-nqn" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-general-cba" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-general-cba" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-general-caba" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-general-caba" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-general-mza" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-general-mza" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
                             </div>
                         </div>
@@ -288,29 +276,29 @@
                                 </div>
                                 <br>
                                 <br>
-                                <div id="ipc-alimentos" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-alimentos" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-alcohol" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-alcohol" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-vestimenta" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-vestimenta" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-servicios" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-servicios" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-equipamiento" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-equipamiento" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-salud" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-salud" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-transporte" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-transporte" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-comunicaciones" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-comunicaciones" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-recreacion" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-recreacion" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-educacion" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-educacion" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-hoteles" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-hoteles" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
-                                <div id="ipc-varios" class="col-xs-12 col-sm-6 col-md-3 cardWrapper">
+                                <div id="ipc-varios" class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
                                 </div>
                             </div>
                         </div>
@@ -330,17 +318,17 @@
                                     </div>
                                 </div>
                                 <div class="container">
-                                    <div id='ipc-regiones-patagonia' class="col-xs-8 col-sm-4 col-md-2 cardWrapper">
+                                    <div id='ipc-regiones-patagonia' class="col-xs-8 col-sm-4 col-md-2 card-wrapper">
                                     </div>
-                                    <div id='ipc-regiones-cuyo' class="col-xs-8 col-sm-4 col-md-2 cardWrapper">
+                                    <div id='ipc-regiones-cuyo' class="col-xs-8 col-sm-4 col-md-2 card-wrapper">
                                     </div>
-                                    <div id='ipc-regiones-no' class="col-xs-8 col-sm-4 col-md-2 cardWrapper">
+                                    <div id='ipc-regiones-no' class="col-xs-8 col-sm-4 col-md-2 card-wrapper">
                                     </div>
-                                    <div id='ipc-regiones-ne' class="col-xs-8 col-sm-4 col-md-2 cardWrapper">
+                                    <div id='ipc-regiones-ne' class="col-xs-8 col-sm-4 col-md-2 card-wrapper">
                                     </div>
-                                    <div id='ipc-regiones-pampeana' class="col-xs-8 col-sm-4 col-md-2 cardWrapper">
+                                    <div id='ipc-regiones-pampeana' class="col-xs-8 col-sm-4 col-md-2 card-wrapper">
                                     </div>
-                                    <div id='ipc-regiones-gba' class="col-xs-8 col-sm-4 col-md-2 cardWrapper">
+                                    <div id='ipc-regiones-gba' class="col-xs-8 col-sm-4 col-md-2 card-wrapper">
                                     </div>
                                 </div>
                             </div>
@@ -350,7 +338,7 @@
     </main>
     <footer class="main-footer">
         <div class="container">
-            <div class="row">
+            <div class="ts-components-row">
                 <div class="col-sm-6">
                     <a class="navbar-brand" href="#" aria-label="Argentina.gob.ar Presidencia de la Nación">
             <img alt="Argentina.gob.ar" src="img/argentinagob.svg" height="50">

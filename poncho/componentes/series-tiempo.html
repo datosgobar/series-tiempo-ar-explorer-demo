@@ -80,18 +80,6 @@
 .btn-focus {
     border: 3px solid #FEC221!important;
 }
-
-/* ESTILOS PARA TARJETAS DE SERIES DE TIEMPO */
-.row {
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-}
-
-.cardWrapper {
-    margin-bottom: 10px;
-    text-align: center;
-}
 </style>
 
 <body>
@@ -137,11 +125,11 @@
     </div>
     <main>
         <div class="container">
-            <div class="row">
+            <div class="ts-components-row">
                 <div class="col-sm-3" id="menuLateral" data-seccion="3"></div>
                 <div class="col-sm-9">
                     <section>
-                        <article class="row">
+                        <article class="ts-components-row">
                             <div class="col-sm-12">
                                 <h1>Series de tiempo</h1>
                                 <p>Las series de tiempo son indicadores numéricos con evolución temporal. Estos componentes se pueden usar con todas las series publicadas en la <a href="https://apis.datos.gob.ar/series">API de Series de Tiempo de la República Argentina</a>.</p>
@@ -150,7 +138,7 @@
                                     <h2>Tarjetas</h2>
                                     <p>Sirven para mostrar el valor más reciente de un indicador.</p>
                                     <p>Para usarlas debe importarse dos CSS's y un JS adicional:</p>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
 
@@ -164,7 +152,7 @@
                                         </div>
                                     </div>
                                     <p>Debe ubicarse un div con un id en el html, y crear un objeto TSComponentes.Card en un script:</p>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
 
@@ -184,18 +172,12 @@ window.onload = function() {
                       </code></pre>
                                         </div>
                                     </div>
-                                    <p>Para que se vean mejor, conviene ubicar las tarjetas en una row y agregar algunos estilos:</p>
-                                    <div class="row">
+                                    <p>Para que se vean mejor, conviene ubicar las tarjetas en una ts-components-row y agregar algunos estilos:</p>
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
-&lt;style>
-.row {
-&emsp;&emsp;&emsp;&emsp;display: flex;
-&emsp;&emsp;&emsp;&emsp;justify-content: space-around;
-}
-&lt;/style>
 
-&lt;div class="row">
+&lt;div class="ts-components-row">
 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&lt;div id='reservas-card'>&lt;/div>
 &lt;/div>
                       </code></pre>
@@ -205,15 +187,15 @@ window.onload = function() {
                                     <div class="title">
                                         <h3>Card: default</h3>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div id='reservas-card'></div>
                                         <div id='tn-card'></div>
                                         <div id='faafem-card'></div>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
-                                    &lt;div class="row">
+                                    &lt;div class="ts-components-row">
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='reservas-card'>&lt;/div>
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='tn-card'>&lt;/div>
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='faafem-card'>&lt;/div>
@@ -247,15 +229,15 @@ window.onload = function() {
                                     <div class="title">
                                         <h3>Card: menos links</h3>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div id='reservas-card-links2'></div>
                                         <div id='tn-card-links2'></div>
                                         <div id='faafem-card-links2'></div>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
-                                    &lt;div class="row">
+                                    &lt;div class="ts-components-row">
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='reservas-card-links2'>&lt;/div>
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='tn-card-links2'>&lt;/div>
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='faafem-card-links2'>&lt;/div>
@@ -291,15 +273,15 @@ window.onload = function() {
                                     <div class="title">
                                         <h3>Card: sin links</h3>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div id='reservas-card-med'></div>
                                         <div id='tn-card-med'></div>
                                         <div id='faafem-card-med'></div>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
-                                    &lt;div class="row">
+                                    &lt;div class="ts-components-row">
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='reservas-card-med'>&lt;/div>
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='tn-card-med'>&lt;/div>
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='faafem-card-med'>&lt;/div>
@@ -337,20 +319,20 @@ window.onload = function() {
                                     <div class="title">
                                         <h3>Card: mínima</h3>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div id='reservas-card-min'></div>
                                         <div id='tn-card-min'></div>
                                         <div id='faafem-card-min'></div>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
-                                    &lt;div class="row">
+                                    &lt;div class="ts-components-row">
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='reservas-card-min'>&lt;/div>
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='tn-card-min'>&lt;/div>
                                     &emsp;&emsp;&emsp;&emsp;&lt;div id='faafem-card-min'>&lt;/div>
                                     &lt;/div>
-                                    &lt;div class="row">
+                                    &lt;div class="ts-components-row">
                       </code></pre>
                                             <pre><code class="language-js">
         TSComponents.Card.render('reservas-card-min', {
@@ -384,15 +366,15 @@ window.onload = function() {
                                     <div class="title">
                                         <h3>Card: mínima (eliminando elementos)</h3>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div id='reservas-card-min-xtreme'></div>
                                         <div id='tn-card-min-xtreme'></div>
                                         <div id='faafem-card-min-xtreme'></div>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
-                                    &lt;div class="row">
+                                    &lt;div class="ts-components-row">
                                         &emsp;&emsp;&emsp;&emsp;&lt;div id='reservas-card-min-xtreme'>&lt;/div>
                                         &emsp;&emsp;&emsp;&emsp;&lt;div id='tn-card-min-xtreme'>&lt;/div>
                                         &emsp;&emsp;&emsp;&emsp;&lt;div id='faafem-card-min-xtreme'>&lt;/div>
@@ -439,15 +421,15 @@ window.onload = function() {
                                     <div class="title">
                                         <h3>Gráfico: completo</h3>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12" id="tsChartFull"></div>
                                     </div>
                                     <br>
                                     <br>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
-                                    &lt;div class="row">
+                                    &lt;div class="ts-components-row">
                                         &emsp;&emsp;&emsp;&emsp;&lt;div class="col-sm-12" id="tsChartFull">&lt;/div>
                                     &lt;/div>
 
@@ -471,17 +453,17 @@ window.onload = function() {
                                     <div class="title">
                                         <h3>Gráfico: medio</h3>
                                     </div>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-6" id="tsChartSmall1"></div>
                                         <div class="col-sm-6" id="tsChartSmall2"></div>
                                     </div>
                                     <br>
                                     <br>
                                     <br>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
-                                    &lt;div class="row">
+                                    &lt;div class="ts-components-row">
                                         &emsp;&emsp;&emsp;&emsp;&lt;div class="col-sm-6" id="tsChartSmall1">&lt;/div>
                                         &emsp;&emsp;&emsp;&emsp;&lt;div class="col-sm-6" id="tsChartSmall2">&lt;/div>
                                     &lt;/div>
@@ -513,7 +495,7 @@ window.onload = function() {
                                     <div class="title">
                                         <h3>Gráfico: mínimo</h3>
                                     </div>
-                                    <div class="row" style="height: 400px">
+                                    <div class="ts-components-row" style="height: 400px">
                                         <div class="col-sm-4" id="tsChartMin1"></div>
                                         <div class="col-sm-4" id="tsChartMin2"></div>
                                         <div class="col-sm-4" id="tsChartMin4"></div>
@@ -521,10 +503,10 @@ window.onload = function() {
                                     <br>
                                     <br>
                                     <br>
-                                    <div class="row">
+                                    <div class="ts-components-row">
                                         <div class="col-sm-12">
                                             <pre><code class="language-html">
-                                    &lt;div class="row" style="height: 400px">
+                                    &lt;div class="ts-components-row" style="height: 400px">
                                         &emsp;&emsp;&emsp;&emsp;&lt;div class="col-sm-4" id="tsChartMin1">&lt;/div>
                                         &emsp;&emsp;&emsp;&emsp;&lt;div class="col-sm-4" id="tsChartMin2">&lt;/div>
                                         &emsp;&emsp;&emsp;&emsp;&lt;div class="col-sm-4" id="tsChartMin4">&lt;/div>
@@ -567,7 +549,7 @@ window.onload = function() {
     </main>
     <footer class="main-footer hidden">
         <div class="container">
-            <div class="row">
+            <div class="ts-components-row">
                 <div class="col-sm-6">
                     <img class="image-responsive" alt="Argentina.gob.ar - Presidencia de la Nación" src="img/argentinagob.svg">
                     <p class="text-muted small">Los contenidos de Argentina.gob.ar están licenciados bajo <a href="https://creativecommons.org/licenses/by/2.5/ar/">Creative Commons Reconocimiento 2.5 Argentina License</a></p>
