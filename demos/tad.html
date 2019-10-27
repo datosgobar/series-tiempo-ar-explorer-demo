@@ -88,6 +88,14 @@
                         </div>
                         <div class="row panels-row">
                             <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="center-block card-wrapper" id='tad_tramites_hist_card'></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="center-block card-wrapper" id='tad_usuarios_hist_card'> </div>
+                            </div>
+                        </div>
+                        <div class="row panels-row">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
                                 <div class="center-block card-wrapper" id='tad_tramites_ini_card'></div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-3">
@@ -166,8 +174,8 @@
                         <!-- FIN DEL SELECTOR DE PROVINCIAS -->
                         <!-- COMIENZO DE LOS PANELES DE PROVINCIAS-INDICADORES -->
                         <div class="row panels-row province-indicator-panel" id='tad_tramites_ini_06_panel'>
-                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper col-xs-12 col-sm-4 col-md-4" id="tad_tramites_ini_06_card"></div>
-                            <div style=" height: 420px;" class="col-xs-12 col-sm-8 col-md-8" id="tad_tramites_ini_06_graphic"></div>
+                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper col-xs-12 col-sm-3 col-md-3" id="tad_tramites_ini_06_card"></div>
+                            <div style=" height: 420px;" class="col-xs-12 col-sm-9 col-md-9" id="tad_tramites_ini_06_graphic"></div>
                         </div>
                         <!-- los nuevos paneles de provincia-indicadore se agregan dinámicamente -->
                         <!-- FIN DE LOS PANELES DE PROVINCIAS-INDICADORES -->
@@ -245,6 +253,16 @@
 
     // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
     INDICS_PARAMS = {
+        "tad_tramites_hist": {
+            "color": { "card": "#0072BB", "graphic": ["#0072BB", "#039BE5"] },
+            "decimals": 0,
+            "title": "Trámites históricos en TAD"
+        },
+        "tad_usuarios_hist": {
+            "color": { "card": "#C2185B", "graphic": ["#C2185B", "#EC407A"] },
+            "decimals": 0,
+            "title": "Usuarios históricos de TAD"
+        },
         "tad_tramites_ini": {
             "color": { "card": "#0072BB", "graphic": ["#0072BB", "#039BE5"] },
             "decimals": 0,
@@ -550,6 +568,8 @@
         });
 
         // crea las tarjetas de indicadores nacionales
+        nationalIndicatorCard("tad_tramites_hist")
+        nationalIndicatorCard("tad_usuarios_hist")
         nationalIndicatorCard("tad_tramites_ini")
         nationalIndicatorCard("tad_tramites_fin")
         nationalIndicatorCard("tad_usuarios_ini")
