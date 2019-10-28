@@ -45,18 +45,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.9/dist/js/components.js'></script>
-<style>
-.row {
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-}
-
-.card-wrapper {
-    margin-bottom: 10px;
-    text-align: center;
-}
-</style>
 
 <body role="document" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-26548 node-type-area og-context og-context-node og-context-node-26548 i18n-es">
     <noscript>
@@ -86,7 +74,7 @@
                                 <h2 class="h3 section-title">Indicadores históricos</h2>
                             </div>
                         </div>
-                        <div class="row panels-row">
+                        <div class="row ts-components-row panels-row">
                             <div class="col-xs-12 col-sm-6 col-md-3">
                                 <div class="center-block card-wrapper" id='tad_tramites_hist_card'></div>
                             </div>
@@ -103,7 +91,13 @@
                                 <h2 class="h3 section-title">Indicadores nacionales</h2>
                             </div>
                         </div>
-                        <div class="row panels-row">
+                        <div class="row">
+                            <div class="col">
+                                <p>Mirá alguas métricas nacionales de uso de la plataforma Trámites a Distancia.</p>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="row ts-components-row panels-row">
                             <div class="col-xs-12 col-sm-6 col-md-3">
                                 <div class="center-block card-wrapper" id='tad_tramites_ini_card'></div>
                             </div>
@@ -122,10 +116,10 @@
                         <div class="row">
                             <div class="col">
                                 <select name="indicator-selector" id="indicator-selector-id" class="form-control">
-                                    <option value="tad_tramites_ini" selected>Trámites iniciados en TAD</option>
-                                    <option value="tad_tramites_fin">Trámites finalizados en TAD</option>
-                                    <option value="tad_usuarios_ini">Usuarios iniciaron trámites en TAD</option>
-                                    <option value="tad_usuarios_fin">Usuarios finalizaron trámites en TAD</option>
+                                    <option value="tad_tramites_ini" selected>Trámites iniciados</option>
+                                    <option value="tad_tramites_fin">Trámites finalizados</option>
+                                    <option value="tad_usuarios_ini">Usuarios iniciaron trámites</option>
+                                    <option value="tad_usuarios_fin">Usuarios finalizaron trámites</option>
                                 </select>
                             </div>
                         </div>
@@ -148,6 +142,12 @@
                             <div class="col">
                                 <h2 class="h3 section-title">Indicadores por provincia</h2>
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Mirá alguas métricas por provincia de uso de la plataforma Trámites a Distancia.</p>
+                            </div>
+                            <br>
                         </div>
                         <!-- COMIENZO DEL SELECTOR DE PROVINCIAS -->
                         <div class="row">
@@ -197,6 +197,12 @@
                                 <h2 class="h3 section-title">Indicadores por género</h2>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Usuarios de Trámites a Distancia por género a nivel nacional.</p>
+                            </div>
+                            <br>
+                        </div>
                         <div class="row panels-row">
                             <div class="col-xs-12 col-sm-3 col-md-3">
                                 <div class="container">
@@ -224,6 +230,12 @@
                         <br>
                         <br>
                         <br>
+                        <div class="row">
+                            <div class="col">
+                                <p>Usuarios de Trámites a Distancia por género por provincia.</p>
+                            </div>
+                            <br>
+                        </div>
                         <!-- COMIENZO DEL SELECTOR DE PROVINCIAS -->
                         <div class="row">
                             <div class="col">
@@ -296,32 +308,32 @@
         "tad_tramites_hist": {
             "color": { "card": 3, "graphic": ["#0072BB", "#039BE5"] },
             "decimals": 0,
-            "title": "Trámites históricos en TAD"
+            "title": "Trámites históricos"
         },
         "tad_usuarios_hist": {
             "color": { "card": 4, "graphic": ["#C2185B", "#EC407A"] },
             "decimals": 0,
-            "title": "Usuarios históricos de TAD"
+            "title": "Usuarios históricos"
         },
         "tad_tramites_ini": {
             "color": { "card": "#0072BB", "graphic": ["#0072BB", "#039BE5"] },
             "decimals": 0,
-            "title": "Trámites iniciados en TAD"
+            "title": "Trámites iniciados"
         },
         "tad_tramites_fin": {
             "color": { "card": "#2E7D33", "graphic": ["#2E7D33", "#6EA100"] },
             "decimals": 0,
-            "title": "Trámites finalizados en TAD"
+            "title": "Trámites finalizados"
         },
         "tad_usuarios_ini": {
             "color": { "card": "#C2185B", "graphic": ["#C2185B", "#EC407A"] },
             "decimals": 0,
-            "title": "Usuarios iniciaron trámites en TAD"
+            "title": "Usuarios iniciaron trámites"
         },
         "tad_usuarios_fin": {
             "color": { "card": "#C62828", "graphic": ["#C62828", "#6A1B99"] },
             "decimals": 0,
-            "title": "Usuarios finalizaron trámites en TAD"
+            "title": "Usuarios finalizaron trámites"
         },
         "tad_usuarios_ini_f": {
             "color": { "card": 0 },
@@ -370,12 +382,27 @@
         "90": "TU"
     }
 
+    function nationalHistIndicatorCard(serieIdRoot) {
+        var serieId = serieIdRoot
+
+        TSComponents.Card.render(serieId + '_card', {
+            serieId: serieId,
+            title: INDICS_PARAMS[serieIdRoot]["title"],
+            decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
+            color: INDICS_PARAMS[serieIdRoot]["color"]["card"],
+            links: "none",
+            hasChart: "none",
+            source: "",
+            units: ""
+        });
+    }
+
     function nationalIndicatorCard(serieIdRoot) {
         var serieId = serieIdRoot
 
         TSComponents.Card.render(serieId + '_card', {
             serieId: serieId,
-            title: INDICS_PARAMS[serieIdRoot]["title"] + " (ARG)",
+            title: INDICS_PARAMS[serieIdRoot]["title"],
             decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
             color: INDICS_PARAMS[serieIdRoot]["color"]["card"],
             links: "none"
@@ -387,7 +414,7 @@
 
         TSComponents.Card.render(serieId + '_card', {
             serieId: serieId,
-            title: INDICS_PARAMS[serieIdRoot]["title"] + " (ARG)",
+            title: INDICS_PARAMS[serieIdRoot]["title"],
             decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
             color: INDICS_PARAMS[serieIdRoot]["color"]["card"],
             links: "none",
@@ -614,8 +641,8 @@
         });
 
         // crea las tarjetas de indicadores nacionales
-        nationalIndicatorCard("tad_tramites_hist")
-        nationalIndicatorCard("tad_usuarios_hist")
+        nationalHistIndicatorCard("tad_tramites_hist")
+        nationalHistIndicatorCard("tad_usuarios_hist")
         nationalIndicatorCard("tad_tramites_ini")
         nationalIndicatorCard("tad_tramites_fin")
         nationalIndicatorCard("tad_usuarios_ini")
