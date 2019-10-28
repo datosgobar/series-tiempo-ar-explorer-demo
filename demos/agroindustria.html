@@ -124,24 +124,34 @@ body {
                                 <h2 class="h3 section-title">Indicadores de estimaciones de producción de Cultivos</h2>
                             </div>
                         </div>
-                        <div class="row panels-row">
+                        <div style="width: 100%;" class="row panels-row">
                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                <div class="center-block card-wrapper" id='AGRO_0098_card'> </div>
+                                <div class="center-block card-wrapper" id='AGRO_0098_card_top'> </div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                <div class="center-block card-wrapper" id='AGRO_0045_card'> </div>
+                                <div class="center-block card-wrapper" id='AGRO_0045_card_top'> </div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                <div class="center-block card-wrapper" id='AGRO_0251_card'></div>
+                                <div class="center-block card-wrapper" id='AGRO_0251_card_top'></div>
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4">
-                                <div class="center-block card-wrapper" id='AGRO_0102_card'> </div>
+                                <div class="center-block card-wrapper" id='AGRO_0102_card_top'> </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <h2 class="h3 section-title">Indicadores de rendimientos de producción de Cultivos</h2>
                             </div>
                         </div>
                         <div class="row panels-row">
-                            <div id="cultivos-graphic" style="width: 100%;" class="col-xs-12 col-sm-12 col-md-12">
                             </div>
+                            <div id="rendimiento-cultivos-graphic" style="width: 100%;" class="col-xs-12 col-sm-12 col-md-12">
                         </div>
+                    </div>
                 </section>
                 <section>
                     <div class="container">
@@ -150,64 +160,169 @@ body {
                                 <h2 class="h3 section-title">Indicadores completos por cultivos</h2>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col">
+                                <select name="indicator-selector" id="indicator-selector-id" class="form-control">
+                                    <option value="soja" selected>Soja</option>
+                                    <option value="maiz">Maíz</option>
+                                    <option value="girasol">Girasol</option>
+                                    <option value="trigo">Trigo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="width: 100%;" class="row panels-row">
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <div class="center-block card-wrapper" id='AGRO_0096_card'> </div>
+                                <div id="AGRO_0096_graphic" style="width: 100%;" class="col-xs-12 col-sm-12 col-md-12"></div>
+                            </div>
+                        </div>                        
+                        <div style="width: 100%;" class="row panels-row">
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <div class="center-block card-wrapper" id='AGRO_0097_card'> </div>
+                                <div id="AGRO_0097_graphic" style="width: 100%;" class="col-xs-12 col-sm-12 col-md-12"></div>
+                            </div>
+                        </div>
+                        <div style="width: 100%;" class="row panels-row">
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <div class="center-block card-wrapper" id='AGRO_0098_card'> </div>
+                                <div id="AGRO_0098_graphic" style="width: 100%;" class="col-xs-12 col-sm-12 col-md-12"></div>
+                            </div>
+                        </div>                        
+                        <div style="width: 100%;" class="row panels-row">
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <div class="center-block card-wrapper" id='AGRO_0099_card'> </div>
+                                <div id="AGRO_0099_graphic" style="width: 100%;" class="col-xs-12 col-sm-12 col-md-12"></div>
+                            </div>
+                        </div>
                     </div>
-                </section>
+                  </section>
                 </div>
                 </div>
     </main>
     <script>
-    window.onload = function() {
-        // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
+        window.onload = function() {
+            // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
 
-        // sección de indicadores de cultivos a nivel nacional
-        TSComponents.Card.render('AGRO_0098_card', {
-            serieId: 'AGRO_0098',
-            links: "none",
-            color: "#0072BB",
-            decimals: 0,
-            title: "Soja"
-        })
+            // sección de indicadores de cultivos a nivel nacional
+            TSComponents.Card.render('AGRO_0098_card_top', {
+                serieId: 'AGRO_0098',
+                links: "none",
+                color: "#0072BB",
+                decimals: 0,
+                title: "Soja"
+            })
 
-        TSComponents.Card.render('AGRO_0045_card', {
-            serieId: 'AGRO_0045',
-            links: "none",
-            color: "#2E7D33",
-            decimals: 0,
-            title: "Maíz"
-        })
+            TSComponents.Card.render('AGRO_0045_card_top', {
+                serieId: 'AGRO_0045',
+                links: "none",
+                color: "#2E7D33",
+                decimals: 0,
+                title: "Maíz"
+            })
 
-        TSComponents.Card.render('AGRO_0251_card', {
-            serieId: 'AGRO_0251',
-            links: "none",
-            color: "#C62828",
-            decimals: 0,
-            title: "Girasol"
-        })
+            TSComponents.Card.render('AGRO_0251_card_top', {
+                serieId: 'AGRO_0251',
+                links: "none",
+                color: "#C62828",
+                decimals: 0,
+                title: "Girasol"
+            })
 
-        TSComponents.Card.render('AGRO_0102_card', {
-            serieId: 'AGRO_0102',
-            links: "none",
-            color: "#F9A822",
-            decimals: 0,
-            title: "Trigo"
-        })
+            TSComponents.Card.render('AGRO_0102_card_top', {
+                serieId: 'AGRO_0102',
+                links: "none",
+                color: "#F9A822",
+                decimals: 0,
+                title: "Trigo"
+            })
+    // indicadores de rendimientos de todos los cultivos
+            TSComponents.Graphic.render('rendimiento-cultivos-graphic', {
+                graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=AGRO_0099,AGRO_0095,AGRO_0252,AGRO_0103&start_date=1998-01', //quiero mostrar en el grafico los ultimos 10 años por default para que sea mas "legible" PERO no puedo ver los datos anteriores
+                colors: ["#0072BB", "#2E7D33", "#C62828","#F9A822"],
+                chartType: "column",
+                seriesAxis: {
+                    "AGRO_0099": "left",
+                    "AGRO_0095": "left",
+                    "AGRO_0252": "left",
+                    "AGRO_0103": "left"
+                },
+                decimalTooltip: 0
+            })
+        // sección de indicadores completos por cada cultivo
+    //hago ejemplo para SOJA
+//superficie sembrada
+            TSComponents.Card.render('AGRO_0096_card', {
+                serieId: 'AGRO_0096',
+                links: "none",
+                color: "#0072BB",
+                decimals: 0,
+                title: "Soja - Siembra"
+            })
 
-        TSComponents.Graphic.render('cultivos-graphic', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=AGRO_0098,AGRO_0045,AGRO_0251,AGRO_0102',
-            colors: ["#0072BB", "#2E7D33", "#C62828","#F9A822"],
-            chartType: "column",
-            seriesAxis: {
-                "AGRO_0098": "left",
-                "AGRO_0045": "left",
-                "AGRO_0251": "left",
-                "AGRO_0102": "left"
-            },
-            decimalTooltip: 0
-        })
-    // sección de indicadores completos por cultivos
-    
+            TSComponents.Graphic.render('AGRO_0096_graphic', {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=AGRO_0096,AGRO_0096:percent_change_a_year_ago",
+                colors: ["#0072BB", "#2E7D33"],
+                chartType: "column",
+                seriesAxis: {
+                    "AGRO_0096": "right"
+                },
+                decimalTooltip: 0
+            })
+//superficie cosechada
+            TSComponents.Card.render('AGRO_0097_card', {
+                serieId: 'AGRO_0097',
+                links: "none",
+                color: "#0072BB",
+                decimals: 0,
+                title: "Soja - Cosecha"
+            })
 
-    }
+            TSComponents.Graphic.render('AGRO_0097_graphic', {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=AGRO_0097,AGRO_0097:percent_change_a_year_ago",
+                colors: ["#0072BB", "#2E7D33"],
+                chartType: "column",
+                seriesAxis: {
+                    "AGRO_0097": "left"
+                },
+                decimalTooltip: 0
+            })
+//produccion
+            TSComponents.Card.render('AGRO_0098_card', {
+                serieId: 'AGRO_0098',
+                links: "none",
+                color: "#0072BB",
+                decimals: 0,
+                title: "Soja - Producción"
+            })
+
+            TSComponents.Graphic.render('AGRO_0098_graphic', {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=AGRO_0098,AGRO_0098:percent_change_a_year_ago",
+                colors: ["#0072BB", "#2E7D33"],
+                chartType: "column",
+                seriesAxis: {
+                    "AGRO_0098": "left"
+                },
+                decimalTooltip: 0
+            })
+//rendimiento
+            TSComponents.Card.render('AGRO_0099_card', {
+                serieId: 'AGRO_0099',
+                links: "none",
+                color: "#0072BB",
+                decimals: 0,
+                title: "Soja - Rendimiento"
+            })
+
+            TSComponents.Graphic.render('AGRO_0099_graphic', {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=AGRO_0099,AGRO_0099:percent_change_a_year_ago",
+                colors: ["#0072BB", "#2E7D33"],
+                chartType: "column",
+                seriesAxis: {
+                    "AGRO_0099": "left"
+                },
+                decimalTooltip: 0
+            })
+        }
     </script>
     <script src="https://www.argentina.gob.ar/sites/default/files/js/js_yI4XDRIca1vpVutY_HYJvsqEnjRmmpr-WgeRS0xBbPQ.js"></script>
     <script src="https://www.argentina.gob.ar/sites/default/files/js/js_L50O_PWoAuMOxVjnzZCkNSSmI0kFwhZsO1_KS8WnGKw.js"></script>
