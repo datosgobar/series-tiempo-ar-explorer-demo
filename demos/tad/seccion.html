@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]> <html lang="es"class="iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html lang="es" class="ie6 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="es" class="ie7 lt-ie8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="es" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html lang="es">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banco de Pruebas</title>
+    <meta name="description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina.">
+    <meta name="author" content="Presidencia de la Nación">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Nav and address bar color -->
+    <meta name="theme-color" content="#0072b8">
+    <meta name="msapplication-navbutton-color" content="#0072b8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0072b8">
+    <meta property="og:url" content="http://localhost:4000/proyectos/argentina/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Banco de Pruebas" />
+    <meta property="og:description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta property="og:image" content="/ejemplos/img/jumbotron.jpg" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Banco de Pruebas" />
+    <meta name="twitter:description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta name="twitter:image" content="/ejemplos/img/jumbotron.jpg" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" media="all" />
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/poncho.min.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/icono-arg.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/argentina.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://argob.github.io/poncho/js/html5shiv.js"></script>
+      <script src="http://argob.github.io/poncho/js/respond.min.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.9/dist/css/components.css" type="text/css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.9/dist/js/components.js'></script>
+
+<body role="document" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-26548 node-type-area og-context og-context-node og-context-node-26548 i18n-es">
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-P68ZXT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P68ZXT');
+    </script>
+    <div id="skip-link"> <a href="#main-content" class="element-invisible element-focusable">Pasar al contenido principal</a></div>
+    <main role="main"> <a id="main-content"></a>
+        <div class="container"></div>
+        <div class="region region-content">
+            <div id="block-system-main" class="block block-system clearfix">
+                <section>
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <h2 class="h3 section-title">Indicadores históricos</h2>
+                            </div>
+                        </div>
+                        <div class="row ts-components-row panels-row">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="center-block card-wrapper" id='tad_tramites_hist_card'></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="center-block card-wrapper" id='tad_usuarios_hist_card'> </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <h2 class="h3 section-title">Indicadores nacionales</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Mirá alguas métricas nacionales de uso de la plataforma Trámites a Distancia.</p>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="row ts-components-row panels-row">
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="center-block card-wrapper" id='tad_tramites_ini_card'></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="center-block card-wrapper" id='tad_tramites_fin_card'> </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="center-block card-wrapper" id='tad_usuarios_ini_card'></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                <div class="center-block card-wrapper" id='tad_usuarios_fin_card'></div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <select name="indicator-selector" id="indicator-selector-id" class="form-control">
+                                    <option value="tad_tramites_ini" selected>Trámites iniciados</option>
+                                    <option value="tad_tramites_fin">Trámites finalizados</option>
+                                    <option value="tad_usuarios_ini">Usuarios iniciaron trámites</option>
+                                    <option value="tad_usuarios_fin">Usuarios finalizaron trámites</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col national-indicator-graphic" id='tad_tramites_ini_graphic'></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%;" class="col national-indicator-graphic" id='tad_tramites_fin_graphic'></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%; display: none;" class="col national-indicator-graphic" id='tad_usuarios_ini_graphic'></div>
+                        </div>
+                        <div class="row">
+                            <div style="width: 100%; display: none;" class="col national-indicator-graphic" id='tad_usuarios_fin_graphic'></div>
+                        </div>
+                </section>
+                <section>
+                    <div class="container" id="province_indicators_panels">
+                        <div class="row ">
+                            <div class="col">
+                                <h2 class="h3 section-title">Indicadores por provincia</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Mirá alguas métricas por provincia de uso de la plataforma Trámites a Distancia.</p>
+                            </div>
+                            <br>
+                        </div>
+                        <!-- COMIENZO DEL SELECTOR DE PROVINCIAS -->
+                        <div class="row">
+                            <div class="col">
+                                <select name="province-selector" id="province-selector-id" class="form-control">
+                                    <option value="06" selected>Buenos Aires</option>
+                                    <option value="10">Catamarca</option>
+                                    <option value="22">Chaco</option>
+                                    <option value="26">Chubut</option>
+                                    <option value="02">Ciudad Autónoma de Buenos Aires</option>
+                                    <option value="14">Córdoba</option>
+                                    <option value="18">Corrientes</option>
+                                    <option value="30">Entre Ríos</option>
+                                    <option value="34">Formosa</option>
+                                    <option value="38">Jujuy</option>
+                                    <option value="42">La Pampa</option>
+                                    <option value="46">La Rioja</option>
+                                    <option value="50">Mendoza</option>
+                                    <option value="54">Misiones</option>
+                                    <option value="58">Neuquén</option>
+                                    <option value="62">Río Negro</option>
+                                    <option value="66">Salta</option>
+                                    <option value="70">San Juan</option>
+                                    <option value="74">San Luis</option>
+                                    <option value="78">Santa Cruz</option>
+                                    <option value="82">Santa Fe</option>
+                                    <option value="86">Santiago del Estero</option>
+                                    <option value="94">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                                    <option value="90">Tucumán</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- FIN DEL SELECTOR DE PROVINCIAS -->
+                        <!-- COMIENZO DE LOS PANELES DE PROVINCIAS-INDICADORES -->
+                        <div class="row panels-row province-indicator-panel" id='tad_tramites_ini_06_panel'>
+                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper col-xs-12 col-sm-3 col-md-3" id="tad_tramites_ini_06_card"></div>
+                            <div style=" height: 420px;" class="col-xs-12 col-sm-9 col-md-9" id="tad_tramites_ini_06_graphic"></div>
+                        </div>
+                        <!-- los nuevos paneles de provincia-indicadore se agregan dinámicamente -->
+                        <!-- FIN DE LOS PANELES DE PROVINCIAS-INDICADORES -->
+                    </div>
+                </section>
+                <section>
+                    <div class="container" id="province_indicators_gender_panels">
+                        <div class="row ">
+                            <div class="col">
+                                <h2 class="h3 section-title">Indicadores por género</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>Usuarios de Trámites a Distancia por género a nivel nacional.</p>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="row panels-row">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div class="container">
+                                    <div class="row panels-row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper" id='tad_usuarios_ini_f_card'></div>
+                                        </div>
+                                    </div>
+                                    <div class="row panels-row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper" id='tad_usuarios_ini_m_card'> </div>
+                                        </div>
+                                    </div>
+                                    <div class="row panels-row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper" id='tad_usuarios_ini_nd_card'> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9">
+                                <div style="width: 100%; height: 520px;" id="   tad_usuarios_ini_gender_graphic"></div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row">
+                            <div class="col">
+                                <p>Usuarios de Trámites a Distancia por género por provincia.</p>
+                            </div>
+                            <br>
+                        </div>
+                        <!-- COMIENZO DEL SELECTOR DE PROVINCIAS -->
+                        <div class="row">
+                            <div class="col">
+                                <select name="province-gender-selector" id="province-gender-selector-id" class="form-control">
+                                    <option value="06" selected>Buenos Aires</option>
+                                    <option value="10">Catamarca</option>
+                                    <option value="22">Chaco</option>
+                                    <option value="26">Chubut</option>
+                                    <option value="02">Ciudad Autónoma de Buenos Aires</option>
+                                    <option value="14">Córdoba</option>
+                                    <option value="18">Corrientes</option>
+                                    <option value="30">Entre Ríos</option>
+                                    <option value="34">Formosa</option>
+                                    <option value="38">Jujuy</option>
+                                    <option value="42">La Pampa</option>
+                                    <option value="46">La Rioja</option>
+                                    <option value="50">Mendoza</option>
+                                    <option value="54">Misiones</option>
+                                    <option value="58">Neuquén</option>
+                                    <option value="62">Río Negro</option>
+                                    <option value="66">Salta</option>
+                                    <option value="70">San Juan</option>
+                                    <option value="74">San Luis</option>
+                                    <option value="78">Santa Cruz</option>
+                                    <option value="82">Santa Fe</option>
+                                    <option value="86">Santiago del Estero</option>
+                                    <option value="94">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                                    <option value="90">Tucumán</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- FIN DEL SELECTOR DE PROVINCIAS -->
+                        <!-- COMIENZO DE LOS PANELES DE PROVINCIAS-INDICADORES-GENERO -->
+                        <div class="row panels-row province-indicator-gender-panel" id='tad_usuarios_ini_06_gender_panel'>
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div class="container">
+                                    <div class="row panels-row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper" id='tad_usuarios_ini_f_06_card'></div>
+                                        </div>
+                                    </div>
+                                    <div class="row panels-row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper" id='tad_usuarios_ini_m_06_card'> </div>
+                                        </div>
+                                    </div>
+                                    <div class="row panels-row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12">
+                                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper" id='tad_usuarios_ini_nd_06_card'> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-9 col-md-9">
+                                <div style="width: 100%; height: 520px;" id="tad_usuarios_ini_06_gender_graphic"></div>
+                            </div>
+                        </div>
+                        <!-- los nuevos paneles de provincia-indicadore se agregan dinámicamente -->
+                        <!-- FIN DE LOS PANELES DE PROVINCIAS-INDICADORES-GENERO -->
+                    </div>
+                </section>
+                </div>
+            </div>
+    </main>
+    <script type="text/javascript">
+    // crea los componentes de series de tiempo
+
+    // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
+    INDICS_PARAMS = {
+        "tad_tramites_hist": {
+            "color": { "card": 3, "graphic": ["#0072BB", "#039BE5"] },
+            "decimals": 0,
+            "title": "Trámites históricos"
+        },
+        "tad_usuarios_hist": {
+            "color": { "card": 4, "graphic": ["#C2185B", "#EC407A"] },
+            "decimals": 0,
+            "title": "Usuarios históricos"
+        },
+        "tad_tramites_ini": {
+            "color": { "card": "#0072BB", "graphic": ["#0072BB", "#039BE5"] },
+            "decimals": 0,
+            "title": "Trámites iniciados"
+        },
+        "tad_tramites_fin": {
+            "color": { "card": "#2E7D33", "graphic": ["#2E7D33", "#6EA100"] },
+            "decimals": 0,
+            "title": "Trámites finalizados"
+        },
+        "tad_usuarios_ini": {
+            "color": { "card": "#C2185B", "graphic": ["#C2185B", "#EC407A"] },
+            "decimals": 0,
+            "title": "Usuarios iniciaron trámites"
+        },
+        "tad_usuarios_fin": {
+            "color": { "card": "#C62828", "graphic": ["#C62828", "#6A1B99"] },
+            "decimals": 0,
+            "title": "Usuarios finalizaron trámites"
+        },
+        "tad_usuarios_ini_f": {
+            "color": { "card": 0 },
+            "decimals": 0,
+            "title": "Usuarios femeninos inician trám."
+        },
+        "tad_usuarios_ini_m": {
+            "color": { "card": 2 },
+            "decimals": 0,
+            "title": "Usuarios masculinos inician trám."
+        },
+        "tad_usuarios_ini_nd": {
+            "color": { "card": 3 },
+            "decimals": 0,
+            "title": "Usuarios sin declarar sexo ini. trám."
+        },
+        "tad_usuarios_ini_gender_graphic": {
+            "color": [0, 2, 0, 2]
+        }
+    }
+
+    PROV_SHORT = {
+        "02": "CABA",
+        "06": "PBA",
+        "10": "CA",
+        "22": "CH",
+        "26": "CT",
+        "14": "CB",
+        "18": "CR",
+        "30": "ER",
+        "34": "FO",
+        "38": "JY",
+        "42": "LP",
+        "46": "LR",
+        "50": "MZ",
+        "54": "MI",
+        "58": "NQ",
+        "62": "RN",
+        "66": "SA",
+        "70": "SJ",
+        "74": "SL",
+        "78": "SC",
+        "82": "SF",
+        "86": "SE",
+        "94": "TF",
+        "90": "TU"
+    }
+
+    function nationalHistIndicatorCard(serieIdRoot) {
+        var serieId = serieIdRoot
+
+        TSComponents.Card.render(serieId + '_card', {
+            serieId: serieId,
+            title: INDICS_PARAMS[serieIdRoot]["title"],
+            decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
+            color: INDICS_PARAMS[serieIdRoot]["color"]["card"],
+            links: "none",
+            hasChart: "none",
+            source: "",
+            units: ""
+        });
+    }
+
+    function nationalIndicatorCard(serieIdRoot) {
+        var serieId = serieIdRoot
+
+        TSComponents.Card.render(serieId + '_card', {
+            serieId: serieId,
+            title: INDICS_PARAMS[serieIdRoot]["title"],
+            decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
+            color: INDICS_PARAMS[serieIdRoot]["color"]["card"],
+            links: "none"
+        });
+    }
+
+    function nationalGenderIndicatorCard(serieIdRoot) {
+        var serieId = serieIdRoot
+
+        TSComponents.Card.render(serieId + '_card', {
+            serieId: serieId,
+            title: INDICS_PARAMS[serieIdRoot]["title"],
+            decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
+            color: INDICS_PARAMS[serieIdRoot]["color"]["card"],
+            links: "none",
+            hasChart: "none",
+            source: "",
+            units: ""
+        });
+    }
+
+    function nationalIndicatorGraphic(serieIdRoot) {
+        var serieId = serieIdRoot
+        var serieIdVariation = serieId + ":percent_change_a_year_ago"
+
+        var chartTypes = {}
+        chartTypes[serieId] = "line"
+        chartTypes[serieIdVariation] = "column"
+
+        var seriesAxis = {}
+        seriesAxis[serieId] = "left"
+        seriesAxis[serieIdVariation] = "right"
+
+        var decimalTooltips = {}
+        decimalTooltips[serieId] = INDICS_PARAMS[serieIdRoot]["decimals"]
+        decimalTooltips[serieIdVariation] = 1
+
+        TSComponents.Graphic.render(serieId + '_graphic', {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieId + "," + serieIdVariation,
+            colors: INDICS_PARAMS[serieIdRoot]["color"]["graphic"],
+            chartTypes: chartTypes,
+            seriesAxis: seriesAxis,
+            decimalTooltips: decimalTooltips
+        });
+    }
+
+    function provinceIndicatorCard(serieIdRoot, provinceId) {
+        var serieId = serieIdRoot + "_" + provinceId
+        var cardTargetDiv = serieId + '_card'
+
+        TSComponents.Card.render(cardTargetDiv, {
+            serieId: serieId,
+            title: INDICS_PARAMS[serieIdRoot]["title"] + " (" + PROV_SHORT[provinceId] + ")",
+            decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
+            color: INDICS_PARAMS[serieIdRoot]["color"]["card"]
+        });
+    }
+
+    function provinceGenderIndicatorCard(serieIdRoot, provinceId) {
+        var serieId = serieIdRoot + "_" + provinceId
+        var cardTargetDiv = serieId + '_card'
+
+        TSComponents.Card.render(cardTargetDiv, {
+            serieId: serieId,
+            title: INDICS_PARAMS[serieIdRoot]["title"] + " (" + PROV_SHORT[provinceId] + ")",
+            decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
+            color: INDICS_PARAMS[serieIdRoot]["color"]["card"],
+            links: "none",
+            hasChart: "none",
+            source: "",
+            units: ""
+        });
+    }
+
+    function provinceIndicatorGraphic(serieIdRoot, provinceId) {
+        var serieId = serieIdRoot + "_" + provinceId
+        var serieIdVariation = serieId + ":percent_change_a_year_ago"
+        var graphicTargetDiv = serieId + '_graphic'
+
+        var chartTypes = {}
+        chartTypes[serieId] = "line"
+        chartTypes[serieIdVariation] = "column"
+
+        var seriesAxis = {}
+        seriesAxis[serieId] = "left"
+        seriesAxis[serieIdVariation] = "right"
+
+        var decimalTooltips = {}
+        decimalTooltips[serieId] = INDICS_PARAMS[serieIdRoot]["decimals"]
+        decimalTooltips[serieIdVariation] = 1
+
+        TSComponents.Graphic.render(graphicTargetDiv, {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieId + "," + serieIdVariation,
+            colors: INDICS_PARAMS[serieIdRoot]["color"]["graphic"],
+            chartTypes: chartTypes,
+            seriesAxis: seriesAxis,
+            decimalTooltips: decimalTooltips,
+            datePickerEnabled: false,
+            zoom: false,
+            navigator: true,
+        });
+    }
+
+    function nationalGenderIndicatorGraphic(graphicTargetDiv) {
+        var serieIdF = "tad_usuarios_ini_f"
+        var serieIdM = "tad_usuarios_ini_m"
+        var serieIdVariationF = serieIdF + ":percent_change_a_year_ago"
+        var serieIdVariationM = serieIdM + ":percent_change_a_year_ago"
+
+        var chartTypes = {}
+        chartTypes[serieIdF] = "line"
+        chartTypes[serieIdM] = "line"
+        chartTypes[serieIdVariationF] = "column"
+        chartTypes[serieIdVariationM] = "column"
+
+        var seriesAxis = {}
+        seriesAxis[serieIdF] = "left"
+        seriesAxis[serieIdM] = "left"
+        seriesAxis[serieIdVariationF] = "right"
+        seriesAxis[serieIdVariationM] = "right"
+
+        var decimalTooltips = {}
+        decimalTooltips[serieIdF] = 0
+        decimalTooltips[serieIdM] = 0
+        decimalTooltips[serieIdVariationF] = 1
+        decimalTooltips[serieIdVariationM] = 1
+
+        var series = serieIdF + "," + serieIdM + "," + serieIdVariationF + "," + serieIdVariationM
+
+        TSComponents.Graphic.render(graphicTargetDiv, {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + series,
+            chartTypes: chartTypes,
+            colors: INDICS_PARAMS["tad_usuarios_ini_gender_graphic"]["color"],
+            seriesAxis: seriesAxis,
+            decimalTooltips: decimalTooltips,
+            datePickerEnabled: false,
+            zoom: false,
+            navigator: true,
+        });
+    }
+
+    function provinceGenderIndicatorGraphic(provinceId) {
+        var serieIdF = "tad_usuarios_ini_f_" + provinceId
+        var serieIdM = "tad_usuarios_ini_m_" + provinceId
+        var serieIdVariationF = serieIdF + ":percent_change_a_year_ago"
+        var serieIdVariationM = serieIdM + ":percent_change_a_year_ago"
+        var graphicTargetDiv = "tad_usuarios_ini_" + provinceId + '_gender_graphic'
+
+        var chartTypes = {}
+        chartTypes[serieIdF] = "line"
+        chartTypes[serieIdM] = "line"
+        chartTypes[serieIdVariationF] = "column"
+        chartTypes[serieIdVariationM] = "column"
+
+        var seriesAxis = {}
+        seriesAxis[serieIdF] = "left"
+        seriesAxis[serieIdM] = "left"
+        seriesAxis[serieIdVariationF] = "right"
+        seriesAxis[serieIdVariationM] = "right"
+
+        var decimalTooltips = {}
+        decimalTooltips[serieIdF] = 0
+        decimalTooltips[serieIdM] = 0
+        decimalTooltips[serieIdVariationF] = 1
+        decimalTooltips[serieIdVariationM] = 1
+
+        var series = serieIdF + "," + serieIdM + "," + serieIdVariationF + "," + serieIdVariationM
+
+        TSComponents.Graphic.render(graphicTargetDiv, {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + series,
+            chartTypes: chartTypes,
+            colors: INDICS_PARAMS["tad_usuarios_ini_gender_graphic"]["color"],
+            seriesAxis: seriesAxis,
+            decimalTooltips: decimalTooltips,
+            datePickerEnabled: false,
+            zoom: false,
+            navigator: true,
+        });
+    }
+
+    function provinceIndicatorPanelHtml(serieIdRoot, provinceId) {
+        var serieId = serieIdRoot + "_" + provinceId
+        var provinceIndicatorPanelId = "#" + serieId + "_panel"
+
+        if ($(provinceIndicatorPanelId).length) {
+            // it exists
+        } else {
+            var panelTemplate = $("#tad_tramites_ini_06_panel").prop('outerHTML')
+            var newPanelHtml = panelTemplate.replace(/tad_tramites_ini_06/g, serieId)
+            $("#province_indicators_panels").append($(newPanelHtml))
+        }
+    }
+
+    function provinceGenderIndicatorPanelHtml(provinceId) {
+        var provinceIndicatorPanelId = "#tad_usuarios_ini_" + provinceId + "_gender_panel"
+
+        if ($(provinceIndicatorPanelId).length) {
+            // it exists
+        } else {
+            var panelTemplate = $("#tad_usuarios_ini_06_gender_panel").prop('outerHTML')
+            var newPanelHtml = panelTemplate.replace(/06/g, provinceId)
+            $("#province_indicators_gender_panels").append($(newPanelHtml))
+        }
+    }
+
+    function provinceIndicatorPanel(serieIdRoot, provinceId) {
+        provinceIndicatorPanelHtml(serieIdRoot, provinceId)
+        provinceIndicatorCard(serieIdRoot, provinceId)
+        provinceIndicatorGraphic(serieIdRoot, provinceId)
+    }
+
+    function provinceGenderIndicatorPanel(provinceId) {
+        provinceGenderIndicatorPanelHtml(provinceId)
+        provinceGenderIndicatorCard("tad_usuarios_ini_f", provinceId)
+        provinceGenderIndicatorCard("tad_usuarios_ini_m", provinceId)
+        provinceGenderIndicatorCard("tad_usuarios_ini_nd", provinceId)
+        provinceGenderIndicatorGraphic(provinceId)
+    }
+
+    $(document).ready(function() {
+        // INDICADORES NACIONALES
+        // crea el selector de indicadores nacionales
+        $("#indicator-selector-id").on("change", function() {
+            var selector = $(this);
+            var serieRootId = selector.val()
+
+            // hide all
+            $(".national-indicator-graphic").each(function() {
+                $(this).hide();
+            });
+
+            nationalIndicatorGraphic(serieRootId)
+
+            // show selected
+            $("#" + serieRootId + "_graphic").show();
+        });
+
+        // crea las tarjetas de indicadores nacionales
+        nationalHistIndicatorCard("tad_tramites_hist")
+        nationalHistIndicatorCard("tad_usuarios_hist")
+        nationalIndicatorCard("tad_tramites_ini")
+        nationalIndicatorCard("tad_tramites_fin")
+        nationalIndicatorCard("tad_usuarios_ini")
+        nationalIndicatorCard("tad_usuarios_fin")
+
+        // crea el primer gráfico de indicador nacional
+        nationalIndicatorGraphic("tad_tramites_ini")
+
+        // INDICADORES PROVINCIALES
+        // crea el selector de provincias
+        $("#province-selector-id").on("change", function() {
+            var selector = $(this);
+            var provinceId = selector.val()
+
+            // hide all
+            $(".province-indicator-panel").each(function() {
+                $(this).hide();
+            });
+
+            // crea paneles de la provincia si todavía no existen
+            provinceIndicatorPanel("tad_tramites_ini", provinceId)
+            provinceIndicatorPanel("tad_tramites_fin", provinceId)
+            provinceIndicatorPanel("tad_usuarios_ini", provinceId)
+            provinceIndicatorPanel("tad_usuarios_fin", provinceId)
+
+            // show selected
+            $("#tad_tramites_ini_" + provinceId + "_panel").show();
+            $("#tad_tramites_fin_" + provinceId + "_panel").show();
+            $("#tad_usuarios_ini_" + provinceId + "_panel").show();
+            $("#tad_usuarios_fin_" + provinceId + "_panel").show();
+        });
+
+        // crea los primeros paneles de indicadores provinciales
+        provinceIndicatorPanel("tad_tramites_ini", "06")
+        provinceIndicatorPanel("tad_tramites_fin", "06")
+        provinceIndicatorPanel("tad_usuarios_ini", "06")
+        provinceIndicatorPanel("tad_usuarios_fin", "06")
+
+        // INDICADORES DE GÉNERO
+        nationalGenderIndicatorCard("tad_usuarios_ini_f")
+        nationalGenderIndicatorCard("tad_usuarios_ini_m")
+        nationalGenderIndicatorCard("tad_usuarios_ini_nd")
+        nationalGenderIndicatorGraphic("tad_usuarios_ini_gender_graphic")
+
+        // crea el selector de provincias por género
+        $("#province-gender-selector-id").on("change", function() {
+            var selector = $(this);
+            var provinceId = selector.val()
+
+            // hide all
+            $(".province-indicator-gender-panel").each(function() {
+                $(this).hide();
+            });
+
+            // crea paneles de la provincia si todavía no existen
+            provinceGenderIndicatorPanel(provinceId)
+
+            // show selected
+            $("#tad_usuarios_ini_" + provinceId + "_gender_panel").show();
+        });
+
+        // crea el primer panel de indicadores de género por provincia
+        provinceGenderIndicatorCard("tad_usuarios_ini_f", "06")
+        provinceGenderIndicatorCard("tad_usuarios_ini_m", "06")
+        provinceGenderIndicatorCard("tad_usuarios_ini_nd", "06")
+        provinceGenderIndicatorPanel("06")
+
+    });
+    </script>
+    <script src="https://www.argentina.gob.ar/sites/default/files/js/js_yI4XDRIca1vpVutY_HYJvsqEnjRmmpr-WgeRS0xBbPQ.js"></script>
+    <script src="https://www.argentina.gob.ar/sites/default/files/js/js_L50O_PWoAuMOxVjnzZCkNSSmI0kFwhZsO1_KS8WnGKw.js"></script>
+</body>
+
+</html>
