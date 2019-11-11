@@ -22,7 +22,7 @@ div.graphic-panel {
     <div class="graphic-element" id="desempleo"></div>
 </div>
 
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.10/dist/js/components.js'></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
 
 <script>
 window.onload = function() {
