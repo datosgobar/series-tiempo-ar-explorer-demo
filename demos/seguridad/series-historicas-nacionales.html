@@ -1,0 +1,101 @@
+<head>
+    <!-- INICIO estilos y JS de tarjetas de indicadores -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" type="text/css">
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- FIN estilos y JS de tarjetas de indicadores -->
+</head>
+<!-- incluir bloque de style para que queden bien las tarjetas -->
+<div class="row">
+    <div class="col-md-12">
+        <h2 class="h3 section-title">Series históricas: nacionales</h2>
+    </div>
+</div>
+<div class="row panels-row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="center-block card-wrapper" id='hdv'></div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="center-block card-wrapper" id='hdt'> </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="center-block full-width" style="height: 380px; width: 100%;" id='hdv-hdt'></div>
+    </div>
+</div>
+</div>
+<script>
+function hideSeriesDivs() {
+    $(".serie-div").each(function() {
+        $(this).hide();
+    });
+}
+
+function showSerieDiv(targetDivId, serieIds) {
+    var hdv = serieIds.split(',')[0] + ""
+    var hdt = serieIds.split(',')[1] + ""
+
+    var chartTypes = {}
+    chartTypes[hdt] = "column"
+
+    var seriesAxis = {}
+    seriesAxis[hdv] = "left"
+    seriesAxis[hdt] = "right"
+
+    var decimalTooltips = {}
+    decimalTooltips[hdv] = 0
+    decimalTooltips[hdt] = 1
+
+    TSComponents.Graphic.render(targetDivId, {
+        graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieIds,
+        chartTypes: chartTypes,
+        seriesAxis: seriesAxis,
+        decimalTooltips: decimalTooltips,
+        decimalRightAxis: 1,
+        decimalLeftAxis: 0
+    });
+
+    $("#" + targetDivId).show();
+}
+TSComponents.Card.render('hdv', {
+    serieId: "snic_hdv_arg",
+    title: "Homicidios (ARG)",
+    decimals: 1,
+    color: 2
+});
+
+TSComponents.Card.render('hdt', {
+    serieId: "snic_hdt_arg",
+    title: "Tasa de homicidios (ARG)",
+    color: "#2E7D33",
+    decimals: 2,
+    color: 1
+});
+
+TSComponents.Graphic.render('hdv-hdt', {
+    graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=snic_hdv_arg,snic_hdt_arg",
+    colors: [2, 1],
+    datePickerEnabled: false,
+    displayUnits: false,
+    zoom: false,
+    navigator: true,
+    title: "Evolución de víctimas de homicidios en Argentina",
+    decimalLeftAxis: 0,
+    decimalRightAxis: 1,
+    chartTypes: {
+        "snic_hdt_arg": "column"
+    },
+    seriesAxis: {
+        "snic_hdv_arg": "left",
+        "snic_hdt_arg": "right"
+    },
+    legendLabel: {
+        "snic_hdv_arg": "Homicidios (ARG)",
+        "snic_hdt_arg": "Tasa de homicidios (ARG)",
+    },
+    decimalTooltips: {
+        "snic_hdv_arg": 0,
+        "snic_hdt_arg": 1
+    }
+});
+</script>

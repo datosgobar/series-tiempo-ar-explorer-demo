@@ -1,0 +1,189 @@
+<head>
+    <!-- INICIO estilos y JS de tarjetas de indicadores -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" type="text/css">
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- FIN estilos y JS de tarjetas de indicadores -->
+</head>
+<!-- incluir bloque de style para que queden bien las tarjetas -->
+<div class="container" id="delitos_personas_panels">
+    <div class="row ">
+        <div class="col-md-12">
+            <h4 class="h4 section-title">Delitos contra las personas</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <select name="delitos-personas-selector" id="delitos-personas-selector-delitos-id" class="form-control">
+                <option value="1" selected>Homicidios dolosos</option>
+                <option value="2">Homicidios dolosos en grado de tentativa</option>
+                <option value="3">Muertes en Accidentes Viales</option>
+                <option value="4">Homicidios culposos por otros hechos</option>
+                <option value="5">Lesiones dolosas</option>
+                <option value="6">Lesiones culposas en Accidentes Viales</option>
+                <option value="7">Lesiones culposas por otros hechos</option>
+                <option value="8">Otros delitos contra las personas</option>
+                <option value="9">Delitos contra el honor</option>
+                <option value="10">Violaciones</option>
+                <option value="11">Otros delitos contra la integridad sexual</option>
+            </select>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <select name="delitos-personas-provincias-selector" id="delitos-personas-selector-provincias-id" class="form-control">
+                <option value="arg" selected>Total Argentina</option>
+                <option value="06">Buenos Aires</option>
+                <option value="10">Catamarca</option>
+                <option value="22">Chaco</option>
+                <option value="26">Chubut</option>
+                <option value="02">Ciudad Autónoma de Buenos Aires</option>
+                <option value="14">Córdoba</option>
+                <option value="18">Corrientes</option>
+                <option value="30">Entre Ríos</option>
+                <option value="34">Formosa</option>
+                <option value="38">Jujuy</option>
+                <option value="42">La Pampa</option>
+                <option value="46">La Rioja</option>
+                <option value="50">Mendoza</option>
+                <option value="54">Misiones</option>
+                <option value="58">Neuquén</option>
+                <option value="62">Río Negro</option>
+                <option value="66">Salta</option>
+                <option value="70">San Juan</option>
+                <option value="74">San Luis</option>
+                <option value="78">Santa Cruz</option>
+                <option value="82">Santa Fe</option>
+                <option value="86">Santiago del Estero</option>
+                <option value="94">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                <option value="90">Tucumán</option>
+            </select>
+        </div>
+    </div>
+    <!-- COMIENZO DE LOS PANELES DE DELITOS-PERSONAS-PROVINCIAS-INDICADORES -->
+    <br>
+    <div class="row panels-row delitos-personas-panel" id="snic_1_hechos_victimas_arg_panel">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper" id='snic_1_hechos_arg_card'></div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper" id='snic_1_victimas_arg_card'> </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="center-block full-width" style="height: 380px; width: 100%;" id='snic_1_victimas_hechos_arg_graphic'></div>
+        </div>
+    </div>
+    <!-- los nuevos paneles se agregan dinámicamente -->
+    <!-- FIN DE LOS PANELES DE DELITOS-PERSONAS-PROVINCIAS-INDICADORES -->
+</div>
+<script>
+$(document).ready(function() {
+    var INDICS_PARAMS = {
+        "hechos": { "color": 0, "title": "Hechos" },
+        "victimas": { "color": 3, "title": "Víctimas" }
+    }
+
+    function delitosPanelCard(provinceId, delitoId, variable) {
+        var serieId = "snic_" + delitoId + "_" + variable + "_" + provinceId
+        var cardTargetDiv = serieId + "_card"
+
+        TSComponents.Card.render(cardTargetDiv, {
+            serieId: serieId,
+            decimals: 0,
+            color: INDICS_PARAMS[variable]["color"],
+            title: INDICS_PARAMS[variable]["title"]
+        });
+    }
+
+    function delitosPersonasPanelGraphic(provinceId, delitoId) {
+        var serieIdHechos = "snic_" + delitoId + "_hechos_" + provinceId
+        var serieIdVictimas = "snic_" + delitoId + "_victimas_" + provinceId
+        var graphicTargetDiv = "snic_" + delitoId + "_victimas_hechos_" + provinceId + "_graphic"
+
+        var chartTypes = {}
+        chartTypes[serieIdHechos] = "column"
+        chartTypes[serieIdVictimas] = "column"
+
+        var seriesAxis = {}
+        seriesAxis[serieIdHechos] = "left"
+        seriesAxis[serieIdVictimas] = "left"
+
+        var decimalTooltips = {}
+        decimalTooltips[serieIdHechos] = 0
+        decimalTooltips[serieIdVictimas] = 0
+
+        TSComponents.Graphic.render(graphicTargetDiv, {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdHechos + "," + serieIdVictimas,
+            colors: [INDICS_PARAMS["hechos"]["color"],
+                INDICS_PARAMS["victimas"]["color"]
+            ],
+            chartTypes: chartTypes,
+            seriesAxis: seriesAxis,
+            decimalTooltips: decimalTooltips,
+            datePickerEnabled: false,
+            zoom: false,
+            navigator: true,
+            decimalRightAxis: 0,
+            decimalLeftAxis: 0
+        });
+    }
+
+    function delitosPersonasPanelHtml(provinceId, delitoId) {
+        var delitosPersonasPanelId = "#snic_" + delitoId + "_hechos_victimas_" + provinceId + "_panel"
+
+        if ($(delitosPersonasPanelId).length) {
+            // it exists
+        } else {
+            var panelTemplate = $("#snic_1_hechos_victimas_arg_panel").prop('outerHTML')
+            var newPanelHtml = panelTemplate.replace(/arg/g, provinceId).replace(/1/g, delitoId)
+            $("#delitos_personas_panels").append($(newPanelHtml))
+        }
+    }
+
+    function delitosPersonasPanel(provinceId, delitoId) {
+        delitosPersonasPanelHtml(provinceId, delitoId)
+        delitosPanelCard(provinceId, delitoId, "hechos")
+        delitosPanelCard(provinceId, delitoId, "victimas")
+        delitosPersonasPanelGraphic(provinceId, delitoId)
+    }
+    // crea el selector de DELITOS-PERSONAS-DELITOS
+    $("#delitos-personas-selector-delitos-id").on("change", function() {
+        var selectorDelitos = $(this);
+        var selectorProvincias = $("#delitos-personas-selector-provincias-id");
+        var delitoId = selectorDelitos.val()
+        var provinceId = selectorProvincias.val()
+
+        // hide all
+        $(".delitos-personas-panel").each(function() {
+            $(this).hide();
+        });
+
+        // crea el panel si todavía no existe
+        delitosPersonasPanel(provinceId, delitoId)
+
+        // show selected
+        $("#snic_" + delitoId + "_hechos_victimas_" + provinceId + "_panel").show();
+    });
+
+    // crea el selector de DELITOS-PERSONAS-PROVINCIAS
+    $("#delitos-personas-selector-provincias-id").on("change", function() {
+        var selectorDelitos = $("#delitos-personas-selector-delitos-id");
+        var selectorProvincias = $(this);
+        var provinceId = selectorProvincias.val()
+        var delitoId = selectorDelitos.val()
+
+        // hide all
+        $(".delitos-personas-panel").each(function() {
+            $(this).hide();
+        });
+
+        // crea el panel si todavía no existe
+        delitosPersonasPanel(provinceId, delitoId)
+
+        // show selected
+        $("#snic_" + delitoId + "_hechos_victimas_" + provinceId + "_panel").show();
+    });
+
+    // crea el primer panel de indicadores de delitos contra las personas
+    delitosPersonasPanel("arg", "1")
+})
+</script>
