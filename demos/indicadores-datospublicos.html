@@ -1,0 +1,48 @@
+<head>
+    <!-- INICIO estilos y JS de tarjetas de indicadores -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" type="text/css">
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
+    <!-- FIN estilos y JS de tarjetas de indicadores -->
+</head>
+<!-- incluir bloque de style para que queden bien las tarjetas -->
+<style>
+.panel-card-column {
+    padding-left: 9px;
+    padding-right: 9px;
+}
+</style>
+<!-- INICIO bloque de indicadores de "apn" -->
+<!-- debe reemplazarse "apn" por el identificador del catálogo que corresponda -->
+<div class="row">
+    <div class="col-md-4 panel-card-column" id='ddaa_apn_001'></div>
+    <div class="col-md-4 panel-card-column" id='ddaa_apn_002'></div>
+    <div class="col-md-4 panel-card-column" id='ddaa_apn_009'></div>
+</div>
+<div class="row">
+    <div class="col-md-4 panel-card-column" id='apis_georef_005'></div>
+    <div class="col-md-4 panel-card-column" id='apis_series_005'></div>
+</div>
+<!-- FIN bloque de indicadores de "apn" -->
+<script>
+// INICIO funciones para crear cada tipo de indicador: NO EDITAR!
+function indicatorCard(serieId, color, title) {
+    TSComponents.Card.render(serieId, {    
+        serieId: serieId,
+        color: color,
+        links: 'none',
+        hasChart: "none",
+        title: title,
+        source: "",
+        units: ""
+    })
+}
+// FIN funciones para crear cada tipo de indicador: NO EDITAR!
+
+// Crea indicadores
+indicatorCard("ddaa_apn_001", 3, "Cantidad de catálogos")
+indicatorCard("ddaa_apn_002", 0, "Cantidad de datasets")
+indicatorCard("ddaa_apn_009", 4, "Cantidad de distribuciones")
+indicatorCard("apis_georef_005", 2, "API Georef. Consultas históricas.")
+indicatorCard("apis_series_005", 1, "API Series de Tiempo. Consultas históricas.")
+</script>
