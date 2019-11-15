@@ -40,27 +40,11 @@
       <script src="http://argob.github.io/poncho/js/html5shiv.js"></script>
       <script src="http://argob.github.io/poncho/js/respond.min.js"></script>
   <![endif]-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.10/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/css/components.css" type="text/css">
 </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.6.10/dist/js/components.js'></script>
-<style>
-.row {
-    display: flex;
-    justify-content: space-around;
-    margin: auto;
-}
-
-.cardWrapper {
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-.panels-row > div.cardWrapper {
-    display: block;
-}
-</style>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
 
 <body role="document" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-26548 node-type-area og-context og-context-node og-context-node-26548 i18n-es">
     <noscript>
@@ -90,15 +74,15 @@
                                 <h2 class="h3 section-title">Indicadores nacionales</h2>
                             </div>
                         </div>
-                        <div class="row panels-row">
+                        <div class="row panels-row ts-components-row">
                             <div class="col-xs-12 col-sm-6 col-md-3">
-                                <div class="center-block cardWrapper" id='tn_arg_card'></div>
+                                <div class="center-block card-wrapper" id='tn_arg_card'></div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-3">
-                                <div class="center-block cardWrapper" id='tmi_arg_card'> </div>
+                                <div class="center-block card-wrapper" id='tmi_arg_card'> </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-3">
-                                <div class="center-block cardWrapper" id='chav_arg_card'></div>
+                                <div class="center-block card-wrapper" id='chav_arg_card'></div>
                             </div>
                         </div>
                         <br>
@@ -162,9 +146,9 @@
                         </div>
                         <!-- FIN DEL SELECTOR DE PROVINCIAS -->
                         <!-- COMIENZO DE LOS PANELES DE PROVINCIAS-INDICADORES -->
-                        <div class="row panels-row province-indicator-panel" id='tn_06_panel'>
-                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block cardWrapper col-xs-12 col-sm-4 col-md-4" id="tn_06_card"></div>
-                            <div style=" height: 420px;" class="col-xs-12 col-sm-8 col-md-8" id="tn_06_graphic"></div>
+                        <div class="row panels-row province-indicator-panel ts-components-row" id='tn_06_panel'>
+                            <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper col-xs-12 col-sm-3 col-md-3" id="tn_06_card"></div>
+                            <div style=" height: 420px;" class="col-xs-12 col-sm-9 col-md-9" id="tn_06_graphic"></div>
                         </div>
                         <!-- los nuevos paneles de provincia-indicadore se agregan dinámicamente -->
                         <!-- FIN DE LOS PANELES DE PROVINCIAS-INDICADORES -->
