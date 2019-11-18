@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]> <html lang="es"class="iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html lang="es" class="ie6 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="es" class="ie7 lt-ie8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="es" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html lang="es">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banco de Pruebas</title>
+    <meta name="description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina.">
+    <meta name="author" content="Presidencia de la Nación">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Nav and address bar color -->
+    <meta name="theme-color" content="#0072b8">
+    <meta name="msapplication-navbutton-color" content="#0072b8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0072b8">
+    <meta property="og:url" content="http://localhost:4000/proyectos/argentina/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Banco de Pruebas" />
+    <meta property="og:description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta property="og:image" content="/ejemplos/img/jumbotron.jpg" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Banco de Pruebas" />
+    <meta name="twitter:description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta name="twitter:image" content="/ejemplos/img/jumbotron.jpg" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" media="all" />
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/poncho.min.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/icono-arg.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/argentina.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://argob.github.io/poncho/js/html5shiv.js"></script>
+      <script src="http://argob.github.io/poncho/js/respond.min.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/css/components.css" type="text/css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
+
+<body role="document" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-769 node-type-page og-context og-context-node og-context-node-769 i18n-es">
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-P68ZXT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+    (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P68ZXT');
+    </script>
+    <div id="skip-link">
+        <a href="#main-content" class="element-invisible element-focusable">Pasar al contenido principal</a>
+    </div>
+    <header>
+        <nav class="navbar navbar-top navbar-default" role="navigation">
+            <div class="container">
+                <div>
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="https://www.argentina.gob.ar/">
+            <img src="https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/logo.svg" alt="Inicio" width="274" height="50" />
+            <h1 class="sr-only">Argentina.gob.ar <small>Presidencia de la Nación</small></h1>
+          </a>
+                        <a class="btn btn-success btn-login visible-xs" href="https://mi.argentina.gob.ar"><span class="fa fa-user fa-fw"></span></a>
+                        <a onclick="jQuery('.navbar.navbar-top').addClass('state-search');" class="btn btn-primary btn-login visible-xs" href="#"><span class="fa fa-search fa-fw"></span></a>
+                    </div>
+                    <ul class="nav navbar-nav navbar-right hidden-xs">
+                        <a onclick="jQuery('.navbar.navbar-top').removeClass('state-search');" href="#" class="btn btn-link visible-xs"> <i class="fa fa-times"></i></a>
+                        <!--<div id="cd-login">-->
+                        <li>
+                            <div class="input-group">
+                                <label for="buscar"><span class="sr-only">Buscar trámites, servicios o áreas ...</span></label>
+                                <input id="busqueda" type="text" class="form-control" aria-hidden="true" placeholder="Buscar trámites, servicios o áreas ...">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" id="buscador-argentina" type="button"><i class="fa fa-search"></i><span class="sr-only">Buscar</span></button>
+                                </span>
+                            </div>
+                        </li>
+                        <a id="cd-login" href="https://mi.argentina.gob.ar" class="btn btn-success hidden-xs"><i class="fa fa-user"></i> &nbsp; Mi Argentina</a>
+                        <!--</div>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <style>
+    .card.empty {
+        width: 170px;
+    }
+    </style>
+    <main role="main">
+        <a id="main-content"></a>
+        <div class="container"></div>
+        <div class="region region-content">
+            <div id="block-system-main" class="block block-system clearfix">
+                <div class="container">
+                    <div class="panel-pane pane-page-breadcrumb">
+                        <div class="pane-content">
+                            <ol class="breadcrumb pull-left">
+                                <li><a href="https://www.argentina.gob.ar/">Inicio</a></li>
+                                <li><a href="https://www.argentina.gob.ar/hacienda">Ministerio de Hacienda</a></li>
+                                <!---
+                                <li><a href=/precios/>Precios</a>
+                                </li>
+                                 -->
+                                <li class="active">Datos Económicos</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                        </div>
+                        <div class="col-sm-6">
+                        </div>
+                    </div>
+                </div>
+                <section>
+                    <div class="container">
+                        <article class="container content_format">
+                            <div class="panel-pane pane-titulo">
+                                <div class="pane-content">
+                                    <h1 class="activities-sidbar">Datos Económicos: nivel de actividad</h1>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="container">
+                        <div class="panel-pane pane-area-estructura">
+                            <div class="panel-pane pane-atajos">
+                                <div class="pane-content">
+                                    <div class="row panels-row">
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="precios.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Precios</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="nivel-actividad.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Nivel de Actividad</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="sector-externo.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Sector Externo</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="finanzas-publicas.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Finanzas Públicas</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="finanzas.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Finanzas</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="economia-internacional.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Economía Internacional</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="dinero-bancos.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Dinero y Bancos</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                        <div class="col-xs-12 col-sm-6 col-md-3">
+                                            <a href="empleo-ingresos.html" class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <div class="media">
+                                                        <div class="media-body">
+                                                            <h3>Empleo e Ingresos</h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- /.col-md-4 -->
+                                    </div>
+                                    <!-- /.panels-row -->
+                                </div>
+                                <!-- /.pane-content -->
+                            </div>
+                            <!-- /.pane-atajos -->
+                        </div>
+                        <!-- /.pane-area-estructura -->
+                    </div>
+                    <!-- /.container -->
+                    <div class="panel-separator"></div>
+                    <div class="container">
+                        <button type="button" class="btn"><a href="https://www.economia.gob.ar/download/infoeco/actividad_ied.xlsx">Descargar apéndice de Nivel de Actividad</a></button>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="activities-sidbar">Estimador Mensual de Actividad Económica</h3>
+                        </div>
+                        <div class="row panels-row ts-components-row">
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <div class="card-wrapper center-block" id="emae-interanual-card"></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <div class="card-wrapper center-block" id="emae-acumulado-card"></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                <div class="card-wrapper center-block" id="emae-mensual-card"></div>
+                            </div>
+                        </div>
+                        <div class="row panels-row ts-components-row">
+                            <div class="col-xs-12 col-sm-12 col-md-12" id="emae-graphic"></div>
+                        </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="activities-sidbar">Estimador Mensual de Actividad Económica: por sectores</h3>
+                        </div>
+                        <div id="emae-panels">
+                            <div class="row">
+                                <div class="col">
+                                    <select name="indicator-selector" id="indicator-selector-id" class="form-control">
+                                        <option value="comercio" selected>Comercio mayorista y minorista y reparaciones</option>
+                                        <option value="ensenianza">Enseñanza</option>
+                                        <option value="publico">Administración pública, defensa y seguridad social</option>
+                                        <option value="transporte">Transporte, almacenamiento y comunicaciones</option>
+                                        <option value="sociales">Servicios sociales (salud)</option>
+                                        <option value="subsidcios">Subsidios netos</option>
+                                        <option value="financiero">Intermediación financiera</option>
+                                        <option value="mineria">Explotación de minas y canteras</option>
+                                        <option value="agricultura">Agricultura, ganadería, caza y silvicultura</option>
+                                        <option value="electricidad">Electricidad, gas y agua</option>
+                                        <option value="hoteles">Hoteles y restaurantes</option>
+                                        <option value="inmobiliarias">Inmobiliarias, empresariales y alquiler</option>
+                                        <option value="comunidad">Servicios comunitarios</option>
+                                        <option value="pesca">Pesca</option>
+                                        <option value="industria">Industria Manufacturera</option>
+                                        <option value="construccion">Construcción</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="emae-panel" id="emae-comercio-panel">
+                                <div class="row panels-row">
+                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                        <div class="row panels-row ts-components-row">
+                                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                                <div class="card-wrapper center-block" id="emae-comercio-interanual-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                                <div class="card-wrapper center-block" id="emae-comercio-acumulado-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                                <div class="card-wrapper center-block" id="emae-comercio-mensual-card"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-6" style="height: 300px;" id="emae-comercio-graphic"></div>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="activities-sidbar">Otros índices de nivel de actividad</h3>
+                        </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="activities-sidbar">Indicadores cuantitativos de nivel de actividad</h3>
+                        </div>
+                </section>
+                </div>
+                </div>
+    </main>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <section class="block block-block clearfix">
+                        <img class="image-responsive" src="https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/logo.svg" alt="Argentina.gob.ar - Presidencia de la Nación" />
+                        <p class="text-muted small"> Los contenidos de Argentina.gob.ar están licenciados bajo <a href="https://creativecommons.org/licenses/by/2.5/ar/" target="_blank">Creative Commons Reconocimiento 2.5 Argentina License</a></p>
+                    </section>
+                    <a href="https://www.argentina.gob.ar/sugerencias-b?url_refence=node/769" class=" active">
+                        <p class="btn btn-primary m-t-1">¿Querés hacernos una sugerencia?</p>
+                    </a>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="region region-footer2">
+                        <section id="block-menu-menu-footer-2" class="block block-menu clearfix">
+                            <ul class="menu nav">
+                                <li class="first leaf"><a href="https://www.argentina.gob.ar/servicios">Trámites y servicios</a></li>
+                                <li class="leaf"><a href="https://www.argentina.gob.ar/turnos">Turnos</a></li>
+                                <li class="leaf"><a href="https://www.argentina.gob.ar/organismos">Organismos del Estado</a></li>
+                                <li class="last leaf"><a href="http://mapadelestado.modernizacion.gob.ar/">Mapa del Estado</a></li>
+                                <li class="last leaf"><a href="https://www.argentina.gob.ar/normativa">Leyes argentinas</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="region region-footer3">
+                        <section id="block-menu-menu-footer-3" class="block block-menu clearfix">
+                            <ul class="menu nav">
+                                <li class="first leaf"><a href="https://www.argentina.gob.ar/acerca">Acerca de este sitio</a></li>
+                                <li class="leaf"><a href="https://www.argentina.gob.ar/terminos-y-condiciones">Términos y condiciones</a></li>
+                                <li class="last leaf"><a href="https://www.argentina.gob.ar/ayuda">Ayuda</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" language="javascript">
+    //BUSCADOR ARGENTINA.GOB.AR
+    jQuery(document).ready(function() {
+        jQuery('#buscador-argentina').click(function() {
+            irABuscador(jQuery('#busqueda').val())
+        })
+
+        jQuery('#busqueda').keypress(function(e) {
+            if (e.keyCode == 13) {
+                irABuscador(jQuery(this).val())
+            }
+        })
+    })
+
+    function irABuscador(val = "") {
+        location.href = "https://www.argentina.gob.ar/buscar/" + val
+    }
+
+    // ANCLAS
+    jQuery(document).ready(function() {
+        jQuery('.anchor').click(function() {
+            top = 1;
+            jQuery('html, body').animate({
+                scrollTop: jQuery(jQuery(this).attr('href')).offset().top - 150
+            }, 500);
+            return false;
+        });
+    });
+    </script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-18918572-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+
+    // alert(jQuery.fn.jquery);
+    </script>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
+    <script>
+    window.onload = function() {
+
+        function simpleCard(serieId, targetDivId, color, title) {
+            TSComponents.Card.render(targetDivId, {
+                serieId: serieId,
+                color: color,
+                hasChart: 'none',
+                title: title,
+                links: "none",
+                units: "",
+                source: "",
+                hasFrame: false,
+                decimals: 1,
+                explicitSign: true
+            })
+        }
+
+        function emaeSectorGraphic(serieId, sector) {
+
+            TSComponents.Graphic.render("emae-" + sector + "-graphic", {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieId + ":percent_change&last=24",
+                colors: [
+                    PARAMS["mensual"]["color"]
+                ],
+                chartType: "column",
+                displayUnits: false,
+                zoom: false,
+                datePickerEnabled: false
+            })
+        }
+
+        function emaeSectorPanelHtml(sector) {
+            var emaeSectorPanelId = "#emae-" + sector + "-panel"
+
+            if ($(emaeSectorPanelId).length) {
+                // it exists
+            } else {
+                var panelTemplate = $("#emae-comercio-panel").prop('outerHTML')
+                var newPanelHtml = panelTemplate.replace(
+                    /comercio/g, sector).replace(
+                    /Comercio mayorista y minorista y reparaciones/g, PARAMS["emae-" + sector]["desc"])
+                $("#emae-panels").append($(newPanelHtml))
+            }
+        }
+
+        function emaeSectorPanel(sector) {
+            var serieId = PARAMS["emae-" + sector]["serieId"]
+            emaeSectorPanelHtml(sector)
+            simpleCard(serieId + ":percent_change_a_year_ago",
+                "emae-" + sector + "-interanual-card", PARAMS["interanual"]["color"], "% interanual")
+            simpleCard(serieId + ":percent_change_since_beginning_of_year",
+                "emae-" + sector + "-acumulado-card", PARAMS["acumulado"]["color"], "% anual acumulado")
+            simpleCard(serieId + ":percent_change",
+                "emae-" + sector + "-mensual-card", PARAMS["mensual"]["color"], "% mensual")
+            emaeSectorGraphic(serieId, sector)
+        }
+
+        var PARAMS = {
+            "interanual": { "color": 1 },
+            "acumulado": { "color": 2 },
+            "mensual": { "color": 3 },
+            "emae-interanual": { "title": "EMAE (% interanual)" },
+            "emae-acumulado": { "title": "EMAE desest. (% anual acumulado)" },
+            "emae-mensual": { "title": "EMAE desest. (% mensual)" },
+            "emae-comercio": {
+                "serieId": "11.3_AGCS_2004_M_41",
+                "desc": "Comercio mayorista y minorista y reparaciones"
+            },
+            "emae-ensenianza": {
+                "serieId": "11.3_CMMR_2004_M_10",
+                "desc": "Enseñanza"
+            },
+            "emae-publico": {
+                "serieId": "11.3_C_2004_M_60",
+                "desc": "Administración pública, defensa y seguridad social"
+            },
+            "emae-transporte": {
+                "serieId": "11.3_EMC_2004_M_25",
+                "desc": "Transporte, almacenamiento y comunicaciones"
+            },
+            "emae-sociales": {
+                "serieId": "11.3_HR_2004_M_24",
+                "desc": "Servicios sociales (salud)"
+            },
+            "emae-subsidcios": {
+                "serieId": "11.3_IF_2004_M_25",
+                "desc": "Subsidios netos"
+            },
+            "emae-financiero": {
+                "serieId": "11.3_IM_2004_M_25",
+                "desc": "Intermediación financiera"
+            },
+            "emae-mineria": {
+                "serieId": "11.3_ISD_2004_M_26",
+                "desc": "Explotación de minas y canteras"
+            },
+            "emae-agricultura": {
+                "serieId": "11.3_ISOM_2004_M_39",
+                "desc": "Agricultura, ganadería, caza y silvicultura"
+            },
+            "emae-electricidad": {
+                "serieId": "11.3_ITC_2004_M_21",
+                "desc": "Electricidad, gas y agua"
+            },
+            "emae-hoteles": {
+                "serieId": "11.3_P_2004_M_20",
+                "desc": "Hoteles y restaurantes"
+            },
+            "emae-inmobiliarias": {
+                "serieId": "11.3_SEGA_2004_M_48",
+                "desc": "Inmobiliarias, empresariales y alquiler"
+            },
+            "emae-comunidad": {
+                "serieId": "11.3_TAC_2004_M_60",
+                "desc": "Servicios comunitarios"
+            },
+            "emae-pesca": {
+                "serieId": "11.3_VIPAA_2004_M_5",
+                "desc": "Pesca"
+            },
+            "emae-industria": {
+                "serieId": "11.3_VMASD_2004_M_23",
+                "desc": "Industria Manufacturera"
+            },
+            "emae-construccion": {
+                "serieId": "11.3_VMATC_2004_M_12",
+                "desc": "Construcción"
+            },
+        }
+
+        // SECCION: Estimador Mensual de Actividad Económica
+        simpleCard("143.3_NO_PR_2004_A_21:percent_change_a_year_ago",
+            "emae-interanual-card",
+            PARAMS["interanual"]["color"],
+            PARAMS["emae-interanual"]["title"])
+        simpleCard("143.3_NO_PR_2004_A_31:percent_change_since_beginning_of_year",
+            "emae-acumulado-card",
+            PARAMS["acumulado"]["color"],
+            PARAMS["emae-acumulado"]["title"])
+        simpleCard("143.3_NO_PR_2004_A_31:percent_change",
+            "emae-mensual-card",
+            PARAMS["mensual"]["color"],
+            PARAMS["emae-mensual"]["title"])
+
+        TSComponents.Graphic.render("emae-graphic", {
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=143.3_NO_PR_2004_A_21:percent_change_a_year_ago,143.3_NO_PR_2004_A_31:percent_change_since_beginning_of_year,143.3_NO_PR_2004_A_31:percent_change&last=24",
+            colors: [
+                PARAMS["interanual"]["color"],
+                PARAMS["acumulado"]["color"],
+                PARAMS["mensual"]["color"]
+            ],
+            chartType: "column",
+            legendLabel: {
+                "143.3_NO_PR_2004_A_21:percent_change_a_year_ago": PARAMS["emae-interanual"]["title"],
+                "143.3_NO_PR_2004_A_31:percent_change_since_beginning_of_year": PARAMS["emae-acumulado"]["title"],
+                "143.3_NO_PR_2004_A_31:percent_change": PARAMS["emae-mensual"]["title"],
+            },
+            displayUnits: false
+        })
+
+
+        // SECCION: Estimador Mensual de Actividad Económica por sectores
+        $("#indicator-selector-id").on("change", function() {
+            var selector = $(this);
+            var sector = selector.val()
+
+            // hide all
+            $(".emae-panel").each(function() {
+                $(this).hide();
+            });
+            emaeSectorPanel(sector)
+
+            // show selected
+            $("#emae-" + sector + "-panel").show();
+        });
+
+        emaeSectorPanel("comercio")
+
+
+    }
+    </script>
+</body>
+
+</html>

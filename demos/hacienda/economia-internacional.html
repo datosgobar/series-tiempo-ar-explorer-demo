@@ -1,63 +1,50 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/ dc: http://purl.org/dc/terms/ foaf: http://xmlns.com/foaf/0.1/ og: http://ogp.me/ns# rdfs: http://www.w3.org/2000/01/rdf-schema# sioc: http://rdfs.org/sioc/ns# sioct: http://rdfs.org/sioc/types# skos: http://www.w3.org/2004/02/skos/core# xsd: http://www.w3.org/2001/XMLSchema#">
+<!--[if IEMobile 7 ]> <html lang="es"class="iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html lang="es" class="ie6 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="es" class="ie7 lt-ie8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="es" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html lang="es">
+<!--<![endif]-->
 
 <head>
-    <link rel="profile" href="http://www.w3.org/1999/xhtml/vocab" />
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banco de Pruebas</title>
+    <meta name="description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina.">
+    <meta name="author" content="Presidencia de la Nación">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Nav and address bar color -->
     <meta name="theme-color" content="#0072b8">
     <meta name="msapplication-navbutton-color" content="#0072b8">
     <meta name="apple-mobile-web-app-status-bar-style" content="#0072b8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="gtm-id" content="769" />
-    <meta name="gtm-tipo" content="page" />
-    <meta name="gtm-padres" content="736" />
-    <!-- page / book / area / noticia -->
-    <meta name="gtm-padre" content="Estudios y Estadísticas Laborales" />
-    <meta name="gtm-raiz" content="Ministerio de Producción y Trabajo" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="gobierno, argentino, nacional, gobierno argentino, gobierno nacional, República Argentina, administración, gestión, pública, administración pública, gestión pública, digital, trámites, servicios, trámites en línea, gobierno digital, servicios en línea, servicios digitales, Estado, transparencia, ciudadanos, modernización, organismo, organismo público, organismos públicos, organismos, beneficios, beneficios" />
-    <link rel="image_src" href="https://www.argentina.gob.ar/sites/default/files/argentina-fb.png" />
-    <link rel="canonical" href="http://www.trabajo.gob.ar/estadisticas/oede/index.asp" />
-    <link rel="shortlink" href="https://www.argentina.gob.ar/node/769" />
-    <meta property="og:site_name" content="Argentina.gob.ar" />
-    <meta property="og:url" content="http://www.trabajo.gob.ar/estadisticas/oede/index.asp" />
-    <meta property="og:title" content="Observatorio de Empleo y Dinámica Empresarial (OEDE)" />
-    <meta property="og:description" content="" />
-    <meta property="og:updated_time" content="20/06/2019 10:29:51 p.m." />
-    <meta property="og:image" content="https://www.argentina.gob.ar/sites/default/files/argentina-fb.png" />
+    <meta property="og:url" content="http://localhost:4000/proyectos/argentina/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Banco de Pruebas" />
+    <meta property="og:description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta property="og:image" content="/ejemplos/img/jumbotron.jpg" />
+    <meta property="og:locale" content="es_AR" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content="http://www.trabajo.gob.ar/estadisticas/oede/index.asp" />
-    <meta name="twitter:title" content="Observatorio de Empleo y Dinámica Empresarial (OEDE)" />
-    <meta name="twitter:description" content="" />
-    <meta name="twitter:image:src" content="https://www.argentina.gob.ar/sites/default/files/argentina-fb.png" />
-    <meta property="article:published_time" content="20/06/2019 10:29:51 p.m." />
-    <meta property="article:modified_time" content="20/06/2019 10:29:51 p.m." />
-    <link rel="shortcut icon" href="https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/favicon.ico" type="image/ico" />
-    <title>Observatorio de Empleo y Dinámica Empresarial (OEDE) | Argentina.gob.ar</title>
-    <link type="text/css" rel="stylesheet" href="https://www.argentina.gob.ar/sites/default/files/css/css_Ps9-OBRN7HporQYTFlUHQ3dOUxkPLFaWo3JP9-kISkQ.css" media="all" />
+    <meta name="twitter:title" content="Banco de Pruebas" />
+    <meta name="twitter:description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta name="twitter:image" content="/ejemplos/img/jumbotron.jpg" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" media="all" />
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,700italic,900,900italic" media="all" />
-    <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic" media="all" />
-    <link type="text/css" rel="stylesheet" href="https://www.argentina.gob.ar/sites/default/files/updatePoncho/css/icono-arg.css" media="all" />
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <script>
-    window.jQuery || document.write("<script src='/profiles/argentinagobar/modules/contrib/jquery_update/replace/jquery/2.1/jquery.min.js'>\x3C/script>")
-    </script>
-    <script>
-    jQuery.migrateMute = true;
-    jQuery.migrateTrace = false;
-    </script>
-    <script>
-    jQuery.extend(Drupal.settings, { "basePath": "https:\/\/www.argentina.gob.ar\/", "pathPrefix": "", "ajaxPageState": { "theme": "argentinagobar_theme", "theme_token": "qXXFC_-9jYshKOI0nzXyt3jOP5CBNEEl1iGaeCHJOc4", "js": { "profiles\/argentinagobar\/modules\/argentinagobar\/argentinagobar_search\/js\/solr_search.js": 1, "profiles\/argentinagobar\/themes\/contrib\/bootstrap\/js\/bootstrap.js": 1, "\/\/code.jquery.com\/jquery-2.1.4.min.js": 1, "0": 1, "1": 1, "profiles\/argentinagobar\/modules\/contrib\/jquery_update\/replace\/jquery-migrate\/1.2.1\/jquery-migrate.min.js": 1, "misc\/jquery.once.js": 1, "misc\/drupal.js": 1, "profiles\/argentinagobar\/modules\/argentinagobar\/ev_calendar\/js\/calendario.js": 1, "public:\/\/languages\/es_KtzKAdYfQ59DDiRk-nPGtUkpxJUzL68uo640Q1iglS8.js": 1, "profiles\/argentinagobar\/modules\/contrib\/drupar_filtros\/js\/mdBlank.js": 1, "profiles\/argentinagobar\/modules\/argentinagobar\/argentinagobar_bloques\/js\/fb-sdk.js": 1, "profiles\/argentinagobar\/modules\/argentinagobar\/argentinagobar_bloques\/js\/tw.js": 1, "profiles\/argentinagobar\/themes\/contrib\/poncho\/vendor\/bootstrap\/js\/bootstrap.min.js": 1 }, "css": { "modules\/system\/system.base.css": 1, "profiles\/argentinagobar\/modules\/argentinagobar\/argentinagobar_search\/css\/search.css": 1, "profiles\/argentinagobar\/modules\/argentinagobar\/argentinagobar_webform\/css\/custom-chosen.css": 1, "profiles\/argentinagobar\/modules\/contrib\/date\/date_api\/date.css": 1, "profiles\/argentinagobar\/modules\/contrib\/date\/date_popup\/themes\/datepicker.1.7.css": 1, "profiles\/argentinagobar\/modules\/argentinagobar\/ev_calendar\/css\/calendario.css": 1, "modules\/field\/theme\/field.css": 1, "profiles\/argentinagobar\/modules\/contrib\/field_hidden\/field_hidden.css": 1, "modules\/node\/node.css": 1, "profiles\/argentinagobar\/modules\/contrib\/views\/css\/views.css": 1, "profiles\/argentinagobar\/modules\/contrib\/ctools\/css\/ctools.css": 1, "profiles\/argentinagobar\/modules\/contrib\/panels\/css\/panels.css": 1, "profiles\/argentinagobar\/modules\/contrib\/rate\/rate.css": 1, "https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/font-awesome\/5.8.2\/css\/font-awesome.css": 1, "https:\/\/fonts.googleapis.com\/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,700italic,900,900italic": 1, "https:\/\/fonts.googleapis.com\/css?family=Droid+Serif:400,400italic,700,700italic": 1, "https:\/\/www.argentina.gob.ar\/sites\/default\/files\/updatePoncho\/css\/icono-arg.css": 1, "profiles\/argentinagobar\/themes\/contrib\/poncho\/vendor\/bootstrap\/css\/bootstrap.min.css": 1, "profiles\/argentinagobar\/themes\/contrib\/poncho\/css\/poncho.min.css": 1, "profiles\/argentinagobar\/themes\/contrib\/poncho\/css\/argentina.css": 1 } }, "urlIsAjaxTrusted": { "\/estadisticas\/oede": true }, "ogContext": { "groupType": "node", "gid": "769" }, "bootstrap": { "anchorsFix": "0", "anchorsSmoothScrolling": "0", "formHasError": 1, "popoverEnabled": 1, "popoverOptions": { "animation": 1, "html": 0, "placement": "right", "selector": "", "trigger": "click", "triggerAutoclose": 1, "title": "", "content": "", "delay": 0, "container": "body" }, "tooltipEnabled": 1, "tooltipOptions": { "animation": 1, "html": 0, "placement": "auto left", "selector": "", "trigger": "hover focus", "delay": 0, "container": "body" } } });
-    </script>
-    <script>
-    dataLayer = [{
-        'userIPaddress': '172.16.97.220',
-    }];
-    </script>
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/poncho.min.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/icono-arg.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/argentina.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://argob.github.io/poncho/js/html5shiv.js"></script>
+      <script src="http://argob.github.io/poncho/js/respond.min.js"></script>
+  <![endif]-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/css/components.css" type="text/css">
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
 
 <body role="document" class="html not-front not-logged-in no-sidebars page-node page-node- page-node-769 node-type-page og-context og-context-node og-context-node-769 i18n-es">
     <noscript>
@@ -120,8 +107,11 @@
                             <ol class="breadcrumb pull-left">
                                 <li><a href="https://www.argentina.gob.ar/">Inicio</a></li>
                                 <li><a href="https://www.argentina.gob.ar/hacienda">Ministerio de Hacienda</a></li>
-                                <li><a href="index.html">Datos Económicos</a></li>
-                                <li class="active">Precios</li>
+                                <!---
+                                <li><a href=/precios/>Precios</a>
+                                </li>
+                                 -->
+                                <li class="active">Datos Económicos</li>
                             </ol>
                         </div>
                     </div>
@@ -137,7 +127,7 @@
                         <article class="container content_format">
                             <div class="panel-pane pane-titulo">
                                 <div class="pane-content">
-                                    <h1 class="activities-sidbar">Datos Económicos: precios</h1>
+                                    <h1 class="activities-sidbar">Datos Económicos: economía internacional</h1>
                                 </div>
                             </div>
                         </article>
@@ -253,50 +243,15 @@
                     <!-- /.container -->
                     <div class="panel-separator"></div>
                     <div class="container">
-                        <button type="button" class="btn"><a href="https://www.economia.gob.ar/download/infoeco/apendice4.xlsx">Descargar apéndice de Precios</a></button>
-                    </div>
-                    <br>
-                    <div class="container">
-                        <div class="panel-separator"></div>
-                        <div class="panel-pane pane-texto">
-                            <div class="pane-content">
-                                <div class="container">
-                                    <h3 class="activities-sidbar">Indice de Precios al Consumidor Nacional</h3>
-                                </div>
-                                <br>
-                                <br>
-                                <div class="container">
-                                    <div id="ipc-general-ia" class="col-xs-12 col-sm-6 col-md-3">
-                                    </div>
-                                    <div id="ipc-general-pp" class="col-xs-12 col-sm-6 col-md-3">
-                                    </div>
-                                    <div id="ipc-nucleo-ia" class="col-xs-12 col-sm-6 col-md-3">
-                                    </div>
-                                    <div id="ipc-nucleo-pp" class="col-xs-12 col-sm-6 col-md-3">
-                                    </div>
-                                </div>
-                                <div class="container">
-                                    <div id="ipc-graphic" class="col-xs-24 col-sm-12 col-md-6">
-                                    </div>
-                                    <div id="ipc-graphic-monthly" class="col-xs-24 col-sm-12 col-md-6">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <button type="button" class="btn"><a href="https://www.economia.gob.ar/download/infoeco/internacional_ied.xlsx">Descargar apéndice de Economía Internacional</a></button>
                     </div>
                 </section>
-                <section>
-                    <div class="container">
-                        <div class="panel-separator"></div>
-                        <div class="panel-pane pane-texto">
-                            <div class="pane-content">
-                                <div class="container">
-                                    <h4 class="activities-sidbar">Otros índices de precios....</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <!-- FIN CONTENIDO 6COL -->
+                <!-- 12COL -->
+                <!-- /.bg-grey -->
+                <!-- FIN 12COL -->
+            </div>
+        </div>
     </main>
     <footer class="main-footer">
         <div class="container">
@@ -386,65 +341,7 @@
     <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
     <script>
     window.onload = function() {
-        // componentes de series de tiempo
-        TSComponents.Graphic.render('ipc-graphic', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago,148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago&limit=5000',
-            title: 'Variación interanual',
-            source: 'Fuente primaria: Instituto Nacional de Estadística y Censos (INDEC)',
-            chartTypes: { "148.3_INIVELNAL_DICI_M_26": "line", "148.3_INUCLEONAL_DICI_M_19": "line" },
-            legendLabel: { "148.3_INIVELNAL_DICI_M_26": "Nivel general", "148.3_INUCLEONAL_DICI_M_19": "Núcleo" },
-            datePickerEnabled: false,
-            navigator: true
 
-        })
-
-        TSComponents.Graphic.render('ipc-graphic-monthly', {
-            graphicUrl: 'https://apis.datos.gob.ar/series/api/series/?ids=148.3_INIVELNAL_DICI_M_26:percent_change,148.3_INUCLEONAL_DICI_M_19:percent_change&limit=5000',
-            title: 'Variación mensual',
-            source: 'Fuente primaria: Instituto Nacional de Estadística y Censos (INDEC)',
-            chartTypes: { "148.3_INIVELNAL_DICI_M_26": "column", "148.3_INUCLEONAL_DICI_M_19": "column" },
-            legendLabel: { "148.3_INIVELNAL_DICI_M_26": "Nivel general", "148.3_INUCLEONAL_DICI_M_19": "Núcleo" },
-            datePickerEnabled: false,
-            navigator: true
-        })
-
-        TSComponents.Card.render('ipc-general-ia', {
-            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change_a_year_ago',
-            color: '#F9A822',
-            hasChart: 'small',
-            title: "Nivel General (% interanual)",
-            links: "none",
-            units: "",
-            hasFrame: false
-        })
-
-        TSComponents.Card.render('ipc-general-pp', {
-            serieId: '148.3_INIVELNAL_DICI_M_26:percent_change',
-            hasChart: 'small',
-            title: "Nivel general (% mensual)",
-            links: "none",
-            units: "",
-            hasFrame: false
-        })
-
-        TSComponents.Card.render('ipc-nucleo-ia', {
-            serieId: '148.3_INUCLEONAL_DICI_M_19:percent_change_a_year_ago',
-            hasChart: 'small',
-            title: "Núcleo (% interanual)",
-            links: "none",
-            units: "",
-            hasFrame: false
-        })
-
-        TSComponents.Card.render('ipc-nucleo-pp', {
-            serieId: '148.3_INUCLEONAL_DICI_M_19:percent_change',
-            color: '#EC407A',
-            hasChart: 'small',
-            title: "Núcleo (% mensual)",
-            links: "none",
-            units: "",
-            hasFrame: false
-        })
 
     }
     </script>
