@@ -246,10 +246,121 @@
                         <button type="button" class="btn"><a href="https://www.economia.gob.ar/download/infoeco/apendice5.xlsx">Descargar apéndice de Sector Externo</a></button>
                     </div>
                 </section>
-                <!-- FIN CONTENIDO 6COL -->
-                <!-- 12COL -->
-                <!-- /.bg-grey -->
-                <!-- FIN 12COL -->
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="activities-sidbar">Intercambio Comercial</h3>
+                        </div>
+                        <!-- COMIENZO de paneles de ICA. Se agregan dinámicamente
+                        según el modelo del div #ica-panels -->
+                        <div id="ica-panels">
+                            <div class="ica-panel" id="ica-exportaciones-panel">
+                                <div class="row">
+                                    <h5 class="activities-sidbar">Exportaciones</h5>
+                                </div>
+                                <div class="row panels-row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="row panels-row ts-components-row">
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="ica-exportaciones-niveles-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="ica-exportaciones-interanual-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="ica-exportaciones-acumulado-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="ica-exportaciones-mensual-card"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FIN de paneles de ICA. Se agregan dinámicamente
+                        según el modelo del div #ica-panels -->
+                        <div class="row panels-row" id="ica-graphics">
+                            <div class="col-xs-12 col-sm-12 col-md-12 ica-graphic" id="ica-graphic-month-value-sum">
+                            </div>
+                        </div>
+                        <div class="row panels-row">
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Frecuencia</label><span><select name="frequencyList" id="selector-frecuencia" class="form-control"><option value="year">Anual</option><option value="semester">Semestral</option><option value="quarter">Trimestral</option><option value="month" selected>Mensual</option><option value="day" disabled="">Diaria</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Unidades</label><span><select name="frequencyList" id="selector-unidades" class="form-control"><option value="value" selected>Unidades originales</option><option value="change">Variación</option><option value="change_a_year_ago">Variación interanual</option><option value="percent_change">Variación porcentual</option><option value="percent_change_a_year_ago">Variación porcentual interanual</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Agregación</label><span><select name="frequencyList" id="selector-agregacion" class="form-control"><option value="avg">Promedio</option><option value="sum" selected>Suma</option><option value="min">Mínimo</option><option value="max">Máximo</option><option value="end_of_period">Último valor del período</option></select></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="activities-sidbar">Intercambio Comercial: composición</h3>
+                        </div>
+                        <div class="row panels-row" id="ica-exportaciones-graphics">
+                            <div class="col-xs-12 col-sm-12 col-md-12 ica-exportaciones-graphic" id="ica-exportaciones-graphic-month-value-sum">
+                            </div>
+                        </div>
+                        <div class="row panels-row">
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Frecuencia</label><span><select name="frequencyList" id="selector-exportaciones-frecuencia" class="form-control"><option value="year">Anual</option><option value="semester">Semestral</option><option value="quarter">Trimestral</option><option value="month" selected>Mensual</option><option value="day" disabled="">Diaria</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Unidades</label><span><select name="frequencyList" id="selector-exportaciones-unidades" class="form-control"><option value="value" selected>Unidades originales</option><option value="change">Variación</option><option value="change_a_year_ago">Variación interanual</option><option value="percent_change">Variación porcentual</option><option value="percent_change_a_year_ago">Variación porcentual interanual</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Agregación</label><span><select name="frequencyList" id="selector-exportaciones-agregacion" class="form-control"><option value="avg">Promedio</option><option value="sum" selected>Suma</option><option value="min">Mínimo</option><option value="max">Máximo</option><option value="end_of_period">Último valor del período</option></select></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row panels-row" id="ica-importaciones-graphics">
+                            <div class="col-xs-12 col-sm-12 col-md-12 ica-importaciones-graphic" id="ica-importaciones-graphic-month-value-sum">
+                            </div>
+                        </div>
+                        <div class="row panels-row">
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Frecuencia</label><span><select name="frequencyList" id="selector-importaciones-frecuencia" class="form-control"><option value="year">Anual</option><option value="semester">Semestral</option><option value="quarter">Trimestral</option><option value="month" selected>Mensual</option><option value="day" disabled="">Diaria</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Unidades</label><span><select name="frequencyList" id="selector-importaciones-unidades" class="form-control"><option value="value" selected>Unidades originales</option><option value="change">Variación</option><option value="change_a_year_ago">Variación interanual</option><option value="percent_change">Variación porcentual</option><option value="percent_change_a_year_ago">Variación porcentual interanual</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Agregación</label><span><select name="frequencyList" id="selector-importaciones-agregacion" class="form-control"><option value="avg">Promedio</option><option value="sum" selected>Suma</option><option value="min">Mínimo</option><option value="max">Máximo</option><option value="end_of_period">Último valor del período</option></select></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
@@ -342,6 +453,254 @@
     <script>
     window.onload = function() {
 
+        function simpleCard(serieId, targetDivId, color, title,
+            explicitSign, decimals) {
+            TSComponents.Card.render(targetDivId, {
+                serieId: serieId,
+                color: color,
+                hasChart: 'none',
+                title: "",
+                links: "none",
+                source: "",
+                hasFrame: false,
+                decimals: decimals,
+                explicitSign: explicitSign
+            })
+        }
+
+        function icaSectorPanelHtml(variable) {
+            var icaSectorPanelId = "#ica-" + variable + "-panel"
+
+            if ($(icaSectorPanelId).length) {
+                // it exists
+            } else {
+                var panelTemplate = $("#ica-exportaciones-panel").prop('outerHTML')
+                var newPanelHtml = panelTemplate.replace(
+                    /exportaciones/g, variable).replace(
+                    /Exportaciones/g, PARAMS["ica-" + variable]["desc"])
+                $("#ica-panels").append($(newPanelHtml))
+            }
+        }
+
+        function icaSectorPanel(variable) {
+            var serieId = PARAMS["ica-" + variable]["serieId"]
+
+            icaSectorPanelHtml(variable)
+
+            simpleCard(serieId,
+                "ica-" + variable + "-niveles-card",
+                PARAMS["ica-" + variable]["color"],
+                "% interanual", false, 0)
+            simpleCard(serieId + ":percent_change_a_year_ago",
+                "ica-" + variable + "-interanual-card",
+                PARAMS["ica-" + variable]["color"],
+                "% interanual", true, 1)
+            simpleCard(serieId + ":percent_change_since_beginning_of_year",
+                "ica-" + variable + "-acumulado-card",
+                PARAMS["ica-" + variable]["color"],
+                "% anual acumulado", true, 1)
+            simpleCard(serieId + ":percent_change",
+                "ica-" + variable + "-mensual-card",
+                PARAMS["ica-" + variable]["color"],
+                "% mensual", true, 1)
+        }
+
+        var PARAMS = {
+            "niveles": { "color": 0 },
+            "interanual": { "color": 1 },
+            "acumulado": { "color": 2 },
+            "mensual": { "color": 3 },
+            "ica-exportaciones": {
+                "serieId": "74.3_IET_0_M_16",
+                "desc": "Exportaciones",
+                "color": 1
+            },
+            "ica-importaciones": {
+                "serieId": "74.3_IIT_0_M_25",
+                "desc": "Importaciones",
+                "color": 3
+            },
+            "ica-saldo": {
+                "serieId": "74.3_ISC_0_M_19",
+                "desc": "Saldo Comercial",
+                "color": 4
+            },
+        }
+
+        icaSectorPanel("exportaciones")
+        icaSectorPanel("importaciones")
+        icaSectorPanel("saldo")
+
+        function icaGraphicRowHtml(frecuencia, unidades, agregacion) {
+            var icaGraphicRowId = "#ica-graphic-" + frecuencia + "-" + unidades + "-" + agregacion
+
+            if ($(icaGraphicRowId).length) {
+                // it exists
+            } else {
+                var panelTemplate = $("#ica-graphic-month-value-sum").prop('outerHTML')
+                var newPanelHtml = panelTemplate.replace(
+                    /month/g, frecuencia).replace(
+                    /value/g, unidades).replace(
+                    /sum/g, agregacion)
+                $("#ica-graphics").append($(newPanelHtml))
+            }
+        }
+
+        function renderIcaGraphic() {
+            var frecuencia = $("#selector-frecuencia").val()
+            var unidades = $("#selector-unidades").val()
+            var agregacion = $("#selector-agregacion").val()
+            var icaGraphicRowId = "#ica-graphic-" + frecuencia + "-" + unidades + "-" + agregacion
+
+            icaGraphicRowHtml(frecuencia, unidades, agregacion)
+            icaGraphic(frecuencia, unidades, agregacion)
+
+            // hide all
+            $(".ica-graphic").each(function() {
+                $(this).hide();
+            });
+
+            // show selected
+            $(icaGraphicRowId).show();
+        }
+        $("#selector-frecuencia").on("change", function() {
+            renderIcaGraphic()
+        });
+        $("#selector-unidades").on("change", function() {
+            renderIcaGraphic()
+        });
+        $("#selector-agregacion").on("change", function() {
+            renderIcaGraphic()
+        });
+
+        function icaGraphic(frecuencia, unidades, agregacion) {
+            TSComponents.Graphic.render("ica-graphic-" + frecuencia + "-" + unidades + "-" + agregacion, {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series/?ids=74.3_IET_0_M_16,74.3_IIT_0_M_25,74.3_ISC_0_M_19&collapse=" + frecuencia + "&representation_mode=" + unidades + "&collapse_aggregation=" + agregacion,
+                chartTypes: {
+                    "74.3_ISC_0_M_19": "column"
+                },
+                decimalLeftAxis: 0,
+                decimalTooltip: 0,
+                colors: [
+                    PARAMS["ica-exportaciones"]["color"],
+                    PARAMS["ica-importaciones"]["color"],
+                    PARAMS["ica-saldo"]["color"]
+                ]
+            })
+        }
+
+        icaGraphic("month", "value", "sum")
+
+        // SECCION: Intercambio Comercial: composición (EXPORTACIONES)
+        function exportacionesGraphic(frecuencia, unidades, agregacion) {
+            TSComponents.Graphic.render("ica-exportaciones-graphic-" + frecuencia + "-" + unidades + "-" + agregacion, {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series/?ids=74.3_IECE_0_M_35,74.3_IEMOA_0_M_48,74.3_IEMOI_0_M_46,74.3_IEPP_0_M_35&collapse=" + frecuencia + "&representation_mode=" + unidades + "&collapse_aggregation=" + agregacion,
+                decimalLeftAxis: 0,
+                decimalTooltip: 0,
+                title: "Composición de exportaciones"
+            })
+        }
+
+        function exportacionesGraphicRowHtml(frecuencia, unidades, agregacion) {
+            var exportacionesGraphicRowId = "#ica-exportaciones-graphic-" + frecuencia + "-" + unidades + "-" + agregacion
+
+            if ($(exportacionesGraphicRowId).length) {
+                // it exists
+            } else {
+                var panelTemplate = $("#ica-exportaciones-graphic-month-value-sum").prop('outerHTML')
+                var newPanelHtml = panelTemplate.replace(
+                    /month/g, frecuencia).replace(
+                    /value/g, unidades).replace(
+                    /sum/g, agregacion)
+                $("#ica-exportaciones-graphics").append($(newPanelHtml))
+            }
+        }
+
+        function renderIcaExportacionesGraphic() {
+            var frecuencia = $("#selector-exportaciones-frecuencia").val()
+            var unidades = $("#selector-exportaciones-unidades").val()
+            var agregacion = $("#selector-exportaciones-agregacion").val()
+            var exportacionesGraphicRowId = "#ica-exportaciones-graphic-" + frecuencia + "-" + unidades + "-" + agregacion
+
+            exportacionesGraphicRowHtml(frecuencia, unidades, agregacion)
+            exportacionesGraphic(frecuencia, unidades, agregacion)
+
+            // hide all
+            $(".ica-exportaciones-graphic").each(function() {
+                $(this).hide();
+            });
+
+            // show selected
+            $(exportacionesGraphicRowId).show();
+        }
+        $("#selector-exportaciones-frecuencia").on("change", function() {
+            renderIcaExportacionesGraphic()
+        });
+        $("#selector-exportaciones-unidades").on("change", function() {
+            renderIcaExportacionesGraphic()
+        });
+        $("#selector-exportaciones-agregacion").on("change", function() {
+            renderIcaExportacionesGraphic()
+        });
+
+        exportacionesGraphic("month", "value", "sum")
+
+        // SECCION: Intercambio Comercial: composición (IMPORTACIONES)
+        function importacionesGraphic(frecuencia, unidades, agregacion) {
+            TSComponents.Graphic.render("ica-importaciones-graphic-" + frecuencia + "-" + unidades + "-" + agregacion, {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series/?ids=74.3_IBCPP_0_M_32,74.3_IBICL_0_M_47,74.3_IIBCVAPR_0_M_58,74.3_IIR_0_M_23&collapse=" + frecuencia + "&representation_mode=" + unidades + "&collapse_aggregation=" + agregacion,
+                decimalLeftAxis: 0,
+                decimalTooltip: 0,
+                title: "Composición de importaciones",
+                seriesAxis: {
+                    "74.3_IIR_0_M_23": "left"
+                }
+            })
+        }
+
+        function importacionesGraphicRowHtml(frecuencia, unidades, agregacion) {
+            var importacionesGraphicRowId = "#ica-importaciones-graphic-" + frecuencia + "-" + unidades + "-" + agregacion
+
+            if ($(importacionesGraphicRowId).length) {
+                // it exists
+            } else {
+                var panelTemplate = $("#ica-importaciones-graphic-month-value-sum").prop('outerHTML')
+                var newPanelHtml = panelTemplate.replace(
+                    /month/g, frecuencia).replace(
+                    /value/g, unidades).replace(
+                    /sum/g, agregacion)
+                $("#ica-importaciones-graphics").append($(newPanelHtml))
+            }
+        }
+
+        function renderIcaExportacionesGraphic() {
+            var frecuencia = $("#selector-importaciones-frecuencia").val()
+            var unidades = $("#selector-importaciones-unidades").val()
+            var agregacion = $("#selector-importaciones-agregacion").val()
+            var importacionesGraphicRowId = "#ica-importaciones-graphic-" + frecuencia + "-" + unidades + "-" + agregacion
+
+            importacionesGraphicRowHtml(frecuencia, unidades, agregacion)
+            importacionesGraphic(frecuencia, unidades, agregacion)
+
+            // hide all
+            $(".ica-importaciones-graphic").each(function() {
+                $(this).hide();
+            });
+
+            // show selected
+            $(importacionesGraphicRowId).show();
+        }
+        $("#selector-importaciones-frecuencia").on("change", function() {
+            renderIcaExportacionesGraphic()
+        });
+        $("#selector-importaciones-unidades").on("change", function() {
+            renderIcaExportacionesGraphic()
+        });
+        $("#selector-importaciones-agregacion").on("change", function() {
+            renderIcaExportacionesGraphic()
+        });
+
+        importacionesGraphic("month", "value", "sum")
 
     }
     </script>
