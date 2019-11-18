@@ -246,10 +246,77 @@
                         <button type="button" class="btn"><a href="https://www.economia.gob.ar/download/infoeco/apendice6.xlsx">Descargar apéndice de Finanzas Públicas</a></button>
                     </div>
                 </section>
-                <!-- FIN CONTENIDO 6COL -->
-                <!-- 12COL -->
-                <!-- /.bg-grey -->
-                <!-- FIN 12COL -->
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="activities-sidbar">IMIG. Resultados Fiscales</h3>
+                        </div>
+                        <!-- COMIENZO de paneles de IMIG. Se agregan dinámicamente
+                        según el modelo del div #imig-panels -->
+                        <div id="imig-panels">
+                            <div class="imig-panel" id="imig-resprimario-panel">
+                                <div class="row">
+                                    <h5 class="activities-sidbar">Resultado Primario</h5>
+                                </div>
+                                <div class="row panels-row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="row panels-row ts-components-row">
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="imig-resprimario-niveles-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="imig-resprimario-interanual-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="imig-resprimario-acumulado-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="imig-resprimario-mensual-card"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FIN de paneles de IMIG. Se agregan dinámicamente
+                        según el modelo del div #imig-panels -->
+                        <div class="row panels-row" id="imig-graphics">
+                            <div class="col-xs-12 col-sm-12 col-md-12 imig-graphic" id="imig-graphic-month-value-sum">
+                            </div>
+                        </div>
+                        <div class="row panels-row">
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Frecuencia</label><span><select name="frequencyList" id="imig-selector-frecuencia" class="form-control"><option value="year">Anual</option><option value="semester">Semestral</option><option value="quarter">Trimestral</option><option value="month" selected>Mensual</option><option value="day" disabled="">Diaria</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Unidades</label><span><select name="frequencyList" id="imig-selector-unidades" class="form-control"><option value="value" selected>Unidades originales</option><option value="change">Variación</option><option value="change_a_year_ago">Variación interanual</option><option value="percent_change">Variación porcentual</option><option value="percent_change_a_year_ago">Variación porcentual interanual</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Agregación</label><span><select name="frequencyList" id="imig-selector-agregacion" class="form-control"><option value="avg">Promedio</option><option value="sum" selected>Suma</option><option value="min">Mínimo</option><option value="max">Máximo</option><option value="end_of_period">Último valor del período</option></select></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col">
+                                <a href="https://datos.gob.ar/series/api/search/?offset=0&limit=10&dataset_theme=Finanzas+Públicas">
+                                    <button type="button" class="btn btn-primary">Ver otras series de Finanzas Públicas</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
@@ -341,7 +408,141 @@
     <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
     <script>
     window.onload = function() {
+        // SECCION: Resultado Fiscal
+        function simpleCard(serieId, targetDivId, color, title,
+            explicitSign, decimals) {
+            TSComponents.Card.render(targetDivId, {
+                serieId: serieId,
+                color: color,
+                hasChart: 'none',
+                title: "",
+                links: "none",
+                source: "",
+                hasFrame: false,
+                decimals: decimals,
+                explicitSign: explicitSign
+            })
+        }
 
+        function imigVariablePanelHtml(variable) {
+            var imigVariablePanelId = "#imig-" + variable + "-panel"
+
+            if ($(imigVariablePanelId).length) {
+                // it exists
+            } else {
+                var panelTemplate = $("#imig-resprimario-panel").prop('outerHTML')
+                var newPanelHtml = panelTemplate.replace(
+                    /resprimario/g, variable).replace(
+                    /Resultado Primario/g, PARAMS["imig-" + variable]["desc"])
+                $("#imig-panels").append($(newPanelHtml))
+            }
+        }
+
+        function imigVariablePanel(variable) {
+            var serieId = PARAMS["imig-" + variable]["serieId"]
+
+            imigVariablePanelHtml(variable)
+
+            simpleCard(serieId,
+                "imig-" + variable + "-niveles-card",
+                PARAMS["imig-" + variable]["color"],
+                "% interanual", false, 0)
+            simpleCard(serieId + ":percent_change_a_year_ago",
+                "imig-" + variable + "-interanual-card",
+                PARAMS["imig-" + variable]["color"],
+                "% interanual", true, 1)
+            simpleCard(serieId + ":percent_change_since_beginning_of_year",
+                "imig-" + variable + "-acumulado-card",
+                PARAMS["imig-" + variable]["color"],
+                "% anual acumulado", true, 1)
+            simpleCard(serieId + ":percent_change",
+                "imig-" + variable + "-mensual-card",
+                PARAMS["imig-" + variable]["color"],
+                "% mensual", true, 1)
+        }
+
+        var PARAMS = {
+            "niveles": { "color": 0 },
+            "interanual": { "color": 1 },
+            "acumulado": { "color": 2 },
+            "mensual": { "color": 3 },
+            "imig-resprimario": {
+                "serieId": "452.3_RESULTADO_RIO_0_M_18_54",
+                "desc": "Resultado Primario",
+                "color": 1
+            },
+            "imig-intereses": {
+                "serieId": "452.3_INTERESES_TOS_0_M_15_62",
+                "desc": "Intereses Netos",
+                "color": 3
+            },
+            "imig-resfinanciero": {
+                "serieId": "452.3_RESULTADO_ERO_0_M_20_25",
+                "desc": "Resultado Financiero",
+                "color": 4
+            },
+        }
+
+        imigVariablePanel("resprimario")
+        imigVariablePanel("intereses")
+        imigVariablePanel("resfinanciero")
+
+        function imigGraphicRowHtml(frecuencia, unidades, agregacion) {
+            var imigGraphicRowId = "#imig-graphic-" + frecuencia + "-" + unidades + "-" + agregacion
+
+            if ($(imigGraphicRowId).length) {
+                // it exists
+            } else {
+                var panelTemplate = $("#imig-graphic-month-value-sum").prop('outerHTML')
+                var newPanelHtml = panelTemplate.replace(
+                    /month/g, frecuencia).replace(
+                    /value/g, unidades).replace(
+                    /sum/g, agregacion)
+                $("#imig-graphics").append($(newPanelHtml))
+            }
+        }
+
+        function renderImigGraphic() {
+            var frecuencia = $("#imig-selector-frecuencia").val()
+            var unidades = $("#imig-selector-unidades").val()
+            var agregacion = $("#imig-selector-agregacion").val()
+            var imigGraphicRowId = "#imig-graphic-" + frecuencia + "-" + unidades + "-" + agregacion
+
+            imigGraphicRowHtml(frecuencia, unidades, agregacion)
+            imigGraphic(frecuencia, unidades, agregacion)
+
+            // hide all
+            $(".imig-graphic").each(function() {
+                $(this).hide();
+            });
+
+            // show selected
+            $(imigGraphicRowId).show();
+        }
+        $("#imig-selector-frecuencia").on("change", function() {
+            renderImigGraphic()
+        });
+        $("#imig-selector-unidades").on("change", function() {
+            renderImigGraphic()
+        });
+        $("#imig-selector-agregacion").on("change", function() {
+            renderImigGraphic()
+        });
+
+        function imigGraphic(frecuencia, unidades, agregacion) {
+            TSComponents.Graphic.render("imig-graphic-" + frecuencia + "-" + unidades + "-" + agregacion, {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series/?ids=452.3_RESULTADO_RIO_0_M_18_54,452.3_INTERESES_TOS_0_M_15_62,452.3_RESULTADO_ERO_0_M_20_25&collapse=" + frecuencia + "&representation_mode=" + unidades + "&collapse_aggregation=" + agregacion,
+                decimalLeftAxis: 0,
+                decimalTooltip: 0,
+                colors: [
+                    PARAMS["imig-resprimario"]["color"],
+                    PARAMS["imig-intereses"]["color"],
+                    PARAMS["imig-resfinanciero"]["color"]
+                ]
+            })
+        }
+
+        imigGraphic("month", "value", "sum")
 
     }
     </script>
