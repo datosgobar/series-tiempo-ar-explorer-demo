@@ -301,20 +301,17 @@
                             </div>
                             <div class="emae-panel" id="emae-comercio-panel">
                                 <div class="row panels-row">
-                                    <div class="col-xs-12 col-sm-12 col-md-6">
+                                    <div class="col-xs-12 col-sm-12 col-md-3">
                                         <div class="row panels-row ts-components-row">
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                            <div class="col-xs-12 col-sm-12 col-md-12">
                                                 <div class="card-wrapper center-block" id="emae-comercio-interanual-card"></div>
                                             </div>
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
-                                                <div class="card-wrapper center-block" id="emae-comercio-acumulado-card"></div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 col-md-4">
+                                            <div class="col-xs-12 col-sm-12 col-md-12">
                                                 <div class="card-wrapper center-block" id="emae-comercio-mensual-card"></div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-12 col-md-6" style="height: 300px;" id="emae-comercio-graphic"></div>
+                                    <div class="col-xs-12 col-sm-12 col-md-9" style="height: 400px;" id="emae-comercio-graphic"></div>
                                 </div>
                             </div>
                         </div>
@@ -438,16 +435,21 @@
         }
 
         function emaeSectorGraphic(serieId, sector) {
+            var legendLabel = {}
+            legendLabel[serieId + ":percent_change_a_year_ago"] = "% interanual"
+            legendLabel[serieId + ":percent_change"] = "% mensual"
 
             TSComponents.Graphic.render("emae-" + sector + "-graphic", {
-                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieId + ":percent_change&last=24",
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieId + ":percent_change_a_year_ago," + serieId + ":percent_change&last=24",
                 colors: [
+                    PARAMS["interanual"]["color"],
                     PARAMS["mensual"]["color"]
                 ],
                 chartType: "column",
                 displayUnits: false,
                 zoom: false,
-                datePickerEnabled: false
+                datePickerEnabled: false,
+                legendLabel: legendLabel
             })
         }
 
@@ -470,8 +472,6 @@
             emaeSectorPanelHtml(sector)
             simpleCard(serieId + ":percent_change_a_year_ago",
                 "emae-" + sector + "-interanual-card", PARAMS["interanual"]["color"], "% interanual")
-            simpleCard(serieId + ":percent_change_since_beginning_of_year",
-                "emae-" + sector + "-acumulado-card", PARAMS["acumulado"]["color"], "% anual acumulado")
             simpleCard(serieId + ":percent_change",
                 "emae-" + sector + "-mensual-card", PARAMS["mensual"]["color"], "% mensual")
             emaeSectorGraphic(serieId, sector)
