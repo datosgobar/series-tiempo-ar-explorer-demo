@@ -249,8 +249,128 @@
                 <section>
                     <div class="container">
                         <div class="row">
+                            <h3 class="activities-sidbar">Tipo de Cambio</h3>
+                        </div>
+                        <!-- COMIENZO de paneles de Tipo de cambio. Se agregan dinámicamente
+                        según el modelo del div #tcs-spot-panels -->
+                        <div id="tcs-spot-panels">
+                            <div class="tcs-spot-panel" id="tca3500-panel">
+                                <div class="row">
+                                    <h5 class="activities-sidbar">Tipo de Cambio A3500</h5>
+                                </div>
+                                <div class="row panels-row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="row panels-row ts-components-row">
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="tca3500-niveles-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="tca3500-interanual-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="tca3500-acumulado-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="tca3500-mensual-card"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FIN de paneles de tipo de cambio. Se agregan dinámicamente
+                        según el modelo del div #tcs-spot-panels -->
+                        <div class="row panels-row" id="tcs-spot-graphics">
+                            <div class="col-xs-12 col-sm-12 col-md-12 tcs-spot-graphic" id="tcs-spot-graphic-day-value-avg">
+                            </div>
+                        </div>
+                        <div class="row panels-row">
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Frecuencia</label><span><select name="frequencyList" id="tcs-spot-selector-frecuencia" class="form-control"><option value="year">Anual</option><option value="semester">Semestral</option><option value="quarter">Trimestral</option><option value="month">Mensual</option><option value="day" selected>Diaria</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Unidades</label><span><select name="frequencyList" id="tcs-spot-selector-unidades" class="form-control"><option value="value" selected>Unidades originales</option><option value="change">Variación</option><option value="change_a_year_ago">Variación interanual</option><option value="percent_change">Variación porcentual</option><option value="percent_change_a_year_ago">Variación porcentual interanual</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Agregación</label><span><select name="frequencyList" id="tcs-spot-selector-agregacion" class="form-control"><option value="avg" selected>Promedio</option><option value="sum">Suma</option><option value="min">Mínimo</option><option value="max">Máximo</option><option value="end_of_period">Último valor del período</option></select></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="activities-sidbar">Tipo de Cambio: futuro</h3>
+                        </div>
+                        <!-- COMIENZO de paneles de Tipo de cambio. Se agregan dinámicamente
+                        según el modelo del div #tcs-panels -->
+                        <div id="tcs-futuro-panels">
+                            <div class="tcs-futuro-panel" id="rofex1m-panel">
+                                <div class="row">
+                                    <h5 class="activities-sidbar">Tipo de cambio futuro ROFEX (1 mes)</h5>
+                                </div>
+                                <div class="row panels-row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="row panels-row ts-components-row">
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="rofex1m-niveles-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="rofex1m-interanual-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="rofex1m-acumulado-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="rofex1m-mensual-card"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FIN de paneles de tipo de cambio. Se agregan dinámicamente
+                        según el modelo del div #tcs-panels -->
+                        <div class="row panels-row" id="tcs-futuro-graphics">
+                            <div class="col-xs-12 col-sm-12 col-md-12 tcs-futuro-graphic" id="tcs-futuro-graphic-day-value-avg">
+                            </div>
+                        </div>
+                        <div class="row panels-row">
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Frecuencia</label><span><select name="frequencyList" id="tcs-futuro-selector-frecuencia" class="form-control"><option value="year">Anual</option><option value="semester">Semestral</option><option value="quarter">Trimestral</option><option value="month">Mensual</option><option value="day" selected>Diaria</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Unidades</label><span><select name="frequencyList" id="tcs-futuro-selector-unidades" class="form-control"><option value="value" selected>Unidades originales</option><option value="change">Variación</option><option value="change_a_year_ago">Variación interanual</option><option value="percent_change">Variación porcentual</option><option value="percent_change_a_year_ago">Variación porcentual interanual</option></select></span></div>
+                                </div>
+                            </div>
+                            <div class="g-complement col-xs-12 col-sm-4 col-md-4">
+                                <div class="form-horizontal" style="width: 100%; padding: 10px;">
+                                    <div class="form-group">
+                                        <label>Agregación</label><span><select name="frequencyList" id="tcs-futuro-selector-agregacion" class="form-control"><option value="avg" selected>Promedio</option><option value="sum">Suma</option><option value="min">Mínimo</option><option value="max">Máximo</option><option value="end_of_period">Último valor del período</option></select></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
                             <div class="col">
-                                <a href="https://datos.gob.ar/series/api/search/?offset=0&limit=10&dataset_theme=Finanzas">
+                                <a href="https://datos.gob.ar/series/api/search/?offset=0&limit=10&dataset_theme=Mercados+Financieros">
                                     <button type="button" class="btn btn-primary">Ver otras series de Finanzas</button>
                                 </a>
                             </div>
@@ -348,7 +468,235 @@
     <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
     <script>
     window.onload = function() {
+        // SECCION: Resultado Fiscal
+        function simpleCard(serieId, targetDivId, color, title,
+            explicitSign, decimals) {
+            TSComponents.Card.render(targetDivId, {
+                serieId: serieId,
+                color: color,
+                hasChart: 'none',
+                title: "",
+                links: "none",
+                source: "",
+                hasFrame: false,
+                decimals: decimals,
+                explicitSign: explicitSign
+            })
+        }
 
+        function tcsVariablePanelHtml(variable) {
+            var tcsVariablePanelId = "#" + variable + "-panel"
+
+            if ($(tcsVariablePanelId).length) {
+                // it exists
+            } else {
+                var panelTemplate = $("#tca3500-panel").prop('outerHTML')
+                var newPanelHtml = panelTemplate.replace(
+                    /tca3500/g, variable).replace(
+                    /Tipo de Cambio A3500/g, PARAMS[variable]["desc"])
+                $("#tcs-spot-panels").append($(newPanelHtml))
+            }
+        }
+
+        function tcsFuturoVariablePanelHtml(variable) {
+            var tcsFuturoVariablePanelId = "#" + variable + "-panel"
+
+            if ($(tcsFuturoVariablePanelId).length) {
+                // it exists
+            } else {
+                var panelTemplate = $("#rofex1m-panel").prop('outerHTML')
+                var newPanelHtml = panelTemplate.replace(
+                    /rofex1m/g, variable).replace(
+                    /Tipo de cambio futuro ROFEX \(1 mes\)/g, PARAMS[variable]["desc"])
+                $("#tcs-futuro-panels").append($(newPanelHtml))
+            }
+        }
+
+        function tcsVariablePanel(variable, section) {
+            var serieId = PARAMS[variable]["serieId"]
+
+            if (section == "futuro") {
+                tcsFuturoVariablePanelHtml(variable)
+            } else {
+                tcsVariablePanelHtml(variable)
+            }
+
+            simpleCard(serieId,
+                variable + "-niveles-card",
+                PARAMS[variable]["color"],
+                "% interanual", false, 1)
+            simpleCard(serieId + ":percent_change_a_year_ago",
+                variable + "-interanual-card",
+                PARAMS[variable]["color"],
+                "% interanual", true, 1)
+            simpleCard(serieId + ":percent_change_since_beginning_of_year",
+                variable + "-acumulado-card",
+                PARAMS[variable]["color"],
+                "% anual acumulado", true, 1)
+            simpleCard(serieId + ":percent_change",
+                variable + "-mensual-card",
+                PARAMS[variable]["color"],
+                "% mensual", true, 1)
+        }
+
+
+        var PARAMS = {
+            "niveles": { "color": 0 },
+            "interanual": { "color": 1 },
+            "acumulado": { "color": 2 },
+            "mensual": { "color": 3 },
+            "tca3500": {
+                "serieId": "168.1_T_CAMBI500_D_0_0_17",
+                "desc": "Tipo de Cambio A3500",
+                "color": 1
+            },
+            "tcadr": {
+                "serieId": "168.1_T_CAMBIDRS_D_0_0_29",
+                "desc": "Tipo de cambio implícito en ADRs",
+                "color": 3
+            },
+            "tcmae": {
+                "serieId": "168.1_T_CAMBIMAE_D_0_0_15",
+                "desc": "Tipo de Cambio MAE",
+                "color": 4
+            },
+            "tcbna": {
+                "serieId": "168.1_T_CAMBIOR_D_0_0_26",
+                "desc": "Tipo de Cambio BNA (Vendedor)",
+                "color": 5
+            },
+            "rofex1m": {
+                "serieId": "168.1_FRO_ROF1M_D_0_0_19",
+                "desc": "Tipo de cambio futuro ROFEX (1 mes)",
+                "color": 1
+            },
+            "rofex2m": {
+                "serieId": "168.1_FRO_ROF2M_D_0_0_19",
+                "desc": "Tipo de cambio futuro ROFEX (2 meses)",
+                "color": 3
+            },
+            "rofex3m": {
+                "serieId": "168.1_FRO_ROF3M_D_0_0_19",
+                "desc": "Tipo de cambio futuro ROFEX (3 meses)",
+                "color": 4
+            },
+            "rofex4m": {
+                "serieId": "168.1_FRO_ROF4M_D_0_0_19",
+                "desc": "Tipo de cambio futuro ROFEX (4 meses)",
+                "color": 5
+            },
+            "rofex5m": {
+                "serieId": "168.1_FRO_ROF5M_D_0_0_19",
+                "desc": "Tipo de cambio futuro ROFEX (5 meses)",
+                "color": 6
+            },
+            "rofex6m": {
+                "serieId": "168.1_FRO_ROF6M_D_0_0_19",
+                "desc": "Tipo de cambio futuro ROFEX (6 meses)",
+                "color": 7
+            },
+        }
+
+        tcsVariablePanel("tca3500", "spot")
+        tcsVariablePanel("tcadr", "spot")
+        tcsVariablePanel("tcmae", "spot")
+        tcsVariablePanel("tcbna", "spot")
+        tcsVariablePanel("rofex1m", "futuro")
+        tcsVariablePanel("rofex2m", "futuro")
+        tcsVariablePanel("rofex3m", "futuro")
+        tcsVariablePanel("rofex4m", "futuro")
+        tcsVariablePanel("rofex5m", "futuro")
+        tcsVariablePanel("rofex6m", "futuro")
+
+        function tcsGraphicRowHtml(frecuencia, unidades, agregacion, section) {
+            var tcsGraphicRowId = "#tcs-" + section + "-graphic-" + frecuencia + "-" + unidades + "-" + agregacion
+
+            if ($(tcsGraphicRowId).length) {
+                // it exists
+            } else {
+                var panelTemplate = $("#tcs-" + section + "-graphic-day-value-avg").prop('outerHTML')
+                var newPanelHtml = panelTemplate.replace(
+                    /day/g, frecuencia).replace(
+                    /value/g, unidades).replace(
+                    /avg/g, agregacion)
+                $("#tcs-" + section + "-graphics").append($(newPanelHtml))
+            }
+        }
+
+        function renderTcsGraphic(section) {
+            var frecuencia = $("#tcs-" + section + "-selector-frecuencia").val()
+            var unidades = $("#tcs-" + section + "-selector-unidades").val()
+            var agregacion = $("#tcs-" + section + "-selector-agregacion").val()
+            var tcsGraphicRowId = "#tcs-" + section + "-graphic-" + frecuencia + "-" + unidades + "-" + agregacion
+
+            tcsGraphicRowHtml(frecuencia, unidades, agregacion, section)
+            if (section == "futuro") {
+                tcsFuturoGraphic(frecuencia, unidades, agregacion)
+            } else {
+                tcsGraphic(frecuencia, unidades, agregacion)
+            }
+
+            // hide all
+            $(".tcs-"+section+"-graphic").each(function() {
+                $(this).hide();
+            });
+
+            // show selected
+            $(tcsGraphicRowId).show();
+        }
+        $("#tcs-spot-selector-frecuencia").on("change", function() {
+            renderTcsGraphic("spot")
+        });
+        $("#tcs-spot-selector-unidades").on("change", function() {
+            renderTcsGraphic("spot")
+        });
+        $("#tcs-spot-selector-agregacion").on("change", function() {
+            renderTcsGraphic("spot")
+        });
+        $("#tcs-futuro-selector-frecuencia").on("change", function() {
+            renderTcsGraphic("futuro")
+        });
+        $("#tcs-futuro-selector-unidades").on("change", function() {
+            renderTcsGraphic("futuro")
+        });
+        $("#tcs-futuro-selector-agregacion").on("change", function() {
+            renderTcsGraphic("futuro")
+        });
+
+        function tcsGraphic(frecuencia, unidades, agregacion) {
+            TSComponents.Graphic.render("tcs-spot-graphic-" + frecuencia + "-" + unidades + "-" + agregacion, {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series/?ids=" + PARAMS["tca3500"]["serieId"] + "," + PARAMS["tcadr"]["serieId"] + "," + PARAMS["tcmae"]["serieId"] + "," + PARAMS["tcbna"]["serieId"] + "&collapse=" + frecuencia + "&representation_mode=" + unidades + "&collapse_aggregation=" + agregacion,
+                decimalLeftAxis: 0,
+                decimalTooltip: 0,
+                colors: [
+                    PARAMS["tca3500"]["color"],
+                    PARAMS["tcadr"]["color"],
+                    PARAMS["tcmae"]["color"],
+                    PARAMS["tcbna"]["color"]
+                ],
+                startDate: "2019"
+            })
+        }
+
+        function tcsFuturoGraphic(frecuencia, unidades, agregacion) {
+            TSComponents.Graphic.render("tcs-futuro-graphic-" + frecuencia + "-" + unidades + "-" + agregacion, {
+                graphicUrl: "https://apis.datos.gob.ar/series/api/series/?ids=" + PARAMS["rofex1m"]["serieId"] + "," + PARAMS["rofex2m"]["serieId"] + "," + PARAMS["rofex3m"]["serieId"] + "," + PARAMS["rofex4m"]["serieId"] + "," + PARAMS["rofex5m"]["serieId"] + "," + PARAMS["rofex6m"]["serieId"] + "&collapse=" + frecuencia + "&representation_mode=" + unidades + "&collapse_aggregation=" + agregacion,
+                decimalLeftAxis: 0,
+                decimalTooltip: 0,
+                colors: [
+                    PARAMS["rofex1m"]["color"],
+                    PARAMS["rofex2m"]["color"],
+                    PARAMS["rofex3m"]["color"],
+                    PARAMS["rofex4m"]["color"],
+                    PARAMS["rofex5m"]["color"],
+                    PARAMS["rofex6m"]["color"]
+                ],
+                startDate: "2019"
+            })
+        }
+
+        tcsGraphic("day", "value", "avg")
+        tcsFuturoGraphic("day", "value", "avg")
 
     }
     </script>
