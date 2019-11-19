@@ -262,13 +262,13 @@
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="row panels-row ts-components-row">
                                             <div class="col-xs-12 col-sm-6 col-md-3">
+                                                <div class="card-wrapper center-block" id="imig-resprimario-niveles-anual-card"></div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-6 col-md-3">
                                                 <div class="card-wrapper center-block" id="imig-resprimario-niveles-card"></div>
                                             </div>
                                             <div class="col-xs-12 col-sm-6 col-md-3">
                                                 <div class="card-wrapper center-block" id="imig-resprimario-interanual-card"></div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-6 col-md-3">
-                                                <div class="card-wrapper center-block" id="imig-resprimario-acumulado-card"></div>
                                             </div>
                                             <div class="col-xs-12 col-sm-6 col-md-3">
                                                 <div class="card-wrapper center-block" id="imig-resprimario-mensual-card"></div>
@@ -424,6 +424,22 @@
             })
         }
 
+        function mediumCard(serieId, targetDivId, color, title,
+            explicitSign, decimals, collapse, collapseAggregation) {
+            TSComponents.Card.render(targetDivId, {
+                serieId: serieId + ":" + collapseAggregation,
+                color: color,
+                hasChart: 'none',
+                title: "",
+                links: "none",
+                source: "",
+                hasFrame: false,
+                decimals: decimals,
+                explicitSign: explicitSign,
+                collapse: collapse
+            })
+        }
+
         function imigVariablePanelHtml(variable) {
             var imigVariablePanelId = "#imig-" + variable + "-panel"
 
@@ -443,22 +459,22 @@
 
             imigVariablePanelHtml(variable)
 
+            mediumCard(serieId,
+                "imig-" + variable + "-niveles-anual-card",
+                PARAMS["imig-" + variable]["color"],
+                "Anual", false, 0, "year", "sum")
             simpleCard(serieId,
                 "imig-" + variable + "-niveles-card",
                 PARAMS["imig-" + variable]["color"],
-                "% interanual", false, 0)
+                "", false, 0)
             simpleCard(serieId + ":percent_change_a_year_ago",
                 "imig-" + variable + "-interanual-card",
                 PARAMS["imig-" + variable]["color"],
-                "% interanual", true, 1)
-            simpleCard(serieId + ":percent_change_since_beginning_of_year",
-                "imig-" + variable + "-acumulado-card",
-                PARAMS["imig-" + variable]["color"],
-                "% anual acumulado", true, 1)
+                "", true, 1)
             simpleCard(serieId + ":percent_change",
                 "imig-" + variable + "-mensual-card",
                 PARAMS["imig-" + variable]["color"],
-                "% mensual", true, 1)
+                "", true, 1)
         }
 
         var PARAMS = {
