@@ -1,0 +1,137 @@
+<head>
+    <!-- INICIO estilos y JS de tarjetas de indicadores -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" type="text/css">
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- FIN estilos y JS de tarjetas de indicadores -->
+</head>
+<!-- incluir bloque de style para que queden bien las tarjetas -->
+<div class="container">
+    <div class="row ">
+        <div class="col-md-12">
+            <h2 class="h3 section-title">Indicadores nacionales</h2>
+        </div>
+    </div>
+    <div class="row panels-row ts-components-row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="center-block card-wrapper" id='tn_arg_card'></div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="center-block card-wrapper" id='tmi_arg_card'> </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="center-block card-wrapper" id='chav_arg_card'></div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col">
+            <select name="indicator-selector" id="indicator-selector-id" class="form-control">
+                <option value="tn" selected>Tasa de Natalidad</option>
+                <option value="tmi">Tasa de Mortalidad Infantil</option>
+                <option value="chav">Casos de Chagas Agudos Vectorial</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div style="width: 100%;" class="col national-indicator-graphic" id='tn_arg_graphic'></div>
+    </div>
+    <div class="row">
+        <div style="width: 100%; display: none;" class="col national-indicator-graphic" id='tmi_arg_graphic'></div>
+    </div>
+    <div class="row">
+        <div style="width: 100%; display: none;" class="col national-indicator-graphic" id='chav_arg_graphic'></div>
+    </div>
+</div>
+<script type="text/javascript">
+INDICS_PARAMS = {
+    "tn": {
+        "color": { "card": "#0072BB", "graphic": ["#0072BB", "#039BE5"] },
+        "decimals": 1,
+        "title": "Tasa de Natalidad"
+    },
+    "tmi": {
+        "color": { "card": "#2E7D33", "graphic": ["#2E7D33", "#6EA100"] },
+        "decimals": 1,
+        "title": "Tasa de Mortalidad Infantil"
+    },
+    "chav": {
+        "color": { "card": "#C2185B", "graphic": ["#C2185B", "#EC407A"] },
+        "decimals": 0,
+        "title": "Casos de Chagas Agudo Vect."
+    },
+    "cus_cons": {
+        "color": { "card": "#C62828", "graphic": ["#C62828", "#6A1B99"] },
+        "decimals": 0,
+        "title": "Consultas Médicas y Odont."
+    },
+    "cus_recetas": {
+        "color": { "card": "#0072BB", "graphic": ["#0072BB", "#0072BB"] },
+        "decimals": 0,
+        "title": "Recetas Medic. Esenciales"
+    },
+}
+
+function nationalIndicatorCard(serieIdRoot) {
+    var serieId = serieIdRoot + "_arg"
+
+    TSComponents.Card.render(serieId + '_card', {
+        serieId: serieId,
+        title: INDICS_PARAMS[serieIdRoot]["title"] + " (ARG)",
+        decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
+        color: INDICS_PARAMS[serieIdRoot]["color"]["card"],
+        links: "none"
+    });
+}
+
+function nationalIndicatorGraphic(serieIdRoot) {
+    var serieId = serieIdRoot + "_arg"
+    var serieIdVariation = serieId + ":percent_change_a_year_ago"
+
+    var chartTypes = {}
+    chartTypes[serieId] = "line"
+    chartTypes[serieIdVariation] = "column"
+
+    var seriesAxis = {}
+    seriesAxis[serieId] = "left"
+    seriesAxis[serieIdVariation] = "right"
+
+    var decimalTooltips = {}
+    decimalTooltips[serieId] = INDICS_PARAMS[serieIdRoot]["decimals"]
+    decimalTooltips[serieIdVariation] = 1
+
+    TSComponents.Graphic.render(serieId + '_graphic', {
+        graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieId + "," + serieIdVariation,
+        colors: INDICS_PARAMS[serieIdRoot]["color"]["graphic"],
+        chartTypes: chartTypes,
+        seriesAxis: seriesAxis,
+        decimalTooltips: decimalTooltips
+    });
+}
+// INDICADORES NACIONALES
+// crea el selector de indicadores nacionales
+$("#indicator-selector-id").on("change", function() {
+    var selector = $(this);
+    var serieRootId = selector.val()
+
+    // hide all
+    $(".national-indicator-graphic").each(function() {
+        $(this).hide();
+    });
+
+    nationalIndicatorGraphic(serieRootId)
+
+    // show selected
+    $("#" + serieRootId + "_arg_graphic").show();
+});
+
+// crea las tarjetas de indicadores nacionales
+nationalIndicatorCard("tn")
+nationalIndicatorCard("tmi")
+nationalIndicatorCard("chav")
+
+// crea el primer gráfico de indicador nacional
+nationalIndicatorGraphic("tn")
+</script>

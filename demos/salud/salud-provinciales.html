@@ -1,0 +1,203 @@
+<head>
+    <!-- INICIO estilos y JS de tarjetas de indicadores -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/css/components.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" type="text/css">
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/js/components.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- FIN estilos y JS de tarjetas de indicadores -->
+</head>
+<div class="container" id="province_indicators_panels">
+    <div class="row ">
+        <div class="col">
+            <h2 class="h3 section-title">Indicadores por provincia</h2>
+        </div>
+    </div>
+    <!-- COMIENZO DEL SELECTOR DE PROVINCIAS -->
+    <div class="row">
+        <div class="col">
+            <select name="province-selector" id="province-selector-id" class="form-control">
+                <option value="06" selected>Buenos Aires</option>
+                <option value="10">Catamarca</option>
+                <option value="22">Chaco</option>
+                <option value="26">Chubut</option>
+                <option value="02">Ciudad Autónoma de Buenos Aires</option>
+                <option value="14">Córdoba</option>
+                <option value="18">Corrientes</option>
+                <option value="30">Entre Ríos</option>
+                <option value="34">Formosa</option>
+                <option value="38">Jujuy</option>
+                <option value="42">La Pampa</option>
+                <option value="46">La Rioja</option>
+                <option value="50">Mendoza</option>
+                <option value="54">Misiones</option>
+                <option value="58">Neuquén</option>
+                <option value="62">Río Negro</option>
+                <option value="66">Salta</option>
+                <option value="70">San Juan</option>
+                <option value="74">San Luis</option>
+                <option value="78">Santa Cruz</option>
+                <option value="82">Santa Fe</option>
+                <option value="86">Santiago del Estero</option>
+                <option value="94">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                <option value="90">Tucumán</option>
+            </select>
+        </div>
+    </div>
+    <!-- FIN DEL SELECTOR DE PROVINCIAS -->
+    <!-- COMIENZO DE LOS PANELES DE PROVINCIAS-INDICADORES -->
+    <div class="row panels-row province-indicator-panel ts-components-row" id='tn_06_panel'>
+        <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper col-xs-12 col-sm-3 col-md-3" id="tn_06_card"></div>
+        <div style=" height: 420px;" class="col-xs-12 col-sm-9 col-md-9" id="tn_06_graphic"></div>
+    </div>
+    <!-- los nuevos paneles de provincia-indicadore se agregan dinámicamente -->
+    <!-- FIN DE LOS PANELES DE PROVINCIAS-INDICADORES -->
+</div>
+<script>
+INDICS_PARAMS = {
+    "tn": {
+        "color": { "card": "#0072BB", "graphic": ["#0072BB", "#039BE5"] },
+        "decimals": 1,
+        "title": "Tasa de Natalidad"
+    },
+    "tmi": {
+        "color": { "card": "#2E7D33", "graphic": ["#2E7D33", "#6EA100"] },
+        "decimals": 1,
+        "title": "Tasa de Mortalidad Infantil"
+    },
+    "chav": {
+        "color": { "card": "#C2185B", "graphic": ["#C2185B", "#EC407A"] },
+        "decimals": 0,
+        "title": "Casos de Chagas Agudo Vect."
+    },
+    "cus_cons": {
+        "color": { "card": "#C62828", "graphic": ["#C62828", "#6A1B99"] },
+        "decimals": 0,
+        "title": "Consultas Médicas y Odont."
+    },
+    "cus_recetas": {
+        "color": { "card": "#0072BB", "graphic": ["#0072BB", "#0072BB"] },
+        "decimals": 0,
+        "title": "Recetas Medic. Esenciales"
+    },
+}
+
+PROV_SHORT = {
+    "02": "CABA",
+    "06": "PBA",
+    "10": "CA",
+    "22": "CH",
+    "26": "CT",
+    "14": "CB",
+    "18": "CR",
+    "30": "ER",
+    "34": "FO",
+    "38": "JY",
+    "42": "LP",
+    "46": "LR",
+    "50": "MZ",
+    "54": "MI",
+    "58": "NQ",
+    "62": "RN",
+    "66": "SA",
+    "70": "SJ",
+    "74": "SL",
+    "78": "SC",
+    "82": "SF",
+    "86": "SE",
+    "94": "TF",
+    "90": "TU"
+}
+
+function provinceIndicatorCard(serieIdRoot, provinceId) {
+    var serieId = serieIdRoot + "_" + provinceId
+    var cardTargetDiv = serieId + '_card'
+
+    TSComponents.Card.render(cardTargetDiv, {
+        serieId: serieId,
+        title: INDICS_PARAMS[serieIdRoot]["title"] + " (" + PROV_SHORT[provinceId] + ")",
+        decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
+        color: INDICS_PARAMS[serieIdRoot]["color"]["card"]
+    });
+}
+
+function provinceIndicatorGraphic(serieIdRoot, provinceId) {
+    var serieId = serieIdRoot + "_" + provinceId
+    var serieIdVariation = serieId + ":percent_change_a_year_ago"
+    var graphicTargetDiv = serieId + '_graphic'
+
+    var chartTypes = {}
+    chartTypes[serieId] = "line"
+    chartTypes[serieIdVariation] = "column"
+
+    var seriesAxis = {}
+    seriesAxis[serieId] = "left"
+    seriesAxis[serieIdVariation] = "right"
+
+    var decimalTooltips = {}
+    decimalTooltips[serieId] = INDICS_PARAMS[serieIdRoot]["decimals"]
+    decimalTooltips[serieIdVariation] = 1
+
+    TSComponents.Graphic.render(graphicTargetDiv, {
+        graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieId + "," + serieIdVariation,
+        colors: INDICS_PARAMS[serieIdRoot]["color"]["graphic"],
+        chartTypes: chartTypes,
+        seriesAxis: seriesAxis,
+        decimalTooltips: decimalTooltips,
+        datePickerEnabled: false,
+        zoom: false,
+        navigator: true,
+    });
+}
+
+function provinceIndicatorPanelHtml(serieIdRoot, provinceId) {
+    var serieId = serieIdRoot + "_" + provinceId
+    var provinceIndicatorPanelId = "#" + serieId + "_panel"
+
+    if ($(provinceIndicatorPanelId).length) {
+        // it exists
+    } else {
+        var panelTemplate = $("#tn_06_panel").prop('outerHTML')
+        var newPanelHtml = panelTemplate.replace(/tn_06/g, serieId)
+        $("#province_indicators_panels").append($(newPanelHtml))
+    }
+}
+
+function provinceIndicatorPanel(serieIdRoot, provinceId) {
+    provinceIndicatorPanelHtml(serieIdRoot, provinceId)
+    provinceIndicatorCard(serieIdRoot, provinceId)
+    provinceIndicatorGraphic(serieIdRoot, provinceId)
+}
+
+// INDICADORES PROVINCIALES
+// crea el selector de provincias
+$("#province-selector-id").on("change", function() {
+    var selector = $(this);
+    var provinceId = selector.val()
+
+    // hide all
+    $(".province-indicator-panel").each(function() {
+        $(this).hide();
+    });
+
+    // crea paneles de la provincia si todavía no existen
+    provinceIndicatorPanel("tn", provinceId)
+    provinceIndicatorPanel("tmi", provinceId)
+    provinceIndicatorPanel("chav", provinceId)
+    // provinceIndicatorPanel("cus_cons", provinceId)
+    // provinceIndicatorPanel("cus_recetas", provinceId)
+
+    // show selected
+    $("#tn_" + provinceId + "_panel").show();
+    $("#tmi_" + provinceId + "_panel").show();
+    $("#chav_" + provinceId + "_panel").show();
+    $("#cus_cons_" + provinceId + "_panel").show();
+    $("#cus_recetas_" + provinceId + "_panel").show();
+});
+
+// crea los primeros paneles de indicadores provinciales
+provinceIndicatorPanel("tn", "06")
+provinceIndicatorPanel("tmi", "06")
+provinceIndicatorPanel("chav", "06")
+// provinceIndicatorPanel("cus_cons", "06")
+// provinceIndicatorPanel("cus_recetas", "06")
+</script>
