@@ -94,6 +94,10 @@ function nationalIndicatorGraphic(serieIdRoot) {
     chartTypes[serieId] = "line"
     chartTypes[serieIdVariation] = "column"
 
+    var legendLabel = {}
+    legendLabel[serieId] = INDICS_PARAMS[serieIdRoot]["title"]
+    legendLabel[serieIdVariation] = INDICS_PARAMS[serieIdRoot]["title"] + " (var. % interanual)"
+
     var seriesAxis = {}
     seriesAxis[serieId] = "left"
     seriesAxis[serieIdVariation] = "right"
@@ -107,6 +111,7 @@ function nationalIndicatorGraphic(serieIdRoot) {
         colors: INDICS_PARAMS[serieIdRoot]["color"]["graphic"],
         chartTypes: chartTypes,
         seriesAxis: seriesAxis,
+        legendLabel: legendLabel,
         decimalTooltips: decimalTooltips
     });
 }
