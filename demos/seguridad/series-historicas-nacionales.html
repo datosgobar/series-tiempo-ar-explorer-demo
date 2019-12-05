@@ -23,50 +23,76 @@
         <div class="center-block full-width" style="height: 380px; width: 100%;" id='hdv-hdt'></div>
     </div>
 </div>
+<div class="row panels-row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="center-block card-wrapper" id='rh'></div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="center-block card-wrapper" id='rt'> </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="center-block full-width" style="height: 380px; width: 100%;" id='rh-rt'></div>
+    </div>
+</div>
+<div class="row panels-row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="center-block card-wrapper" id='ah'></div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="center-block card-wrapper" id='at'> </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="center-block full-width" style="height: 380px; width: 100%;" id='ah-at'></div>
+    </div>
+</div>
+<div class="row panels-row">
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="center-block card-wrapper" id='ldv'></div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+        <div class="center-block card-wrapper" id='ldt'> </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6">
+        <div class="center-block full-width" style="height: 380px; width: 100%;" id='ldv-ldt'></div>
+    </div>
+</div>
 </div>
 <script>
-function hideSeriesDivs() {
-    $(".serie-div").each(function() {
-        $(this).hide();
-    });
+
+INDICS_PARAMS = {
+    "homicidios": {
+        "valor": "Víctimas de homicidios dolosos",
+        "tasa": "Tasa de homicidios dolosos",
+        "graphic": "Evolución de homicidios dolosos en Argentina",
+    },
+    "robos": {
+        "valor": "Robos y tentativas de robo",
+        "tasa": "Tasa de robos y tentativas de robo",
+        "graphic": "Evolución de robos y tentativas de robo en Argentina",
+    },
+    "amenazas": {
+        "valor": "Amenazas",
+        "tasa": "Tasa de amenazas",
+        "graphic": "Evolución de amenazas en Argentina",
+    },
+    "lesiones": {
+        "valor": "Víctimas de lesiones dolosas",
+        "tasa": "Tasa de lesiones dolosas",
+        "graphic": "Evolución de lesiones dolosas en Argentina",
+    },
 }
 
-function showSerieDiv(targetDivId, serieIds) {
-    var hdv = serieIds.split(',')[0] + ""
-    var hdt = serieIds.split(',')[1] + ""
-
-    var chartTypes = {}
-    chartTypes[hdt] = "column"
-
-    var seriesAxis = {}
-    seriesAxis[hdv] = "left"
-    seriesAxis[hdt] = "right"
-
-    var decimalTooltips = {}
-    decimalTooltips[hdv] = 0
-    decimalTooltips[hdt] = 1
-
-    TSComponents.Graphic.render(targetDivId, {
-        graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieIds,
-        chartTypes: chartTypes,
-        seriesAxis: seriesAxis,
-        decimalTooltips: decimalTooltips,
-        decimalRightAxis: 1,
-        decimalLeftAxis: 0
-    });
-
-    $("#" + targetDivId).show();
-}
+// Estadísticas criminales históricas. Homicidios Dolosos
 TSComponents.Card.render('hdv', {
     serieId: "snic_hdv_arg",
-    title: "Homicidios (ARG)",
+    title: INDICS_PARAMS["homicidios"]["valor"],
     decimals: 0,
     color: 2
 });
 
 TSComponents.Card.render('hdt', {
     serieId: "snic_hdt_arg",
-    title: "Tasa de homicidios (ARG)",
+    title: INDICS_PARAMS["homicidios"]["tasa"],
     color: "#2E7D33",
     decimals: 1,
     color: 1
@@ -79,7 +105,7 @@ TSComponents.Graphic.render('hdv-hdt', {
     displayUnits: false,
     zoom: false,
     navigator: true,
-    title: "Evolución de víctimas de homicidios en Argentina",
+    title: INDICS_PARAMS["homicidios"]["graphic"],
     decimalLeftAxis: 0,
     decimalRightAxis: 1,
     chartTypes: {
@@ -90,12 +116,138 @@ TSComponents.Graphic.render('hdv-hdt', {
         "snic_hdt_arg": "right"
     },
     legendLabel: {
-        "snic_hdv_arg": "Homicidios (ARG)",
-        "snic_hdt_arg": "Tasa de homicidios (ARG)",
+        "snic_hdv_arg": INDICS_PARAMS["homicidios"]["valor"],
+        "snic_hdt_arg": INDICS_PARAMS["homicidios"]["tasa"],
     },
     decimalTooltips: {
         "snic_hdv_arg": 0,
         "snic_hdt_arg": 1
+    }
+});
+// Estadísticas criminales históricas. Robos y tentativas de robo
+TSComponents.Card.render('rh', {
+    serieId: "snic_rh_arg",
+    title: INDICS_PARAMS["robos"]["valor"],
+    decimals: 0,
+    color: 2
+});
+
+TSComponents.Card.render('rt', {
+    serieId: "snic_rt_arg",
+    title: INDICS_PARAMS["robos"]["tasa"],
+    color: "#2E7D33",
+    decimals: 1,
+    color: 1
+});
+
+TSComponents.Graphic.render('rh-rt', {
+    graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=snic_rh_arg,snic_rt_arg",
+    colors: [2, 1],
+    datePickerEnabled: false,
+    displayUnits: false,
+    zoom: false,
+    navigator: true,
+    title: INDICS_PARAMS["robos"]["graphic"],
+    decimalLeftAxis: 0,
+    decimalRightAxis: 1,
+    chartTypes: {
+        "snic_rt_arg": "column"
+    },
+    seriesAxis: {
+        "snic_rh_arg": "left",
+        "snic_rt_arg": "right"
+    },
+    legendLabel: {
+        "snic_rh_arg": INDICS_PARAMS["robos"]["valor"],
+        "snic_rt_arg": INDICS_PARAMS["robos"]["tasa"],
+    },
+    decimalTooltips: {
+        "snic_rh_arg": 0,
+        "snic_rt_arg": 1
+    }
+});
+// Estadísticas criminales históricas. Amenazas
+TSComponents.Card.render('ah', {
+    serieId: "snic_ah_arg",
+    title: INDICS_PARAMS["amenazas"]["valor"],
+    decimals: 0,
+    color: 2
+});
+
+TSComponents.Card.render('at', {
+    serieId: "snic_at_arg",
+    title: INDICS_PARAMS["amenazas"]["tasa"],
+    color: "#2E7D33",
+    decimals: 1,
+    color: 1
+});
+
+TSComponents.Graphic.render('ah-at', {
+    graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=snic_ah_arg,snic_at_arg",
+    colors: [2, 1],
+    datePickerEnabled: false,
+    displayUnits: false,
+    zoom: false,
+    navigator: true,
+    title: INDICS_PARAMS["amenazas"]["graphic"],
+    decimalLeftAxis: 0,
+    decimalRightAxis: 1,
+    chartTypes: {
+        "snic_at_arg": "column"
+    },
+    seriesAxis: {
+        "snic_ah_arg": "left",
+        "snic_at_arg": "right"
+    },
+    legendLabel: {
+        "snic_ah_arg": INDICS_PARAMS["amenazas"]["valor"],
+        "snic_at_arg": INDICS_PARAMS["amenazas"]["tasa"],
+    },
+    decimalTooltips: {
+        "snic_ah_arg": 0,
+        "snic_at_arg": 1
+    }
+});
+// Estadísticas criminales históricas. Lesiones dolosas
+TSComponents.Card.render('ldv', {
+    serieId: "snic_ldv_arg",
+    title: INDICS_PARAMS["lesiones"]["valor"],
+    decimals: 0,
+    color: 2
+});
+
+TSComponents.Card.render('ldt', {
+    serieId: "snic_hdt_arg",
+    title: INDICS_PARAMS["lesiones"]["tasa"],
+    color: "#2E7D33",
+    decimals: 1,
+    color: 1
+});
+
+TSComponents.Graphic.render('ldv-ldt', {
+    graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=snic_ldv_arg,snic_ldt_arg",
+    colors: [2, 1],
+    datePickerEnabled: false,
+    displayUnits: false,
+    zoom: false,
+    navigator: true,
+    title: INDICS_PARAMS["lesiones"]["graphic"],
+    decimalLeftAxis: 0,
+    decimalRightAxis: 1,
+    chartTypes: {
+        "snic_ldt_arg": "column"
+    },
+    seriesAxis: {
+        "snic_ldv_arg": "left",
+        "snic_ldt_arg": "right"
+    },
+    legendLabel: {
+        "snic_ldv_arg": INDICS_PARAMS["lesiones"]["valor"],
+        "snic_ldt_arg": INDICS_PARAMS["lesiones"]["tasa"],
+    },
+    decimalTooltips: {
+        "snic_ldv_arg": 0,
+        "snic_ldt_arg": 1
     }
 });
 </script>
