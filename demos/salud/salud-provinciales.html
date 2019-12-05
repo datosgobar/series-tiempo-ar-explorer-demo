@@ -46,6 +46,7 @@
     <!-- FIN DEL SELECTOR DE PROVINCIAS -->
     <!-- COMIENZO DE LOS PANELES DE PROVINCIAS-INDICADORES -->
     <div class="row panels-row province-indicator-panel ts-components-row" id='tn_06_panel'>
+        <h4 class="h4 section-title">Tasa de Natalidad</h4 >
         <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper col-xs-12 col-sm-3 col-md-3" id="tn_06_card"></div>
         <div style=" height: 420px;" class="col-xs-12 col-sm-9 col-md-9" id="tn_06_graphic"></div>
     </div>
@@ -57,27 +58,35 @@ INDICS_PARAMS = {
     "tn": {
         "color": { "card": "#0072BB", "graphic": ["#0072BB", "#039BE5"] },
         "decimals": 1,
-        "title": "Tasa de Natalidad"
+        "title": "Tasa de Natalidad",
+        "description": "Tasa de Natalidad",
+        "units": "Nacidos vivos cada 1000 habitantes"
     },
     "tmi": {
         "color": { "card": "#2E7D33", "graphic": ["#2E7D33", "#6EA100"] },
         "decimals": 1,
-        "title": "Tasa de Mortalidad Infantil"
+        "title": "Tasa de Mortalidad Infantil",
+        "description": "Tasa de Mortalidad Infantil",
+        "units": "Niños menores de un año de edad fallecidos por cada 1000 nacidos vivos"
     },
     "chav": {
         "color": { "card": "#C2185B", "graphic": ["#C2185B", "#EC407A"] },
         "decimals": 0,
-        "title": "Casos de Chagas Agudo Vect."
+        "title": "Casos de Chagas Agudo Vect.",
+        "description": "Casos de Chagas Agudo Vectorial",
+        "units": "Casos"
     },
     "cus_cons": {
         "color": { "card": "#C62828", "graphic": ["#C62828", "#6A1B99"] },
         "decimals": 0,
-        "title": "Consultas Médicas y Odont."
+        "title": "Consultas Médicas y Odont.",
+        "units": ""
     },
     "cus_recetas": {
         "color": { "card": "#0072BB", "graphic": ["#0072BB", "#0072BB"] },
         "decimals": 0,
-        "title": "Recetas Medic. Esenciales"
+        "title": "Recetas Medic. Esenciales",
+        "units": ""
     },
 }
 
@@ -108,13 +117,42 @@ PROV_SHORT = {
     "90": "TU"
 }
 
+PROV_LONG = {
+    "02": "Ciudad Autónoma de Buenos Aires",
+    "06": "Provincia de Buenos Aires",
+    "10": "Provincia de Catamarca",
+    "22": "Provincia de Chaco",
+    "26": "Provincia de Chubut",
+    "14": "Provincia de Córdoba",
+    "18": "Provincia de Corrientes",
+    "30": "Provincia de Entre Ríos",
+    "34": "Provincia de Formosa",
+    "38": "Provincia de Jujuy",
+    "42": "Provincia de La Pampa",
+    "46": "Provincia de La Rioja",
+    "50": "Provincia de Mendoza",
+    "54": "Provincia de Misiones",
+    "58": "Provincia de Neuquén",
+    "62": "Provincia de Río Negro",
+    "66": "Provincia de Salta",
+    "70": "Provincia de San Juan",
+    "74": "Provincia de San Luis",
+    "78": "Provincia de Santa Cruz",
+    "82": "Provincia de Santa Fe",
+    "86": "Provincia del Estero",
+    "94": "Provincia Tierra del Fuego",
+    "90": "Provincia de Tucumán"
+}
+
 function provinceIndicatorCard(serieIdRoot, provinceId) {
     var serieId = serieIdRoot + "_" + provinceId
     var cardTargetDiv = serieId + '_card'
 
     TSComponents.Card.render(cardTargetDiv, {
         serieId: serieId,
-        title: INDICS_PARAMS[serieIdRoot]["title"] + " (" + PROV_SHORT[provinceId] + ")",
+        title: PROV_LONG[provinceId],
+        // title: INDICS_PARAMS[serieIdRoot]["title"] + " (" + PROV_SHORT[provinceId] + ")",
+        // title: "",
         decimals: INDICS_PARAMS[serieIdRoot]["decimals"],
         color: INDICS_PARAMS[serieIdRoot]["color"]["card"]
     });
@@ -133,6 +171,10 @@ function provinceIndicatorGraphic(serieIdRoot, provinceId) {
     seriesAxis[serieId] = "left"
     seriesAxis[serieIdVariation] = "right"
 
+    var legendLabel = {}
+    legendLabel[serieId] = INDICS_PARAMS[serieIdRoot]["units"]
+    legendLabel[serieIdVariation] = "Variación porcentual interanual"
+
     var decimalTooltips = {}
     decimalTooltips[serieId] = INDICS_PARAMS[serieIdRoot]["decimals"]
     decimalTooltips[serieIdVariation] = 1
@@ -143,9 +185,13 @@ function provinceIndicatorGraphic(serieIdRoot, provinceId) {
         chartTypes: chartTypes,
         seriesAxis: seriesAxis,
         decimalTooltips: decimalTooltips,
+        legendLabel: legendLabel,
         datePickerEnabled: false,
         zoom: false,
         navigator: true,
+        displayUnits: false,
+        decimalLeftAxis: INDICS_PARAMS[serieIdRoot]["decimals"],
+        decimalRightAxis: 1
     });
 }
 
@@ -157,7 +203,9 @@ function provinceIndicatorPanelHtml(serieIdRoot, provinceId) {
         // it exists
     } else {
         var panelTemplate = $("#tn_06_panel").prop('outerHTML')
-        var newPanelHtml = panelTemplate.replace(/tn_06/g, serieId)
+        var newPanelHtml = panelTemplate.replace(
+            /tn_06/g, serieId).replace(
+            /Tasa de Natalidad/g, INDICS_PARAMS[serieIdRoot]["description"])
         $("#province_indicators_panels").append($(newPanelHtml))
     }
 }
