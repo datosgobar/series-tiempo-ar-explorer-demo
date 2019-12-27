@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]> <html lang="es"class="iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html lang="es" class="ie6 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="es" class="ie7 lt-ie8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="es" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html lang="es">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banco de Pruebas</title>
+    <meta name="description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina.">
+    <meta name="author" content="Presidencia de la Nación">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Nav and address bar color -->
+    <meta name="theme-color" content="#0072b8">
+    <meta name="msapplication-navbutton-color" content="#0072b8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0072b8">
+    <meta property="og:url" content="http://localhost:4000/proyectos/argentina/pagina-area.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Banco de Pruebas" />
+    <meta property="og:description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta property="og:image" content="/ejemplos/img/jumbotron.jpg" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Banco de Pruebas" />
+    <meta name="twitter:description" content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta name="twitter:image" content="/ejemplos/img/jumbotron.jpg" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/poncho.min.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/icono-arg.css">
+    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/argentina.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/node_modules/html5shiv/html5shiv.js"></script>
+      <script src="/node_modules/respond.js/respond.min.js"></script>
+  <![endif]-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.9.0/dist/css/components.css" type="text/css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.9.0/dist/js/components.js'></script>
+
+<body>
+    <script type="text/javascript">
+    var busqueda = document.getElementById('buscar');
+    var buscar = document.getElementById('buscar-btn');
+    buscar.onclick = function() {
+        var buscado = busqueda.value;
+        location.href = "http://www.argentina.gob.ar/buscar/" + buscado;
+    };
+
+    //PONCHO LABS
+    var url_string = window.location.href;
+    var url = new URL(url_string);
+    var lab = url.searchParams.get("lab");
+
+
+    if (lab == "") {
+        $("head").append('<link href="/proyectos/poncho/css/poncho_lab.css" rel="stylesheet">');
+    }
+    </script>
+    <main role="main">
+        <section class="jumbotron" style="background-image: url('img/datosgobar_banner.png');">
+            <div class="jumbotron_body">
+                <div class="container">
+                    <div class="ts-components-row">
+                        <div class="col-xs-12 col-md-8 text-center">
+                            <h1>DATOS.gob.ar</h1>
+                            <p>Tablero con series testigo para verificar que se generen de manera correcta Series de Tiempo provenientes de diferentes fuentes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay"></div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="ts-components-row ">
+                    <div class="col-md-12">
+                        <h2 class="h3 section-title">Scraper SMN</h2>
+                    </div>
+                </div>
+                <div class="ts-components-row panels-row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-smn1">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-smn2">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-smn3">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-smn4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="ts-components-row ">
+                    <div class="col-md-12">
+                        <h2 class="h3 section-title">Scraper BCRA</h2>
+                    </div>
+                </div>
+                <div class="ts-components-row panels-row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-bcra1">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-bcra2">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-bcra3">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-bcra4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="ts-components-row ">
+                    <div class="col-md-12">
+                        <h2 class="h3 section-title">Scraper General</h2>
+                    </div>
+                </div>
+                <div class="ts-components-row panels-row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-gral1">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-gral2">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-gral3">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="indicador-gral4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="ts-components-row ">
+                    <div class="col-md-12">
+                        <h2 class="h3 section-title">Indicadores de APIS</h2>
+                    </div>
+                </div>
+                <div class="ts-components-row panels-row">
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="georef-consultas-historicas">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="georef-consultas-diarias-promedio">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="georef-consultas-diarias-ayer">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="georef-usuarios-unicos">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="series-consultas-historicas">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="series-consultas-diarias-promedio">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="series-consultas-diarias-ayer">
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3 card-wrapper">
+                        <div class="center-block" id="series-usuarios-unicos">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>        
+    <script>
+    window.onload = function() {
+        // COLORES SUGERIDOS "#0072BB","#2E7D33","#C62828","#F9A822","#6A1B99", "#EC407A","#C2185B","#6A1B99","#039BE5","#6EA100"
+        // componentes de series de tiempo
+
+
+
+        //---------Inicio Scraper SMN---------
+
+        TSComponents.Card.render('indicador-smn1', {
+            serieId: 'temp_min_sayb',
+            color: '0',
+            hasChart: 'small',
+            title: "Temperatura mínima. Base Belgrano II",
+            source: "Fuente: Servicio Meteorológico Nacional"
+        })
+
+        TSComponents.Card.render('indicador-smn2', {
+            serieId: 'temp_max_sayb',
+            color: '1',
+            hasChart: 'small',
+            title: "Temperatura máxima. Base Belgrano II",
+            source: "Fuente: Servicio Meteorológico Nacional"
+        })
+
+        TSComponents.Card.render('indicador-smn3', {
+            serieId: 'temp_min_sasr',
+            color: '2',
+            hasChart: 'small',
+            title: "Temperatura mínima. Estación Rivadavia",
+            source: "Fuente: Servicio Meteorológico Nacional"
+        })
+
+        TSComponents.Card.render('indicador-smn4', {
+            serieId: 'temp_max_sasr',
+            color: '3',
+            hasChart: 'small',
+            title: "Temperatura máxima. Estación Rivadavia",
+            source: "Fuente: Servicio Meteorológico Nacional"
+        })
+
+        //---------Fin Scraper SMN---------
+        //---------Inicio Scraper BCRA---------
+
+        TSComponents.Card.render('indicador-bcra1', {
+            serieId: 'bcra_libor_005',
+            color: '0',
+            hasChart: 'small',
+            title: "LIBOR. Valor diario a 360 días.",
+            source: "Fuente: Banco Central de la República Argentina"
+        })
+
+        TSComponents.Card.render('indicador-bcra2', {
+            serieId: 'bcra_sml_004',
+            color: '1',
+            hasChart: 'small',
+            title: "Tipo cambio SML diario. Uruguayo peso",
+            source: "Fuente: Banco Central de la República Argentina"
+        })
+
+        TSComponents.Card.render('indicador-bcra3', {
+            serieId: 'tc_usd_galicia_mc15',
+            color: '2',
+            hasChart: 'small',
+            title: "Tipo cambio ARS/USD. Galicia. Mostrador. Compra. 15hs",
+            source: "Fuente: Banco Central de la República Argentina"
+        })
+
+        TSComponents.Card.render('indicador-bcra4', {
+            serieId: 'bcra_monedas_pase_cnh',
+            color: '3',
+            hasChart: 'small',
+            title: "Tipo pase diario en dólares de Yuan - China Off Shore CNH",
+            source: "Fuente: Banco Central de la República Argentina"
+        })
+        //---------Fin Scraper BCRA---------
+        //---------Inicio Scraper GRAL---------
+
+        TSComponents.Card.render('indicador-gral1', {
+            serieId: '116.3_TCRMA_0_M_36',
+            color: '0',
+            hasChart: 'small',
+            title: "Tipo de Cambio Real Multilateral",
+            source: "Fuente: Banco Central de la República Argentina"
+        })
+
+        TSComponents.Card.render('indicador-gral2', {
+            serieId: '168.1_T_CAMBIOR_D_0_0_26',
+            color: '1',
+            hasChart: 'small',
+            title: "Tipo de Cambio BNA (Vendedor)",
+            source: "Fuente: BCRA, MAE, Rofex"
+        })
+
+        TSComponents.Card.render('indicador-gral3', {
+            serieId: 'tc_usd_galicia_mc15',
+            color: '2',
+            hasChart: 'small',
+            title: "Tipo cambio ARS/USD. Galicia. Mostrador. Compra. 15hs",
+            source: "Fuente: Banco Central de la República Argentina"
+        })
+
+        TSComponents.Card.render('indicador-gral4', {
+            serieId: 'bcra_monedas_pase_cnh',
+            color: '3',
+            hasChart: 'small',
+            title: "Tipo pase diario en dólares de Yuan - China Off Shore CNH",
+            source: "Fuente: Banco Central de la República Argentina"
+        })
+        //---------Fin Scraper GRAL---------
+        //---------Inicio API---------
+        // API georef
+        TSComponents.Card.render('georef-consultas-historicas', {
+            serieId: 'apis_georef_005',
+            color: "#0072BB",
+            source: "",
+            units: "",
+            links: "none",
+            title: "Georef. Consultas históricas"
+        })
+
+        TSComponents.Card.render('georef-consultas-diarias-promedio', {
+            serieId: 'apis_georef_001',
+            color: "#2E7D33",
+            source: "",
+            units: "",
+            links: "none",
+            title: "Georef. Consultas diarias (promedio mes)",
+            collapse: "month"
+        })
+
+        TSComponents.Card.render('georef-consultas-diarias-ayer', {
+            serieId: 'apis_georef_001',
+            color: "#C62828",
+            source: "",
+            units: "",
+            links: "none",
+            title: "Georef. Consultas diarias (último día)"
+        })
+
+        TSComponents.Card.render('georef-usuarios-unicos', {
+            serieId: 'apis_georef_004',
+            color: "#F9A822",
+            source: "",
+            units: "",
+            links: "none",
+            title: "Georef. Usuarios únicos diarios (prom. mes)",
+            collapse: "month"
+        })
+        
+        TSComponents.Card.render('series-consultas-historicas', {
+            serieId: 'apis_series_005',
+            color: "#0072BB",
+            source: "",
+            units: "",
+            links: "none",
+            title: "Series. Consultas históricas"
+        })
+
+        TSComponents.Card.render('series-consultas-diarias-promedio', {
+            serieId: 'apis_series_001',
+            color: "#2E7D33",
+            source: "",
+            units: "",
+            links: "none",
+            title: "Series. Consultas diarias (promedio mes)",
+            collapse: "month"
+        })
+
+        TSComponents.Card.render('series-consultas-diarias-ayer', {
+            serieId: 'apis_series_001',
+            color: "#C62828",
+            source: "",
+            units: "",
+            links: "none",
+            title: "Series. Consultas diarias (último día)"
+        })
+
+        TSComponents.Card.render('series-usuarios-unicos', {
+            serieId: 'apis_series_004',
+            color: "#F9A822",
+            source: "",
+            units: "",
+            links: "none",
+            title: "Series. Usuarios únicos diarios (prom. mes)",
+            collapse: "month"
+        })
+
+    }
+    </script>
+</body>
+
+</html>
