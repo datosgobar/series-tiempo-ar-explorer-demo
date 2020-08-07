@@ -32,9 +32,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" media="all" />
-    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/poncho.min.css">
-    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/icono-arg.css">
-    <link rel="stylesheet" href="https://qa-poncho.argentina.gob.ar/dist/css/argentina.css">
+    <link rel="stylesheet" href="dist/css/poncho.min.css">
+    <link rel="stylesheet" href="dist/css/icono-arg.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/argob/poncho/ae44eab0fc35c9e562a7b4a565ffe3d10acd3804/dist/css/argentina.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="http://argob.github.io/poncho/js/html5shiv.js"></script>
@@ -62,63 +62,18 @@
         f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-P68ZXT');
     </script>
-    <div id="skip-link">
-        <a href="#main-content" class="element-invisible element-focusable">Pasar al contenido principal</a>
-    </div>
-    <header>
-        <nav class="navbar navbar-top navbar-default" role="navigation">
-            <div class="container">
-                <div>
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="https://www.argentina.gob.ar/">
-            <img src="https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/logo.svg" alt="Inicio" width="274" height="50" />
-            <h1 class="sr-only">Argentina.gob.ar <small>Presidencia de la Nación</small></h1>
-          </a>
-                        <a class="btn btn-success btn-login visible-xs" href="https://mi.argentina.gob.ar"><span class="fa fa-user fa-fw"></span></a>
-                        <a onclick="jQuery('.navbar.navbar-top').addClass('state-search');" class="btn btn-primary btn-login visible-xs" href="#"><span class="fa fa-search fa-fw"></span></a>
-                    </div>
-                    <ul class="nav navbar-nav navbar-right hidden-xs">
-                        <a onclick="jQuery('.navbar.navbar-top').removeClass('state-search');" href="#" class="btn btn-link visible-xs"> <i class="fa fa-times"></i></a>
-                        <!--<div id="cd-login">-->
-                        <li>
-                            <div class="input-group">
-                                <label for="buscar"><span class="sr-only">Buscar trámites, servicios o áreas ...</span></label>
-                                <input id="busqueda" type="text" class="form-control" aria-hidden="true" placeholder="Buscar trámites, servicios o áreas ...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary" id="buscador-argentina" type="button"><i class="fa fa-search"></i><span class="sr-only">Buscar</span></button>
-                                </span>
-                            </div>
-                        </li>
-                        <a id="cd-login" href="https://mi.argentina.gob.ar" class="btn btn-success hidden-xs"><i class="fa fa-user"></i> &nbsp; Mi Argentina</a>
-                        <!--</div>-->
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
     <main role="main">
         <a id="main-content"></a>
         <div class="container"></div>
         <div class="region region-content">
             <div id="block-system-main" class="block block-system clearfix">
                 <div class="container">
-                    <div class="panel-pane pane-page-breadcrumb">
-                        <div class="pane-content">
-                            <ol class="breadcrumb pull-left">
-                                <li><a href="https://www.argentina.gob.ar/">Inicio</a></li>
-                                <li><a href="https://www.argentina.gob.ar/hacienda">Ministerio de Hacienda</a></li>
-                                <!---
-                                <li><a href=/precios/>Precios</a>
-                                </li>
-                                 -->
-                                <li class="active">Datos Económicos</li>
-                            </ol>
-                        </div>
-                    </div>
                     <div class="row">
-                        <div class="col-sm-6">
-                        </div>
-                        <div class="col-sm-6">
+                        <div class="col-xs-12">
+                            <div class="alert alert-warning" style="margin-top: 50px;">
+                                <h5><i class="fa-exclamation-triangle fa"></i>  Sitio de prueba</h5>
+                                <p class="margin-0">Proyecto de prueba y demostración de usos del <a href="https://github.com/datosgobar/series-tiempo-ar-explorer">explorador de series de tiempo</a> y sus componentes embebibles. Todos los componentes se usan a partir de la <a href="https://apis.datos.gob.ar/series">API de Series de Tiempo</a>.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -322,45 +277,6 @@
             </div>
         </div>
     </main>
-    <footer class="main-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <section class="block block-block clearfix">
-                        <img class="image-responsive" src="https://www.argentina.gob.ar/profiles/argentinagobar/themes/argentinagobar/argentinagobar_theme/logo.svg" alt="Argentina.gob.ar - Presidencia de la Nación" />
-                        <p class="text-muted small"> Los contenidos de Argentina.gob.ar están licenciados bajo <a href="https://creativecommons.org/licenses/by/2.5/ar/" target="_blank">Creative Commons Reconocimiento 2.5 Argentina License</a></p>
-                    </section>
-                    <a href="https://www.argentina.gob.ar/sugerencias-b?url_refence=node/769" class=" active">
-                        <p class="btn btn-primary m-t-1">¿Querés hacernos una sugerencia?</p>
-                    </a>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="region region-footer2">
-                        <section id="block-menu-menu-footer-2" class="block block-menu clearfix">
-                            <ul class="menu nav">
-                                <li class="first leaf"><a href="https://www.argentina.gob.ar/servicios">Trámites y servicios</a></li>
-                                <li class="leaf"><a href="https://www.argentina.gob.ar/turnos">Turnos</a></li>
-                                <li class="leaf"><a href="https://www.argentina.gob.ar/organismos">Organismos del Estado</a></li>
-                                <li class="last leaf"><a href="http://mapadelestado.modernizacion.gob.ar/">Mapa del Estado</a></li>
-                                <li class="last leaf"><a href="https://www.argentina.gob.ar/normativa">Leyes argentinas</a></li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="region region-footer3">
-                        <section id="block-menu-menu-footer-3" class="block block-menu clearfix">
-                            <ul class="menu nav">
-                                <li class="first leaf"><a href="https://www.argentina.gob.ar/acerca">Acerca de este sitio</a></li>
-                                <li class="leaf"><a href="https://www.argentina.gob.ar/terminos-y-condiciones">Términos y condiciones</a></li>
-                                <li class="last leaf"><a href="https://www.argentina.gob.ar/ayuda">Ayuda</a></li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
     <script type="text/javascript" language="javascript">
     //BUSCADOR ARGENTINA.GOB.AR
     jQuery(document).ready(function() {
