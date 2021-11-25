@@ -1,0 +1,101 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banco de Pruebas</title>
+    <meta name="description"
+        content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina.">
+    <meta name="author" content="Presidencia de la Nación">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Nav and address bar color -->
+    <meta name="theme-color" content="#0072b8">
+    <meta name="msapplication-navbutton-color" content="#0072b8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0072b8">
+    <meta property="og:url" content="http://localhost:4000/proyectos/argentina/pagina-area.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Banco de Pruebas" />
+    <meta property="og:description"
+        content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta property="og:image" content="/ejemplos/img/jumbotron.jpg" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Banco de Pruebas" />
+    <meta name="twitter:description"
+        content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta name="twitter:image" content="/ejemplos/img/jumbotron.jpg" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://argob.github.io/poncho/node_modules/argob-poncho/dist/css/poncho.min.css">
+    <link rel="stylesheet" href="https://argob.github.io/poncho/node_modules/argob-poncho/dist/css/icono-arg.css">
+    <link rel="stylesheet" href="https://argob.github.io/poncho/node_modules/argob-poncho/dist/css/argentina.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/node_modules/html5shiv/html5shiv.js"></script>
+      <script src="/node_modules/respond.js/respond.min.js"></script>
+  <![endif]-->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.9.0/dist/css/components.css"
+        type="text/css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+<script type='text/javascript'
+    src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.9.0/dist/js/components.js'></script>
+
+
+<body>
+    <div class="container">
+        <h2>Indicadores Sociodemográficos y Obras Públicas</h2>
+        <br>
+
+        <div id="row1"></div>
+        <div id="row2"></div>
+    </div>
+
+    <script>
+        window.onload = function () {
+
+            TSComponents.CardRow.render('row1', {
+                ids: [
+                    'obras_03_03_01',
+                    'obras_13_01_01',//'obras_03_04_01',
+                    'obras_13_01_01',//'obras_12_01_01'
+                ],
+                links: 'small',
+                decimals: 1,
+                explicitSign: [
+                    false,
+                    false,
+                    false,
+
+                ]
+            })
+
+            TSComponents.CardRow.render('row2', {
+                ids: [
+                    'obras_13_01_01', //'obras_11_03_01',
+                    'obras_13_01_01',
+                    'obras_13_01_01', //'obras_10_04_01'
+                ],
+                links: 'small',
+                decimals: 1,
+                explicitSign: [
+                    false,
+                    false,
+                    false,
+
+                ]
+            })
+
+        }
+    </script>
+
+    <script type='text/javascript'
+        src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.9.0/dist/js/components.js'></script>
+</body>
+
+</html>
