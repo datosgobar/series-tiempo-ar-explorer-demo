@@ -79,7 +79,8 @@
 $(document).ready(function() {
     var INDICS_PARAMS = {
         "hechos": { "color": 0, "title": "Hechos" },
-        "victimas": { "color": 3, "title": "Víctimas" }
+        "victimas": { "color": 3, "title": "Víctimas" },
+//        "tasa": { "color": (rojo), "title": "Tasa" }
     }
 
     function delitosPanelCard(provinceId, delitoId, variable) {
@@ -98,21 +99,43 @@ $(document).ready(function() {
         var serieIdHechos = "snic_" + delitoId + "_hechos_" + provinceId
         var serieIdVictimas = "snic_" + delitoId + "_victimas_" + provinceId
         var graphicTargetDiv = "snic_" + delitoId + "_victimas_hechos_" + provinceId + "_graphic"
+/**
+Agregar: 
 
+        var serieIdTasa = "t_snic_" + delitoId + "_victimas_" + provinceId
+**/
         var chartTypes = {}
         chartTypes[serieIdHechos] = "column"
         chartTypes[serieIdVictimas] = "column"
+/**
+Agregar: 
 
+        chartTypes[serieIdTasa] = "line"
+**/
+    
         var seriesAxis = {}
         seriesAxis[serieIdHechos] = "left"
         seriesAxis[serieIdVictimas] = "left"
+/**
+Agregar: 
 
+        seriesAxis[serieIdTasa] = "right"
+**/
         var decimalTooltips = {}
         decimalTooltips[serieIdHechos] = 0
         decimalTooltips[serieIdVictimas] = 0
+/**
+Agregar: 
 
+        decimalTooltips[serieIdTasa] = "1"
+**/
         TSComponents.Graphic.render(graphicTargetDiv, {
             graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdHechos + "," + serieIdVictimas,
+/**
+Cambiar: 
+
+            graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdHechos + "," + serieIdVictimas + "," + serieIdTasa,
+**/
             colors: [INDICS_PARAMS["hechos"]["color"],
                 INDICS_PARAMS["victimas"]["color"]
             ],
@@ -121,7 +144,7 @@ $(document).ready(function() {
             decimalTooltips: decimalTooltips,
             datePickerEnabled: false,
             zoom: false,
-            navigator: true,
+            navigator: false,
             decimalRightAxis: 0,
             decimalLeftAxis: 0
         });
