@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]> <html lang="es"class="iem7"> <![endif]-->
+<!--[if lt IE 7 ]> <html lang="es" class="ie6 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="es" class="ie7 lt-ie8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="es" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!-->
+<html lang="es">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Banco de Pruebas</title>
+    <meta name="description"
+        content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina.">
+    <meta name="author" content="Presidencia de la Nación">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <!-- Nav and address bar color -->
+    <meta name="theme-color" content="#0072b8">
+    <meta name="msapplication-navbutton-color" content="#0072b8">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#0072b8">
+    <meta property="og:url" content="http://localhost:4000/proyectos/argentina/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Banco de Pruebas" />
+    <meta property="og:description"
+        content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta property="og:image" content="/ejemplos/img/jumbotron.jpg" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Banco de Pruebas" />
+    <meta name="twitter:description"
+        content="Base de html y css para la creación de sitios pertenecientes a la Administración Pública Nacional de la República Argentina." />
+    <meta name="twitter:image" content="/ejemplos/img/jumbotron.jpg" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/css/components.css"
+        type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" media="all" />
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/argob/poncho/master/dist/css/poncho.min.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/argob/poncho/master/dist/css/icono-arg.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/argob/poncho/master/dist/css/argentina.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="http://argob.github.io/poncho/js/html5shiv.js"></script>
+      <script src="http://argob.github.io/poncho/js/respond.min.js"></script>
+  <![endif]-->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.7.0/dist/css/components.css"
+        type="text/css">
+</head>
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
+<script type='text/javascript'
+    src='https://cdn.jsdelivr.net/gh/datosgobar/series-tiempo-ar-explorer@ts_components_2.9.0/dist/js/components.js'></script>
+
+<style>
+    .section-margin {
+        margin-top: 40px;
+    }
+</style>
+
+<body role="document"
+    class="html not-front not-logged-in no-sidebars page-node page-node- page-node-26548 node-type-area og-context og-context-node og-context-node-26548 i18n-es">
+
+    <main role="main"> <a id="main-content"></a>
+        <div class="container"></div>
+        <div class="region region-content">
+            <div id="block-system-main" class="block block-system clearfix">
+                <!-- homicidios_doloso -->
+
+                <section class="section-margin">
+                    <div class="container" id="homicidios_doloso">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <h4 class="h4 section-title">Homicidos dolosos</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <select name="homicidios-dolosos-provincias-selector"
+                                    id="homicidios-dolosos-provincias-id" class="form-control">
+                                    <option value="arg" selected>Total Argentina</option>
+                                    <option value="06">Buenos Aires</option>
+                                    <option value="10">Catamarca</option>
+                                    <option value="22">Chaco</option>
+                                    <option value="26">Chubut</option>
+                                    <option value="02">Ciudad Autónoma de Buenos Aires</option>
+                                    <option value="14">Córdoba</option>
+                                    <option value="18">Corrientes</option>
+                                    <option value="30">Entre Ríos</option>
+                                    <option value="34">Formosa</option>
+                                    <option value="38">Jujuy</option>
+                                    <option value="42">La Pampa</option>
+                                    <option value="46">La Rioja</option>
+                                    <option value="50">Mendoza</option>
+                                    <option value="54">Misiones</option>
+                                    <option value="58">Neuquén</option>
+                                    <option value="62">Río Negro</option>
+                                    <option value="66">Salta</option>
+                                    <option value="70">San Juan</option>
+                                    <option value="74">San Luis</option>
+                                    <option value="78">Santa Cruz</option>
+                                    <option value="82">Santa Fe</option>
+                                    <option value="86">Santiago del Estero</option>
+                                    <option value="94">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                                    <option value="90">Tucumán</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row panels-row delitos-hdthdv-panel" id="snic_hdthdv_arg_panel">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper"
+                                    id='snic_hdv_arg_card'></div>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper"
+                                    id='snic_hdt_arg_card'> </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <div class="center-block full-width" style="height: 329px; "
+                                    id='snic_homicidos_dolosos_arg_graphic'></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FIN homicidios_doloso -->
+
+                <!-- robos -->
+
+                <section class="section-margin">
+                    <div class="container" id="robos">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <h4 class="h4 section-title">Robos</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <select name="robos-provincias-selector" id="robos-provincias-id" class="form-control">
+                                    <option value="arg" selected>Total Argentina</option>
+                                    <option value="06">Buenos Aires</option>
+                                    <option value="10">Catamarca</option>
+                                    <option value="22">Chaco</option>
+                                    <option value="26">Chubut</option>
+                                    <option value="02">Ciudad Autónoma de Buenos Aires</option>
+                                    <option value="14">Córdoba</option>
+                                    <option value="18">Corrientes</option>
+                                    <option value="30">Entre Ríos</option>
+                                    <option value="34">Formosa</option>
+                                    <option value="38">Jujuy</option>
+                                    <option value="42">La Pampa</option>
+                                    <option value="46">La Rioja</option>
+                                    <option value="50">Mendoza</option>
+                                    <option value="54">Misiones</option>
+                                    <option value="58">Neuquén</option>
+                                    <option value="62">Río Negro</option>
+                                    <option value="66">Salta</option>
+                                    <option value="70">San Juan</option>
+                                    <option value="74">San Luis</option>
+                                    <option value="78">Santa Cruz</option>
+                                    <option value="82">Santa Fe</option>
+                                    <option value="86">Santiago del Estero</option>
+                                    <option value="94">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                                    <option value="90">Tucumán</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row panels-row robos-panel" id="snic_rhrt_arg_panel">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper"
+                                    id='snic_rh_arg_card'></div>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper"
+                                    id='snic_rt_arg_card'> </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <div class="center-block full-width" style="height: 329px; "
+                                    id='snic_robos_arg_graphic'></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FIN robos -->
+
+
+                <!-- amenazas -->
+
+                <section class="section-margin">
+                    <div class="container" id="amenazas">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <h4 class="h4 section-title">Amenazas</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <select name="amenazas-provincias-selector" id="amenazas-provincias-id"
+                                    class="form-control">
+                                    <option value="arg" selected>Total Argentina</option>
+                                    <option value="06">Buenos Aires</option>
+                                    <option value="10">Catamarca</option>
+                                    <option value="22">Chaco</option>
+                                    <option value="26">Chubut</option>
+                                    <option value="02">Ciudad Autónoma de Buenos Aires</option>
+                                    <option value="14">Córdoba</option>
+                                    <option value="18">Corrientes</option>
+                                    <option value="30">Entre Ríos</option>
+                                    <option value="34">Formosa</option>
+                                    <option value="38">Jujuy</option>
+                                    <option value="42">La Pampa</option>
+                                    <option value="46">La Rioja</option>
+                                    <option value="50">Mendoza</option>
+                                    <option value="54">Misiones</option>
+                                    <option value="58">Neuquén</option>
+                                    <option value="62">Río Negro</option>
+                                    <option value="66">Salta</option>
+                                    <option value="70">San Juan</option>
+                                    <option value="74">San Luis</option>
+                                    <option value="78">Santa Cruz</option>
+                                    <option value="82">Santa Fe</option>
+                                    <option value="86">Santiago del Estero</option>
+                                    <option value="94">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                                    <option value="90">Tucumán</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row panels-row amenazas-panel" id="snic_ahat_arg_panel">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper"
+                                    id='snic_ah_arg_card'></div>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper"
+                                    id='snic_at_arg_card'> </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <div class="center-block full-width" style="height: 329px; "
+                                    id='snic_amenazas_arg_graphic'></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FIN amenazas -->
+
+                <!-- lesiones dolosas-->
+
+                <section class="section-margin">
+                    <div class="container" id="lesiones-dolosas">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <h4 class="h4 section-title">Lesiones dolosas</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-xs-6 col-sm-6 col-md-6">
+                                <select name="lesiones-dolosas-provincias-selector" id="lesiones-dolosas-provincias-id"
+                                    class="form-control">
+                                    <option value="arg" selected>Total Argentina</option>
+                                    <option value="06">Buenos Aires</option>
+                                    <option value="10">Catamarca</option>
+                                    <option value="22">Chaco</option>
+                                    <option value="26">Chubut</option>
+                                    <option value="02">Ciudad Autónoma de Buenos Aires</option>
+                                    <option value="14">Córdoba</option>
+                                    <option value="18">Corrientes</option>
+                                    <option value="30">Entre Ríos</option>
+                                    <option value="34">Formosa</option>
+                                    <option value="38">Jujuy</option>
+                                    <option value="42">La Pampa</option>
+                                    <option value="46">La Rioja</option>
+                                    <option value="50">Mendoza</option>
+                                    <option value="54">Misiones</option>
+                                    <option value="58">Neuquén</option>
+                                    <option value="62">Río Negro</option>
+                                    <option value="66">Salta</option>
+                                    <option value="70">San Juan</option>
+                                    <option value="74">San Luis</option>
+                                    <option value="78">Santa Cruz</option>
+                                    <option value="82">Santa Fe</option>
+                                    <option value="86">Santiago del Estero</option>
+                                    <option value="94">Tierra del Fuego, Antártida e Islas del Atlántico Sur</option>
+                                    <option value="90">Tucumán</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row panels-row lesiones-dolosas-panel" id="snic_ldvldt_arg_panel">
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper"
+                                    id='snic_ldv_arg_card'></div>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-3 col-md-3">
+                                <div style="margin-top: auto; margin-bottom: auto;" class="center-block card-wrapper"
+                                    id='snic_ldt_arg_card'> </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-6">
+                                <div class="center-block full-width" style="height: 329px; "
+                                    id='snic_lesiones_dolosas_arg_graphic'></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- FIN lesiones dolosas -->
+
+
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // function hideSeriesDivs() {
+        //     $(".serie-div").each(function () {
+        //         $(this).hide();
+        //     });
+        // }
+
+        // function showSerieDiv(targetDivId, serieIds) {
+        //     var hdv = serieIds.split(',')[0] + ""
+        //     var hdt = serieIds.split(',')[1] + ""
+
+        //     var chartTypes = {}
+        //     chartTypes[hdt] = "column"
+
+        //     var seriesAxis = {}
+        //     seriesAxis[hdv] = "left"
+        //     seriesAxis[hdt] = "right"
+
+        //     var decimalTooltips = {}
+        //     decimalTooltips[hdv] = 0
+        //     decimalTooltips[hdt] = 1
+
+        //     TSComponents.Graphic.render(targetDivId, {
+        //         graphicUrl: "https://apis.datos.gob.ar/series/api/series?ids=" + serieIds,
+        //         chartTypes: chartTypes,
+        //         seriesAxis: seriesAxis,
+        //         decimalTooltips: decimalTooltips
+        //     });
+
+        //     $("#" + targetDivId).show();
+        // }
+
+        var INDICS_PARAMS = {
+            //TODO: QUITAR HECHOS
+            "hdv": { "color": 2, "title": "Victimas de homicidios dolosos" },
+            "hdt": { "color": 1, "title": "Tasa de homicidios dolosos" },
+            "tasaNacion": { "color": 0, "title": "Tasa Nacional" },
+            "rh": { "color": 2, "title": "Victimas de robos" },
+            "rt": { "color": 1, "title": "Tasa de robos" },
+            "at": { "color": 1, "title": "Tasa de Amenazas" },
+            "ah": { "color": 2, "title": "Victimas de Amenazas" },
+            "ldt": { "color": 1, "title": "Tasa de Lesiones dolosas" },
+            "ldv": { "color": 2, "title": "Victimas de lesiones dolosas" },
+
+        }
+
+        $(document).ready(function () {
+
+            function PanelCard(provinceId, delitoId, variable) {
+
+
+                var serieId = "snic_" + delitoId + "_" + provinceId
+                var cardTargetDiv = serieId + "_card"
+
+                TSComponents.Card.render(cardTargetDiv, {
+                    serieId: serieId,
+                    decimals: 0,
+                    color: INDICS_PARAMS[variable]["color"],
+                    title: INDICS_PARAMS[variable]["title"]
+                });
+
+            }
+
+            // Homicidios dolosos
+            function delitosHomicidiosDolososPanelGraphic(provinceId, HDT, HDV) {
+                var serieIdHDT = "snic_" + HDT + "_" + provinceId
+                var serieIdHDV = "snic_" + HDV + "_" + provinceId
+                var graphicTargetDiv = "snic_" + "homicidos_dolosos_" + provinceId + "_graphic"
+                var serieIdTasaNacion = "snic_" + HDT + "_arg"
+
+                var chartTypes = {}
+                chartTypes[serieIdHDV] = "column"
+                chartTypes[serieIdTasaNacion] = "line"
+                chartTypes[serieIdHDT] = "line"
+
+                var seriesAxis = {}
+                seriesAxis[serieIdHDT] = "left"
+                seriesAxis[serieIdHDV] = "right"
+                seriesAxis[serieIdTasaNacion] = "left"
+
+                var decimalTooltips = {}
+                decimalTooltips[serieIdHDT] = 0
+                decimalTooltips[serieIdHDV] = 1
+
+                var urlFull = "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdHDV + "," + serieIdHDT + "," + serieIdTasaNacion;
+                var urlNacional = "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdHDV + "," + serieIdHDT
+
+                TSComponents.Graphic.render(graphicTargetDiv, {
+                    graphicUrl: provinceId == "arg" ? urlNacional : urlFull,
+
+                    colors: [
+                        INDICS_PARAMS["hdv"]["color"],
+                        INDICS_PARAMS["hdt"]["color"],
+                        INDICS_PARAMS["tasaNacion"]["color"]
+                    ],
+                    title: "Evolucíon de homicidios dolosos",
+                    chartTypes: chartTypes,
+                    seriesAxis: seriesAxis,
+                    decimalTooltips: decimalTooltips,
+                    datePickerEnabled: false,
+                    zoom: false,
+                    navigator: false,
+                    decimalRightAxis: 0,
+                    decimalLeftAxis: 0
+                });
+
+            }
+
+            function delitosHomicidiosDolososPanelHtml(provinceId, delitoId) {
+                var delitosPanelId = "#snic_" + delitoId + "_" + provinceId + "_panel"
+                if ($(delitosPanelId).length) {
+                    // it exists
+                } else {
+                    var panelTemplate = $("#snic_hdthdv_arg_panel").prop('outerHTML')
+                    var newPanelHtml = panelTemplate.replace(/arg/g, provinceId)
+                    $("#homicidios_doloso").append($(newPanelHtml))
+                }
+            }
+
+            function delitosHomicidiosDolososPanel(provinceId) {
+                delitosHomicidiosDolososPanelHtml(provinceId, "hdthdv")
+                PanelCard(provinceId, "hdv", "hdv")
+                PanelCard(provinceId, "hdt", "hdt")
+                delitosHomicidiosDolososPanelGraphic(provinceId, "hdt", "hdv")
+            }
+
+
+            $("#homicidios-dolosos-provincias-id").on("change", function () {
+                var selectorProvincias = $(this);
+                var provinceId = selectorProvincias.val()
+                var delitoId = "hdthdv"
+
+
+                $(".delitos-hdthdv-panel").each(function () {
+                    $(this).hide();
+                });
+                delitosHomicidiosDolososPanel(provinceId)
+                $("#snic_" + delitoId + "_" + provinceId + "_panel").show();
+            });
+            delitosHomicidiosDolososPanel("arg")
+
+            // Robos
+            function delitosRobosPanelGraphic(provinceId, RH, RT) {
+                var serieIdRH = "snic_" + RH + "_" + provinceId
+                var serieIdRT = "snic_" + RT + "_" + provinceId
+                var graphicTargetDiv = "snic_" + "robos_" + provinceId + "_graphic"
+                var serieIdTasaNacion = "snic_" + RT + "_arg"
+
+                var chartTypes = {}
+                chartTypes[serieIdRH] = "column"
+                chartTypes[serieIdTasaNacion] = "line"
+                chartTypes[serieIdRT] = "line"
+
+                var seriesAxis = {}
+                seriesAxis[serieIdRT] = "left"
+                seriesAxis[serieIdRH] = "right"
+                seriesAxis[serieIdTasaNacion] = "left"
+
+                var decimalTooltips = {}
+                decimalTooltips[serieIdRT] = 0
+                decimalTooltips[serieIdRH] = 1
+
+                var urlFull = "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdRH + "," + serieIdRT + "," + serieIdTasaNacion;
+                var urlNacional = "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdRH + "," + serieIdRT
+
+                TSComponents.Graphic.render(graphicTargetDiv, {
+                    graphicUrl: provinceId == "arg" ? urlNacional : urlFull,
+
+                    colors: [
+                        INDICS_PARAMS["rh"]["color"],
+                        INDICS_PARAMS["rt"]["color"],
+                        INDICS_PARAMS["tasaNacion"]["color"]
+                    ],
+                    title: "Evolucíon de robos",
+                    chartTypes: chartTypes,
+                    seriesAxis: seriesAxis,
+                    decimalTooltips: decimalTooltips,
+                    datePickerEnabled: false,
+                    zoom: false,
+                    navigator: false,
+                    decimalRightAxis: 0,
+                    decimalLeftAxis: 0
+                });
+
+            }
+            function delitosRobosPanelHtml(provinceId, delitoId) {
+                var delitosPanelId = "#snic_" + delitoId + "_" + provinceId + "_panel"
+                if ($(delitosPanelId).length) {
+                    // it exists
+                } else {
+                    var panelTemplate = $("#snic_rhrt_arg_panel").prop('outerHTML')
+                    var newPanelHtml = panelTemplate.replace(/arg/g, provinceId)
+                    $("#robos").append($(newPanelHtml))
+                }
+            }
+            function delitosRobosPanel(provinceId) {
+
+                delitosRobosPanelHtml(provinceId, "rhrt")
+                PanelCard(provinceId, "rt", "rt")
+                PanelCard(provinceId, "rh", "rh")
+                delitosRobosPanelGraphic(provinceId, "rh", "rt")
+            }
+            $("#robos-provincias-id").on("change", function () {
+                var selectorProvincias = $(this);
+                var provinceId = selectorProvincias.val()
+                var delitoId = "rhrt"
+
+
+                $(".robos-panel").each(function () {
+                    $(this).hide();
+                });
+                delitosRobosPanel(provinceId)
+                $("#snic_" + delitoId + "_" + provinceId + "_panel").show();
+            });
+            delitosRobosPanel("arg")
+
+            // Amenazas
+
+            function delitosAmenazasPanelGraphic(provinceId, AH, AT) {
+                var serieIdAH = "snic_" + AH + "_" + provinceId
+                var serieIdAT = "snic_" + AT + "_" + provinceId
+                var graphicTargetDiv = "snic_" + "amenazas_" + provinceId + "_graphic"
+                var serieIdTasaNacion = "snic_" + AT + "_arg"
+
+                var chartTypes = {}
+                chartTypes[serieIdAH] = "column"
+                chartTypes[serieIdTasaNacion] = "line"
+                chartTypes[serieIdAT] = "line"
+
+                var seriesAxis = {}
+                seriesAxis[serieIdAT] = "left"
+                seriesAxis[serieIdAH] = "right"
+                seriesAxis[serieIdTasaNacion] = "left"
+
+                var decimalTooltips = {}
+                decimalTooltips[serieIdAT] = 0
+                decimalTooltips[serieIdAH] = 1
+
+                var urlFull = "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdAH + "," + serieIdAT + "," + serieIdTasaNacion;
+                var urlNacional = "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdAH + "," + serieIdAT
+
+                TSComponents.Graphic.render(graphicTargetDiv, {
+                    graphicUrl: provinceId == "arg" ? urlNacional : urlFull,
+
+                    colors: [
+                        INDICS_PARAMS["ah"]["color"],
+                        INDICS_PARAMS["at"]["color"],
+                        INDICS_PARAMS["tasaNacion"]["color"]
+                    ],
+                    title: "Evolucíon de Amenazas",
+                    chartTypes: chartTypes,
+                    seriesAxis: seriesAxis,
+                    decimalTooltips: decimalTooltips,
+                    datePickerEnabled: false,
+                    zoom: false,
+                    navigator: false,
+                    decimalRightAxis: 0,
+                    decimalLeftAxis: 0
+                });
+
+            }
+            function delitosAmenazasPanelHtml(provinceId, delitoId) {
+                var delitosPanelId = "#snic_" + delitoId + "_" + provinceId + "_panel"
+                if ($(delitosPanelId).length) {
+                    // it exists
+                } else {
+                    var panelTemplate = $("#snic_ahat_arg_panel").prop('outerHTML')
+                    var newPanelHtml = panelTemplate.replace(/arg/g, provinceId)
+                    $("#amenazas").append($(newPanelHtml))
+                }
+            }
+            function delitosAmenazasPanel(provinceId) {
+
+
+                delitosAmenazasPanelHtml(provinceId, "ahat")
+                PanelCard(provinceId, "at", "at")
+                PanelCard(provinceId, "ah", "ah")
+                delitosAmenazasPanelGraphic(provinceId, "ah", "at")
+            }
+            $("#amenazas-provincias-id").on("change", function () {
+                var selectorProvincias = $(this);
+                var provinceId = selectorProvincias.val()
+                var delitoId = "ahat"
+
+
+                $(".amenazas-panel").each(function () {
+                    $(this).hide();
+                });
+                delitosAmenazasPanel(provinceId)
+                $("#snic_" + delitoId + "_" + provinceId + "_panel").show();
+            });
+            delitosAmenazasPanel("arg")
+
+            // Lesiones dolosas
+
+            function delitosLesionesDolosasPanelGraphic(provinceId, LDV, LDT) {
+                var serieIdLDV = "snic_" + LDV + "_" + provinceId
+                var serieIdLDT = "snic_" + LDT + "_" + provinceId
+
+                var graphicTargetDiv = "snic_" + "lesiones_dolosas_" + provinceId + "_graphic"
+                var serieIdTasaNacion = "snic_" + LDT + "_arg"
+
+                var chartTypes = {}
+                chartTypes[serieIdLDV] = "column"
+                chartTypes[serieIdTasaNacion] = "line"
+                chartTypes[serieIdLDT] = "line"
+
+                var seriesAxis = {}
+                seriesAxis[serieIdLDT] = "left"
+                seriesAxis[serieIdLDV] = "right"
+                seriesAxis[serieIdTasaNacion] = "left"
+
+                var decimalTooltips = {}
+                decimalTooltips[serieIdLDT] = 0
+                decimalTooltips[serieIdLDV] = 1
+
+                var urlFull = "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdLDV + "," + serieIdLDT + "," + serieIdTasaNacion;
+                var urlNacional = "https://apis.datos.gob.ar/series/api/series?ids=" + serieIdLDV + "," + serieIdLDT
+
+                TSComponents.Graphic.render(graphicTargetDiv, {
+                    graphicUrl: provinceId == "arg" ? urlNacional : urlFull,
+
+                    colors: [
+                        INDICS_PARAMS["ldv"]["color"],
+                        INDICS_PARAMS["ldt"]["color"],
+                        INDICS_PARAMS["tasaNacion"]["color"]
+                    ],
+                    title: "Evolucíon de lesiones dolosas",
+                    chartTypes: chartTypes,
+                    seriesAxis: seriesAxis,
+                    decimalTooltips: decimalTooltips,
+                    datePickerEnabled: false,
+                    zoom: false,
+                    navigator: false,
+                    decimalRightAxis: 0,
+                    decimalLeftAxis: 0
+                });
+
+            }
+            function delitosLesionesDolosasPanelHtml(provinceId, delitoId) {
+                var delitosPanelId = "#snic_" + delitoId + "_" + provinceId + "_panel"
+                if ($(delitosPanelId).length) {
+                    // it exists
+                } else {
+                    var panelTemplate = $("#snic_ldvldt_arg_panel").prop('outerHTML')
+                    var newPanelHtml = panelTemplate.replace(/arg/g, provinceId)
+                    $("#lesiones-dolosas").append($(newPanelHtml))
+                }
+            }
+            function delitosLesionesDolosasPanel(provinceId) {
+
+
+                delitosLesionesDolosasPanelHtml(provinceId, "ldvldt")
+                PanelCard(provinceId, "ldv", "ldv")
+                PanelCard(provinceId, "ldt", "ldt")
+                delitosLesionesDolosasPanelGraphic(provinceId, "ldv", "ldt")
+            }
+            $("#lesiones-dolosas-provincias-id").on("change", function () {
+                var selectorProvincias = $(this);
+                var provinceId = selectorProvincias.val()
+                var delitoId = "ldvldt"
+
+
+                $(".lesiones-dolosas-panel").each(function () {
+                    $(this).hide();
+                });
+                delitosLesionesDolosasPanel(provinceId)
+                $("#snic_" + delitoId + "_" + provinceId + "_panel").show();
+            });
+            delitosLesionesDolosasPanel("arg")
+
+
+        })
+    </script>
+    <script
+        src="https://www.argentina.gob.ar/sites/default/files/js/js_yI4XDRIca1vpVutY_HYJvsqEnjRmmpr-WgeRS0xBbPQ.js"></script>
+    <script
+        src="https://www.argentina.gob.ar/sites/default/files/js/js_L50O_PWoAuMOxVjnzZCkNSSmI0kFwhZsO1_KS8WnGKw.js"></script>
+
+</body>
+
+</html>
